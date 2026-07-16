@@ -18,6 +18,34 @@ active updates and difference responses all use `Call.EncodeResult`,
 `EncodeObject` or `FrozenObject.Encode`; there is no push-specific codec and no
 fallback to canonical bytes when a projection fails.
 
+## Synchronizing `gotd/td` upstream
+
+Upstream is an evidence and patch source, not a branch that is merged wholesale
+into the fork. Every synchronization uses this sequence:
+
+1. Fetch upstream and record the current base, candidate new base, and exact
+   commit range. Classify each non-merge commit or cohesive feature group as
+   `selected` or `skipped`, with a short reason.
+2. Replay selected source/runtime changes on a dedicated fork branch. Preserve
+   the `github.com/iamxvbaba/td` module boundary and resolve upstream import-path
+   differences in source. Keep required dependency changes in the same reviewed
+   patch set as the feature that needs them.
+3. Never copy, cherry-pick, or conflict-merge upstream-generated `tg/*_gen.go`
+   files. They are an oracle for schema/codegen comparison only. Fork-generated
+   outputs must come exclusively from the fork's manifest, semantic IR, policy,
+   templates, and sparse AOT emitter.
+4. Compare schema Layer, normalized SHA-256, and body before importing it. An
+   identical schema with different generator/source header provenance is a
+   no-op for canonical generation. A genuinely new or changed schema must use
+   the import and policy-audit workflow below.
+5. Run deterministic generation, targeted and full fork tests, `go vet`, source
+   budgets, cross-Layer wire oracles, and downstream `telesrv` validation. Only
+   after all gates pass may documentation adopt the candidate upstream base and
+   a new immutable fork tag be published.
+
+This policy applies to every future upstream update. A full upstream
+merge/rebase into the release line is not a shortcut for this review.
+
 ## Adding a Layer
 
 1. Import the exact source from a local upstream checkout. `gotdgen` discovers

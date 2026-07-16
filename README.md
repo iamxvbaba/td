@@ -11,6 +11,25 @@ for source reference, but `gif-download` and `userbot` still depend on
 before they can be built against this renamed module and are not part of this
 fork's release gate.
 
+## Fork maintenance
+
+Upstream synchronization is selective by design. Do not merge or rebase the
+whole `gotd/td` branch into this fork's release line. For every fetched upstream
+range, record the old and candidate base commits, review each commit or cohesive
+feature group, and replay only the selected source, runtime, diagnostic,
+performance, security, and required dependency changes. Record skipped changes
+and the reason they do not belong in the fork.
+
+Upstream-generated `tg/*_gen.go` files are never copied or conflict-merged.
+Schema changes enter through the versioned manifest, semantic policy audit, and
+sparse AOT generation workflow documented in
+[`_schema/layers/README.md`](_schema/layers/README.md). If the upstream schema
+has the same Layer, normalized SHA-256, and body as the fork's canonical schema,
+provenance-only differences do not trigger canonical regeneration. A candidate
+upstream base becomes the documented baseline only after deterministic
+generation, fork tests, downstream `telesrv` validation, and publication of a
+new immutable tag.
+
 Telegram MTProto API client in Go for users and bots.
 
 [![Telegram: English chat](https://api.go-faster.org/badge/telegram/gotd_en?title=EN&v=1)](https://t.me/gotd_en) [![Telegram: Russian chat](https://api.go-faster.org/badge/telegram/gotd_ru?title=RU&v=1)](https://t.me/gotd_ru) [![Telegram: Chinese chat](https://api.go-faster.org/badge/telegram/gotd_zhcn?title=CN&v=1)](https://t.me/gotd_zhcn) [![Telegram: Online count](https://api.go-faster.org/badge/telegram/online?groups=gotd_ru&groups=gotd_en&groups=gotd_zhcn)](https://t.me/gotd_en)
