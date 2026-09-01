@@ -119,7 +119,15 @@ func NewMessageIDNano(nano int64, typ MessageType) MessageID {
 	default:
 		yield = yieldClient
 	}
-	return MessageID(newMessageID(nano, yield))
+	id := MessageID(newMessageID(nano, yield))
+	// A client message created exactly on an integral second otherwise has a
+	// zero lower 32-bit fractional part. MTProto reserves that value to make
+	// replay protection effective, so move it to the first valid client tick
+	// while preserving both its timestamp and message type.
+	if id.Type() == MessageFromClient && uint32(id) == 0 {
+		id += messageIDModulo
+	}
+	return id
 }
 
 // MessageIDGen is message id generator that provides collision prevention.
