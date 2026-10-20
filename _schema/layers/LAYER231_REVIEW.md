@@ -47,3 +47,5 @@ families 687→689, rewrite variants 2101→2107, unavailable variants 783→789
 body obligation variants 212→224, field-projection obligations 181→205,
 new-only obligations 783→789, sparse typed codec wire budget 1500→1520 (the
 observed count is 1501). The profile catalog assertion now covers 225–231.
+The semantic universe lock follows the same window: signature changes
+56→58 and the Layer 225 signature baseline 48→50.
