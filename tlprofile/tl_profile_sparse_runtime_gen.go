@@ -2456,6 +2456,7 @@ const (
 	LayerSemanticMethodPaymentsGetStarGiftUpgradeAttributes                            = SemanticMethodPaymentsGetStarGiftUpgradeAttributes
 	LayerSemanticMethodPaymentsGetStarGiftUpgradePreview                               = SemanticMethodPaymentsGetStarGiftUpgradePreview
 	LayerSemanticMethodPaymentsGetStarGiftWithdrawalURL                                = SemanticMethodPaymentsGetStarGiftWithdrawalURL
+	LayerSemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy                          = SemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy
 	LayerSemanticMethodPaymentsGetStarGifts                                            = SemanticMethodPaymentsGetStarGifts
 	LayerSemanticMethodPaymentsGetStarsGiftOptions                                     = SemanticMethodPaymentsGetStarsGiftOptions
 	LayerSemanticMethodPaymentsGetStarsGiveawayOptions                                 = SemanticMethodPaymentsGetStarsGiveawayOptions

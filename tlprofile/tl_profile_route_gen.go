@@ -15852,8 +15852,8 @@ func tlLookupRoute(profile Profile, wireID uint32) (tlRoute, bool) {
 		}
 	case 0xd06e93a8:
 		switch profile {
-		case Profile225, Profile226, Profile227, Profile228, Profile229, Profile230, Profile231:
-			return tlRoute{semantic: SemanticMethodPaymentsGetStarGiftWithdrawalURL, mode: tlRoutePolicy, canonicalWireID: 0xc8ca817b}, true
+		case Profile225, Profile226, Profile227, Profile228, Profile229, Profile230, Profile231, Profile232:
+			return tlRoute{semantic: SemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy, mode: tlRouteDirect, canonicalWireID: 0xd06e93a8}, true
 		default:
 			return tlRoute{}, false
 		}
@@ -23814,6 +23814,8 @@ func tlNewCanonical(wireID uint32) (bin.Object, bool) {
 		return &tg.AiComposeTone{}, true
 	case 0xd069ccde:
 		return &tg.StoriesStartLiveRequest{}, true
+	case 0xd06e93a8:
+		return &tg.PaymentsGetStarGiftWithdrawalURLLegacyRequest{}, true
 	case 0xd072acb4:
 		return &tg.RestrictionReason{}, true
 	case 0xd087663a:

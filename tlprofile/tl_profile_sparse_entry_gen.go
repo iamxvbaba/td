@@ -916,8 +916,6 @@ func tlDecodeSparse(profile Profile, wireID uint32, b *bin.Buffer, limits Limits
 		return layerDecodeWirecff63ea9(profile, b, state)
 	case 0xd069ccde:
 		return layerDecodeWired069ccde(profile, b, state)
-	case 0xd06e93a8:
-		return layerDecodeWired06e93a8(profile, b, state)
 	case 0xd1b4ab14:
 		return layerDecodeWired1b4ab14(profile, b, state)
 	case 0xd31bc45d:
@@ -1578,12 +1576,6 @@ func tlEncodeSparse(profile Profile, semantic SemanticID, value bin.Object, b *b
 			return &LayerCodecError{Operation: "encode sparse", Profile: profile, Semantic: semantic, Reason: fmt.Sprintf("canonical type mismatch: %T", value)}
 		}
 		return layerEncodeFamilyPaymentsGetPaymentFormRequest(profile, typed, b, state)
-	case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
-		typed, ok := value.(*tg.PaymentsGetStarGiftWithdrawalURLRequest)
-		if !ok {
-			return &LayerCodecError{Operation: "encode sparse", Profile: profile, Semantic: semantic, Reason: fmt.Sprintf("canonical type mismatch: %T", value)}
-		}
-		return layerEncodeFamilyPaymentsGetStarGiftWithdrawalURLRequest(profile, typed, b, state)
 	case SemanticMethodPaymentsLaunchPrepaidGiveaway:
 		typed, ok := value.(*tg.PaymentsLaunchPrepaidGiveawayRequest)
 		if !ok {
@@ -7397,6 +7389,11 @@ func tlLookupResultPlan(profile Profile, semantic SemanticID) (int, bool) {
 	case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
 		switch profile {
 		case Profile232:
+			return 249, true
+		}
+	case SemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy:
+		switch profile {
+		case Profile225, Profile226, Profile227, Profile228, Profile229, Profile230, Profile231, Profile232:
 			return 249, true
 		}
 	case SemanticMethodPaymentsGetStarGifts:

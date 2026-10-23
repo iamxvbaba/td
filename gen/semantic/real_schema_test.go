@@ -41,7 +41,7 @@ func TestTelegramLayers225Through232(t *testing.T) {
 		}
 	}
 
-	assertKeyCount(t, "signature changes", signature, 62)
+	assertKeyCount(t, "signature changes", signature, 61)
 	assertKeyCount(t, "same-ID signature changes", sameWire, 12)
 	assertKeyCount(t, "result-only changes", resultOnly, 4)
 	assertKeyCount(t, "old-only definitions", oldOnly, 18)
@@ -92,7 +92,7 @@ func TestTelegramLayers225Through232(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if got, want := len(diff225.SignatureChanges()), 53; got != want {
+	if got, want := len(diff225.SignatureChanges()), 52; got != want {
 		t.Fatalf("layer 225 signature changes = %d, want %d", got, want)
 	}
 	if got, want := len(diff225.SameWireSignatureChanges()), 12; got != want {

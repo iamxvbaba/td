@@ -863,6 +863,8 @@ func tlUnprofiledInvariant(wireID uint32) bool {
 		return true
 	case 0xcff43f61:
 		return true
+	case 0xd06e93a8:
+		return true
 	case 0xd0b5e1fc:
 		return true
 	case 0xd1d7efc5:

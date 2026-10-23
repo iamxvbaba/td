@@ -134,13 +134,13 @@ func TestLayerConversionPlanTelegram225Through232(t *testing.T) {
 	}
 	want := map[LayerObligationKind]int{
 		LayerObligationAtomicFlagGroup:  0,
-		LayerObligationDiscard:          9,
-		LayerObligationFieldProjection:  263,
+		LayerObligationDiscard:          2,
+		LayerObligationFieldProjection:  256,
 		LayerObligationFieldReplacement: 0,
 		LayerObligationIncompatible:     38,
-		LayerObligationNewOnly:          957,
+		LayerObligationNewOnly:          964,
 		LayerObligationOldOnly:          73,
-		LayerObligationRequired:         30,
+		LayerObligationRequired:         16,
 		LayerObligationResult:           8,
 		LayerObligationUpdateProjection: 45,
 	}

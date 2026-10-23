@@ -148,7 +148,9 @@ merge/rebase into the release line is not a shortcut for this review.
 3. Review every new obligation. Mechanical ID/body reuse needs no policy.
    Removed fields, replacements, old-only definitions, changed RPC results and
    unavailable update constructors require an explicit `reject`, `drop`,
-   `default`, `alias`, `project` or typed `adapter` decision. Copy only reviewed
+   `default`, `alias`, `project` or typed `adapter` decision. A superseded RPC
+   whose replacement changed a field's meaning may instead be promoted to its
+   own method through [`legacy_methods`](#legacy-methods). Copy only reviewed
    entries into `policy.json`; stale keys and unresolved obligations are hard
    generation errors.
 4. Regenerate and verify:
@@ -170,13 +172,16 @@ Canonical Layer 232 comes from official Telegram Desktop
 `dev@850fb90eb6db96c124b6da1349060f9ed00f4fe4`; exact profiles 225–231 remain
 available. The [Layer 232 review](LAYER232_REVIEW.md) locks provenance, the
 seven reshuffled constructor IDs and the star-gift withdrawal request change:
-Layer 232 replaces the SRP challenge with a temporary password, so a historical
-withdrawal request is rejected at admission instead of having its SRP proof
-discarded, and a canonical request is never downgraded into an empty SRP
+Layer 232 replaces the SRP challenge with a temporary password. The historical
+`#d06e93a8` request is promoted to its own canonical method
+`payments.getStarGiftWithdrawalUrlLegacy` (see [Legacy methods](#legacy-methods)),
+so its SRP proof reaches the server unchanged instead of being discarded or
+rejected, and a canonical request is never downgraded into an empty SRP
 challenge. New optional fields drop for 225–231; a server emitting
-`quote_rich` must also carry the flat quote fallback. The policy has 270
-entries (249 existing plus 21 withdrawal rejections). No PTS/update or MTProto
-transport schema changes are part of this release.
+`quote_rich` must also carry the flat quote fallback. The policy has 249
+entries; the 21 withdrawal rejections of v1.6.0 became stale with the
+promotion. No PTS/update or MTProto transport schema changes are part of this
+release.
 
 ### Layer 231 review record
 
@@ -254,6 +259,29 @@ bridge. Overlay IDs are classified per exact profile, so a private ID that
 collides with a historical official constructor is never globally stolen.
 There is no runtime TL parser, schema map, reflection walker, or client-driven
 Layer selection in this path.
+
+## Legacy methods
+
+`legacy_methods` in `manifest.json` handles an official constructor whose
+replacement changed the meaning of a field, so that no same-name mapping is
+correct (Layer 232 replaced the withdrawal SRP proof with a temporary
+password). Each entry names a new canonical method and quotes the exact
+official historical definition. gotdgen then:
+
+- requires every official profile that defines the wire ID to carry exactly
+  that definition, and renames it there to the declared method;
+- adds the same definition to the canonical model, so `tg` owns one request
+  type and every profile that knows the wire admits it as that method;
+- fails generation when no historical profile defines the wire any more, the
+  canonical profile no longer defines the superseding official method, or the
+  canonical profile itself defines the wire ID.
+
+The promoted method keeps the official wire and fields, so it is not a
+transcoder, adapter or alias: historical and canonical bodies are the same TL
+definition and need no policy. Use it only when both methods remain
+meaningful and the server can verify each one on its own terms; a field that
+can be represented canonically still belongs in reviewed policy.
+`_schema/telegram.tl` lists promoted methods in its `Legacy` header.
 
 ## Runtime invariants
 

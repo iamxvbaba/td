@@ -12107,28 +12107,6 @@ func layerEncodeFamilyPaymentsGetPaymentFormRequestBody(profile LayerProfile, va
 	}
 }
 
-func layerEncodeFamilyPaymentsGetStarGiftWithdrawalURLRequest(profile LayerProfile, value *tg.PaymentsGetStarGiftWithdrawalURLRequest, b *bin.Buffer, state *layerCodecState) error {
-	return layerCodecEncodeAtomic(profile, b, func() error {
-		return layerEncodeFamilyPaymentsGetStarGiftWithdrawalURLRequestBody(profile, value, b, state)
-	})
-}
-
-func layerEncodeFamilyPaymentsGetStarGiftWithdrawalURLRequestBody(profile LayerProfile, value *tg.PaymentsGetStarGiftWithdrawalURLRequest, b *bin.Buffer, state *layerCodecState) error {
-	if value == nil {
-		return &LayerCodecError{Operation: "encode", Profile: profile, Semantic: LayerSemanticMethodPaymentsGetStarGiftWithdrawalURL, Reason: "nil canonical value"}
-	}
-	switch profile {
-	case LayerProfile225, LayerProfile226, LayerProfile227, LayerProfile228, LayerProfile229, LayerProfile230, LayerProfile231:
-		b.PutID(0xd06e93a8)
-		return layerEncodeWired06e93a8BareBody(profile, value, b, state)
-	case LayerProfile232:
-		b.PutID(0xc8ca817b)
-		return layerEncodeWirec8ca817bBareBody(profile, value, b, state)
-	default:
-		return &LayerCodecError{Operation: "encode", Profile: profile, Semantic: LayerSemanticMethodPaymentsGetStarGiftWithdrawalURL, Reason: "unsupported exact profile"}
-	}
-}
-
 func layerEncodeFamilyPaymentsGiveawayInfoBody(profile LayerProfile, value *tg.PaymentsGiveawayInfo, b *bin.Buffer, state *layerCodecState) error {
 	if value == nil {
 		return &LayerCodecError{Operation: "encode", Profile: profile, Semantic: LayerSemanticTypePaymentsGiveawayInfo, Reason: "nil canonical value"}

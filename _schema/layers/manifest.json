@@ -111,6 +111,12 @@
       }
     }
   ],
+  "legacy_methods": [
+    {
+      "name": "payments.getStarGiftWithdrawalUrlLegacy",
+      "definition": "payments.getStarGiftWithdrawalUrl#d06e93a8 stargift:InputSavedStarGift password:InputCheckPasswordSRP = payments.StarGiftWithdrawalUrl;"
+    }
+  ],
   "layers": [
     {
       "layer": 225,

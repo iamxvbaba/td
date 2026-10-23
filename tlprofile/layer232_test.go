@@ -2,6 +2,7 @@ package tlprofile
 
 import (
 	"bytes"
+	"context"
 	"fmt"
 	"reflect"
 	"testing"
@@ -202,41 +203,79 @@ func TestLayer232StarGiftWithdrawalTemporaryPassword(t *testing.T) {
 	}
 
 	for profile := Profile225; profile <= Profile231; profile++ {
-		// A canonical request can never be encoded as the legacy SRP
-		// challenge, whether or not it carries a temporary password.
+		// The temporary-password method does not exist before Layer 232: a
+		// canonical request is never encoded as the legacy SRP challenge,
+		// whether or not it carries a temporary password.
 		for _, tmp := range [][]byte{nil, {}, {1}} {
 			assert230EncodeRejected(t, profile, &tg.PaymentsGetStarGiftWithdrawalURLRequest{
 				Stargift: &tg.InputSavedStarGiftSlug{Slug: "gift"}, TmpPassword: tmp,
 			})
 		}
-		// A historical request carries an SRP proof (or the empty check) that
-		// has no canonical counterpart: reject it instead of admitting the
-		// request as "no temporary password".
-		for _, password := range []bin.Encoder{
-			&tg.InputCheckPasswordSRP{SRPID: 1, A: []byte{2}, M1: []byte{3}},
-			&tg.InputCheckPasswordEmpty{},
-		} {
-			wire := layer232HistoricalWithdrawalWire(password)
-			in := &bin.Buffer{Buf: append([]byte(nil), wire...)}
-			if got, err := DecodeObject(profile, in, Limits{}); err == nil || !bytes.Equal(in.Raw(), wire) {
-				t.Fatalf("%d historical withdrawal %T decoded as %#v or consumed input: %v", profile, password, got, err)
-			}
-			in = &bin.Buffer{Buf: append([]byte(nil), wire...)}
-			if _, err := NewDispatcher().Admit(profile, in, Limits{}); err == nil || !bytes.Equal(in.Raw(), wire) {
-				t.Fatalf("%d historical withdrawal %T admitted or consumed input: %v", profile, password, err)
-			}
-		}
 	}
 
-	// Each exact profile admits only its own wire ID.
+	// Each exact historical profile admits only its own wire ID.
 	modern := &bin.Buffer{Buf: layer232Encode(t, Profile232, request)}
 	before := modern.Copy()
 	if _, err := NewDispatcher().Admit(Profile231, modern, Limits{}); err == nil || !bytes.Equal(before, modern.Raw()) {
 		t.Fatalf("Layer 231 admitted or consumed the Layer 232 withdrawal: %v", err)
 	}
-	legacy := &bin.Buffer{Buf: layer232HistoricalWithdrawalWire(&tg.InputCheckPasswordEmpty{})}
-	before = legacy.Copy()
-	if _, err := NewDispatcher().Admit(Profile232, legacy, Limits{}); err == nil || !bytes.Equal(before, legacy.Raw()) {
-		t.Fatalf("Layer 232 admitted or consumed the historical withdrawal: %v", err)
+}
+
+func TestLayer232LegacyStarGiftWithdrawalKeepsSRPProof(t *testing.T) {
+	// The historical constructor is promoted to its own method, so the SRP
+	// proof reaches the server unchanged instead of being dropped or turned
+	// into a temporary password.
+	if tg.PaymentsGetStarGiftWithdrawalURLLegacyRequestTypeID != 0xd06e93a8 {
+		t.Fatalf("legacy withdrawal wire ID = %#x", tg.PaymentsGetStarGiftWithdrawalURLLegacyRequestTypeID)
+	}
+	if _, name, ok := SemanticName(SemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy); !ok || name != "payments.getStarGiftWithdrawalUrlLegacy" {
+		t.Fatalf("legacy withdrawal semantic = %q, %v", name, ok)
+	}
+	for _, password := range []tg.InputCheckPasswordSRPClass{
+		&tg.InputCheckPasswordSRP{SRPID: 1, A: []byte{2}, M1: []byte{3}},
+		&tg.InputCheckPasswordEmpty{},
+	} {
+		want := &tg.PaymentsGetStarGiftWithdrawalURLLegacyRequest{
+			Stargift: &tg.InputSavedStarGiftSlug{Slug: "gift"},
+			Password: password,
+		}
+		wire := layer232HistoricalWithdrawalWire(password)
+		for profile := Profile225; profile <= Profile232; profile++ {
+			if got := layer232Encode(t, profile, want); !bytes.Equal(got, wire) {
+				t.Fatalf("%d legacy withdrawal wire %x != literal %x", profile, got, wire)
+			}
+			in := &bin.Buffer{Buf: append([]byte(nil), wire...)}
+			got, err := DecodeObject(profile, in, Limits{})
+			if err != nil || in.Len() != 0 || !reflect.DeepEqual(got, want) {
+				t.Fatalf("%d legacy withdrawal decode = %#v, left %d: %v", profile, got, in.Len(), err)
+			}
+
+			dispatcher := NewDispatcher()
+			var handled bin.Object
+			if err := dispatcher.Register(SemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy, func(_ context.Context, request bin.Object) (any, error) {
+				handled = request
+				return &tg.PaymentsStarGiftWithdrawalURL{URL: "https://fragment.example/gift"}, nil
+			}); err != nil {
+				t.Fatal(err)
+			}
+			admission, err := dispatcher.Admit(profile, &bin.Buffer{Buf: append([]byte(nil), wire...)}, Limits{})
+			if err != nil {
+				t.Fatalf("%d legacy withdrawal admission: %v", profile, err)
+			}
+			if admission.Call().Method() != SemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy || admission.Call().WireID() != 0xd06e93a8 {
+				t.Fatalf("%d legacy withdrawal admitted as %#x/%#x", profile, admission.Call().Method(), admission.Call().WireID())
+			}
+			result, err := dispatcher.Dispatch(context.Background(), admission)
+			if err != nil {
+				t.Fatalf("%d legacy withdrawal dispatch: %v", profile, err)
+			}
+			if !reflect.DeepEqual(handled, want) {
+				t.Fatalf("%d legacy withdrawal handler got %#v", profile, handled)
+			}
+			var out bin.Buffer
+			if err := result.Encode(&out); err != nil {
+				t.Fatalf("%d legacy withdrawal result: %v", profile, err)
+			}
+		}
 	}
 }

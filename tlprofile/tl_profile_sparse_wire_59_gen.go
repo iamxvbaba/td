@@ -1666,17 +1666,6 @@ func layerEncodeWirec4b9f9bbBareBody(profile LayerProfile, value *tg.Error, b *b
 }
 
 // Canonical-direct exact wire; the scanner has validated its transitive graph.
-func layerEncodeWirec8ca817bBare(profile LayerProfile, value *tg.PaymentsGetStarGiftWithdrawalURLRequest, b *bin.Buffer, state *layerCodecState) error {
-	if value == nil {
-		return &LayerCodecError{Operation: "encode-bare", Profile: profile, Semantic: LayerSemanticMethodPaymentsGetStarGiftWithdrawalURL, WireID: 0xc8ca817b, Reason: "nil canonical value"}
-	}
-	return value.EncodeBare(b)
-}
-func layerEncodeWirec8ca817bBareBody(profile LayerProfile, value *tg.PaymentsGetStarGiftWithdrawalURLRequest, b *bin.Buffer, state *layerCodecState) error {
-	return layerEncodeWirec8ca817bBare(profile, value, b, state)
-}
-
-// Canonical-direct exact wire; the scanner has validated its transitive graph.
 func layerEncodeWirecdbbcebbBare(profile LayerProfile, value *tg.MessagesAllStickers, b *bin.Buffer, state *layerCodecState) error {
 	if value == nil {
 		return &LayerCodecError{Operation: "encode-bare", Profile: profile, Semantic: LayerSemanticTypeMessagesAllStickers, WireID: 0xcdbbcebb, Reason: "nil canonical value"}

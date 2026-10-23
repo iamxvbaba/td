@@ -23,6 +23,7 @@ type Manifest struct {
 	SourcePath        string                     `json:"source_path"`
 	Overlays          []ManifestOverlay          `json:"overlays"`
 	ClientRPCOverlays []ManifestClientRPCOverlay `json:"client_rpc_overlays,omitempty"`
+	LegacyMethods     []ManifestLegacyMethod     `json:"legacy_methods,omitempty"`
 	Layers            []ManifestLayer            `json:"layers"`
 }
 
@@ -253,6 +254,9 @@ func validateManifest(manifest Manifest) error {
 			}
 		}
 	}
+	if _, err := parseLegacyMethods(manifest.LegacyMethods); err != nil {
+		return err
+	}
 	return nil
 }
 
@@ -308,6 +312,11 @@ func LoadManifestUniverse(manifest Manifest, root string, overrides map[string][
 		}
 		overlays = append(overlays, overlay)
 	}
+	legacy, err := parseLegacyMethods(manifest.LegacyMethods)
+	if err != nil {
+		return nil, err
+	}
+	legacyMatched := make([]bool, len(legacy))
 
 	schemas := make([]*SchemaModel, 0, len(manifest.Layers))
 	for _, entry := range manifest.Layers {
@@ -334,6 +343,13 @@ func LoadManifestUniverse(manifest Manifest, root string, overrides map[string][
 				return nil, fmt.Errorf("semantic: layer %d apply overlay %q: %w", entry.Layer, manifest.Overlays[i].File, err)
 			}
 		}
+		matched, err := applyLegacyMethods(parsed, entry.Layer, entry.Layer == manifest.CanonicalLayer, legacy)
+		if err != nil {
+			return nil, err
+		}
+		for i := range matched {
+			legacyMatched[i] = legacyMatched[i] || matched[i]
+		}
 		model, err := BuildSchema(parsed, SourceRef{
 			Layer:      entry.Layer,
 			Repository: manifest.Repository,
@@ -347,6 +363,12 @@ func LoadManifestUniverse(manifest Manifest, root string, overrides map[string][
 			return nil, err
 		}
 		schemas = append(schemas, model)
+	}
+	for i, method := range legacy {
+		if !legacyMatched[i] {
+			return nil, fmt.Errorf("semantic: stale legacy method %q: no historical layer defines wire ID %#08x",
+				method.name, method.definition.Definition.ID)
+		}
 	}
 	universe, err := NewUniverse(manifest.CanonicalLayer, schemas...)
 	if err != nil {

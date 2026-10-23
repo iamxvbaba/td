@@ -64197,7 +64197,7 @@ func tlScanWireBucket40(profile Profile, id uint32, b *bin.Buffer, state *tlScan
 		}
 	case 0xd06e93a8:
 		switch profile {
-		case Profile225, Profile226, Profile227, Profile228, Profile229, Profile230, Profile231:
+		case Profile225, Profile226, Profile227, Profile228, Profile229, Profile230, Profile231, Profile232:
 			return tlScanBody350(profile, b, state)
 		default:
 			return fmt.Errorf("tlprofile: wire %#08x is unavailable in exact profile %d", id, profile)

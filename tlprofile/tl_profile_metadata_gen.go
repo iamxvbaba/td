@@ -2496,6 +2496,7 @@ const (
 	SemanticMethodPaymentsGetStarGiftUpgradeAttributes                            SemanticID = 0xe8a051ad5e6656ca
 	SemanticMethodPaymentsGetStarGiftUpgradePreview                               SemanticID = 0x7c028a0b96e69fb3
 	SemanticMethodPaymentsGetStarGiftWithdrawalURL                                SemanticID = 0x8c65ea9afacc3771
+	SemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy                          SemanticID = 0x17ce6d34c94dd7b5
 	SemanticMethodPaymentsGetStarGifts                                            SemanticID = 0xf421726730f5d5ea
 	SemanticMethodPaymentsGetStarsGiftOptions                                     SemanticID = 0xc6e46df0fce43c17
 	SemanticMethodPaymentsGetStarsGiveawayOptions                                 SemanticID = 0x33af6cff7a7cf6ed
@@ -8429,6 +8430,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "payments.getStarGiftUpgradePreview", true
 	case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
 		return "function", "payments.getStarGiftWithdrawalUrl", true
+	case SemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy:
+		return "function", "payments.getStarGiftWithdrawalUrlLegacy", true
 	case SemanticMethodPaymentsGetStarGifts:
 		return "function", "payments.getStarGifts", true
 	case SemanticMethodPaymentsGetStarsGiftOptions:
@@ -13618,6 +13621,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x9c9abcb1, true
 	case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
 		return 0xc8ca817b, true
+	case SemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy:
+		return 0xd06e93a8, true
 	case SemanticMethodPaymentsGetStarGifts:
 		return 0xc4563590, true
 	case SemanticMethodPaymentsGetStarsGiftOptions:
@@ -14551,7 +14556,7 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsGetOnrampQuote:
 			return 0, false
 		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
-			return 0xd06e93a8, true
+			return 0, false
 		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodToncenterGetStreamingURL:
@@ -15102,7 +15107,7 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsGetOnrampQuote:
 			return 0, false
 		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
-			return 0xd06e93a8, true
+			return 0, false
 		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodToncenterGetStreamingURL:
@@ -15563,7 +15568,7 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsGetOnrampQuote:
 			return 0, false
 		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
-			return 0xd06e93a8, true
+			return 0, false
 		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodToncenterGetStreamingURL:
@@ -15944,7 +15949,7 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsGetOnrampQuote:
 			return 0, false
 		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
-			return 0xd06e93a8, true
+			return 0, false
 		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodToncenterGetStreamingURL:
@@ -16229,7 +16234,7 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsGetOnrampQuote:
 			return 0, false
 		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
-			return 0xd06e93a8, true
+			return 0, false
 		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodToncenterGetStreamingURL:
@@ -16390,7 +16395,7 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsDisplayStarGift:
 			return 0, false
 		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
-			return 0xd06e93a8, true
+			return 0, false
 		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodWalletSetCardStickers:
@@ -16491,7 +16496,7 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsDisplayStarGift:
 			return 0, false
 		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
-			return 0xd06e93a8, true
+			return 0, false
 		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodWalletSetCardStickers:
@@ -20797,7 +20802,7 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 	case 0xd069ccde:
 		return SemanticMethodStoriesStartLive, true
 	case 0xd06e93a8:
-		return SemanticMethodPaymentsGetStarGiftWithdrawalURL, true
+		return SemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy, true
 	case 0xd072acb4:
 		return SemanticTypeRestrictionReason, true
 	case 0xd087663a:

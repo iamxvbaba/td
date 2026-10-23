@@ -182,10 +182,10 @@ func TestLayerStaticModelTelegram225Through232(t *testing.T) {
 	if got, want := model.RewriteCount, 2538; got != want {
 		t.Errorf("rewrite variants = %d, want locked schema count %d", got, want)
 	}
-	if got, want := model.UnavailableCount, 957; got != want {
+	if got, want := model.UnavailableCount, 964; got != want {
 		t.Fatalf("unavailable variants = %d, want locked schema count %d", got, want)
 	}
-	if got, want := model.ObligationCount, 259; got != want {
+	if got, want := model.ObligationCount, 252; got != want {
 		t.Errorf("body obligation variants = %d, want locked schema count %d", got, want)
 	}
 	if got, want := model.ResultObligationCount, 4; got != want {

@@ -2628,6 +2628,7 @@ func TypesMap() map[uint32]string {
 		InputStickerSetThumbLegacyTypeID:                                        "inputStickerSetThumbLegacy#dbaeae9",
 		TestUseErrorRequestTypeID:                                               "test.useError#ee75af01",
 		TestUseConfigSimpleRequestTypeID:                                        "test.useConfigSimple#f9b7b23d",
+		PaymentsGetStarGiftWithdrawalURLLegacyRequestTypeID:                     "payments.getStarGiftWithdrawalUrlLegacy#d06e93a8",
 	}
 }
 
@@ -5225,6 +5226,7 @@ func NamesMap() map[string]uint32 {
 		"inputStickerSetThumbLegacy":                                        InputStickerSetThumbLegacyTypeID,
 		"test.useError":                                                     TestUseErrorRequestTypeID,
 		"test.useConfigSimple":                                              TestUseConfigSimpleRequestTypeID,
+		"payments.getStarGiftWithdrawalUrlLegacy":                           PaymentsGetStarGiftWithdrawalURLLegacyRequestTypeID,
 	}
 }
 
@@ -7822,6 +7824,7 @@ func TypesConstructorMap() map[uint32]func() bin.Object {
 		InputStickerSetThumbLegacyTypeID:                                        func() bin.Object { return &InputStickerSetThumbLegacy{} },
 		TestUseErrorRequestTypeID:                                               func() bin.Object { return &TestUseErrorRequest{} },
 		TestUseConfigSimpleRequestTypeID:                                        func() bin.Object { return &TestUseConfigSimpleRequest{} },
+		PaymentsGetStarGiftWithdrawalURLLegacyRequestTypeID:                     func() bin.Object { return &PaymentsGetStarGiftWithdrawalURLLegacyRequest{} },
 	}
 }
 

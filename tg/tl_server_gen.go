@@ -15426,3 +15426,20 @@ func (s *ServerDispatcher) OnTestUseConfigSimple(f func(ctx context.Context) (*H
 
 	s.handlers[TestUseConfigSimpleRequestTypeID] = handler
 }
+
+func (s *ServerDispatcher) OnPaymentsGetStarGiftWithdrawalURLLegacy(f func(ctx context.Context, request *PaymentsGetStarGiftWithdrawalURLLegacyRequest) (*PaymentsStarGiftWithdrawalURL, error)) {
+	handler := func(ctx context.Context, b *bin.Buffer) (bin.Encoder, error) {
+		var request PaymentsGetStarGiftWithdrawalURLLegacyRequest
+		if err := request.Decode(b); err != nil {
+			return nil, err
+		}
+
+		response, err := f(ctx, &request)
+		if err != nil {
+			return nil, err
+		}
+		return response, nil
+	}
+
+	s.handlers[PaymentsGetStarGiftWithdrawalURLLegacyRequestTypeID] = handler
+}

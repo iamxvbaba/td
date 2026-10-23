@@ -2,6 +2,7 @@
 //
 // Source: https://github.com/telegramdesktop/tdesktop/blob/850fb90eb6db96c124b6da1349060f9ed00f4fe4/Telegram/SourceFiles/mtproto/scheme/api.tl
 // Merge:  _schema/legacy.tl
+// Legacy: payments.getStarGiftWithdrawalUrlLegacy#d06e93a8
 // Layer:  232
 // SHA256: 76922ce265441d3f2f5188f56b69b41e1cb11354657ea547707507f8c3b93826
 
@@ -5195,5 +5196,7 @@ inputStickerSetThumbLegacy#dbaeae9 stickerset:InputStickerSet volume_id:long loc
 test.useError#ee75af01 = Error;
 
 test.useConfigSimple#f9b7b23d = help.ConfigSimple;
+
+payments.getStarGiftWithdrawalUrlLegacy#d06e93a8 stargift:InputSavedStarGift password:InputCheckPasswordSRP = payments.StarGiftWithdrawalUrl;
 
 // LAYER 232
