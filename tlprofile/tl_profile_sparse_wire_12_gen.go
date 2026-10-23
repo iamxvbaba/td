@@ -190,7 +190,7 @@ func layerEncodeWirebdc62dccBareBody(profile LayerProfile, value *tg.MessagesExp
 	}
 	state = &child
 	switch profile {
-	case LayerProfile225, LayerProfile226, LayerProfile227, LayerProfile228, LayerProfile229, LayerProfile230, LayerProfile231:
+	case LayerProfile225, LayerProfile226, LayerProfile227, LayerProfile228, LayerProfile229, LayerProfile230, LayerProfile231, LayerProfile232:
 		{
 			b.PutInt(value.Count)
 			if len(value.Invites) > layerCodecMaxVectorElements {
@@ -261,7 +261,7 @@ func layerEncodeWirebdc62dccBareBody(profile LayerProfile, value *tg.MessagesExp
 
 func layerDecodeWirebdc62dcc(profile LayerProfile, b *bin.Buffer, state *layerCodecState) (*tg.MessagesExportedChatInvites, error) {
 	switch profile {
-	case LayerProfile225, LayerProfile226, LayerProfile227, LayerProfile228, LayerProfile229, LayerProfile230, LayerProfile231:
+	case LayerProfile225, LayerProfile226, LayerProfile227, LayerProfile228, LayerProfile229, LayerProfile230, LayerProfile231, LayerProfile232:
 
 	default:
 		return nil, &LayerCodecError{Operation: "decode", Profile: profile, Semantic: LayerSemanticTypeMessagesExportedChatInvites, WireID: 0xbdc62dcc, Reason: "wire ID is unavailable in exact profile"}
@@ -283,7 +283,7 @@ func layerDecodeWirebdc62dccBare(profile LayerProfile, b *bin.Buffer, state *lay
 	value := new(tg.MessagesExportedChatInvites)
 	_ = value
 	switch profile {
-	case LayerProfile225, LayerProfile226, LayerProfile227, LayerProfile228, LayerProfile229, LayerProfile230, LayerProfile231:
+	case LayerProfile225, LayerProfile226, LayerProfile227, LayerProfile228, LayerProfile229, LayerProfile230, LayerProfile231, LayerProfile232:
 		{
 			var layerDecoded17 int
 			layerPrimitive18, err := b.Int()

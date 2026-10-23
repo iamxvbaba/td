@@ -786,6 +786,393 @@ func (w *WalletTransactionPeerUnsupported) DecodeBare(b *bin.Buffer) error {
 	return nil
 }
 
+// WalletTransactionPeerChannel represents TL type `walletTransactionPeerChannel#54e70c31`.
+//
+// See https://core.telegram.org/constructor/walletTransactionPeerChannel for reference.
+type WalletTransactionPeerChannel struct {
+	// Flags field of WalletTransactionPeerChannel.
+	Flags bin.Fields
+	// ChannelID field of WalletTransactionPeerChannel.
+	ChannelID int64
+	// Address field of WalletTransactionPeerChannel.
+	Address string
+	// Domain field of WalletTransactionPeerChannel.
+	//
+	// Use SetDomain and GetDomain helpers.
+	Domain string
+}
+
+// WalletTransactionPeerChannelTypeID is TL type id of WalletTransactionPeerChannel.
+const WalletTransactionPeerChannelTypeID = 0x54e70c31
+
+// construct implements constructor of WalletTransactionPeerClass.
+func (w WalletTransactionPeerChannel) construct() WalletTransactionPeerClass { return &w }
+
+// Ensuring interfaces in compile-time for WalletTransactionPeerChannel.
+var (
+	_ bin.Encoder     = &WalletTransactionPeerChannel{}
+	_ bin.Decoder     = &WalletTransactionPeerChannel{}
+	_ bin.BareEncoder = &WalletTransactionPeerChannel{}
+	_ bin.BareDecoder = &WalletTransactionPeerChannel{}
+
+	_ WalletTransactionPeerClass = &WalletTransactionPeerChannel{}
+)
+
+func (w *WalletTransactionPeerChannel) Zero() bool {
+	if w == nil {
+		return true
+	}
+	if !(w.Flags.Zero()) {
+		return false
+	}
+	if !(w.ChannelID == 0) {
+		return false
+	}
+	if !(w.Address == "") {
+		return false
+	}
+	if !(w.Domain == "") {
+		return false
+	}
+
+	return true
+}
+
+// String implements fmt.Stringer.
+func (w *WalletTransactionPeerChannel) String() string {
+	if w == nil {
+		return "WalletTransactionPeerChannel(nil)"
+	}
+	type Alias WalletTransactionPeerChannel
+	return fmt.Sprintf("WalletTransactionPeerChannel%+v", Alias(*w))
+}
+
+// FillFrom fills WalletTransactionPeerChannel from given interface.
+func (w *WalletTransactionPeerChannel) FillFrom(from interface {
+	GetChannelID() (value int64)
+	GetAddress() (value string)
+	GetDomain() (value string, ok bool)
+}) {
+	w.ChannelID = from.GetChannelID()
+	w.Address = from.GetAddress()
+	if val, ok := from.GetDomain(); ok {
+		w.Domain = val
+	}
+
+}
+
+// TypeID returns type id in TL schema.
+//
+// See https://core.telegram.org/mtproto/TL-tl#remarks.
+func (*WalletTransactionPeerChannel) TypeID() uint32 {
+	return WalletTransactionPeerChannelTypeID
+}
+
+// TypeName returns name of type in TL schema.
+func (*WalletTransactionPeerChannel) TypeName() string {
+	return "walletTransactionPeerChannel"
+}
+
+// TypeInfo returns info about TL type.
+func (w *WalletTransactionPeerChannel) TypeInfo() tdp.Type {
+	typ := tdp.Type{
+		Name: "walletTransactionPeerChannel",
+		ID:   WalletTransactionPeerChannelTypeID,
+	}
+	if w == nil {
+		typ.Null = true
+		return typ
+	}
+	typ.Fields = []tdp.Field{
+		{
+			Name:       "ChannelID",
+			SchemaName: "channel_id",
+		},
+		{
+			Name:       "Address",
+			SchemaName: "address",
+		},
+		{
+			Name:       "Domain",
+			SchemaName: "domain",
+			Null:       !w.Flags.Has(0),
+		},
+	}
+	return typ
+}
+
+// SetFlags sets flags for non-zero fields.
+func (w *WalletTransactionPeerChannel) SetFlags() {
+	if !(w.Domain == "") {
+		w.Flags.Set(0)
+	}
+}
+
+// Encode implements bin.Encoder.
+func (w *WalletTransactionPeerChannel) Encode(b *bin.Buffer) error {
+	if w == nil {
+		return fmt.Errorf("can't encode walletTransactionPeerChannel#54e70c31 as nil")
+	}
+	b.PutID(WalletTransactionPeerChannelTypeID)
+	return w.EncodeBare(b)
+}
+
+// EncodeBare implements bin.BareEncoder.
+func (w *WalletTransactionPeerChannel) EncodeBare(b *bin.Buffer) error {
+	if w == nil {
+		return fmt.Errorf("can't encode walletTransactionPeerChannel#54e70c31 as nil")
+	}
+	w.SetFlags()
+	if err := w.Flags.Encode(b); err != nil {
+		return fmt.Errorf("unable to encode walletTransactionPeerChannel#54e70c31: field flags: %w", err)
+	}
+	b.PutLong(w.ChannelID)
+	b.PutString(w.Address)
+	if w.Flags.Has(0) {
+		b.PutString(w.Domain)
+	}
+	return nil
+}
+
+// Decode implements bin.Decoder.
+func (w *WalletTransactionPeerChannel) Decode(b *bin.Buffer) error {
+	if w == nil {
+		return fmt.Errorf("can't decode walletTransactionPeerChannel#54e70c31 to nil")
+	}
+	if err := b.ConsumeID(WalletTransactionPeerChannelTypeID); err != nil {
+		return fmt.Errorf("unable to decode walletTransactionPeerChannel#54e70c31: %w", err)
+	}
+	return w.DecodeBare(b)
+}
+
+// DecodeBare implements bin.BareDecoder.
+func (w *WalletTransactionPeerChannel) DecodeBare(b *bin.Buffer) error {
+	if w == nil {
+		return fmt.Errorf("can't decode walletTransactionPeerChannel#54e70c31 to nil")
+	}
+	{
+		if err := w.Flags.Decode(b); err != nil {
+			return fmt.Errorf("unable to decode walletTransactionPeerChannel#54e70c31: field flags: %w", err)
+		}
+	}
+	{
+		value, err := b.Long()
+		if err != nil {
+			return fmt.Errorf("unable to decode walletTransactionPeerChannel#54e70c31: field channel_id: %w", err)
+		}
+		w.ChannelID = value
+	}
+	{
+		value, err := b.String()
+		if err != nil {
+			return fmt.Errorf("unable to decode walletTransactionPeerChannel#54e70c31: field address: %w", err)
+		}
+		w.Address = value
+	}
+	if w.Flags.Has(0) {
+		value, err := b.String()
+		if err != nil {
+			return fmt.Errorf("unable to decode walletTransactionPeerChannel#54e70c31: field domain: %w", err)
+		}
+		w.Domain = value
+	}
+	return nil
+}
+
+// GetChannelID returns value of ChannelID field.
+func (w *WalletTransactionPeerChannel) GetChannelID() (value int64) {
+	if w == nil {
+		return
+	}
+	return w.ChannelID
+}
+
+// GetAddress returns value of Address field.
+func (w *WalletTransactionPeerChannel) GetAddress() (value string) {
+	if w == nil {
+		return
+	}
+	return w.Address
+}
+
+// SetDomain sets value of Domain conditional field.
+func (w *WalletTransactionPeerChannel) SetDomain(value string) {
+	w.Flags.Set(0)
+	w.Domain = value
+}
+
+// GetDomain returns value of Domain conditional field and
+// boolean which is true if field was set.
+func (w *WalletTransactionPeerChannel) GetDomain() (value string, ok bool) {
+	if w == nil {
+		return
+	}
+	if !w.Flags.Has(0) {
+		return value, false
+	}
+	return w.Domain, true
+}
+
+// WalletTransactionPeerTelegramGift represents TL type `walletTransactionPeerTelegramGift#f4729499`.
+//
+// See https://core.telegram.org/constructor/walletTransactionPeerTelegramGift for reference.
+type WalletTransactionPeerTelegramGift struct {
+	// Flags field of WalletTransactionPeerTelegramGift.
+	Flags bin.Fields
+	// OwnProfile field of WalletTransactionPeerTelegramGift.
+	OwnProfile bool
+}
+
+// WalletTransactionPeerTelegramGiftTypeID is TL type id of WalletTransactionPeerTelegramGift.
+const WalletTransactionPeerTelegramGiftTypeID = 0xf4729499
+
+// construct implements constructor of WalletTransactionPeerClass.
+func (w WalletTransactionPeerTelegramGift) construct() WalletTransactionPeerClass { return &w }
+
+// Ensuring interfaces in compile-time for WalletTransactionPeerTelegramGift.
+var (
+	_ bin.Encoder     = &WalletTransactionPeerTelegramGift{}
+	_ bin.Decoder     = &WalletTransactionPeerTelegramGift{}
+	_ bin.BareEncoder = &WalletTransactionPeerTelegramGift{}
+	_ bin.BareDecoder = &WalletTransactionPeerTelegramGift{}
+
+	_ WalletTransactionPeerClass = &WalletTransactionPeerTelegramGift{}
+)
+
+func (w *WalletTransactionPeerTelegramGift) Zero() bool {
+	if w == nil {
+		return true
+	}
+	if !(w.Flags.Zero()) {
+		return false
+	}
+	if !(w.OwnProfile == false) {
+		return false
+	}
+
+	return true
+}
+
+// String implements fmt.Stringer.
+func (w *WalletTransactionPeerTelegramGift) String() string {
+	if w == nil {
+		return "WalletTransactionPeerTelegramGift(nil)"
+	}
+	type Alias WalletTransactionPeerTelegramGift
+	return fmt.Sprintf("WalletTransactionPeerTelegramGift%+v", Alias(*w))
+}
+
+// FillFrom fills WalletTransactionPeerTelegramGift from given interface.
+func (w *WalletTransactionPeerTelegramGift) FillFrom(from interface {
+	GetOwnProfile() (value bool)
+}) {
+	w.OwnProfile = from.GetOwnProfile()
+}
+
+// TypeID returns type id in TL schema.
+//
+// See https://core.telegram.org/mtproto/TL-tl#remarks.
+func (*WalletTransactionPeerTelegramGift) TypeID() uint32 {
+	return WalletTransactionPeerTelegramGiftTypeID
+}
+
+// TypeName returns name of type in TL schema.
+func (*WalletTransactionPeerTelegramGift) TypeName() string {
+	return "walletTransactionPeerTelegramGift"
+}
+
+// TypeInfo returns info about TL type.
+func (w *WalletTransactionPeerTelegramGift) TypeInfo() tdp.Type {
+	typ := tdp.Type{
+		Name: "walletTransactionPeerTelegramGift",
+		ID:   WalletTransactionPeerTelegramGiftTypeID,
+	}
+	if w == nil {
+		typ.Null = true
+		return typ
+	}
+	typ.Fields = []tdp.Field{
+		{
+			Name:       "OwnProfile",
+			SchemaName: "own_profile",
+			Null:       !w.Flags.Has(0),
+		},
+	}
+	return typ
+}
+
+// SetFlags sets flags for non-zero fields.
+func (w *WalletTransactionPeerTelegramGift) SetFlags() {
+	if !(w.OwnProfile == false) {
+		w.Flags.Set(0)
+	}
+}
+
+// Encode implements bin.Encoder.
+func (w *WalletTransactionPeerTelegramGift) Encode(b *bin.Buffer) error {
+	if w == nil {
+		return fmt.Errorf("can't encode walletTransactionPeerTelegramGift#f4729499 as nil")
+	}
+	b.PutID(WalletTransactionPeerTelegramGiftTypeID)
+	return w.EncodeBare(b)
+}
+
+// EncodeBare implements bin.BareEncoder.
+func (w *WalletTransactionPeerTelegramGift) EncodeBare(b *bin.Buffer) error {
+	if w == nil {
+		return fmt.Errorf("can't encode walletTransactionPeerTelegramGift#f4729499 as nil")
+	}
+	w.SetFlags()
+	if err := w.Flags.Encode(b); err != nil {
+		return fmt.Errorf("unable to encode walletTransactionPeerTelegramGift#f4729499: field flags: %w", err)
+	}
+	return nil
+}
+
+// Decode implements bin.Decoder.
+func (w *WalletTransactionPeerTelegramGift) Decode(b *bin.Buffer) error {
+	if w == nil {
+		return fmt.Errorf("can't decode walletTransactionPeerTelegramGift#f4729499 to nil")
+	}
+	if err := b.ConsumeID(WalletTransactionPeerTelegramGiftTypeID); err != nil {
+		return fmt.Errorf("unable to decode walletTransactionPeerTelegramGift#f4729499: %w", err)
+	}
+	return w.DecodeBare(b)
+}
+
+// DecodeBare implements bin.BareDecoder.
+func (w *WalletTransactionPeerTelegramGift) DecodeBare(b *bin.Buffer) error {
+	if w == nil {
+		return fmt.Errorf("can't decode walletTransactionPeerTelegramGift#f4729499 to nil")
+	}
+	{
+		if err := w.Flags.Decode(b); err != nil {
+			return fmt.Errorf("unable to decode walletTransactionPeerTelegramGift#f4729499: field flags: %w", err)
+		}
+	}
+	w.OwnProfile = w.Flags.Has(0)
+	return nil
+}
+
+// SetOwnProfile sets value of OwnProfile conditional field.
+func (w *WalletTransactionPeerTelegramGift) SetOwnProfile(value bool) {
+	if value {
+		w.Flags.Set(0)
+		w.OwnProfile = true
+	} else {
+		w.Flags.Unset(0)
+		w.OwnProfile = false
+	}
+}
+
+// GetOwnProfile returns value of OwnProfile conditional field.
+func (w *WalletTransactionPeerTelegramGift) GetOwnProfile() (value bool) {
+	if w == nil {
+		return
+	}
+	return w.Flags.Has(0)
+}
+
 // WalletTransactionPeerClassName is schema name of WalletTransactionPeerClass.
 const WalletTransactionPeerClassName = "WalletTransactionPeer"
 
@@ -798,6 +1185,8 @@ const WalletTransactionPeerClassName = "WalletTransactionPeer"
 //   - [WalletTransactionPeerAddress]
 //   - [WalletTransactionPeerOnramp]
 //   - [WalletTransactionPeerUnsupported]
+//   - [WalletTransactionPeerChannel]
+//   - [WalletTransactionPeerTelegramGift]
 //
 // Example:
 //
@@ -810,6 +1199,8 @@ const WalletTransactionPeerClassName = "WalletTransactionPeer"
 //	case *tg.WalletTransactionPeerAddress: // walletTransactionPeerAddress#62cc1bc
 //	case *tg.WalletTransactionPeerOnramp: // walletTransactionPeerOnramp#e595186e
 //	case *tg.WalletTransactionPeerUnsupported: // walletTransactionPeerUnsupported#728bed5a
+//	case *tg.WalletTransactionPeerChannel: // walletTransactionPeerChannel#54e70c31
+//	case *tg.WalletTransactionPeerTelegramGift: // walletTransactionPeerTelegramGift#f4729499
 //	default: panic(v)
 //	}
 type WalletTransactionPeerClass interface {
@@ -862,6 +1253,20 @@ func DecodeWalletTransactionPeer(buf *bin.Buffer) (WalletTransactionPeerClass, e
 	case WalletTransactionPeerUnsupportedTypeID:
 		// Decoding walletTransactionPeerUnsupported#728bed5a.
 		v := WalletTransactionPeerUnsupported{}
+		if err := v.Decode(buf); err != nil {
+			return nil, fmt.Errorf("unable to decode WalletTransactionPeerClass: %w", err)
+		}
+		return &v, nil
+	case WalletTransactionPeerChannelTypeID:
+		// Decoding walletTransactionPeerChannel#54e70c31.
+		v := WalletTransactionPeerChannel{}
+		if err := v.Decode(buf); err != nil {
+			return nil, fmt.Errorf("unable to decode WalletTransactionPeerClass: %w", err)
+		}
+		return &v, nil
+	case WalletTransactionPeerTelegramGiftTypeID:
+		// Decoding walletTransactionPeerTelegramGift#f4729499.
+		v := WalletTransactionPeerTelegramGift{}
 		if err := v.Decode(buf); err != nil {
 			return nil, fmt.Errorf("unable to decode WalletTransactionPeerClass: %w", err)
 		}

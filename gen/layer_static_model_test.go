@@ -147,7 +147,7 @@ func TestLayerStaticModelDirtyReachability(t *testing.T) {
 	}
 }
 
-func TestLayerStaticModelTelegram225Through231(t *testing.T) {
+func TestLayerStaticModelTelegram225Through232(t *testing.T) {
 	universe, err := semantic.LoadUniverse("../_schema/layers/manifest.json")
 	if err != nil {
 		t.Fatal(err)
@@ -176,16 +176,16 @@ func TestLayerStaticModelTelegram225Through231(t *testing.T) {
 	if model.ResultObligationCount == 0 {
 		t.Fatal("real layer set produced no explicit result obligations")
 	}
-	if got, want := model.FamilyCount, 689; got != want {
+	if got, want := model.FamilyCount, 714; got != want {
 		t.Fatalf("projected families = %d, want locked schema count %d", got, want)
 	}
-	if got, want := model.RewriteCount, 2107; got != want {
+	if got, want := model.RewriteCount, 2538; got != want {
 		t.Errorf("rewrite variants = %d, want locked schema count %d", got, want)
 	}
-	if got, want := model.UnavailableCount, 789; got != want {
+	if got, want := model.UnavailableCount, 957; got != want {
 		t.Fatalf("unavailable variants = %d, want locked schema count %d", got, want)
 	}
-	if got, want := model.ObligationCount, 224; got != want {
+	if got, want := model.ObligationCount, 259; got != want {
 		t.Errorf("body obligation variants = %d, want locked schema count %d", got, want)
 	}
 	if got, want := model.ResultObligationCount, 4; got != want {

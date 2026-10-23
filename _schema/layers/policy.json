@@ -10,10 +10,59 @@
       }
     },
     {
+      "key": "layer-obligation/v1/discard/18ac98470ca839b642d453a8b1a2bcc57a45a9eebb391a6c50b9451168fb7f41",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=discard; layer=230; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=password-\u003e; type=InputCheckPasswordSRP-\u003e; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/discard/256c086b4d7d0befc337499b15b1e61fc4f11f9e54a2addac549ee5ab5791efa",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=discard; layer=228; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=password-\u003e; type=InputCheckPasswordSRP-\u003e; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/discard/34c6fe69a5ba67b28438758138c2f817cf2c4a4c48853df5cc84cc763fb22133",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=discard; layer=231; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=password-\u003e; type=InputCheckPasswordSRP-\u003e; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/discard/397a28d2a1d2a63d878b2d1afe276308bbfa6013e3681df7b599046c707b8c4e",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=discard; layer=226; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=password-\u003e; type=InputCheckPasswordSRP-\u003e; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
+      }
+    },
+    {
       "key": "layer-obligation/v1/discard/a03d3a8eca03b74c961a039d2093066dd541ef618cf9facd3e34c95aa5d7bc81",
       "resolution": {
         "action": "drop",
         "note": "kind=discard; layer=226; direction=profile-to-canonical; semantic=type:messages.chatInviteJoinResultWebView; wire=0x774bbdf4-\u003e0x61ca29d3; field=url-\u003e; type=string-\u003e; source_shape=4232b0fbdb1d2bf00a07c97e23623fb406e9362a37fd7436db7b7282d43a5e9a; target_shape=23897ef08057397f177aec8394608c9d59b1981d8c1ed60c7c69304c83b52674"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/discard/a74790e2f921dc4385b5b1eb4d52154c336aab1252fe7dae2aedf1191aa0eece",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=discard; layer=229; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=password-\u003e; type=InputCheckPasswordSRP-\u003e; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/discard/d91d4020c14924f0f7140ccf1237a375e5496eee03a73b29107438c07a091268",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=discard; layer=225; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=password-\u003e; type=InputCheckPasswordSRP-\u003e; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/discard/e1cd19eea419f93ab3ebcf06b7851fb28abda12ced75363a64adfefea2000c60",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=discard; layer=227; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=password-\u003e; type=InputCheckPasswordSRP-\u003e; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
       }
     },
     {
@@ -1459,6 +1508,13 @@
       }
     },
     {
+      "key": "layer-obligation/v1/required/0f8ff0f3937a4d9c8d115e2e66241c194635c045248a59acb355fb80f7854908",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=231; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=-\u003etmp_password; type=-\u003ebytes; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
+      }
+    },
+    {
       "key": "layer-obligation/v1/required/1051a55d4f57064689e68ed4a47ba6a7fd45d00672420509ecac88acdac5afe2",
       "resolution": {
         "action": "adapter",
@@ -1474,10 +1530,24 @@
       }
     },
     {
+      "key": "layer-obligation/v1/required/46f28f32c662cb722041641608b26d49350ad644fc599295d287834eab299260",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=228; direction=canonical-to-profile; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xc8ca817b-\u003e0xd06e93a8; field=-\u003epassword; type=-\u003eInputCheckPasswordSRP; source_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd; target_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba"
+      }
+    },
+    {
       "key": "layer-obligation/v1/required/52139828cc80b3c0d48de01af172713cbff07c7184eff002ef966045579938ef",
       "resolution": {
         "action": "default",
         "note": "kind=required; layer=225; direction=canonical-to-profile; semantic=type:pageListOrderedItemBlocks; wire=0x8ff2d5f0-\u003e0x98dd8936; field=num-\u003enum; type=string-\u003estring; source_shape=2daa98691b9e948d7b4edff85bef4932815116ed884963efd9b83631edfc948f; target_shape=3cd6031c308bc9b8275f84a965877b23f8e24725b238a372c673f28380214619"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/536cb0635b16c2e1d03502b5a560392e2ce003136d0111c78df288f7c1b94478",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=225; direction=canonical-to-profile; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xc8ca817b-\u003e0xd06e93a8; field=-\u003epassword; type=-\u003eInputCheckPasswordSRP; source_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd; target_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba"
       }
     },
     {
@@ -1503,6 +1573,13 @@
       }
     },
     {
+      "key": "layer-obligation/v1/required/7cf8658b53c5b83cb98b80dfe16e75d2ef6061c7bd3ed5b90a33a0083e32ebbb",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=226; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=-\u003etmp_password; type=-\u003ebytes; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
+      }
+    },
+    {
       "key": "layer-obligation/v1/required/80caad5e891aa10433ca649bcb331cee1b2d8c21735b5aaeb39aa49ea8149095",
       "resolution": {
         "action": "default",
@@ -1515,6 +1592,27 @@
         "action": "adapter",
         "hook": "layerDefaultLegacyKeyboardButtonType",
         "note": "kind=required; layer=226; direction=profile-to-canonical; semantic=type:keyboardButton; wire=0x7d170cff-\u003e0x2f67a72f; field=-\u003etype; type=-\u003eButtonType; source_shape=d5de65f73914c8ec962960b97070a20b698fe29e5dccd18b0735273b38010d31; target_shape=f58bb0f4c175be9e8798770d8b6173fed7e5340b641f1e9a8679e54d235f4b43"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/9d3df32d0c7020b4219aca52eac469738fcac30165b5700154f71a1a4d71ca49",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=227; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=-\u003etmp_password; type=-\u003ebytes; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/a5d57d9eceecdcdbff3813cb1a5bdc0e48ec5beba806783087814187262f0e49",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=226; direction=canonical-to-profile; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xc8ca817b-\u003e0xd06e93a8; field=-\u003epassword; type=-\u003eInputCheckPasswordSRP; source_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd; target_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/ac2623f541f102656f916d9264bfbf39ddc2d5bbecfc420b4df37f620a811dee",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=228; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=-\u003etmp_password; type=-\u003ebytes; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
       }
     },
     {
@@ -1542,6 +1640,13 @@
       }
     },
     {
+      "key": "layer-obligation/v1/required/cb29c7b9abeb5224f8db66f27017e7f451fdc49bb25f4cc2c34e5486e60bed7b",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=229; direction=canonical-to-profile; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xc8ca817b-\u003e0xd06e93a8; field=-\u003epassword; type=-\u003eInputCheckPasswordSRP; source_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd; target_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba"
+      }
+    },
+    {
       "key": "layer-obligation/v1/required/cd9125a49bb4740f5108e644ca0a2323925d40a81a9df4f50e3bafc49ba167d7",
       "resolution": {
         "action": "reject",
@@ -1556,11 +1661,53 @@
       }
     },
     {
+      "key": "layer-obligation/v1/required/d348e235127d95f4e5902d2525001a2badbd281c4231453fa10bc7a526982032",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=230; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=-\u003etmp_password; type=-\u003ebytes; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/d3caedc14caf46117ee0532cdf3408c656287549347878a13b44db688f46a1ec",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=231; direction=canonical-to-profile; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xc8ca817b-\u003e0xd06e93a8; field=-\u003epassword; type=-\u003eInputCheckPasswordSRP; source_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd; target_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/d442d9d3775cc553414b851eb98bcedcd0a8457af7feacff0a5af3af089a21f4",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=229; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=-\u003etmp_password; type=-\u003ebytes; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/dc29aa60806668a978139a804bc6b585ebcdd2386dc8e83e213d8d4f5d47b4d4",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=230; direction=canonical-to-profile; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xc8ca817b-\u003e0xd06e93a8; field=-\u003epassword; type=-\u003eInputCheckPasswordSRP; source_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd; target_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/de5e288ead31b19339191cfbf6b141d7190c653f59c461e9518689d93da245d5",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=227; direction=canonical-to-profile; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xc8ca817b-\u003e0xd06e93a8; field=-\u003epassword; type=-\u003eInputCheckPasswordSRP; source_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd; target_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba"
+      }
+    },
+    {
       "key": "layer-obligation/v1/required/e5172cf75a29757f3d8a2c83e52ed0f2696d4e2c97a12538fb31a858796e3374",
       "resolution": {
         "action": "adapter",
         "hook": "layerRequireLegacyEphemeralDeletePeer",
         "note": "kind=required; layer=228; direction=canonical-to-profile; semantic=function:ephemeral.deleteMessage; wire=0x92f6e797-\u003e0xa3c0d511; field=peer-\u003epeer; type=InputPeer-\u003eInputPeer; source_shape=35174d25a41609c9f3447fce9f9d280c2c4fae5127d693ff0c735be95d3395ac; target_shape=badf9af5f17cc4e1483dbb0f31f4c7ce4290ebd2fcab01fd27adb187c78ee3fa"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/f81521f880c4365daf5ad6e0924bdddfbdb4f2155c0030c8a3caf21935cc88f1",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=225; direction=profile-to-canonical; semantic=function:payments.getStarGiftWithdrawalUrl; wire=0xd06e93a8-\u003e0xc8ca817b; field=-\u003etmp_password; type=-\u003ebytes; source_shape=1a33a5100d2eea7e0ca7e08564819f2082d09a36050cc82e5b295de48aa846ba; target_shape=fddff15cec4154b78de178789219743a3502e359354265fa320a34757586c3fd"
       }
     },
     {

@@ -16349,6 +16349,107 @@ func (m *MessageActionWalletTonConnectRequest) GetDappName() (value string, ok b
 	return m.DappName, true
 }
 
+// MessageActionNoPaidMessagesTokenUsed represents TL type `messageActionNoPaidMessagesTokenUsed#c1d2f1c6`.
+//
+// See https://core.telegram.org/constructor/messageActionNoPaidMessagesTokenUsed for reference.
+type MessageActionNoPaidMessagesTokenUsed struct {
+}
+
+// MessageActionNoPaidMessagesTokenUsedTypeID is TL type id of MessageActionNoPaidMessagesTokenUsed.
+const MessageActionNoPaidMessagesTokenUsedTypeID = 0xc1d2f1c6
+
+// construct implements constructor of MessageActionClass.
+func (m MessageActionNoPaidMessagesTokenUsed) construct() MessageActionClass { return &m }
+
+// Ensuring interfaces in compile-time for MessageActionNoPaidMessagesTokenUsed.
+var (
+	_ bin.Encoder     = &MessageActionNoPaidMessagesTokenUsed{}
+	_ bin.Decoder     = &MessageActionNoPaidMessagesTokenUsed{}
+	_ bin.BareEncoder = &MessageActionNoPaidMessagesTokenUsed{}
+	_ bin.BareDecoder = &MessageActionNoPaidMessagesTokenUsed{}
+
+	_ MessageActionClass = &MessageActionNoPaidMessagesTokenUsed{}
+)
+
+func (m *MessageActionNoPaidMessagesTokenUsed) Zero() bool {
+	if m == nil {
+		return true
+	}
+
+	return true
+}
+
+// String implements fmt.Stringer.
+func (m *MessageActionNoPaidMessagesTokenUsed) String() string {
+	if m == nil {
+		return "MessageActionNoPaidMessagesTokenUsed(nil)"
+	}
+	type Alias MessageActionNoPaidMessagesTokenUsed
+	return fmt.Sprintf("MessageActionNoPaidMessagesTokenUsed%+v", Alias(*m))
+}
+
+// TypeID returns type id in TL schema.
+//
+// See https://core.telegram.org/mtproto/TL-tl#remarks.
+func (*MessageActionNoPaidMessagesTokenUsed) TypeID() uint32 {
+	return MessageActionNoPaidMessagesTokenUsedTypeID
+}
+
+// TypeName returns name of type in TL schema.
+func (*MessageActionNoPaidMessagesTokenUsed) TypeName() string {
+	return "messageActionNoPaidMessagesTokenUsed"
+}
+
+// TypeInfo returns info about TL type.
+func (m *MessageActionNoPaidMessagesTokenUsed) TypeInfo() tdp.Type {
+	typ := tdp.Type{
+		Name: "messageActionNoPaidMessagesTokenUsed",
+		ID:   MessageActionNoPaidMessagesTokenUsedTypeID,
+	}
+	if m == nil {
+		typ.Null = true
+		return typ
+	}
+	typ.Fields = []tdp.Field{}
+	return typ
+}
+
+// Encode implements bin.Encoder.
+func (m *MessageActionNoPaidMessagesTokenUsed) Encode(b *bin.Buffer) error {
+	if m == nil {
+		return fmt.Errorf("can't encode messageActionNoPaidMessagesTokenUsed#c1d2f1c6 as nil")
+	}
+	b.PutID(MessageActionNoPaidMessagesTokenUsedTypeID)
+	return m.EncodeBare(b)
+}
+
+// EncodeBare implements bin.BareEncoder.
+func (m *MessageActionNoPaidMessagesTokenUsed) EncodeBare(b *bin.Buffer) error {
+	if m == nil {
+		return fmt.Errorf("can't encode messageActionNoPaidMessagesTokenUsed#c1d2f1c6 as nil")
+	}
+	return nil
+}
+
+// Decode implements bin.Decoder.
+func (m *MessageActionNoPaidMessagesTokenUsed) Decode(b *bin.Buffer) error {
+	if m == nil {
+		return fmt.Errorf("can't decode messageActionNoPaidMessagesTokenUsed#c1d2f1c6 to nil")
+	}
+	if err := b.ConsumeID(MessageActionNoPaidMessagesTokenUsedTypeID); err != nil {
+		return fmt.Errorf("unable to decode messageActionNoPaidMessagesTokenUsed#c1d2f1c6: %w", err)
+	}
+	return m.DecodeBare(b)
+}
+
+// DecodeBare implements bin.BareDecoder.
+func (m *MessageActionNoPaidMessagesTokenUsed) DecodeBare(b *bin.Buffer) error {
+	if m == nil {
+		return fmt.Errorf("can't decode messageActionNoPaidMessagesTokenUsed#c1d2f1c6 to nil")
+	}
+	return nil
+}
+
 // MessageActionClassName is schema name of MessageActionClass.
 const MessageActionClassName = "MessageAction"
 
@@ -16428,6 +16529,7 @@ const MessageActionClassName = "MessageAction"
 //   - [MessageActionChatJoinedViaCommunity]
 //   - [MessageActionGramTransfer]
 //   - [MessageActionWalletTonConnectRequest]
+//   - [MessageActionNoPaidMessagesTokenUsed]
 //
 // Example:
 //
@@ -16507,6 +16609,7 @@ const MessageActionClassName = "MessageAction"
 //	case *tg.MessageActionChatJoinedViaCommunity: // messageActionChatJoinedViaCommunity#4a8bfe80
 //	case *tg.MessageActionGramTransfer: // messageActionGramTransfer#9329ea33
 //	case *tg.MessageActionWalletTonConnectRequest: // messageActionWalletTonConnectRequest#69b8c4bf
+//	case *tg.MessageActionNoPaidMessagesTokenUsed: // messageActionNoPaidMessagesTokenUsed#c1d2f1c6
 //	default: panic(v)
 //	}
 type MessageActionClass interface {
@@ -17028,6 +17131,13 @@ func DecodeMessageAction(buf *bin.Buffer) (MessageActionClass, error) {
 	case MessageActionWalletTonConnectRequestTypeID:
 		// Decoding messageActionWalletTonConnectRequest#69b8c4bf.
 		v := MessageActionWalletTonConnectRequest{}
+		if err := v.Decode(buf); err != nil {
+			return nil, fmt.Errorf("unable to decode MessageActionClass: %w", err)
+		}
+		return &v, nil
+	case MessageActionNoPaidMessagesTokenUsedTypeID:
+		// Decoding messageActionNoPaidMessagesTokenUsed#c1d2f1c6.
+		v := MessageActionNoPaidMessagesTokenUsed{}
 		if err := v.Decode(buf); err != nil {
 			return nil, fmt.Errorf("unable to decode MessageActionClass: %w", err)
 		}

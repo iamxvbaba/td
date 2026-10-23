@@ -56,7 +56,7 @@ func TestRealLayerPolicy(t *testing.T) {
 	if unresolved := resolved.LayerConversionPlan().Report.Unresolved(); len(unresolved) != 0 {
 		t.Fatalf("real policy leaves %d unresolved obligations; first=%+v", len(unresolved), unresolved[0])
 	}
-	if got, want := len(document.Entries), 249; got != want {
+	if got, want := len(document.Entries), 270; got != want {
 		t.Fatalf("reviewed policy entry count = %d, want %d", got, want)
 	}
 	codec, err := resolved.buildLayerCodecModel("tg")
@@ -277,6 +277,12 @@ func realLayerResolution(obligation LayerObligation) (LayerObligationResolution,
 			return LayerObligationResolution{Action: LayerResolveDrop}, true, nil
 		case "messages.chatInviteJoinResultWebView:webview":
 			return adapter("layerCaptureChatInviteJoinQueryIDFromWebView")
+		case "payments.getStarGiftWithdrawalUrl:password":
+			// Layer 232 replaces the SRP challenge with a temporary password.
+			// The historical SRP proof has no canonical counterpart; dropping it
+			// would admit an authenticated financial request as "no password".
+			// Reject the historical request instead of silently discarding it.
+			return LayerObligationResolution{Action: LayerResolveReject}, true, nil
 		}
 	case LayerObligationRequired:
 		return realRequiredLayerResolution(obligation)
@@ -347,6 +353,17 @@ func realRequiredLayerResolution(obligation LayerObligation) (LayerObligationRes
 		}
 		if obligation.Direction == LayerDirectionProfileToCanonical && obligation.OtherField == "query_id" {
 			return adapter("layerRequireCapturedChatInviteJoinQueryID")
+		}
+	case "payments.getStarGiftWithdrawalUrl":
+		// Layer 232 carries a temporary password instead of the SRP
+		// challenge. A historical request cannot supply one, and a canonical
+		// request can never be encoded as the legacy SRP challenge: both
+		// directions reject.
+		if obligation.Direction == LayerDirectionProfileToCanonical && obligation.OtherField == "tmp_password" {
+			return LayerObligationResolution{Action: LayerResolveReject}, true, nil
+		}
+		if obligation.Direction == LayerDirectionCanonicalToProfile && obligation.OtherField == "password" {
+			return LayerObligationResolution{Action: LayerResolveReject}, true, nil
 		}
 	}
 	return LayerObligationResolution{}, false, fmt.Errorf("unreviewed required layer obligation: %+v", obligation)

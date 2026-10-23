@@ -155,6 +155,32 @@ func (s WalletTransactionPeerClassArray) AsWalletTransactionPeerOnramp() (to Wal
 	return to
 }
 
+// AsWalletTransactionPeerChannel returns copy with only WalletTransactionPeerChannel constructors.
+func (s WalletTransactionPeerClassArray) AsWalletTransactionPeerChannel() (to WalletTransactionPeerChannelArray) {
+	for _, elem := range s {
+		value, ok := elem.(*WalletTransactionPeerChannel)
+		if !ok {
+			continue
+		}
+		to = append(to, *value)
+	}
+
+	return to
+}
+
+// AsWalletTransactionPeerTelegramGift returns copy with only WalletTransactionPeerTelegramGift constructors.
+func (s WalletTransactionPeerClassArray) AsWalletTransactionPeerTelegramGift() (to WalletTransactionPeerTelegramGiftArray) {
+	for _, elem := range s {
+		value, ok := elem.(*WalletTransactionPeerTelegramGift)
+		if !ok {
+			continue
+		}
+		to = append(to, *value)
+	}
+
+	return to
+}
+
 // WalletTransactionPeerUserArray is adapter for slice of WalletTransactionPeerUser.
 type WalletTransactionPeerUserArray []WalletTransactionPeerUser
 
@@ -389,6 +415,170 @@ func (s *WalletTransactionPeerOnrampArray) PopFirst() (v WalletTransactionPeerOn
 
 // Pop returns last element of slice (if exists) and deletes it.
 func (s *WalletTransactionPeerOnrampArray) Pop() (v WalletTransactionPeerOnramp, ok bool) {
+	if s == nil || len(*s) < 1 {
+		return
+	}
+
+	a := *s
+	v = a[len(a)-1]
+	a = a[:len(a)-1]
+	*s = a
+
+	return v, true
+}
+
+// WalletTransactionPeerChannelArray is adapter for slice of WalletTransactionPeerChannel.
+type WalletTransactionPeerChannelArray []WalletTransactionPeerChannel
+
+// Sort sorts slice of WalletTransactionPeerChannel.
+func (s WalletTransactionPeerChannelArray) Sort(less func(a, b WalletTransactionPeerChannel) bool) WalletTransactionPeerChannelArray {
+	sort.Slice(s, func(i, j int) bool {
+		return less(s[i], s[j])
+	})
+	return s
+}
+
+// SortStable sorts slice of WalletTransactionPeerChannel.
+func (s WalletTransactionPeerChannelArray) SortStable(less func(a, b WalletTransactionPeerChannel) bool) WalletTransactionPeerChannelArray {
+	sort.SliceStable(s, func(i, j int) bool {
+		return less(s[i], s[j])
+	})
+	return s
+}
+
+// Retain filters in-place slice of WalletTransactionPeerChannel.
+func (s WalletTransactionPeerChannelArray) Retain(keep func(x WalletTransactionPeerChannel) bool) WalletTransactionPeerChannelArray {
+	n := 0
+	for _, x := range s {
+		if keep(x) {
+			s[n] = x
+			n++
+		}
+	}
+	s = s[:n]
+
+	return s
+}
+
+// First returns first element of slice (if exists).
+func (s WalletTransactionPeerChannelArray) First() (v WalletTransactionPeerChannel, ok bool) {
+	if len(s) < 1 {
+		return
+	}
+	return s[0], true
+}
+
+// Last returns last element of slice (if exists).
+func (s WalletTransactionPeerChannelArray) Last() (v WalletTransactionPeerChannel, ok bool) {
+	if len(s) < 1 {
+		return
+	}
+	return s[len(s)-1], true
+}
+
+// PopFirst returns first element of slice (if exists) and deletes it.
+func (s *WalletTransactionPeerChannelArray) PopFirst() (v WalletTransactionPeerChannel, ok bool) {
+	if s == nil || len(*s) < 1 {
+		return
+	}
+
+	a := *s
+	v = a[0]
+
+	// Delete by index from SliceTricks.
+	copy(a[0:], a[1:])
+	var zero WalletTransactionPeerChannel
+	a[len(a)-1] = zero
+	a = a[:len(a)-1]
+	*s = a
+
+	return v, true
+}
+
+// Pop returns last element of slice (if exists) and deletes it.
+func (s *WalletTransactionPeerChannelArray) Pop() (v WalletTransactionPeerChannel, ok bool) {
+	if s == nil || len(*s) < 1 {
+		return
+	}
+
+	a := *s
+	v = a[len(a)-1]
+	a = a[:len(a)-1]
+	*s = a
+
+	return v, true
+}
+
+// WalletTransactionPeerTelegramGiftArray is adapter for slice of WalletTransactionPeerTelegramGift.
+type WalletTransactionPeerTelegramGiftArray []WalletTransactionPeerTelegramGift
+
+// Sort sorts slice of WalletTransactionPeerTelegramGift.
+func (s WalletTransactionPeerTelegramGiftArray) Sort(less func(a, b WalletTransactionPeerTelegramGift) bool) WalletTransactionPeerTelegramGiftArray {
+	sort.Slice(s, func(i, j int) bool {
+		return less(s[i], s[j])
+	})
+	return s
+}
+
+// SortStable sorts slice of WalletTransactionPeerTelegramGift.
+func (s WalletTransactionPeerTelegramGiftArray) SortStable(less func(a, b WalletTransactionPeerTelegramGift) bool) WalletTransactionPeerTelegramGiftArray {
+	sort.SliceStable(s, func(i, j int) bool {
+		return less(s[i], s[j])
+	})
+	return s
+}
+
+// Retain filters in-place slice of WalletTransactionPeerTelegramGift.
+func (s WalletTransactionPeerTelegramGiftArray) Retain(keep func(x WalletTransactionPeerTelegramGift) bool) WalletTransactionPeerTelegramGiftArray {
+	n := 0
+	for _, x := range s {
+		if keep(x) {
+			s[n] = x
+			n++
+		}
+	}
+	s = s[:n]
+
+	return s
+}
+
+// First returns first element of slice (if exists).
+func (s WalletTransactionPeerTelegramGiftArray) First() (v WalletTransactionPeerTelegramGift, ok bool) {
+	if len(s) < 1 {
+		return
+	}
+	return s[0], true
+}
+
+// Last returns last element of slice (if exists).
+func (s WalletTransactionPeerTelegramGiftArray) Last() (v WalletTransactionPeerTelegramGift, ok bool) {
+	if len(s) < 1 {
+		return
+	}
+	return s[len(s)-1], true
+}
+
+// PopFirst returns first element of slice (if exists) and deletes it.
+func (s *WalletTransactionPeerTelegramGiftArray) PopFirst() (v WalletTransactionPeerTelegramGift, ok bool) {
+	if s == nil || len(*s) < 1 {
+		return
+	}
+
+	a := *s
+	v = a[0]
+
+	// Delete by index from SliceTricks.
+	copy(a[0:], a[1:])
+	var zero WalletTransactionPeerTelegramGift
+	a[len(a)-1] = zero
+	a = a[:len(a)-1]
+	*s = a
+
+	return v, true
+}
+
+// Pop returns last element of slice (if exists) and deletes it.
+func (s *WalletTransactionPeerTelegramGiftArray) Pop() (v WalletTransactionPeerTelegramGift, ok bool) {
 	if s == nil || len(*s) < 1 {
 		return
 	}

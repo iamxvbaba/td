@@ -43,7 +43,8 @@ const (
 	Profile229       Profile = 229
 	Profile230       Profile = 230
 	Profile231       Profile = 231
-	ProfileCanonical Profile = 231
+	Profile232       Profile = 232
+	ProfileCanonical Profile = 232
 )
 
 // ResolveProfile accepts only exact generated profiles.
@@ -63,6 +64,8 @@ func ResolveProfile(layer int) (Profile, bool) {
 		return Profile230, true
 	case Profile231:
 		return Profile231, true
+	case Profile232:
+		return Profile232, true
 	default:
 		return 0, false
 	}
@@ -439,6 +442,7 @@ const (
 	SemanticTypeExportedChatlistInvite                                            SemanticID = 0xe00371df0adc407f
 	SemanticTypeExportedContactToken                                              SemanticID = 0xe8cec563ea9bbcef
 	SemanticTypeExportedMessageLink                                               SemanticID = 0x3fbc0a462e146609
+	SemanticTypeExportedNoPaidMessagesToken                                       SemanticID = 0xcef21d8ef77d4765
 	SemanticTypeExportedStoryLink                                                 SemanticID = 0x9d47b444484cb17e
 	SemanticTypeFactCheck                                                         SemanticID = 0x4f00623b8d02452e
 	SemanticTypeFileHash                                                          SemanticID = 0xdf6043281e9af9de
@@ -737,6 +741,7 @@ const (
 	SemanticTypeInputSecureFileUploaded                                           SemanticID = 0x8c60f6b212d0eca6
 	SemanticTypeInputSecureValue                                                  SemanticID = 0x79e3ac86ad3ff687
 	SemanticTypeInputSendMessageRichMessageDraftAction                            SemanticID = 0xceeed76d0517fb60
+	SemanticTypeInputShareThemeGift                                               SemanticID = 0x621c9ee12dc6ccb4
 	SemanticTypeInputSingleMedia                                                  SemanticID = 0x4738bd312dc813c1
 	SemanticTypeInputStarGiftAuction                                              SemanticID = 0xfe02fa8b6080b167
 	SemanticTypeInputStarGiftAuctionSlug                                          SemanticID = 0x6989d59683ca3f7d
@@ -778,6 +783,7 @@ const (
 	SemanticTypeInputWallPaper                                                    SemanticID = 0x3b6bfd2e30b91cd7
 	SemanticTypeInputWallPaperNoFile                                              SemanticID = 0x9f789a816a913e0f
 	SemanticTypeInputWallPaperSlug                                                SemanticID = 0x765b22d802c60740
+	SemanticTypeInputWalletCardSticker                                            SemanticID = 0xde4c390ff862295a
 	SemanticTypeInputWalletImported                                               SemanticID = 0x57c28e50e1e75be7
 	SemanticTypeInputWalletNew                                                    SemanticID = 0xf9f8a27fec04d4af
 	SemanticTypeInputWebDocument                                                  SemanticID = 0x48ee587e4d2f2e7a
@@ -872,6 +878,7 @@ const (
 	SemanticTypeMessageActionNewCreatorPending                                    SemanticID = 0x86113844990832b8
 	SemanticTypeMessageActionNoForwardsRequest                                    SemanticID = 0x20f8704b6c60469b
 	SemanticTypeMessageActionNoForwardsToggle                                     SemanticID = 0x8c8f530cbf3d5d0c
+	SemanticTypeMessageActionNoPaidMessagesTokenUsed                              SemanticID = 0x383025866538a0d5
 	SemanticTypeMessageActionPaidMessagesPrice                                    SemanticID = 0x41895bed7590422b
 	SemanticTypeMessageActionPaidMessagesRefunded                                 SemanticID = 0x56db9b1a5a59edfc
 	SemanticTypeMessageActionPaymentRefunded                                      SemanticID = 0xf2d1371e17931dc3
@@ -1170,6 +1177,7 @@ const (
 	SemanticTypePaymentsStarGiftAuctionState                                      SemanticID = 0x4eb6b1d1e45644bc
 	SemanticTypePaymentsStarGiftCollections                                       SemanticID = 0x612367d2fdaadd1d
 	SemanticTypePaymentsStarGiftCollectionsNotModified                            SemanticID = 0x243e34fb10d1b63f
+	SemanticTypePaymentsStarGiftDepositPayload                                    SemanticID = 0x76a58c85bf7d92a1
 	SemanticTypePaymentsStarGiftUpgradeAttributes                                 SemanticID = 0x28ac1ce966ab7f75
 	SemanticTypePaymentsStarGiftUpgradePreview                                    SemanticID = 0x8cff33c924880ce2
 	SemanticTypePaymentsStarGiftWithdrawalURL                                     SemanticID = 0x0e1d1fd92b56e136
@@ -1380,6 +1388,12 @@ const (
 	SemanticTypeSendMessageUploadPhotoAction                                      SemanticID = 0x936d1753292263f4
 	SemanticTypeSendMessageUploadRoundAction                                      SemanticID = 0xba2b445084a7b27a
 	SemanticTypeSendMessageUploadVideoAction                                      SemanticID = 0x8b5eddca8e89c344
+	SemanticTypeShareThemeBackdropOption                                          SemanticID = 0x352a1e4d5d025c59
+	SemanticTypeShareThemeBackdrops                                               SemanticID = 0x4d24898410a0d049
+	SemanticTypeShareThemeBackdropsNotModified                                    SemanticID = 0x7b8676603319f9c7
+	SemanticTypeShareThemeDefault                                                 SemanticID = 0xa928c34af1032dd1
+	SemanticTypeShareThemeEmojiBackdrop                                           SemanticID = 0x65aa30a099ada51d
+	SemanticTypeShareThemeGift                                                    SemanticID = 0xdbeda6e5408f2717
 	SemanticTypeShippingOption                                                    SemanticID = 0xdb8b5e7b19009fc1
 	SemanticTypeSMSJob                                                            SemanticID = 0x257028c6707802e8
 	SemanticTypeSMSJobsEligibleToJoin                                             SemanticID = 0x290b776a1a2645ce
@@ -1768,6 +1782,8 @@ const (
 	SemanticTypeWallPaper                                                         SemanticID = 0x9efc2b7ca591becf
 	SemanticTypeWallPaperNoFile                                                   SemanticID = 0x574cb487a404271e
 	SemanticTypeWallPaperSettings                                                 SemanticID = 0x095b2b4ad1d8cfd6
+	SemanticTypeWalletCard                                                        SemanticID = 0x103db12da69c1dca
+	SemanticTypeWalletCardSticker                                                 SemanticID = 0x421a17af80fc1faf
 	SemanticTypeWalletEncryptedSecretPhrasePart                                   SemanticID = 0x09a70ad9a71d2168
 	SemanticTypeWalletExistingBalance                                             SemanticID = 0x308240a208b2b073
 	SemanticTypeWalletHolderDC                                                    SemanticID = 0xea901184d80fb1aa
@@ -1786,7 +1802,9 @@ const (
 	SemanticTypeWalletStateEmpty                                                  SemanticID = 0xecda484b64e6b9bb
 	SemanticTypeWalletTransaction                                                 SemanticID = 0xad740c8c51d6a41e
 	SemanticTypeWalletTransactionPeerAddress                                      SemanticID = 0xae0a8b05b4999860
+	SemanticTypeWalletTransactionPeerChannel                                      SemanticID = 0x908efe2362d14cf9
 	SemanticTypeWalletTransactionPeerOnramp                                       SemanticID = 0xcba8f4ae6e7074f3
+	SemanticTypeWalletTransactionPeerTelegramGift                                 SemanticID = 0xc67ab0a533338766
 	SemanticTypeWalletTransactionPeerUnsupported                                  SemanticID = 0x0a64d40aef721e20
 	SemanticTypeWalletTransactionPeerUser                                         SemanticID = 0x3b6a879158178ba4
 	SemanticTypeWalletUserAddress                                                 SemanticID = 0xd9fd91133a947edc
@@ -2098,6 +2116,7 @@ const (
 	SemanticMethodContactsDeleteContacts                                          SemanticID = 0x6530a69c231d902f
 	SemanticMethodContactsEditCloseFriends                                        SemanticID = 0x5e9688a7c5ea1339
 	SemanticMethodContactsExportContactToken                                      SemanticID = 0x7ffdf21c9ef644ba
+	SemanticMethodContactsExportNoPaidMessagesToken                               SemanticID = 0x9e61da9dee454bae
 	SemanticMethodContactsGetBirthdays                                            SemanticID = 0x6b308b9392809fb5
 	SemanticMethodContactsGetBlocked                                              SemanticID = 0x4766485a18388772
 	SemanticMethodContactsGetContactIDs                                           SemanticID = 0x88d27cb8f0c7bd51
@@ -2109,6 +2128,7 @@ const (
 	SemanticMethodContactsGetTopPeers                                             SemanticID = 0xa527bd5f06957983
 	SemanticMethodContactsImportContactToken                                      SemanticID = 0x0b74654aabad9727
 	SemanticMethodContactsImportContacts                                          SemanticID = 0x2099913302c20166
+	SemanticMethodContactsImportNoPaidMessagesToken                               SemanticID = 0x9abe6bde41b9e9e4
 	SemanticMethodContactsResetSaved                                              SemanticID = 0x4c6d5c36c404b00a
 	SemanticMethodContactsResetTopPeerRating                                      SemanticID = 0x06c9b87126a032f0
 	SemanticMethodContactsResolvePhone                                            SemanticID = 0x94541704ed9ac33e
@@ -2306,6 +2326,7 @@ const (
 	SemanticMethodMessagesGetSearchCounters                                       SemanticID = 0xe976ef0cba99747f
 	SemanticMethodMessagesGetSearchResultsCalendar                                SemanticID = 0xe79a9dd88d8d4014
 	SemanticMethodMessagesGetSearchResultsPositions                               SemanticID = 0xcc2439f4de5feab4
+	SemanticMethodMessagesGetShareThemeBackdrops                                  SemanticID = 0xd928cf9baf09c002
 	SemanticMethodMessagesGetSplitRanges                                          SemanticID = 0x3fc7021e3ef2be82
 	SemanticMethodMessagesGetSponsoredMessages                                    SemanticID = 0xe48ca0d70c5efefc
 	SemanticMethodMessagesGetStickerSet                                           SemanticID = 0x4017c35f25e112a6
@@ -2400,6 +2421,7 @@ const (
 	SemanticMethodMessagesSetHistoryTTL                                           SemanticID = 0x185bfa8469c32431
 	SemanticMethodMessagesSetInlineBotResults                                     SemanticID = 0x332d4d2caa40bfea
 	SemanticMethodMessagesSetInlineGameScore                                      SemanticID = 0x9a3ac7f30645cfd3
+	SemanticMethodMessagesSetShareTheme                                           SemanticID = 0xa58f94424cac61ab
 	SemanticMethodMessagesSetTyping                                               SemanticID = 0x651667f3a85658da
 	SemanticMethodMessagesStartBot                                                SemanticID = 0xd5e4924a6a5f0370
 	SemanticMethodMessagesStartHistoryImport                                      SemanticID = 0x9e128b44253b0417
@@ -2442,7 +2464,10 @@ const (
 	SemanticMethodPaymentsCraftStarGift                                           SemanticID = 0xc0436f117a3edd5b
 	SemanticMethodPaymentsCreateOnrampSession                                     SemanticID = 0xbcad5ad7c0860a5e
 	SemanticMethodPaymentsCreateStarGiftCollection                                SemanticID = 0xc4e057d298dd8462
+	SemanticMethodPaymentsDeleteStarGift                                          SemanticID = 0x210e69f214ec2b8e
 	SemanticMethodPaymentsDeleteStarGiftCollection                                SemanticID = 0x373fb2f8a486839c
+	SemanticMethodPaymentsDepositStarGift                                         SemanticID = 0x5c53ee19db6431a3
+	SemanticMethodPaymentsDisplayStarGift                                         SemanticID = 0x9b2a77bbe8a39a02
 	SemanticMethodPaymentsEditConnectedStarRefBot                                 SemanticID = 0xd576d49e4e338f83
 	SemanticMethodPaymentsExportInvoice                                           SemanticID = 0xee06b2e309db1134
 	SemanticMethodPaymentsFulfillStarsSubscription                                SemanticID = 0x15a95d59cab27f0b
@@ -2500,6 +2525,7 @@ const (
 	SemanticMethodPaymentsUpdateStarGiftPrice                                     SemanticID = 0xea0e700d593f792a
 	SemanticMethodPaymentsUpgradeStarGift                                         SemanticID = 0x071e40994d416e21
 	SemanticMethodPaymentsValidateRequestedInfo                                   SemanticID = 0x9958d82dd094eee9
+	SemanticMethodPaymentsWithdrawStarGift                                        SemanticID = 0x1edf45931c889f0b
 	SemanticMethodPhoneAcceptCall                                                 SemanticID = 0xa6b85a0fce4e46cd
 	SemanticMethodPhoneCheckGroupCall                                             SemanticID = 0xdd913d48c99f737a
 	SemanticMethodPhoneConfirmCall                                                SemanticID = 0xe6b7199ddbd89779
@@ -2650,6 +2676,7 @@ const (
 	SemanticMethodWalletGetUserAddresses                                          SemanticID = 0xa065e27433d0dcb1
 	SemanticMethodWalletReplaceWallet                                             SemanticID = 0x3fcbde89ca4cbf3a
 	SemanticMethodWalletSendTransfer                                              SemanticID = 0x215b329008825e43
+	SemanticMethodWalletSetCardStickers                                           SemanticID = 0x34982da71802a06f
 	SemanticMethodWalletTonConnectClaimRequest                                    SemanticID = 0x780f15512699a663
 	SemanticMethodWalletTonConnectCloseSession                                    SemanticID = 0x0a2462262ae3518a
 	SemanticMethodWalletTonConnectCreateSession                                   SemanticID = 0x25d53eacdcdebfe8
@@ -2892,6 +2919,7 @@ const (
 	FieldContactsGetTopPeersOffset                          FieldID = 0x63b111fda380ff40
 	FieldContactsImportContactTokenToken                    FieldID = 0xa77dc942bb027efa
 	FieldContactsImportContactsContacts                     FieldID = 0x643b96faf4176e10
+	FieldContactsImportNoPaidMessagesTokenToken             FieldID = 0x0524ddc6f5682668
 	FieldContactsResolvePhonePhone                          FieldID = 0x5b5a0fd1f8922df9
 	FieldContactsResolveUsernameReferer                     FieldID = 0x89b74dcbc50f7993
 	FieldContactsResolveUsernameUsername                    FieldID = 0x649ca63f478683ab
@@ -3112,6 +3140,7 @@ const (
 	FieldMessagesGetSearchResultsCalendarOffsetID           FieldID = 0x404eebd4c1ee93c5
 	FieldMessagesGetSearchResultsPositionsLimit             FieldID = 0x1801b352ed30bcf4
 	FieldMessagesGetSearchResultsPositionsOffsetID          FieldID = 0x6933e7427f47594d
+	FieldMessagesGetShareThemeBackdropsHash                 FieldID = 0xc1c3f3ea813b450a
 	FieldMessagesGetSponsoredMessagesMsgID                  FieldID = 0x43ffc7065b04e564
 	FieldMessagesGetStickerSetHash                          FieldID = 0x22293b5ced2ba7eb
 	FieldMessagesGetStickersEmoticon                        FieldID = 0x34780da61d43a51d
@@ -3316,6 +3345,8 @@ const (
 	FieldPaymentsCreateStarGiftCollectionStargift           FieldID = 0x0a08c394ac46804e
 	FieldPaymentsCreateStarGiftCollectionTitle              FieldID = 0x3adcf95ae1ab032d
 	FieldPaymentsDeleteStarGiftCollectionCollectionID       FieldID = 0xd2e712bd260f111a
+	FieldPaymentsDepositStarGiftSlug                        FieldID = 0x4fd54c0b4e318bcf
+	FieldPaymentsDisplayStarGiftSlug                        FieldID = 0x30f04f3b18c196c0
 	FieldPaymentsEditConnectedStarRefBotLink                FieldID = 0x174f0dbfd1f64e0f
 	FieldPaymentsFulfillStarsSubscriptionSubscriptionID     FieldID = 0x81de6e813e5ae275
 	FieldPaymentsGetBankCardDataNumber                      FieldID = 0x8d63da671cb175e1
@@ -3350,6 +3381,7 @@ const (
 	FieldPaymentsGetSavedStarGiftsLimit                     FieldID = 0xbfad08288377befc
 	FieldPaymentsGetSavedStarGiftsOffset                    FieldID = 0x09d12bd775f06b00
 	FieldPaymentsGetStarGiftAuctionStateVersion             FieldID = 0xcec0a6699a5b0d84
+	FieldPaymentsGetStarGiftWithdrawalURLTmpPassword        FieldID = 0x991b2d43f43c2510
 	FieldPaymentsGetStarGiftsHash                           FieldID = 0x97de7a943bb6a04e
 	FieldPaymentsGetStarsSubscriptionsOffset                FieldID = 0x7f8a6ccd971f293c
 	FieldPaymentsGetStarsTransactionsLimit                  FieldID = 0xe9fbc7dad2b7f701
@@ -3373,6 +3405,7 @@ const (
 	FieldPaymentsUpdateStarGiftCollectionDeleteStargift     FieldID = 0x73166bad73e9535d
 	FieldPaymentsUpdateStarGiftCollectionOrder              FieldID = 0x1049a2b4b68038b1
 	FieldPaymentsUpdateStarGiftCollectionTitle              FieldID = 0xa24ec95960f5de25
+	FieldPaymentsWithdrawStarGiftTmpPassword                FieldID = 0xf49c86942829cd31
 	FieldPhoneAcceptCallGB                                  FieldID = 0xc20129783867cf2b
 	FieldPhoneCheckGroupCallSources                         FieldID = 0xe91b5f677630ff85
 	FieldPhoneConfirmCallGA                                 FieldID = 0x73ed44e0e8040efb
@@ -3537,6 +3570,8 @@ const (
 	FieldWalletGetUserAddressesID                           FieldID = 0x95daf5c6a7c424b4
 	FieldWalletSendTransferDataGasless                      FieldID = 0xc4281e6d145db453
 	FieldWalletSendTransferDataNormal                       FieldID = 0xc1ad075438cdc1ee
+	FieldWalletSetCardStickersBgNftAddress                  FieldID = 0x4980f169c9f6c34f
+	FieldWalletSetCardStickersStickers                      FieldID = 0x93072f99292ec03f
 	FieldWalletTonConnectClaimRequestAppRequestID           FieldID = 0x07cb855d555eba8c
 	FieldWalletTonConnectClaimRequestChallengeAnswer        FieldID = 0xa94f7e3912501ef0
 	FieldWalletTonConnectClaimRequestMsgID                  FieldID = 0x35ab040420737772
@@ -4286,6 +4321,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "exportedContactToken", true
 	case SemanticTypeExportedMessageLink:
 		return "type", "exportedMessageLink", true
+	case SemanticTypeExportedNoPaidMessagesToken:
+		return "type", "exportedNoPaidMessagesToken", true
 	case SemanticTypeExportedStoryLink:
 		return "type", "exportedStoryLink", true
 	case SemanticTypeFactCheck:
@@ -4882,6 +4919,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "inputSecureValue", true
 	case SemanticTypeInputSendMessageRichMessageDraftAction:
 		return "type", "inputSendMessageRichMessageDraftAction", true
+	case SemanticTypeInputShareThemeGift:
+		return "type", "inputShareThemeGift", true
 	case SemanticTypeInputSingleMedia:
 		return "type", "inputSingleMedia", true
 	case SemanticTypeInputStarGiftAuction:
@@ -4964,6 +5003,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "inputWallPaperNoFile", true
 	case SemanticTypeInputWallPaperSlug:
 		return "type", "inputWallPaperSlug", true
+	case SemanticTypeInputWalletCardSticker:
+		return "type", "inputWalletCardSticker", true
 	case SemanticTypeInputWalletImported:
 		return "type", "inputWalletImported", true
 	case SemanticTypeInputWalletNew:
@@ -5152,6 +5193,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "messageActionNoForwardsRequest", true
 	case SemanticTypeMessageActionNoForwardsToggle:
 		return "type", "messageActionNoForwardsToggle", true
+	case SemanticTypeMessageActionNoPaidMessagesTokenUsed:
+		return "type", "messageActionNoPaidMessagesTokenUsed", true
 	case SemanticTypeMessageActionPaidMessagesPrice:
 		return "type", "messageActionPaidMessagesPrice", true
 	case SemanticTypeMessageActionPaidMessagesRefunded:
@@ -5748,6 +5791,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "payments.starGiftCollections", true
 	case SemanticTypePaymentsStarGiftCollectionsNotModified:
 		return "type", "payments.starGiftCollectionsNotModified", true
+	case SemanticTypePaymentsStarGiftDepositPayload:
+		return "type", "payments.starGiftDepositPayload", true
 	case SemanticTypePaymentsStarGiftUpgradeAttributes:
 		return "type", "payments.starGiftUpgradeAttributes", true
 	case SemanticTypePaymentsStarGiftUpgradePreview:
@@ -6168,6 +6213,18 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "sendMessageUploadRoundAction", true
 	case SemanticTypeSendMessageUploadVideoAction:
 		return "type", "sendMessageUploadVideoAction", true
+	case SemanticTypeShareThemeBackdropOption:
+		return "type", "shareThemeBackdropOption", true
+	case SemanticTypeShareThemeBackdrops:
+		return "type", "shareThemeBackdrops", true
+	case SemanticTypeShareThemeBackdropsNotModified:
+		return "type", "shareThemeBackdropsNotModified", true
+	case SemanticTypeShareThemeDefault:
+		return "type", "shareThemeDefault", true
+	case SemanticTypeShareThemeEmojiBackdrop:
+		return "type", "shareThemeEmojiBackdrop", true
+	case SemanticTypeShareThemeGift:
+		return "type", "shareThemeGift", true
 	case SemanticTypeShippingOption:
 		return "type", "shippingOption", true
 	case SemanticTypeSMSJob:
@@ -6944,6 +7001,10 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "wallPaperNoFile", true
 	case SemanticTypeWallPaperSettings:
 		return "type", "wallPaperSettings", true
+	case SemanticTypeWalletCard:
+		return "type", "wallet.card", true
+	case SemanticTypeWalletCardSticker:
+		return "type", "wallet.cardSticker", true
 	case SemanticTypeWalletEncryptedSecretPhrasePart:
 		return "type", "wallet.encryptedSecretPhrasePart", true
 	case SemanticTypeWalletExistingBalance:
@@ -6980,8 +7041,12 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "walletTransaction", true
 	case SemanticTypeWalletTransactionPeerAddress:
 		return "type", "walletTransactionPeerAddress", true
+	case SemanticTypeWalletTransactionPeerChannel:
+		return "type", "walletTransactionPeerChannel", true
 	case SemanticTypeWalletTransactionPeerOnramp:
 		return "type", "walletTransactionPeerOnramp", true
+	case SemanticTypeWalletTransactionPeerTelegramGift:
+		return "type", "walletTransactionPeerTelegramGift", true
 	case SemanticTypeWalletTransactionPeerUnsupported:
 		return "type", "walletTransactionPeerUnsupported", true
 	case SemanticTypeWalletTransactionPeerUser:
@@ -7604,6 +7669,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "contacts.editCloseFriends", true
 	case SemanticMethodContactsExportContactToken:
 		return "function", "contacts.exportContactToken", true
+	case SemanticMethodContactsExportNoPaidMessagesToken:
+		return "function", "contacts.exportNoPaidMessagesToken", true
 	case SemanticMethodContactsGetBirthdays:
 		return "function", "contacts.getBirthdays", true
 	case SemanticMethodContactsGetBlocked:
@@ -7626,6 +7693,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "contacts.importContactToken", true
 	case SemanticMethodContactsImportContacts:
 		return "function", "contacts.importContacts", true
+	case SemanticMethodContactsImportNoPaidMessagesToken:
+		return "function", "contacts.importNoPaidMessagesToken", true
 	case SemanticMethodContactsResetSaved:
 		return "function", "contacts.resetSaved", true
 	case SemanticMethodContactsResetTopPeerRating:
@@ -8020,6 +8089,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "messages.getSearchResultsCalendar", true
 	case SemanticMethodMessagesGetSearchResultsPositions:
 		return "function", "messages.getSearchResultsPositions", true
+	case SemanticMethodMessagesGetShareThemeBackdrops:
+		return "function", "messages.getShareThemeBackdrops", true
 	case SemanticMethodMessagesGetSplitRanges:
 		return "function", "messages.getSplitRanges", true
 	case SemanticMethodMessagesGetSponsoredMessages:
@@ -8208,6 +8279,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "messages.setInlineBotResults", true
 	case SemanticMethodMessagesSetInlineGameScore:
 		return "function", "messages.setInlineGameScore", true
+	case SemanticMethodMessagesSetShareTheme:
+		return "function", "messages.setShareTheme", true
 	case SemanticMethodMessagesSetTyping:
 		return "function", "messages.setTyping", true
 	case SemanticMethodMessagesStartBot:
@@ -8292,8 +8365,14 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "payments.createOnrampSession", true
 	case SemanticMethodPaymentsCreateStarGiftCollection:
 		return "function", "payments.createStarGiftCollection", true
+	case SemanticMethodPaymentsDeleteStarGift:
+		return "function", "payments.deleteStarGift", true
 	case SemanticMethodPaymentsDeleteStarGiftCollection:
 		return "function", "payments.deleteStarGiftCollection", true
+	case SemanticMethodPaymentsDepositStarGift:
+		return "function", "payments.depositStarGift", true
+	case SemanticMethodPaymentsDisplayStarGift:
+		return "function", "payments.displayStarGift", true
 	case SemanticMethodPaymentsEditConnectedStarRefBot:
 		return "function", "payments.editConnectedStarRefBot", true
 	case SemanticMethodPaymentsExportInvoice:
@@ -8408,6 +8487,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "payments.upgradeStarGift", true
 	case SemanticMethodPaymentsValidateRequestedInfo:
 		return "function", "payments.validateRequestedInfo", true
+	case SemanticMethodPaymentsWithdrawStarGift:
+		return "function", "payments.withdrawStarGift", true
 	case SemanticMethodPhoneAcceptCall:
 		return "function", "phone.acceptCall", true
 	case SemanticMethodPhoneCheckGroupCall:
@@ -8708,6 +8789,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "wallet.replaceWallet", true
 	case SemanticMethodWalletSendTransfer:
 		return "function", "wallet.sendTransfer", true
+	case SemanticMethodWalletSetCardStickers:
+		return "function", "wallet.setCardStickers", true
 	case SemanticMethodWalletTonConnectClaimRequest:
 		return "function", "wallet.tonConnectClaimRequest", true
 	case SemanticMethodWalletTonConnectCloseSession:
@@ -9056,7 +9139,7 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 	case SemanticTypeCDNPublicKey:
 		return 0xc982eaba, true
 	case SemanticTypeChannel:
-		return 0xd49f34c6, true
+		return 0x7ad15240, true
 	case SemanticTypeChannelAdminLogEvent:
 		return 0x1fad68cd, true
 	case SemanticTypeChannelAdminLogEventActionChangeAbout:
@@ -9168,7 +9251,7 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 	case SemanticTypeChannelForbidden:
 		return 0x17d493d5, true
 	case SemanticTypeChannelFull:
-		return 0xa04e8d3a, true
+		return 0xc4c4dd40, true
 	case SemanticTypeChannelLocation:
 		return 0x209b82db, true
 	case SemanticTypeChannelLocationEmpty:
@@ -9463,6 +9546,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x41bf109b, true
 	case SemanticTypeExportedMessageLink:
 		return 0x5dab1af4, true
+	case SemanticTypeExportedNoPaidMessagesToken:
+		return 0x695dd042, true
 	case SemanticTypeExportedStoryLink:
 		return 0x3fc9053b, true
 	case SemanticTypeFactCheck:
@@ -10000,7 +10085,7 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 	case SemanticTypeInputReplyToEphemeralMessage:
 		return 0x4119b95e, true
 	case SemanticTypeInputReplyToMessage:
-		return 0x3bd4b7c2, true
+		return 0x75c1ad70, true
 	case SemanticTypeInputReplyToMonoForum:
 		return 0x69d66c45, true
 	case SemanticTypeInputReplyToStory:
@@ -10051,6 +10136,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xdb21d0a7, true
 	case SemanticTypeInputSendMessageRichMessageDraftAction:
 		return 0xa937c7be, true
+	case SemanticTypeInputShareThemeGift:
+		return 0x3fb92b5b, true
 	case SemanticTypeInputSingleMedia:
 		return 0x1cc6e91f, true
 	case SemanticTypeInputStarGiftAuction:
@@ -10133,6 +10220,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x967a462e, true
 	case SemanticTypeInputWallPaperSlug:
 		return 0x72091c80, true
+	case SemanticTypeInputWalletCardSticker:
+		return 0x57df45a7, true
 	case SemanticTypeInputWalletImported:
 		return 0x66a66a3b, true
 	case SemanticTypeInputWalletNew:
@@ -10293,6 +10382,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x3e2793ba, true
 	case SemanticTypeMessageActionNoForwardsToggle:
 		return 0xbf7d6572, true
+	case SemanticTypeMessageActionNoPaidMessagesTokenUsed:
+		return 0xc1d2f1c6, true
 	case SemanticTypeMessageActionPaidMessagesPrice:
 		return 0x84b88578, true
 	case SemanticTypeMessageActionPaidMessagesRefunded:
@@ -10474,7 +10565,7 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 	case SemanticTypeMessageReplies:
 		return 0x83d60fc2, true
 	case SemanticTypeMessageReplyHeader:
-		return 0x1b97dd66, true
+		return 0xddb5ab75, true
 	case SemanticTypeMessageReplyStoryHeader:
 		return 0x0e5af939, true
 	case SemanticTypeMessageReportOption:
@@ -10889,6 +10980,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x8a2932f3, true
 	case SemanticTypePaymentsStarGiftCollectionsNotModified:
 		return 0xa0ba4f17, true
+	case SemanticTypePaymentsStarGiftDepositPayload:
+		return 0x725bb4eb, true
 	case SemanticTypePaymentsStarGiftUpgradeAttributes:
 		return 0x46c6e36f, true
 	case SemanticTypePaymentsStarGiftUpgradePreview:
@@ -11309,6 +11402,18 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x243e1c66, true
 	case SemanticTypeSendMessageUploadVideoAction:
 		return 0xe9763aec, true
+	case SemanticTypeShareThemeBackdropOption:
+		return 0x45c1d652, true
+	case SemanticTypeShareThemeBackdrops:
+		return 0xaaeadce0, true
+	case SemanticTypeShareThemeBackdropsNotModified:
+		return 0x7a3f6dff, true
+	case SemanticTypeShareThemeDefault:
+		return 0x95ace84f, true
+	case SemanticTypeShareThemeEmojiBackdrop:
+		return 0x64b334e1, true
+	case SemanticTypeShareThemeGift:
+		return 0xebece66d, true
 	case SemanticTypeShippingOption:
 		return 0xb6213cdf, true
 	case SemanticTypeSMSJob:
@@ -12044,7 +12149,7 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 	case SemanticTypeUserEmpty:
 		return 0xd3bc4b7a, true
 	case SemanticTypeUserFull:
-		return 0x06cbe645, true
+		return 0xb90c2afd, true
 	case SemanticTypeUserProfilePhoto:
 		return 0x82d1f706, true
 	case SemanticTypeUserProfilePhotoEmpty:
@@ -12085,6 +12190,10 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xe0804116, true
 	case SemanticTypeWallPaperSettings:
 		return 0x372efcd0, true
+	case SemanticTypeWalletCard:
+		return 0x8ed043b1, true
+	case SemanticTypeWalletCardSticker:
+		return 0xf3010cba, true
 	case SemanticTypeWalletEncryptedSecretPhrasePart:
 		return 0x18e82537, true
 	case SemanticTypeWalletExistingBalance:
@@ -12094,7 +12203,7 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 	case SemanticTypeWalletNftAttribute:
 		return 0x4c1ef10e, true
 	case SemanticTypeWalletNftItem:
-		return 0x3441fd1c, true
+		return 0x173dfaf3, true
 	case SemanticTypeWalletNftItems:
 		return 0x794d486f, true
 	case SemanticTypeWalletProofChallenge:
@@ -12121,8 +12230,12 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x952dc143, true
 	case SemanticTypeWalletTransactionPeerAddress:
 		return 0x062cc1bc, true
+	case SemanticTypeWalletTransactionPeerChannel:
+		return 0x54e70c31, true
 	case SemanticTypeWalletTransactionPeerOnramp:
 		return 0xe595186e, true
+	case SemanticTypeWalletTransactionPeerTelegramGift:
+		return 0xf4729499, true
 	case SemanticTypeWalletTransactionPeerUnsupported:
 		return 0x728bed5a, true
 	case SemanticTypeWalletTransactionPeerUser:
@@ -12745,6 +12858,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xba6705f0, true
 	case SemanticMethodContactsExportContactToken:
 		return 0xf8654027, true
+	case SemanticMethodContactsExportNoPaidMessagesToken:
+		return 0x83c586ae, true
 	case SemanticMethodContactsGetBirthdays:
 		return 0xdaeda864, true
 	case SemanticMethodContactsGetBlocked:
@@ -12767,6 +12882,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x13005788, true
 	case SemanticMethodContactsImportContacts:
 		return 0x2c800be5, true
+	case SemanticMethodContactsImportNoPaidMessagesToken:
+		return 0x35a7c6ca, true
 	case SemanticMethodContactsResetSaved:
 		return 0x879537f1, true
 	case SemanticMethodContactsResetTopPeerRating:
@@ -13161,6 +13278,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x6aa3f6bd, true
 	case SemanticMethodMessagesGetSearchResultsPositions:
 		return 0x9c7f2f10, true
+	case SemanticMethodMessagesGetShareThemeBackdrops:
+		return 0xf4599ef2, true
 	case SemanticMethodMessagesGetSplitRanges:
 		return 0x1cff7e08, true
 	case SemanticMethodMessagesGetSponsoredMessages:
@@ -13349,6 +13468,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xbb12a419, true
 	case SemanticMethodMessagesSetInlineGameScore:
 		return 0x15ad9f64, true
+	case SemanticMethodMessagesSetShareTheme:
+		return 0x698a9b1a, true
 	case SemanticMethodMessagesSetTyping:
 		return 0x58943ee2, true
 	case SemanticMethodMessagesStartBot:
@@ -13433,8 +13554,14 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xa2197cf6, true
 	case SemanticMethodPaymentsCreateStarGiftCollection:
 		return 0x1f4a0e87, true
+	case SemanticMethodPaymentsDeleteStarGift:
+		return 0x3cdaf8aa, true
 	case SemanticMethodPaymentsDeleteStarGiftCollection:
 		return 0xad5648e8, true
+	case SemanticMethodPaymentsDepositStarGift:
+		return 0xc0a2ea9f, true
+	case SemanticMethodPaymentsDisplayStarGift:
+		return 0x4aa5f0fe, true
 	case SemanticMethodPaymentsEditConnectedStarRefBot:
 		return 0xe4fca4a3, true
 	case SemanticMethodPaymentsExportInvoice:
@@ -13490,7 +13617,7 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 	case SemanticMethodPaymentsGetStarGiftUpgradePreview:
 		return 0x9c9abcb1, true
 	case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
-		return 0xd06e93a8, true
+		return 0xc8ca817b, true
 	case SemanticMethodPaymentsGetStarGifts:
 		return 0xc4563590, true
 	case SemanticMethodPaymentsGetStarsGiftOptions:
@@ -13549,6 +13676,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xaed6e4f5, true
 	case SemanticMethodPaymentsValidateRequestedInfo:
 		return 0xb6c8f12b, true
+	case SemanticMethodPaymentsWithdrawStarGift:
+		return 0xec2030ae, true
 	case SemanticMethodPhoneAcceptCall:
 		return 0x3bd2b4a0, true
 	case SemanticMethodPhoneCheckGroupCall:
@@ -13849,6 +13978,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xd8c72eec, true
 	case SemanticMethodWalletSendTransfer:
 		return 0xd9e5d9e2, true
+	case SemanticMethodWalletSetCardStickers:
+		return 0x068509ac, true
 	case SemanticMethodWalletTonConnectClaimRequest:
 		return 0x66b57b41, true
 	case SemanticMethodWalletTonConnectCloseSession:
@@ -13939,6 +14070,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeEphemeralMessage:
 			return 0, false
+		case SemanticTypeExportedNoPaidMessagesToken:
+			return 0, false
 		case SemanticTypeInlineButtonTypeBuy:
 			return 0, false
 		case SemanticTypeInlineButtonTypeCallback:
@@ -13987,6 +14120,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x5b1ccb28, true
 		case SemanticTypeInputReplyToEphemeralMessage:
 			return 0, false
+		case SemanticTypeInputReplyToMessage:
+			return 0x3bd4b7c2, true
 		case SemanticTypeInputRichFileDocument:
 			return 0, false
 		case SemanticTypeInputRichFilePhoto:
@@ -13999,9 +14134,13 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeInputSendMessageRichMessageDraftAction:
 			return 0, false
+		case SemanticTypeInputShareThemeGift:
+			return 0, false
 		case SemanticTypeInputStorePaymentAuthCode:
 			return 0x9bb2636d, true
 		case SemanticTypeInputTonConnectOauthSession:
+			return 0, false
+		case SemanticTypeInputWalletCardSticker:
 			return 0, false
 		case SemanticTypeInputWalletImported:
 			return 0, false
@@ -14057,12 +14196,16 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageActionGramTransfer:
 			return 0, false
+		case SemanticTypeMessageActionNoPaidMessagesTokenUsed:
+			return 0, false
 		case SemanticTypeMessageActionStarGiftUnique:
 			return 0xe6c31522, true
 		case SemanticTypeMessageActionWalletTonConnectRequest:
 			return 0, false
 		case SemanticTypeMessageEntityTonAddress:
 			return 0, false
+		case SemanticTypeMessageReplyHeader:
+			return 0x1b97dd66, true
 		case SemanticTypeMessagesChatInviteJoinResultOk:
 			return 0, false
 		case SemanticTypeMessagesChatInviteJoinResultWebView:
@@ -14123,6 +14266,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x5e068047, true
 		case SemanticTypePaymentsCurrencyRates:
 			return 0, false
+		case SemanticTypePaymentsStarGiftDepositPayload:
+			return 0, false
 		case SemanticTypeReplyInlineMarkup:
 			return 0x48a30254, true
 		case SemanticTypeRichButtonStyle:
@@ -14135,6 +14280,18 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeSendMessageTextDraftAction:
 			return 0x376d975c, true
+		case SemanticTypeShareThemeBackdropOption:
+			return 0, false
+		case SemanticTypeShareThemeBackdrops:
+			return 0, false
+		case SemanticTypeShareThemeBackdropsNotModified:
+			return 0, false
+		case SemanticTypeShareThemeDefault:
+			return 0, false
+		case SemanticTypeShareThemeEmojiBackdrop:
+			return 0, false
+		case SemanticTypeShareThemeGift:
+			return 0, false
 		case SemanticTypeTextAutoEmail:
 			return 0, false
 		case SemanticTypeTextAutoPhone:
@@ -14215,6 +14372,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x3cd623ec, true
 		case SemanticTypeUser:
 			return 0x31774388, true
+		case SemanticTypeUserFull:
+			return 0x06cbe645, true
+		case SemanticTypeWalletCard:
+			return 0, false
+		case SemanticTypeWalletCardSticker:
+			return 0, false
 		case SemanticTypeWalletEncryptedSecretPhrasePart:
 			return 0, false
 		case SemanticTypeWalletExistingBalance:
@@ -14251,7 +14414,11 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWalletTransactionPeerAddress:
 			return 0, false
+		case SemanticTypeWalletTransactionPeerChannel:
+			return 0, false
 		case SemanticTypeWalletTransactionPeerOnramp:
+			return 0, false
+		case SemanticTypeWalletTransactionPeerTelegramGift:
 			return 0, false
 		case SemanticTypeWalletTransactionPeerUnsupported:
 			return 0, false
@@ -14311,6 +14478,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodCommunitiesTogglePeerLinkRequestApproval:
 			return 0, false
+		case SemanticMethodContactsExportNoPaidMessagesToken:
+			return 0, false
+		case SemanticMethodContactsImportNoPaidMessagesToken:
+			return 0, false
 		case SemanticMethodContactsSearch:
 			return 0x11f812d8, true
 		case SemanticMethodEphemeralDeleteAllWelcomeMessages:
@@ -14341,6 +14512,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodMessagesGetRichMessage:
 			return 0, false
+		case SemanticMethodMessagesGetShareThemeBackdrops:
+			return 0, false
 		case SemanticMethodMessagesImportChatInvite:
 			return 0x6c50051c, true
 		case SemanticMethodMessagesRequestChatJoinWebView:
@@ -14353,9 +14526,17 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x545cd15a, true
 		case SemanticMethodMessagesSetBotGuestChatResult:
 			return 0x052b08db, true
+		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
 		case SemanticMethodMessagesTranslateRichMessage:
 			return 0, false
 		case SemanticMethodPaymentsCreateOnrampSession:
+			return 0, false
+		case SemanticMethodPaymentsDeleteStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDepositStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDisplayStarGift:
 			return 0, false
 		case SemanticMethodPaymentsGetCurrencyRates:
 			return 0, false
@@ -14368,6 +14549,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsGetOnrampProviders:
 			return 0, false
 		case SemanticMethodPaymentsGetOnrampQuote:
+			return 0, false
+		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
+			return 0xd06e93a8, true
+		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodToncenterGetStreamingURL:
 			return 0, false
@@ -14404,6 +14589,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodWalletReplaceWallet:
 			return 0, false
 		case SemanticMethodWalletSendTransfer:
+			return 0, false
+		case SemanticMethodWalletSetCardStickers:
 			return 0, false
 		case SemanticMethodWalletTonConnectClaimRequest:
 			return 0, false
@@ -14450,6 +14637,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeChannel:
 			return 0x1c32b11c, true
+		case SemanticTypeChannelFull:
+			return 0xa04e8d3a, true
 		case SemanticTypeCommunitiesParticipantJoinedChats:
 			return 0, false
 		case SemanticTypeCommunitiesPeerLinkRequests:
@@ -14477,6 +14666,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticTypeEphemeralWelcomeMessagesNotModified:
 			return 0, false
 		case SemanticTypeEphemeralMessage:
+			return 0, false
+		case SemanticTypeExportedNoPaidMessagesToken:
 			return 0, false
 		case SemanticTypeInlineButtonTypeBuy:
 			return 0, false
@@ -14526,6 +14717,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x5b1ccb28, true
 		case SemanticTypeInputReplyToEphemeralMessage:
 			return 0, false
+		case SemanticTypeInputReplyToMessage:
+			return 0x3bd4b7c2, true
 		case SemanticTypeInputRichFileDocument:
 			return 0, false
 		case SemanticTypeInputRichFilePhoto:
@@ -14538,7 +14731,11 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeInputSendMessageRichMessageDraftAction:
 			return 0, false
+		case SemanticTypeInputShareThemeGift:
+			return 0, false
 		case SemanticTypeInputTonConnectOauthSession:
+			return 0, false
+		case SemanticTypeInputWalletCardSticker:
 			return 0, false
 		case SemanticTypeInputWalletImported:
 			return 0, false
@@ -14586,12 +14783,16 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageActionGramTransfer:
 			return 0, false
+		case SemanticTypeMessageActionNoPaidMessagesTokenUsed:
+			return 0, false
 		case SemanticTypeMessageActionStarGiftUnique:
 			return 0xe6c31522, true
 		case SemanticTypeMessageActionWalletTonConnectRequest:
 			return 0, false
 		case SemanticTypeMessageEntityTonAddress:
 			return 0, false
+		case SemanticTypeMessageReplyHeader:
+			return 0x1b97dd66, true
 		case SemanticTypeMessagesChatInviteJoinResultWebView:
 			return 0x774bbdf4, true
 		case SemanticTypeMessagesComposedRichMessageWithAI:
@@ -14650,6 +14851,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x5e068047, true
 		case SemanticTypePaymentsCurrencyRates:
 			return 0, false
+		case SemanticTypePaymentsStarGiftDepositPayload:
+			return 0, false
 		case SemanticTypeReplyInlineMarkup:
 			return 0x48a30254, true
 		case SemanticTypeRichButtonStyle:
@@ -14662,6 +14865,18 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeSendMessageTextDraftAction:
 			return 0x376d975c, true
+		case SemanticTypeShareThemeBackdropOption:
+			return 0, false
+		case SemanticTypeShareThemeBackdrops:
+			return 0, false
+		case SemanticTypeShareThemeBackdropsNotModified:
+			return 0, false
+		case SemanticTypeShareThemeDefault:
+			return 0, false
+		case SemanticTypeShareThemeEmojiBackdrop:
+			return 0, false
+		case SemanticTypeShareThemeGift:
+			return 0, false
 		case SemanticTypeTextAutoEmail:
 			return 0, false
 		case SemanticTypeTextAutoPhone:
@@ -14730,6 +14945,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x3cd623ec, true
 		case SemanticTypeUser:
 			return 0x31774388, true
+		case SemanticTypeUserFull:
+			return 0x06cbe645, true
+		case SemanticTypeWalletCard:
+			return 0, false
+		case SemanticTypeWalletCardSticker:
+			return 0, false
 		case SemanticTypeWalletEncryptedSecretPhrasePart:
 			return 0, false
 		case SemanticTypeWalletExistingBalance:
@@ -14766,7 +14987,11 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWalletTransactionPeerAddress:
 			return 0, false
+		case SemanticTypeWalletTransactionPeerChannel:
+			return 0, false
 		case SemanticTypeWalletTransactionPeerOnramp:
+			return 0, false
+		case SemanticTypeWalletTransactionPeerTelegramGift:
 			return 0, false
 		case SemanticTypeWalletTransactionPeerUnsupported:
 			return 0, false
@@ -14810,6 +15035,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodCommunitiesTogglePeerLinkRequestApproval:
 			return 0, false
+		case SemanticMethodContactsExportNoPaidMessagesToken:
+			return 0, false
+		case SemanticMethodContactsImportNoPaidMessagesToken:
+			return 0, false
 		case SemanticMethodContactsSearch:
 			return 0x11f812d8, true
 		case SemanticMethodEphemeralDeleteAllWelcomeMessages:
@@ -14838,6 +15067,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x51e842e1, true
 		case SemanticMethodMessagesGetRichMessage:
 			return 0, false
+		case SemanticMethodMessagesGetShareThemeBackdrops:
+			return 0, false
 		case SemanticMethodMessagesRequestChatJoinWebView:
 			return 0, false
 		case SemanticMethodMessagesSaveDraft:
@@ -14846,9 +15077,17 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x4bc6589a, true
 		case SemanticMethodMessagesSendMessage:
 			return 0x545cd15a, true
+		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
 		case SemanticMethodMessagesTranslateRichMessage:
 			return 0, false
 		case SemanticMethodPaymentsCreateOnrampSession:
+			return 0, false
+		case SemanticMethodPaymentsDeleteStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDepositStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDisplayStarGift:
 			return 0, false
 		case SemanticMethodPaymentsGetCurrencyRates:
 			return 0, false
@@ -14861,6 +15100,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsGetOnrampProviders:
 			return 0, false
 		case SemanticMethodPaymentsGetOnrampQuote:
+			return 0, false
+		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
+			return 0xd06e93a8, true
+		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodToncenterGetStreamingURL:
 			return 0, false
@@ -14897,6 +15140,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodWalletReplaceWallet:
 			return 0, false
 		case SemanticMethodWalletSendTransfer:
+			return 0, false
+		case SemanticMethodWalletSetCardStickers:
 			return 0, false
 		case SemanticMethodWalletTonConnectClaimRequest:
 			return 0, false
@@ -14941,6 +15186,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeChannel:
 			return 0x1c32b11c, true
+		case SemanticTypeChannelFull:
+			return 0xa04e8d3a, true
 		case SemanticTypeCommunitiesParticipantJoinedChats:
 			return 0, false
 		case SemanticTypeCommunitiesPeerLinkRequests:
@@ -14966,6 +15213,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticTypeEphemeralWelcomeMessagesNotModified:
 			return 0, false
 		case SemanticTypeEphemeralMessage:
+			return 0, false
+		case SemanticTypeExportedNoPaidMessagesToken:
 			return 0, false
 		case SemanticTypeInlineButtonTypeBuy:
 			return 0, false
@@ -15011,9 +15260,15 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x5b1ccb28, true
 		case SemanticTypeInputReplyToEphemeralMessage:
 			return 0, false
+		case SemanticTypeInputReplyToMessage:
+			return 0x3bd4b7c2, true
 		case SemanticTypeInputSendMessageRichMessageDraftAction:
 			return 0xe2b23b51, true
+		case SemanticTypeInputShareThemeGift:
+			return 0, false
 		case SemanticTypeInputTonConnectOauthSession:
+			return 0, false
+		case SemanticTypeInputWalletCardSticker:
 			return 0, false
 		case SemanticTypeInputWalletImported:
 			return 0, false
@@ -15059,12 +15314,16 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageActionGramTransfer:
 			return 0, false
+		case SemanticTypeMessageActionNoPaidMessagesTokenUsed:
+			return 0, false
 		case SemanticTypeMessageActionStarGiftUnique:
 			return 0xe6c31522, true
 		case SemanticTypeMessageActionWalletTonConnectRequest:
 			return 0, false
 		case SemanticTypeMessageEntityTonAddress:
 			return 0, false
+		case SemanticTypeMessageReplyHeader:
+			return 0x1b97dd66, true
 		case SemanticTypeMessagesChatInviteJoinResultWebView:
 			return 0x2f51c337, true
 		case SemanticTypeMessagesComposedRichMessageWithAI:
@@ -15095,6 +15354,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypePaymentsCurrencyRates:
 			return 0, false
+		case SemanticTypePaymentsStarGiftDepositPayload:
+			return 0, false
 		case SemanticTypeReplyInlineMarkup:
 			return 0x48a30254, true
 		case SemanticTypeRichButtonStyle:
@@ -15105,6 +15366,18 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeSendMessageTextDraftAction:
 			return 0x376d975c, true
+		case SemanticTypeShareThemeBackdropOption:
+			return 0, false
+		case SemanticTypeShareThemeBackdrops:
+			return 0, false
+		case SemanticTypeShareThemeBackdropsNotModified:
+			return 0, false
+		case SemanticTypeShareThemeDefault:
+			return 0, false
+		case SemanticTypeShareThemeEmojiBackdrop:
+			return 0, false
+		case SemanticTypeShareThemeGift:
+			return 0, false
 		case SemanticTypeTextButton:
 			return 0, false
 		case SemanticTypeTextDiff:
@@ -15147,6 +15420,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x3cd623ec, true
 		case SemanticTypeUser:
 			return 0x31774388, true
+		case SemanticTypeUserFull:
+			return 0x06cbe645, true
+		case SemanticTypeWalletCard:
+			return 0, false
+		case SemanticTypeWalletCardSticker:
+			return 0, false
 		case SemanticTypeWalletEncryptedSecretPhrasePart:
 			return 0, false
 		case SemanticTypeWalletExistingBalance:
@@ -15183,7 +15462,11 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWalletTransactionPeerAddress:
 			return 0, false
+		case SemanticTypeWalletTransactionPeerChannel:
+			return 0, false
 		case SemanticTypeWalletTransactionPeerOnramp:
+			return 0, false
+		case SemanticTypeWalletTransactionPeerTelegramGift:
 			return 0, false
 		case SemanticTypeWalletTransactionPeerUnsupported:
 			return 0, false
@@ -15225,6 +15508,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodCommunitiesTogglePeerLinkRequestApproval:
 			return 0, false
+		case SemanticMethodContactsExportNoPaidMessagesToken:
+			return 0, false
+		case SemanticMethodContactsImportNoPaidMessagesToken:
+			return 0, false
 		case SemanticMethodEphemeralDeleteAllWelcomeMessages:
 			return 0, false
 		case SemanticMethodEphemeralDeleteMessage:
@@ -15245,13 +15532,23 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x67a3f0de, true
 		case SemanticMethodMessagesComposeRichMessageWithAI:
 			return 0, false
+		case SemanticMethodMessagesGetShareThemeBackdrops:
+			return 0, false
 		case SemanticMethodMessagesRequestChatJoinWebView:
 			return 0, false
 		case SemanticMethodMessagesSearchGlobal:
 			return 0x4bc6589a, true
+		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
 		case SemanticMethodMessagesTranslateRichMessage:
 			return 0, false
 		case SemanticMethodPaymentsCreateOnrampSession:
+			return 0, false
+		case SemanticMethodPaymentsDeleteStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDepositStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDisplayStarGift:
 			return 0, false
 		case SemanticMethodPaymentsGetCurrencyRates:
 			return 0, false
@@ -15264,6 +15561,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsGetOnrampProviders:
 			return 0, false
 		case SemanticMethodPaymentsGetOnrampQuote:
+			return 0, false
+		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
+			return 0xd06e93a8, true
+		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodToncenterGetStreamingURL:
 			return 0, false
@@ -15300,6 +15601,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodWalletReplaceWallet:
 			return 0, false
 		case SemanticMethodWalletSendTransfer:
+			return 0, false
+		case SemanticMethodWalletSetCardStickers:
 			return 0, false
 		case SemanticMethodWalletTonConnectClaimRequest:
 			return 0, false
@@ -15340,6 +15643,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeButtonTypeSimpleWebView:
 			return 0, false
+		case SemanticTypeChannel:
+			return 0xd49f34c6, true
+		case SemanticTypeChannelFull:
+			return 0xa04e8d3a, true
 		case SemanticTypeCurrencyRate:
 			return 0, false
 		case SemanticTypeEphemeralWelcomeMessages:
@@ -15348,6 +15655,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeEphemeralMessage:
 			return 0xd9c6dc1a, true
+		case SemanticTypeExportedNoPaidMessagesToken:
+			return 0, false
 		case SemanticTypeInlineButtonTypeBuy:
 			return 0, false
 		case SemanticTypeInlineButtonTypeCallback:
@@ -15384,9 +15693,15 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x7d5e07c7, true
 		case SemanticTypeInputPasskeyCredentialFirebasePNV:
 			return 0x5b1ccb28, true
+		case SemanticTypeInputReplyToMessage:
+			return 0x3bd4b7c2, true
 		case SemanticTypeInputSendMessageRichMessageDraftAction:
 			return 0xe2b23b51, true
+		case SemanticTypeInputShareThemeGift:
+			return 0, false
 		case SemanticTypeInputTonConnectOauthSession:
+			return 0, false
+		case SemanticTypeInputWalletCardSticker:
 			return 0, false
 		case SemanticTypeInputWalletImported:
 			return 0, false
@@ -15430,12 +15745,16 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageActionGramTransfer:
 			return 0, false
+		case SemanticTypeMessageActionNoPaidMessagesTokenUsed:
+			return 0, false
 		case SemanticTypeMessageActionStarGiftUnique:
 			return 0xe6c31522, true
 		case SemanticTypeMessageActionWalletTonConnectRequest:
 			return 0, false
 		case SemanticTypeMessageEntityTonAddress:
 			return 0, false
+		case SemanticTypeMessageReplyHeader:
+			return 0x1b97dd66, true
 		case SemanticTypeOnrampAvailability:
 			return 0, false
 		case SemanticTypeOnrampLimits:
@@ -15458,6 +15777,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypePaymentsCurrencyRates:
 			return 0, false
+		case SemanticTypePaymentsStarGiftDepositPayload:
+			return 0, false
 		case SemanticTypeReplyInlineMarkup:
 			return 0x48a30254, true
 		case SemanticTypeRichButtonStyle:
@@ -15468,6 +15789,18 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeSendMessageTextDraftAction:
 			return 0x376d975c, true
+		case SemanticTypeShareThemeBackdropOption:
+			return 0, false
+		case SemanticTypeShareThemeBackdrops:
+			return 0, false
+		case SemanticTypeShareThemeBackdropsNotModified:
+			return 0, false
+		case SemanticTypeShareThemeDefault:
+			return 0, false
+		case SemanticTypeShareThemeEmojiBackdrop:
+			return 0, false
+		case SemanticTypeShareThemeGift:
+			return 0, false
 		case SemanticTypeTextButton:
 			return 0, false
 		case SemanticTypeTextTonAddress:
@@ -15498,6 +15831,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeURLAuthResultRequest:
 			return 0x3cd623ec, true
+		case SemanticTypeUserFull:
+			return 0x06cbe645, true
+		case SemanticTypeWalletCard:
+			return 0, false
+		case SemanticTypeWalletCardSticker:
+			return 0, false
 		case SemanticTypeWalletEncryptedSecretPhrasePart:
 			return 0, false
 		case SemanticTypeWalletExistingBalance:
@@ -15534,7 +15873,11 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWalletTransactionPeerAddress:
 			return 0, false
+		case SemanticTypeWalletTransactionPeerChannel:
+			return 0, false
 		case SemanticTypeWalletTransactionPeerOnramp:
+			return 0, false
+		case SemanticTypeWalletTransactionPeerTelegramGift:
 			return 0, false
 		case SemanticTypeWalletTransactionPeerUnsupported:
 			return 0, false
@@ -15558,6 +15901,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodBotsSetCustomVerification:
 			return 0x8b89dfbd, true
+		case SemanticMethodContactsExportNoPaidMessagesToken:
+			return 0, false
+		case SemanticMethodContactsImportNoPaidMessagesToken:
+			return 0, false
 		case SemanticMethodEphemeralDeleteAllWelcomeMessages:
 			return 0, false
 		case SemanticMethodEphemeralDeleteMessage:
@@ -15572,7 +15919,17 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x68cbd09f, true
 		case SemanticMethodMessagesAcceptURLAuth:
 			return 0x67a3f0de, true
+		case SemanticMethodMessagesGetShareThemeBackdrops:
+			return 0, false
+		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
 		case SemanticMethodPaymentsCreateOnrampSession:
+			return 0, false
+		case SemanticMethodPaymentsDeleteStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDepositStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDisplayStarGift:
 			return 0, false
 		case SemanticMethodPaymentsGetCurrencyRates:
 			return 0, false
@@ -15585,6 +15942,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsGetOnrampProviders:
 			return 0, false
 		case SemanticMethodPaymentsGetOnrampQuote:
+			return 0, false
+		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
+			return 0xd06e93a8, true
+		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodToncenterGetStreamingURL:
 			return 0, false
@@ -15622,6 +15983,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodWalletSendTransfer:
 			return 0, false
+		case SemanticMethodWalletSetCardStickers:
+			return 0, false
 		case SemanticMethodWalletTonConnectClaimRequest:
 			return 0, false
 		case SemanticMethodWalletTonConnectCloseSession:
@@ -15647,7 +16010,13 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0xf93cd45c, true
 		case SemanticTypeBotVerifierSettings:
 			return 0xb0cd6617, true
+		case SemanticTypeChannel:
+			return 0xd49f34c6, true
+		case SemanticTypeChannelFull:
+			return 0xa04e8d3a, true
 		case SemanticTypeCurrencyRate:
+			return 0, false
+		case SemanticTypeExportedNoPaidMessagesToken:
 			return 0, false
 		case SemanticTypeInputKeyboardButtonRequestPeer:
 			return 0, false
@@ -15657,7 +16026,13 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeInputPasskeyCredentialFirebasePNV:
 			return 0x5b1ccb28, true
+		case SemanticTypeInputReplyToMessage:
+			return 0x3bd4b7c2, true
+		case SemanticTypeInputShareThemeGift:
+			return 0, false
 		case SemanticTypeInputTonConnectOauthSession:
+			return 0, false
+		case SemanticTypeInputWalletCardSticker:
 			return 0, false
 		case SemanticTypeInputWalletImported:
 			return 0, false
@@ -15695,10 +16070,14 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageActionGramTransfer:
 			return 0, false
+		case SemanticTypeMessageActionNoPaidMessagesTokenUsed:
+			return 0, false
 		case SemanticTypeMessageActionWalletTonConnectRequest:
 			return 0, false
 		case SemanticTypeMessageEntityTonAddress:
 			return 0, false
+		case SemanticTypeMessageReplyHeader:
+			return 0x1b97dd66, true
 		case SemanticTypeOnrampAvailability:
 			return 0, false
 		case SemanticTypeOnrampLimits:
@@ -15712,6 +16091,20 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticTypeOnrampSession:
 			return 0, false
 		case SemanticTypePaymentsCurrencyRates:
+			return 0, false
+		case SemanticTypePaymentsStarGiftDepositPayload:
+			return 0, false
+		case SemanticTypeShareThemeBackdropOption:
+			return 0, false
+		case SemanticTypeShareThemeBackdrops:
+			return 0, false
+		case SemanticTypeShareThemeBackdropsNotModified:
+			return 0, false
+		case SemanticTypeShareThemeDefault:
+			return 0, false
+		case SemanticTypeShareThemeEmojiBackdrop:
+			return 0, false
+		case SemanticTypeShareThemeGift:
 			return 0, false
 		case SemanticTypeTextTonAddress:
 			return 0, false
@@ -15739,6 +16132,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeURLAuthResultRequest:
 			return 0x3cd623ec, true
+		case SemanticTypeUserFull:
+			return 0x06cbe645, true
+		case SemanticTypeWalletCard:
+			return 0, false
+		case SemanticTypeWalletCardSticker:
+			return 0, false
 		case SemanticTypeWalletEncryptedSecretPhrasePart:
 			return 0, false
 		case SemanticTypeWalletExistingBalance:
@@ -15775,7 +16174,11 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWalletTransactionPeerAddress:
 			return 0, false
+		case SemanticTypeWalletTransactionPeerChannel:
+			return 0, false
 		case SemanticTypeWalletTransactionPeerOnramp:
+			return 0, false
+		case SemanticTypeWalletTransactionPeerTelegramGift:
 			return 0, false
 		case SemanticTypeWalletTransactionPeerUnsupported:
 			return 0, false
@@ -15795,9 +16198,23 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodBotsSetCustomVerification:
 			return 0x8b89dfbd, true
+		case SemanticMethodContactsExportNoPaidMessagesToken:
+			return 0, false
+		case SemanticMethodContactsImportNoPaidMessagesToken:
+			return 0, false
 		case SemanticMethodMessagesAcceptURLAuth:
 			return 0x67a3f0de, true
+		case SemanticMethodMessagesGetShareThemeBackdrops:
+			return 0, false
+		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
 		case SemanticMethodPaymentsCreateOnrampSession:
+			return 0, false
+		case SemanticMethodPaymentsDeleteStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDepositStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDisplayStarGift:
 			return 0, false
 		case SemanticMethodPaymentsGetCurrencyRates:
 			return 0, false
@@ -15810,6 +16227,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsGetOnrampProviders:
 			return 0, false
 		case SemanticMethodPaymentsGetOnrampQuote:
+			return 0, false
+		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
+			return 0xd06e93a8, true
+		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodToncenterGetStreamingURL:
 			return 0, false
@@ -15847,6 +16268,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodWalletSendTransfer:
 			return 0, false
+		case SemanticMethodWalletSetCardStickers:
+			return 0, false
 		case SemanticMethodWalletTonConnectClaimRequest:
 			return 0, false
 		case SemanticMethodWalletTonConnectCloseSession:
@@ -15868,6 +16291,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		}
 	case Profile230:
 		switch semantic {
+		case SemanticTypeChannel:
+			return 0xd49f34c6, true
+		case SemanticTypeChannelFull:
+			return 0xa04e8d3a, true
+		case SemanticTypeExportedNoPaidMessagesToken:
+			return 0, false
 		case SemanticTypeInputKeyboardButtonRequestPeer:
 			return 0, false
 		case SemanticTypeInputKeyboardButtonURLAuth:
@@ -15876,7 +16305,13 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeInputPasskeyCredentialFirebasePNV:
 			return 0, false
+		case SemanticTypeInputReplyToMessage:
+			return 0x3bd4b7c2, true
+		case SemanticTypeInputShareThemeGift:
+			return 0, false
 		case SemanticTypeInputTonConnectOauthSession:
+			return 0, false
+		case SemanticTypeInputWalletCardSticker:
 			return 0, false
 		case SemanticTypeKeyboardButtonBuy:
 			return 0, false
@@ -15906,10 +16341,161 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeKeyboardButtonWebView:
 			return 0, false
+		case SemanticTypeMessageActionNoPaidMessagesTokenUsed:
+			return 0, false
+		case SemanticTypeMessageReplyHeader:
+			return 0x1b97dd66, true
+		case SemanticTypePaymentsStarGiftDepositPayload:
+			return 0, false
+		case SemanticTypeShareThemeBackdropOption:
+			return 0, false
+		case SemanticTypeShareThemeBackdrops:
+			return 0, false
+		case SemanticTypeShareThemeBackdropsNotModified:
+			return 0, false
+		case SemanticTypeShareThemeDefault:
+			return 0, false
+		case SemanticTypeShareThemeEmojiBackdrop:
+			return 0, false
+		case SemanticTypeShareThemeGift:
+			return 0, false
 		case SemanticTypeURLAuthResultRequest:
 			return 0x3cd623ec, true
+		case SemanticTypeUserFull:
+			return 0x06cbe645, true
+		case SemanticTypeWalletCard:
+			return 0, false
+		case SemanticTypeWalletCardSticker:
+			return 0, false
+		case SemanticTypeWalletNftItem:
+			return 0x3441fd1c, true
+		case SemanticTypeWalletTransactionPeerChannel:
+			return 0, false
+		case SemanticTypeWalletTransactionPeerTelegramGift:
+			return 0, false
+		case SemanticMethodContactsExportNoPaidMessagesToken:
+			return 0, false
+		case SemanticMethodContactsImportNoPaidMessagesToken:
+			return 0, false
 		case SemanticMethodMessagesAcceptURLAuth:
 			return 0x67a3f0de, true
+		case SemanticMethodMessagesGetShareThemeBackdrops:
+			return 0, false
+		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
+		case SemanticMethodPaymentsDeleteStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDepositStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDisplayStarGift:
+			return 0, false
+		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
+			return 0xd06e93a8, true
+		case SemanticMethodPaymentsWithdrawStarGift:
+			return 0, false
+		case SemanticMethodWalletSetCardStickers:
+			return 0, false
+		}
+	case Profile231:
+		switch semantic {
+		case SemanticTypeChannel:
+			return 0xd49f34c6, true
+		case SemanticTypeChannelFull:
+			return 0xa04e8d3a, true
+		case SemanticTypeExportedNoPaidMessagesToken:
+			return 0, false
+		case SemanticTypeInputKeyboardButtonRequestPeer:
+			return 0, false
+		case SemanticTypeInputKeyboardButtonURLAuth:
+			return 0, false
+		case SemanticTypeInputKeyboardButtonUserProfile:
+			return 0, false
+		case SemanticTypeInputPasskeyCredentialFirebasePNV:
+			return 0, false
+		case SemanticTypeInputReplyToMessage:
+			return 0x3bd4b7c2, true
+		case SemanticTypeInputShareThemeGift:
+			return 0, false
+		case SemanticTypeInputWalletCardSticker:
+			return 0, false
+		case SemanticTypeKeyboardButtonBuy:
+			return 0, false
+		case SemanticTypeKeyboardButtonCallback:
+			return 0, false
+		case SemanticTypeKeyboardButtonCopy:
+			return 0, false
+		case SemanticTypeKeyboardButtonGame:
+			return 0, false
+		case SemanticTypeKeyboardButtonRequestGeoLocation:
+			return 0, false
+		case SemanticTypeKeyboardButtonRequestPeer:
+			return 0, false
+		case SemanticTypeKeyboardButtonRequestPhone:
+			return 0, false
+		case SemanticTypeKeyboardButtonRequestPoll:
+			return 0, false
+		case SemanticTypeKeyboardButtonSimpleWebView:
+			return 0, false
+		case SemanticTypeKeyboardButtonSwitchInline:
+			return 0, false
+		case SemanticTypeKeyboardButtonURL:
+			return 0, false
+		case SemanticTypeKeyboardButtonURLAuth:
+			return 0, false
+		case SemanticTypeKeyboardButtonUserProfile:
+			return 0, false
+		case SemanticTypeKeyboardButtonWebView:
+			return 0, false
+		case SemanticTypeMessageActionNoPaidMessagesTokenUsed:
+			return 0, false
+		case SemanticTypeMessageReplyHeader:
+			return 0x1b97dd66, true
+		case SemanticTypePaymentsStarGiftDepositPayload:
+			return 0, false
+		case SemanticTypeShareThemeBackdropOption:
+			return 0, false
+		case SemanticTypeShareThemeBackdrops:
+			return 0, false
+		case SemanticTypeShareThemeBackdropsNotModified:
+			return 0, false
+		case SemanticTypeShareThemeDefault:
+			return 0, false
+		case SemanticTypeShareThemeEmojiBackdrop:
+			return 0, false
+		case SemanticTypeShareThemeGift:
+			return 0, false
+		case SemanticTypeUserFull:
+			return 0x06cbe645, true
+		case SemanticTypeWalletCard:
+			return 0, false
+		case SemanticTypeWalletCardSticker:
+			return 0, false
+		case SemanticTypeWalletNftItem:
+			return 0x3441fd1c, true
+		case SemanticTypeWalletTransactionPeerChannel:
+			return 0, false
+		case SemanticTypeWalletTransactionPeerTelegramGift:
+			return 0, false
+		case SemanticMethodContactsExportNoPaidMessagesToken:
+			return 0, false
+		case SemanticMethodContactsImportNoPaidMessagesToken:
+			return 0, false
+		case SemanticMethodMessagesGetShareThemeBackdrops:
+			return 0, false
+		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
+		case SemanticMethodPaymentsDeleteStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDepositStarGift:
+			return 0, false
+		case SemanticMethodPaymentsDisplayStarGift:
+			return 0, false
+		case SemanticMethodPaymentsGetStarGiftWithdrawalURL:
+			return 0xd06e93a8, true
+		case SemanticMethodPaymentsWithdrawStarGift:
+			return 0, false
+		case SemanticMethodWalletSetCardStickers:
+			return 0, false
 		}
 	case ProfileCanonical:
 	default:
@@ -16044,6 +16630,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeMessageEntityDiffDelete, true
 	case 0x0656ac4b:
 		return SemanticTypeChannelParticipantsSearch, true
+	case 0x068509ac:
+		return SemanticMethodWalletSetCardStickers, true
 	case 0x068e9916:
 		return SemanticTypeAuthLoginTokenMigrateTo, true
 	case 0x0697102b:
@@ -16356,6 +16944,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeUpdateEncryptedChatTyping, true
 	case 0x1720b4d8:
 		return SemanticMethodMessagesReadPollVotes, true
+	case 0x173dfaf3:
+		return SemanticTypeWalletNftItem, true
 	case 0x1759c560:
 		return SemanticTypePageBlockPhoto, true
 	case 0x175df251:
@@ -16968,6 +17558,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodChannelsSetMainProfileTab, true
 	case 0x35a0e062:
 		return SemanticMethodMessagesGetEmojiKeywords, true
+	case 0x35a7c6ca:
+		return SemanticMethodContactsImportNoPaidMessagesToken, true
 	case 0x35a95cb9:
 		return SemanticTypeInputPeerChat, true
 	case 0x35a9e0d5:
@@ -17120,6 +17712,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeURLAuthResultRequest, true
 	case 0x3cd930b7:
 		return SemanticMethodChannelsSetEmojiStickers, true
+	case 0x3cdaf8aa:
+		return SemanticMethodPaymentsDeleteStarGift, true
 	case 0x3d662b7b:
 		return SemanticTypePrivacyKeyPhoneCall, true
 	case 0x3d6ce850:
@@ -17188,6 +17782,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodEphemeralGetCallbackAnswer, true
 	case 0x3fa53905:
 		return SemanticTypeKeyboardButtonBuy, true
+	case 0x3fb92b5b:
+		return SemanticTypeInputShareThemeGift, true
 	case 0x3fc18057:
 		return SemanticTypeInputStorePaymentAuthCode, true
 	case 0x3fc9053b:
@@ -17316,6 +17912,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeMessageViews, true
 	case 0x4576f3f0:
 		return SemanticTypeAttachMenuBotIconColor, true
+	case 0x45c1d652:
+		return SemanticTypeShareThemeBackdropOption, true
 	case 0x45d5b021:
 		return SemanticTypeMessageActionGiftStars, true
 	case 0x461b3f48:
@@ -17398,6 +17996,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeInputNotifyChats, true
 	case 0x4a992157:
 		return SemanticTypeInputStickeredMediaPhoto, true
+	case 0x4aa5f0fe:
+		return SemanticMethodPaymentsDisplayStarGift, true
 	case 0x4aa83913:
 		return SemanticMethodAicomposeCreateTone, true
 	case 0x4afe8f6d:
@@ -17610,6 +18210,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeWebPageAttributeTheme, true
 	case 0x54c01850:
 		return SemanticTypeUpdateChatDefaultBannedRights, true
+	case 0x54e70c31:
+		return SemanticTypeWalletTransactionPeerChannel, true
 	case 0x55188a2e:
 		return SemanticTypeChannelAdminLogEventActionChangeAbout, true
 	case 0x55451fa9:
@@ -17682,6 +18284,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodStoriesActivateStealthMode, true
 	case 0x57de635e:
 		return SemanticTypeMessageActionSuggestProfilePhoto, true
+	case 0x57df45a7:
+		return SemanticTypeInputWalletCardSticker, true
 	case 0x57e28221:
 		return SemanticTypeAccountContentSettings, true
 	case 0x57e2f66c:
@@ -17910,6 +18514,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodAccountToggleConnectedBotPaused, true
 	case 0x64780b14:
 		return SemanticMethodMessagesGetFeaturedStickers, true
+	case 0x64b334e1:
+		return SemanticTypeShareThemeEmojiBackdrop, true
 	case 0x64bd0306:
 		return SemanticTypeInputEncryptedFileUploaded, true
 	case 0x64e475c2:
@@ -18008,6 +18614,10 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypePageButton, true
 	case 0x695c9e7c:
 		return SemanticTypeUpdateReadChannelDiscussionOutbox, true
+	case 0x695dd042:
+		return SemanticTypeExportedNoPaidMessagesToken, true
+	case 0x698a9b1a:
+		return SemanticMethodMessagesSetShareTheme, true
 	case 0x69b8c4bf:
 		return SemanticTypeMessageActionWalletTonConnectRequest, true
 	case 0x69d66c45:
@@ -18168,6 +18778,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodContactsResolveUsername, true
 	case 0x725b04c3:
 		return SemanticTypeUpdatesCombined, true
+	case 0x725bb4eb:
+		return SemanticTypePaymentsStarGiftDepositPayload, true
 	case 0x728bed5a:
 		return SemanticTypeWalletTransactionPeerUnsupported, true
 	case 0x72a3158c:
@@ -18232,6 +18844,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodUsersGetSavedMusicByID, true
 	case 0x75b3b798:
 		return SemanticTypeUpdateStory, true
+	case 0x75c1ad70:
+		return SemanticTypeInputReplyToMessage, true
 	case 0x75c78e60:
 		return SemanticTypePhotoSize, true
 	case 0x7600b9d3:
@@ -18334,6 +18948,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeKeyboardButtonRequestPoll, true
 	case 0x7a1e11d1:
 		return SemanticTypeEmojiList, true
+	case 0x7a3f6dff:
+		return SemanticTypeShareThemeBackdropsNotModified, true
 	case 0x7a5fa236:
 		return SemanticMethodPaymentsGetResaleStarGifts, true
 	case 0x7a700873:
@@ -18352,6 +18968,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeEmojiGroup, true
 	case 0x7ab58308:
 		return SemanticTypeInputStarGiftAuctionSlug, true
+	case 0x7ad15240:
+		return SemanticTypeChannel, true
 	case 0x7adc669d:
 		return SemanticMethodContactsGetContactIDs, true
 	case 0x7b197dc8:
@@ -18514,6 +19132,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeUpdateChatUserTyping, true
 	case 0x83557dba:
 		return SemanticMethodMessagesEditInlineBotMessage, true
+	case 0x83c586ae:
+		return SemanticMethodContactsExportNoPaidMessagesToken, true
 	case 0x83d60fc2:
 		return SemanticTypeMessageReplies, true
 	case 0x840649cf:
@@ -18734,6 +19354,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeStatsGraph, true
 	case 0x8ecf0511:
 		return SemanticTypeMessagesBotPreparedInlineMessage, true
+	case 0x8ed043b1:
+		return SemanticTypeWalletCard, true
 	case 0x8ef3eab0:
 		return SemanticMethodAccountInitTakeoutSession, true
 	case 0x8ef8ecc0:
@@ -18862,6 +19484,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeAccountPassword, true
 	case 0x95ac5ce4:
 		return SemanticMethodAuthImportLoginToken, true
+	case 0x95ace84f:
+		return SemanticTypeShareThemeDefault, true
 	case 0x95c5346b:
 		return SemanticTypeWalletState, true
 	case 0x95d2ac92:
@@ -19358,6 +19982,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodAuthSignUp, true
 	case 0xaacfff84:
 		return SemanticTypeButtonTypeRequestPoll, true
+	case 0xaaeadce0:
+		return SemanticTypeShareThemeBackdrops, true
 	case 0xab03c6d9:
 		return SemanticTypeAuthSentCodeTypeFlashCall, true
 	case 0xab0f6b1e:
@@ -19674,6 +20300,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeInputPeerColorCollectible, true
 	case 0xb8f106e3:
 		return SemanticMethodMessagesSetBotGuestChatResult, true
+	case 0xb90c2afd:
+		return SemanticTypeUserFull, true
 	case 0xb91bbd3a:
 		return SemanticTypeMessageActionSetChatTheme, true
 	case 0xb92c09e2:
@@ -19868,6 +20496,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeMessageActionTopicEdit, true
 	case 0xc0977421:
 		return SemanticMethodHelpGetPromoData, true
+	case 0xc0a2ea9f:
+		return SemanticMethodPaymentsDepositStarGift, true
 	case 0xc0c4edc9:
 		return SemanticMethodPaymentsCheckCanSendGift, true
 	case 0xc0cf7646:
@@ -19890,6 +20520,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodAccountCancelPasswordEmail, true
 	case 0xc1cd5ea9:
 		return SemanticMethodInitConnection, true
+	case 0xc1d2f1c6:
+		return SemanticTypeMessageActionNoPaidMessagesTokenUsed, true
 	case 0xc1e4a2b1:
 		return SemanticTypeInputReportReasonOther, true
 	case 0xc1e92cc5:
@@ -19960,6 +20592,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodContactsGetStatuses, true
 	case 0xc4b9f9bb:
 		return SemanticTypeError, true
+	case 0xc4c4dd40:
+		return SemanticTypeChannelFull, true
 	case 0xc4e57915:
 		return SemanticTypeInputPrivacyValueDisallowBots, true
 	case 0xc4e5921e:
@@ -20020,6 +20654,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeInputStickerSetPremiumGifts, true
 	case 0xc8a0ec74:
 		return SemanticMethodMessagesGetStickerSet, true
+	case 0xc8ca817b:
+		return SemanticMethodPaymentsGetStarGiftWithdrawalURL, true
 	case 0xc8cf05f8:
 		return SemanticTypeMessageEntityCustomEmoji, true
 	case 0xc93de95c:
@@ -20420,6 +21056,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodAicomposeDeleteTone, true
 	case 0xdd6a8f48:
 		return SemanticTypeSendMessageGamePlayAction, true
+	case 0xddb5ab75:
+		return SemanticTypeMessageReplyHeader, true
 	case 0xddbcd819:
 		return SemanticMethodMessagesReportMusicListen, true
 	case 0xdde8a54c:
@@ -20734,8 +21372,12 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeUpdatePeerBlocked, true
 	case 0xebe46819:
 		return SemanticTypeUpdateServiceNotification, true
+	case 0xebece66d:
+		return SemanticTypeShareThemeGift, true
 	case 0xec05b097:
 		return SemanticTypeUpdateAutoSaveSettings, true
+	case 0xec2030ae:
+		return SemanticMethodPaymentsWithdrawStarGift, true
 	case 0xec22cfcd:
 		return SemanticMethodHelpSetBotUpdatesStatus, true
 	case 0xec43a2d1:
@@ -20894,6 +21536,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeChatAdminWithInvites, true
 	case 0xf2f2330a:
 		return SemanticMethodLangpackGetLangPack, true
+	case 0xf3010cba:
+		return SemanticTypeWalletCardSticker, true
 	case 0xf351d7ab:
 		return SemanticTypeSendMessageUploadAudioAction, true
 	case 0xf35aec28:
@@ -20922,8 +21566,12 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodChannelsReportSpam, true
 	case 0xf450f59b:
 		return SemanticTypeAuthSentCodeTypeEmailCode, true
+	case 0xf4599ef2:
+		return SemanticMethodMessagesGetShareThemeBackdrops, true
 	case 0xf46fe924:
 		return SemanticTypeInputWebFileAudioAlbumThumbLocation, true
+	case 0xf4729499:
+		return SemanticTypeWalletTransactionPeerTelegramGift, true
 	case 0xf47741f7:
 		return SemanticTypePeerSettings, true
 	case 0xf47751b6:

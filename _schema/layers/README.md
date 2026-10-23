@@ -164,6 +164,20 @@ Adding a schema-identical next profile therefore only extends generated profile
 metadata and switch cases. A genuinely changed schema stops at generation time
 until its semantic policy and typed hook are supplied.
 
+### Layer 232 review record
+
+Canonical Layer 232 comes from official Telegram Desktop
+`dev@850fb90eb6db96c124b6da1349060f9ed00f4fe4`; exact profiles 225–231 remain
+available. The [Layer 232 review](LAYER232_REVIEW.md) locks provenance, the
+seven reshuffled constructor IDs and the star-gift withdrawal request change:
+Layer 232 replaces the SRP challenge with a temporary password, so a historical
+withdrawal request is rejected at admission instead of having its SRP proof
+discarded, and a canonical request is never downgraded into an empty SRP
+challenge. New optional fields drop for 225–231; a server emitting
+`quote_rich` must also carry the flat quote fallback. The policy has 270
+entries (249 existing plus 21 withdrawal rejections). No PTS/update or MTProto
+transport schema changes are part of this release.
+
 ### Layer 231 review record
 
 Canonical Layer 231 comes from official Telegram Desktop `dev@78ceaa548a`;

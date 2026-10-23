@@ -31,7 +31,7 @@ var (
 	_ = tdjson.Encoder{}
 )
 
-// WalletNftItem represents TL type `wallet.nftItem#3441fd1c`.
+// WalletNftItem represents TL type `wallet.nftItem#173dfaf3`.
 //
 // See https://core.telegram.org/constructor/wallet.nftItem for reference.
 type WalletNftItem struct {
@@ -79,10 +79,14 @@ type WalletNftItem struct {
 	//
 	// Use SetExtra and GetExtra helpers.
 	Extra DataJSON
+	// Gift field of WalletNftItem.
+	//
+	// Use SetGift and GetGift helpers.
+	Gift StarGiftClass
 }
 
 // WalletNftItemTypeID is TL type id of WalletNftItem.
-const WalletNftItemTypeID = 0x3441fd1c
+const WalletNftItemTypeID = 0x173dfaf3
 
 // Ensuring interfaces in compile-time for WalletNftItem.
 var (
@@ -135,6 +139,9 @@ func (n *WalletNftItem) Zero() bool {
 	if !(n.Extra.Zero()) {
 		return false
 	}
+	if !(n.Gift == nil) {
+		return false
+	}
 
 	return true
 }
@@ -162,6 +169,7 @@ func (n *WalletNftItem) FillFrom(from interface {
 	GetLottie() (value WebDocumentClass, ok bool)
 	GetAttributes() (value []WalletNftAttribute, ok bool)
 	GetExtra() (value DataJSON, ok bool)
+	GetGift() (value StarGiftClass, ok bool)
 }) {
 	if val, ok := from.GetCollectionAddress(); ok {
 		n.CollectionAddress = val
@@ -200,6 +208,10 @@ func (n *WalletNftItem) FillFrom(from interface {
 
 	if val, ok := from.GetExtra(); ok {
 		n.Extra = val
+	}
+
+	if val, ok := from.GetGift(); ok {
+		n.Gift = val
 	}
 
 }
@@ -284,6 +296,11 @@ func (n *WalletNftItem) TypeInfo() tdp.Type {
 			SchemaName: "extra",
 			Null:       !n.Flags.Has(8),
 		},
+		{
+			Name:       "Gift",
+			SchemaName: "gift",
+			Null:       !n.Flags.Has(9),
+		},
 	}
 	return typ
 }
@@ -317,12 +334,15 @@ func (n *WalletNftItem) SetFlags() {
 	if !(n.Extra.Zero()) {
 		n.Flags.Set(8)
 	}
+	if !(n.Gift == nil) {
+		n.Flags.Set(9)
+	}
 }
 
 // Encode implements bin.Encoder.
 func (n *WalletNftItem) Encode(b *bin.Buffer) error {
 	if n == nil {
-		return fmt.Errorf("can't encode wallet.nftItem#3441fd1c as nil")
+		return fmt.Errorf("can't encode wallet.nftItem#173dfaf3 as nil")
 	}
 	b.PutID(WalletNftItemTypeID)
 	return n.EncodeBare(b)
@@ -331,11 +351,11 @@ func (n *WalletNftItem) Encode(b *bin.Buffer) error {
 // EncodeBare implements bin.BareEncoder.
 func (n *WalletNftItem) EncodeBare(b *bin.Buffer) error {
 	if n == nil {
-		return fmt.Errorf("can't encode wallet.nftItem#3441fd1c as nil")
+		return fmt.Errorf("can't encode wallet.nftItem#173dfaf3 as nil")
 	}
 	n.SetFlags()
 	if err := n.Flags.Encode(b); err != nil {
-		return fmt.Errorf("unable to encode wallet.nftItem#3441fd1c: field flags: %w", err)
+		return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field flags: %w", err)
 	}
 	if n.Flags.Has(0) {
 		b.PutString(n.CollectionAddress)
@@ -351,47 +371,55 @@ func (n *WalletNftItem) EncodeBare(b *bin.Buffer) error {
 	}
 	if n.Flags.Has(3) {
 		if n.Image == nil {
-			return fmt.Errorf("unable to encode wallet.nftItem#3441fd1c: field image is nil")
+			return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field image is nil")
 		}
 		if err := n.Image.Encode(b); err != nil {
-			return fmt.Errorf("unable to encode wallet.nftItem#3441fd1c: field image: %w", err)
+			return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field image: %w", err)
 		}
 	}
 	if n.Flags.Has(4) {
 		if n.ImageSmall == nil {
-			return fmt.Errorf("unable to encode wallet.nftItem#3441fd1c: field image_small is nil")
+			return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field image_small is nil")
 		}
 		if err := n.ImageSmall.Encode(b); err != nil {
-			return fmt.Errorf("unable to encode wallet.nftItem#3441fd1c: field image_small: %w", err)
+			return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field image_small: %w", err)
 		}
 	}
 	if n.Flags.Has(5) {
 		if n.ContentURL == nil {
-			return fmt.Errorf("unable to encode wallet.nftItem#3441fd1c: field content_url is nil")
+			return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field content_url is nil")
 		}
 		if err := n.ContentURL.Encode(b); err != nil {
-			return fmt.Errorf("unable to encode wallet.nftItem#3441fd1c: field content_url: %w", err)
+			return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field content_url: %w", err)
 		}
 	}
 	if n.Flags.Has(6) {
 		if n.Lottie == nil {
-			return fmt.Errorf("unable to encode wallet.nftItem#3441fd1c: field lottie is nil")
+			return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field lottie is nil")
 		}
 		if err := n.Lottie.Encode(b); err != nil {
-			return fmt.Errorf("unable to encode wallet.nftItem#3441fd1c: field lottie: %w", err)
+			return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field lottie: %w", err)
 		}
 	}
 	if n.Flags.Has(7) {
 		b.PutVectorHeader(len(n.Attributes))
 		for idx, v := range n.Attributes {
 			if err := v.Encode(b); err != nil {
-				return fmt.Errorf("unable to encode wallet.nftItem#3441fd1c: field attributes element with index %d: %w", idx, err)
+				return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field attributes element with index %d: %w", idx, err)
 			}
 		}
 	}
 	if n.Flags.Has(8) {
 		if err := n.Extra.Encode(b); err != nil {
-			return fmt.Errorf("unable to encode wallet.nftItem#3441fd1c: field extra: %w", err)
+			return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field extra: %w", err)
+		}
+	}
+	if n.Flags.Has(9) {
+		if n.Gift == nil {
+			return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field gift is nil")
+		}
+		if err := n.Gift.Encode(b); err != nil {
+			return fmt.Errorf("unable to encode wallet.nftItem#173dfaf3: field gift: %w", err)
 		}
 	}
 	return nil
@@ -400,10 +428,10 @@ func (n *WalletNftItem) EncodeBare(b *bin.Buffer) error {
 // Decode implements bin.Decoder.
 func (n *WalletNftItem) Decode(b *bin.Buffer) error {
 	if n == nil {
-		return fmt.Errorf("can't decode wallet.nftItem#3441fd1c to nil")
+		return fmt.Errorf("can't decode wallet.nftItem#173dfaf3 to nil")
 	}
 	if err := b.ConsumeID(WalletNftItemTypeID); err != nil {
-		return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: %w", err)
+		return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: %w", err)
 	}
 	return n.DecodeBare(b)
 }
@@ -411,87 +439,87 @@ func (n *WalletNftItem) Decode(b *bin.Buffer) error {
 // DecodeBare implements bin.BareDecoder.
 func (n *WalletNftItem) DecodeBare(b *bin.Buffer) error {
 	if n == nil {
-		return fmt.Errorf("can't decode wallet.nftItem#3441fd1c to nil")
+		return fmt.Errorf("can't decode wallet.nftItem#173dfaf3 to nil")
 	}
 	{
 		if err := n.Flags.Decode(b); err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field flags: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field flags: %w", err)
 		}
 	}
 	if n.Flags.Has(0) {
 		value, err := b.String()
 		if err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field collection_address: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field collection_address: %w", err)
 		}
 		n.CollectionAddress = value
 	}
 	{
 		value, err := b.String()
 		if err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field address: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field address: %w", err)
 		}
 		n.Address = value
 	}
 	{
 		value, err := b.String()
 		if err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field owner_address: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field owner_address: %w", err)
 		}
 		n.OwnerAddress = value
 	}
 	{
 		value, err := b.String()
 		if err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field index: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field index: %w", err)
 		}
 		n.Index = value
 	}
 	if n.Flags.Has(1) {
 		value, err := b.String()
 		if err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field name: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field name: %w", err)
 		}
 		n.Name = value
 	}
 	if n.Flags.Has(2) {
 		value, err := b.String()
 		if err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field description: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field description: %w", err)
 		}
 		n.Description = value
 	}
 	if n.Flags.Has(3) {
 		value, err := DecodeWebDocument(b)
 		if err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field image: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field image: %w", err)
 		}
 		n.Image = value
 	}
 	if n.Flags.Has(4) {
 		value, err := DecodeWebDocument(b)
 		if err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field image_small: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field image_small: %w", err)
 		}
 		n.ImageSmall = value
 	}
 	if n.Flags.Has(5) {
 		value, err := DecodeWebDocument(b)
 		if err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field content_url: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field content_url: %w", err)
 		}
 		n.ContentURL = value
 	}
 	if n.Flags.Has(6) {
 		value, err := DecodeWebDocument(b)
 		if err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field lottie: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field lottie: %w", err)
 		}
 		n.Lottie = value
 	}
 	if n.Flags.Has(7) {
 		headerLen, err := b.VectorHeader()
 		if err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field attributes: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field attributes: %w", err)
 		}
 
 		if headerLen > 0 {
@@ -500,15 +528,22 @@ func (n *WalletNftItem) DecodeBare(b *bin.Buffer) error {
 		for idx := 0; idx < headerLen; idx++ {
 			var value WalletNftAttribute
 			if err := value.Decode(b); err != nil {
-				return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field attributes: %w", err)
+				return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field attributes: %w", err)
 			}
 			n.Attributes = append(n.Attributes, value)
 		}
 	}
 	if n.Flags.Has(8) {
 		if err := n.Extra.Decode(b); err != nil {
-			return fmt.Errorf("unable to decode wallet.nftItem#3441fd1c: field extra: %w", err)
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field extra: %w", err)
 		}
+	}
+	if n.Flags.Has(9) {
+		value, err := DecodeStarGift(b)
+		if err != nil {
+			return fmt.Errorf("unable to decode wallet.nftItem#173dfaf3: field gift: %w", err)
+		}
+		n.Gift = value
 	}
 	return nil
 }
@@ -697,4 +732,22 @@ func (n *WalletNftItem) GetExtra() (value DataJSON, ok bool) {
 		return value, false
 	}
 	return n.Extra, true
+}
+
+// SetGift sets value of Gift conditional field.
+func (n *WalletNftItem) SetGift(value StarGiftClass) {
+	n.Flags.Set(9)
+	n.Gift = value
+}
+
+// GetGift returns value of Gift conditional field and
+// boolean which is true if field was set.
+func (n *WalletNftItem) GetGift() (value StarGiftClass, ok bool) {
+	if n == nil {
+		return
+	}
+	if !n.Flags.Has(9) {
+		return value, false
+	}
+	return n.Gift, true
 }

@@ -24,7 +24,7 @@ func TestLayerMetadataUsesSparseProfileOverrides(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if got, want := metadata.Profiles, []int{225, 226, 227, 228, 229, 230, 231}; !reflect.DeepEqual(got, want) {
+	if got, want := metadata.Profiles, []int{225, 226, 227, 228, 229, 230, 231, 232}; !reflect.DeepEqual(got, want) {
 		t.Fatalf("profiles = %v, want %v", got, want)
 	}
 	if got, want := len(metadata.Wires), len(set.WireCodecs); got != want {

@@ -10,12 +10,9 @@ import (
 )
 
 func TestLayer231URLAuthConstructorOracles(t *testing.T) {
-	if tg.Layer != 231 || ProfileCanonical != Profile231 {
-		t.Fatalf("canonical Layer = tg:%d profile:%d, want 231", tg.Layer, ProfileCanonical)
-	}
-	for profile := Profile225; profile <= Profile231; profile++ {
+	for profile := Profile225; profile <= ProfileCanonical; profile++ {
 		methodID, resultID := uint32(0x67a3f0de), uint32(0x3cd623ec)
-		if profile == Profile231 {
+		if profile >= Profile231 {
 			methodID, resultID = 0x18dd4e92, 0xbdca6167
 		}
 		accept := &tg.MessagesAcceptURLAuthRequest{}

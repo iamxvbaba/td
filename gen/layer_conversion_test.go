@@ -119,7 +119,7 @@ func TestProjectionObligationsPreferUpdateOverNewOnly(t *testing.T) {
 	}
 }
 
-func TestLayerConversionPlanTelegram225Through231(t *testing.T) {
+func TestLayerConversionPlanTelegram225Through232(t *testing.T) {
 	set, err := semantic.LoadUniverse("../_schema/layers/manifest.json")
 	if err != nil {
 		t.Fatal(err)
@@ -134,13 +134,13 @@ func TestLayerConversionPlanTelegram225Through231(t *testing.T) {
 	}
 	want := map[LayerObligationKind]int{
 		LayerObligationAtomicFlagGroup:  0,
-		LayerObligationDiscard:          2,
-		LayerObligationFieldProjection:  205,
+		LayerObligationDiscard:          9,
+		LayerObligationFieldProjection:  263,
 		LayerObligationFieldReplacement: 0,
 		LayerObligationIncompatible:     38,
-		LayerObligationNewOnly:          789,
+		LayerObligationNewOnly:          957,
 		LayerObligationOldOnly:          73,
-		LayerObligationRequired:         16,
+		LayerObligationRequired:         30,
 		LayerObligationResult:           8,
 		LayerObligationUpdateProjection: 45,
 	}

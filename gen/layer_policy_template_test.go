@@ -48,7 +48,7 @@ func TestMarshalLayerPolicyTemplateFailsClosed(t *testing.T) {
 	}
 }
 
-func TestLayerPolicyTemplateTelegram225Through230(t *testing.T) {
+func TestLayerPolicyTemplateTelegram225Through232(t *testing.T) {
 	set, err := semantic.LoadUniverse("../_schema/layers/manifest.json")
 	if err != nil {
 		t.Fatal(err)
@@ -58,7 +58,7 @@ func TestLayerPolicyTemplateTelegram225Through230(t *testing.T) {
 		t.Fatal(err)
 	}
 	document := BuildLayerPolicyTemplate(g.LayerConversionPlan().Report)
-	if got, want := len(document.Entries), 182; got != want {
+	if got, want := len(document.Entries), 203; got != want {
 		t.Fatalf("unresolved policy entries = %d, want %d", got, want)
 	}
 	for i := 1; i < len(document.Entries); i++ {

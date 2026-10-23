@@ -27,6 +27,7 @@ const (
 	LayerProfile229       = Profile229
 	LayerProfile230       = Profile230
 	LayerProfile231       = Profile231
+	LayerProfile232       = Profile232
 	LayerProfileCanonical = ProfileCanonical
 )
 
@@ -401,6 +402,7 @@ const (
 	LayerSemanticTypeExportedChatlistInvite                                            = SemanticTypeExportedChatlistInvite
 	LayerSemanticTypeExportedContactToken                                              = SemanticTypeExportedContactToken
 	LayerSemanticTypeExportedMessageLink                                               = SemanticTypeExportedMessageLink
+	LayerSemanticTypeExportedNoPaidMessagesToken                                       = SemanticTypeExportedNoPaidMessagesToken
 	LayerSemanticTypeExportedStoryLink                                                 = SemanticTypeExportedStoryLink
 	LayerSemanticTypeFactCheck                                                         = SemanticTypeFactCheck
 	LayerSemanticTypeFileHash                                                          = SemanticTypeFileHash
@@ -699,6 +701,7 @@ const (
 	LayerSemanticTypeInputSecureFileUploaded                                           = SemanticTypeInputSecureFileUploaded
 	LayerSemanticTypeInputSecureValue                                                  = SemanticTypeInputSecureValue
 	LayerSemanticTypeInputSendMessageRichMessageDraftAction                            = SemanticTypeInputSendMessageRichMessageDraftAction
+	LayerSemanticTypeInputShareThemeGift                                               = SemanticTypeInputShareThemeGift
 	LayerSemanticTypeInputSingleMedia                                                  = SemanticTypeInputSingleMedia
 	LayerSemanticTypeInputStarGiftAuction                                              = SemanticTypeInputStarGiftAuction
 	LayerSemanticTypeInputStarGiftAuctionSlug                                          = SemanticTypeInputStarGiftAuctionSlug
@@ -740,6 +743,7 @@ const (
 	LayerSemanticTypeInputWallPaper                                                    = SemanticTypeInputWallPaper
 	LayerSemanticTypeInputWallPaperNoFile                                              = SemanticTypeInputWallPaperNoFile
 	LayerSemanticTypeInputWallPaperSlug                                                = SemanticTypeInputWallPaperSlug
+	LayerSemanticTypeInputWalletCardSticker                                            = SemanticTypeInputWalletCardSticker
 	LayerSemanticTypeInputWalletImported                                               = SemanticTypeInputWalletImported
 	LayerSemanticTypeInputWalletNew                                                    = SemanticTypeInputWalletNew
 	LayerSemanticTypeInputWebDocument                                                  = SemanticTypeInputWebDocument
@@ -834,6 +838,7 @@ const (
 	LayerSemanticTypeMessageActionNewCreatorPending                                    = SemanticTypeMessageActionNewCreatorPending
 	LayerSemanticTypeMessageActionNoForwardsRequest                                    = SemanticTypeMessageActionNoForwardsRequest
 	LayerSemanticTypeMessageActionNoForwardsToggle                                     = SemanticTypeMessageActionNoForwardsToggle
+	LayerSemanticTypeMessageActionNoPaidMessagesTokenUsed                              = SemanticTypeMessageActionNoPaidMessagesTokenUsed
 	LayerSemanticTypeMessageActionPaidMessagesPrice                                    = SemanticTypeMessageActionPaidMessagesPrice
 	LayerSemanticTypeMessageActionPaidMessagesRefunded                                 = SemanticTypeMessageActionPaidMessagesRefunded
 	LayerSemanticTypeMessageActionPaymentRefunded                                      = SemanticTypeMessageActionPaymentRefunded
@@ -1132,6 +1137,7 @@ const (
 	LayerSemanticTypePaymentsStarGiftAuctionState                                      = SemanticTypePaymentsStarGiftAuctionState
 	LayerSemanticTypePaymentsStarGiftCollections                                       = SemanticTypePaymentsStarGiftCollections
 	LayerSemanticTypePaymentsStarGiftCollectionsNotModified                            = SemanticTypePaymentsStarGiftCollectionsNotModified
+	LayerSemanticTypePaymentsStarGiftDepositPayload                                    = SemanticTypePaymentsStarGiftDepositPayload
 	LayerSemanticTypePaymentsStarGiftUpgradeAttributes                                 = SemanticTypePaymentsStarGiftUpgradeAttributes
 	LayerSemanticTypePaymentsStarGiftUpgradePreview                                    = SemanticTypePaymentsStarGiftUpgradePreview
 	LayerSemanticTypePaymentsStarGiftWithdrawalURL                                     = SemanticTypePaymentsStarGiftWithdrawalURL
@@ -1342,6 +1348,12 @@ const (
 	LayerSemanticTypeSendMessageUploadPhotoAction                                      = SemanticTypeSendMessageUploadPhotoAction
 	LayerSemanticTypeSendMessageUploadRoundAction                                      = SemanticTypeSendMessageUploadRoundAction
 	LayerSemanticTypeSendMessageUploadVideoAction                                      = SemanticTypeSendMessageUploadVideoAction
+	LayerSemanticTypeShareThemeBackdropOption                                          = SemanticTypeShareThemeBackdropOption
+	LayerSemanticTypeShareThemeBackdrops                                               = SemanticTypeShareThemeBackdrops
+	LayerSemanticTypeShareThemeBackdropsNotModified                                    = SemanticTypeShareThemeBackdropsNotModified
+	LayerSemanticTypeShareThemeDefault                                                 = SemanticTypeShareThemeDefault
+	LayerSemanticTypeShareThemeEmojiBackdrop                                           = SemanticTypeShareThemeEmojiBackdrop
+	LayerSemanticTypeShareThemeGift                                                    = SemanticTypeShareThemeGift
 	LayerSemanticTypeShippingOption                                                    = SemanticTypeShippingOption
 	LayerSemanticTypeSMSJob                                                            = SemanticTypeSMSJob
 	LayerSemanticTypeSMSJobsEligibleToJoin                                             = SemanticTypeSMSJobsEligibleToJoin
@@ -1730,6 +1742,8 @@ const (
 	LayerSemanticTypeWallPaper                                                         = SemanticTypeWallPaper
 	LayerSemanticTypeWallPaperNoFile                                                   = SemanticTypeWallPaperNoFile
 	LayerSemanticTypeWallPaperSettings                                                 = SemanticTypeWallPaperSettings
+	LayerSemanticTypeWalletCard                                                        = SemanticTypeWalletCard
+	LayerSemanticTypeWalletCardSticker                                                 = SemanticTypeWalletCardSticker
 	LayerSemanticTypeWalletEncryptedSecretPhrasePart                                   = SemanticTypeWalletEncryptedSecretPhrasePart
 	LayerSemanticTypeWalletExistingBalance                                             = SemanticTypeWalletExistingBalance
 	LayerSemanticTypeWalletHolderDC                                                    = SemanticTypeWalletHolderDC
@@ -1748,7 +1762,9 @@ const (
 	LayerSemanticTypeWalletStateEmpty                                                  = SemanticTypeWalletStateEmpty
 	LayerSemanticTypeWalletTransaction                                                 = SemanticTypeWalletTransaction
 	LayerSemanticTypeWalletTransactionPeerAddress                                      = SemanticTypeWalletTransactionPeerAddress
+	LayerSemanticTypeWalletTransactionPeerChannel                                      = SemanticTypeWalletTransactionPeerChannel
 	LayerSemanticTypeWalletTransactionPeerOnramp                                       = SemanticTypeWalletTransactionPeerOnramp
+	LayerSemanticTypeWalletTransactionPeerTelegramGift                                 = SemanticTypeWalletTransactionPeerTelegramGift
 	LayerSemanticTypeWalletTransactionPeerUnsupported                                  = SemanticTypeWalletTransactionPeerUnsupported
 	LayerSemanticTypeWalletTransactionPeerUser                                         = SemanticTypeWalletTransactionPeerUser
 	LayerSemanticTypeWalletUserAddress                                                 = SemanticTypeWalletUserAddress
@@ -2060,6 +2076,7 @@ const (
 	LayerSemanticMethodContactsDeleteContacts                                          = SemanticMethodContactsDeleteContacts
 	LayerSemanticMethodContactsEditCloseFriends                                        = SemanticMethodContactsEditCloseFriends
 	LayerSemanticMethodContactsExportContactToken                                      = SemanticMethodContactsExportContactToken
+	LayerSemanticMethodContactsExportNoPaidMessagesToken                               = SemanticMethodContactsExportNoPaidMessagesToken
 	LayerSemanticMethodContactsGetBirthdays                                            = SemanticMethodContactsGetBirthdays
 	LayerSemanticMethodContactsGetBlocked                                              = SemanticMethodContactsGetBlocked
 	LayerSemanticMethodContactsGetContactIDs                                           = SemanticMethodContactsGetContactIDs
@@ -2071,6 +2088,7 @@ const (
 	LayerSemanticMethodContactsGetTopPeers                                             = SemanticMethodContactsGetTopPeers
 	LayerSemanticMethodContactsImportContactToken                                      = SemanticMethodContactsImportContactToken
 	LayerSemanticMethodContactsImportContacts                                          = SemanticMethodContactsImportContacts
+	LayerSemanticMethodContactsImportNoPaidMessagesToken                               = SemanticMethodContactsImportNoPaidMessagesToken
 	LayerSemanticMethodContactsResetSaved                                              = SemanticMethodContactsResetSaved
 	LayerSemanticMethodContactsResetTopPeerRating                                      = SemanticMethodContactsResetTopPeerRating
 	LayerSemanticMethodContactsResolvePhone                                            = SemanticMethodContactsResolvePhone
@@ -2268,6 +2286,7 @@ const (
 	LayerSemanticMethodMessagesGetSearchCounters                                       = SemanticMethodMessagesGetSearchCounters
 	LayerSemanticMethodMessagesGetSearchResultsCalendar                                = SemanticMethodMessagesGetSearchResultsCalendar
 	LayerSemanticMethodMessagesGetSearchResultsPositions                               = SemanticMethodMessagesGetSearchResultsPositions
+	LayerSemanticMethodMessagesGetShareThemeBackdrops                                  = SemanticMethodMessagesGetShareThemeBackdrops
 	LayerSemanticMethodMessagesGetSplitRanges                                          = SemanticMethodMessagesGetSplitRanges
 	LayerSemanticMethodMessagesGetSponsoredMessages                                    = SemanticMethodMessagesGetSponsoredMessages
 	LayerSemanticMethodMessagesGetStickerSet                                           = SemanticMethodMessagesGetStickerSet
@@ -2362,6 +2381,7 @@ const (
 	LayerSemanticMethodMessagesSetHistoryTTL                                           = SemanticMethodMessagesSetHistoryTTL
 	LayerSemanticMethodMessagesSetInlineBotResults                                     = SemanticMethodMessagesSetInlineBotResults
 	LayerSemanticMethodMessagesSetInlineGameScore                                      = SemanticMethodMessagesSetInlineGameScore
+	LayerSemanticMethodMessagesSetShareTheme                                           = SemanticMethodMessagesSetShareTheme
 	LayerSemanticMethodMessagesSetTyping                                               = SemanticMethodMessagesSetTyping
 	LayerSemanticMethodMessagesStartBot                                                = SemanticMethodMessagesStartBot
 	LayerSemanticMethodMessagesStartHistoryImport                                      = SemanticMethodMessagesStartHistoryImport
@@ -2404,7 +2424,10 @@ const (
 	LayerSemanticMethodPaymentsCraftStarGift                                           = SemanticMethodPaymentsCraftStarGift
 	LayerSemanticMethodPaymentsCreateOnrampSession                                     = SemanticMethodPaymentsCreateOnrampSession
 	LayerSemanticMethodPaymentsCreateStarGiftCollection                                = SemanticMethodPaymentsCreateStarGiftCollection
+	LayerSemanticMethodPaymentsDeleteStarGift                                          = SemanticMethodPaymentsDeleteStarGift
 	LayerSemanticMethodPaymentsDeleteStarGiftCollection                                = SemanticMethodPaymentsDeleteStarGiftCollection
+	LayerSemanticMethodPaymentsDepositStarGift                                         = SemanticMethodPaymentsDepositStarGift
+	LayerSemanticMethodPaymentsDisplayStarGift                                         = SemanticMethodPaymentsDisplayStarGift
 	LayerSemanticMethodPaymentsEditConnectedStarRefBot                                 = SemanticMethodPaymentsEditConnectedStarRefBot
 	LayerSemanticMethodPaymentsExportInvoice                                           = SemanticMethodPaymentsExportInvoice
 	LayerSemanticMethodPaymentsFulfillStarsSubscription                                = SemanticMethodPaymentsFulfillStarsSubscription
@@ -2462,6 +2485,7 @@ const (
 	LayerSemanticMethodPaymentsUpdateStarGiftPrice                                     = SemanticMethodPaymentsUpdateStarGiftPrice
 	LayerSemanticMethodPaymentsUpgradeStarGift                                         = SemanticMethodPaymentsUpgradeStarGift
 	LayerSemanticMethodPaymentsValidateRequestedInfo                                   = SemanticMethodPaymentsValidateRequestedInfo
+	LayerSemanticMethodPaymentsWithdrawStarGift                                        = SemanticMethodPaymentsWithdrawStarGift
 	LayerSemanticMethodPhoneAcceptCall                                                 = SemanticMethodPhoneAcceptCall
 	LayerSemanticMethodPhoneCheckGroupCall                                             = SemanticMethodPhoneCheckGroupCall
 	LayerSemanticMethodPhoneConfirmCall                                                = SemanticMethodPhoneConfirmCall
@@ -2612,6 +2636,7 @@ const (
 	LayerSemanticMethodWalletGetUserAddresses                                          = SemanticMethodWalletGetUserAddresses
 	LayerSemanticMethodWalletReplaceWallet                                             = SemanticMethodWalletReplaceWallet
 	LayerSemanticMethodWalletSendTransfer                                              = SemanticMethodWalletSendTransfer
+	LayerSemanticMethodWalletSetCardStickers                                           = SemanticMethodWalletSetCardStickers
 	LayerSemanticMethodWalletTonConnectClaimRequest                                    = SemanticMethodWalletTonConnectClaimRequest
 	LayerSemanticMethodWalletTonConnectCloseSession                                    = SemanticMethodWalletTonConnectCloseSession
 	LayerSemanticMethodWalletTonConnectCreateSession                                   = SemanticMethodWalletTonConnectCreateSession
