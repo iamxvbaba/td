@@ -1446,7 +1446,7 @@
     {
       "key": "layer-obligation/v1/required/057483ac77470a69ba8d4c4d25f1790d29e079047a6e9c624c265cb46843b6da",
       "resolution": {
-        "action": "reject",
+        "action": "default",
         "note": "kind=required; layer=230; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
       }
     },
@@ -1476,7 +1476,7 @@
     {
       "key": "layer-obligation/v1/required/10bca969b78ebc1afa7196b98afb92650a0db2a674de1153b75a31bd30cf7f75",
       "resolution": {
-        "action": "reject",
+        "action": "default",
         "note": "kind=required; layer=227; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
       }
     },
@@ -1497,14 +1497,14 @@
     {
       "key": "layer-obligation/v1/required/52452976d2febe9fed86d5b45e885672993307a4751d9f7fefec71283f6df4f2",
       "resolution": {
-        "action": "reject",
+        "action": "default",
         "note": "kind=required; layer=228; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
       }
     },
     {
       "key": "layer-obligation/v1/required/5feef02527906dfaa7e54a9ba97a326b3a0b01d28c12461ac9dad25f116b3513",
       "resolution": {
-        "action": "reject",
+        "action": "default",
         "note": "kind=required; layer=225; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
       }
     },
@@ -1548,7 +1548,7 @@
     {
       "key": "layer-obligation/v1/required/8e8967365359350add44feec605aa631b4928f68e7d5273093592a7d3a22ad24",
       "resolution": {
-        "action": "reject",
+        "action": "default",
         "note": "kind=required; layer=229; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
       }
     },
@@ -1601,21 +1601,21 @@
     {
       "key": "layer-obligation/v1/required/e93cd64176e5431e873c9f103c54f8e22a1eca48031ec88196fa6918949b97fc",
       "resolution": {
-        "action": "reject",
+        "action": "default",
         "note": "kind=required; layer=232; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
       }
     },
     {
       "key": "layer-obligation/v1/required/f571e55bda0dc954bbe572cc6fb852818a20bd8c79748cfc4701227edf8d3967",
       "resolution": {
-        "action": "reject",
+        "action": "default",
         "note": "kind=required; layer=226; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
       }
     },
     {
       "key": "layer-obligation/v1/required/f5e9c5a308adae2a25d7e2f13b1ad386f449b5b9925154123d3b424851793bc3",
       "resolution": {
-        "action": "reject",
+        "action": "default",
         "note": "kind=required; layer=231; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
       }
     },

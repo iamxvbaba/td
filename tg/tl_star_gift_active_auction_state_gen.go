@@ -35,7 +35,7 @@ var (
 // Contains info about an auction where the user has placed a bid »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/auctions
+//  1. https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/constructor/starGiftActiveAuctionState for reference.
 type StarGiftActiveAuctionState struct {

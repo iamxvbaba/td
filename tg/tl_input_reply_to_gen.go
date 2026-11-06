@@ -874,7 +874,7 @@ func (i *InputReplyToStory) GetStoryID() (value int) {
 // Used to send messages to a monoforum topic¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/monoforum
+//  1. https://core.telegram.org/api/monoforum
 //
 // See https://core.telegram.org/constructor/inputReplyToMonoForum for reference.
 type InputReplyToMonoForum struct {
@@ -1155,23 +1155,24 @@ const InputReplyToClassName = "InputReplyTo"
 // See https://core.telegram.org/type/InputReplyTo for reference.
 //
 // Constructors:
-//  - [InputReplyToMessage]
-//  - [InputReplyToStory]
-//  - [InputReplyToMonoForum]
-//  - [InputReplyToEphemeralMessage]
+//   - [InputReplyToMessage]
+//   - [InputReplyToStory]
+//   - [InputReplyToMonoForum]
+//   - [InputReplyToEphemeralMessage]
 //
 // Example:
-//  g, err := tg.DecodeInputReplyTo(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.InputReplyToMessage: // inputReplyToMessage#75c1ad70
-//  case *tg.InputReplyToStory: // inputReplyToStory#5881323a
-//  case *tg.InputReplyToMonoForum: // inputReplyToMonoForum#69d66c45
-//  case *tg.InputReplyToEphemeralMessage: // inputReplyToEphemeralMessage#4119b95e
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeInputReplyTo(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.InputReplyToMessage: // inputReplyToMessage#75c1ad70
+//	case *tg.InputReplyToStory: // inputReplyToStory#5881323a
+//	case *tg.InputReplyToMonoForum: // inputReplyToMonoForum#69d66c45
+//	case *tg.InputReplyToEphemeralMessage: // inputReplyToEphemeralMessage#4119b95e
+//	default: panic(v)
+//	}
 type InputReplyToClass interface {
 	bin.Encoder
 	bin.Decoder

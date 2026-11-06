@@ -35,7 +35,7 @@ var (
 // Edit a group participant's tag »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/rank
+//  1. https://core.telegram.org/api/rank
 //
 // See https://core.telegram.org/method/messages.editChatParticipantRank for reference.
 type MessagesEditChatParticipantRankRequest struct {
@@ -232,7 +232,7 @@ func (e *MessagesEditChatParticipantRankRequest) GetRank() (value string) {
 // Edit a group participant's tag »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/rank
+//  1. https://core.telegram.org/api/rank
 //
 // See https://core.telegram.org/method/messages.editChatParticipantRank for reference.
 func (c *Client) MessagesEditChatParticipantRank(ctx context.Context, request *MessagesEditChatParticipantRankRequest) (UpdatesClass, error) {

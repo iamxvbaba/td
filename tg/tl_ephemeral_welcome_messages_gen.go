@@ -316,19 +316,20 @@ const EphemeralWelcomeMessagesClassName = "ephemeral.WelcomeMessages"
 // See https://core.telegram.org/type/ephemeral.WelcomeMessages for reference.
 //
 // Constructors:
-//  - [EphemeralWelcomeMessagesNotModified]
-//  - [EphemeralWelcomeMessages]
+//   - [EphemeralWelcomeMessagesNotModified]
+//   - [EphemeralWelcomeMessages]
 //
 // Example:
-//  g, err := tg.DecodeEphemeralWelcomeMessages(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.EphemeralWelcomeMessagesNotModified: // ephemeral.welcomeMessagesNotModified#59ffdb31
-//  case *tg.EphemeralWelcomeMessages: // ephemeral.welcomeMessages#104fc872
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeEphemeralWelcomeMessages(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.EphemeralWelcomeMessagesNotModified: // ephemeral.welcomeMessagesNotModified#59ffdb31
+//	case *tg.EphemeralWelcomeMessages: // ephemeral.welcomeMessages#104fc872
+//	default: panic(v)
+//	}
 type EphemeralWelcomeMessagesClass interface {
 	bin.Encoder
 	bin.Decoder

@@ -36,7 +36,7 @@ var (
 // See here »¹ for the full flow to use for restricted or age-gated content.
 //
 // Links:
-//  1) https://core.telegram.org/api/age-verification
+//  1. https://core.telegram.org/api/age-verification
 //
 // See https://core.telegram.org/constructor/restrictionReason for reference.
 type RestrictionReason struct {

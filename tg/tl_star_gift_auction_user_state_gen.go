@@ -37,8 +37,8 @@ var (
 // starGiftAuctionUserState¹ will all be set if the user placed a bid in the auction.
 //
 // Links:
-//  1) https://core.telegram.org/api/auctions
-//  2) https://core.telegram.org/constructor/starGiftAuctionUserState
+//  1. https://core.telegram.org/api/auctions
+//  2. https://core.telegram.org/constructor/starGiftAuctionUserState
 //
 // See https://core.telegram.org/constructor/starGiftAuctionUserState for reference.
 type StarGiftAuctionUserState struct {

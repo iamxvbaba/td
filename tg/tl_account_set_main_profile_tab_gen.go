@@ -35,7 +35,7 @@ var (
 // Changes the main profile tab of the current user, see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/profile#tabs
+//  1. https://core.telegram.org/api/profile#tabs
 //
 // See https://core.telegram.org/method/account.setMainProfileTab for reference.
 type AccountSetMainProfileTabRequest struct {
@@ -173,7 +173,7 @@ func (s *AccountSetMainProfileTabRequest) GetTab() (value ProfileTabClass) {
 // Changes the main profile tab of the current user, see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/profile#tabs
+//  1. https://core.telegram.org/api/profile#tabs
 //
 // See https://core.telegram.org/method/account.setMainProfileTab for reference.
 func (c *Client) AccountSetMainProfileTab(ctx context.Context, tab ProfileTabClass) (bool, error) {

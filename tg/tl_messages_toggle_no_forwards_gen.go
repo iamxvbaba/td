@@ -35,7 +35,7 @@ var (
 // Enable or disable content protection¹ on a channel, group or private chat.
 //
 // Links:
-//  1) https://core.telegram.org/api/content-protection
+//  1. https://core.telegram.org/api/content-protection
 //
 // See https://core.telegram.org/method/messages.toggleNoForwards for reference.
 type MessagesToggleNoForwardsRequest struct {
@@ -273,12 +273,13 @@ func (t *MessagesToggleNoForwardsRequest) GetRequestMsgID() (value int, ok bool)
 // Enable or disable content protection¹ on a channel, group or private chat.
 //
 // Links:
-//  1) https://core.telegram.org/api/content-protection
+//  1. https://core.telegram.org/api/content-protection
 //
 // Possible errors:
-//  400 CHAT_ADMIN_REQUIRED: You must be an admin in this chat to do this.
-//  400 CHAT_NOT_MODIFIED: No changes were made to chat information because the new information you passed is identical to the current information.
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 CHAT_ADMIN_REQUIRED: You must be an admin in this chat to do this.
+//	400 CHAT_NOT_MODIFIED: No changes were made to chat information because the new information you passed is identical to the current information.
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/messages.toggleNoForwards for reference.
 func (c *Client) MessagesToggleNoForwards(ctx context.Context, request *MessagesToggleNoForwardsRequest) (UpdatesClass, error) {

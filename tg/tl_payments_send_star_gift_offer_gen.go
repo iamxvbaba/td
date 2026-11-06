@@ -35,8 +35,8 @@ var (
 // Send an offer to purchase a collectible gift »¹, see here »² for the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
-//  2) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  1. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  2. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
 //
 // See https://core.telegram.org/method/payments.sendStarGiftOffer for reference.
 type PaymentsSendStarGiftOfferRequest struct {
@@ -370,19 +370,20 @@ func (s *PaymentsSendStarGiftOfferRequest) GetAllowPaidStars() (value int64, ok 
 // Send an offer to purchase a collectible gift »¹, see here »² for the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
-//  2) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  1. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  2. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
 //
 // Possible errors:
-//  400 INPUT_STARS_AMOUNT_INVALID:
-//  400 INPUT_STARS_NANOS_INVALID:
-//  400 INVOICE_INVALID: The specified invoice is invalid.
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
-//  400 RESELL_STARS_TOO_FEW:
-//  400 RESELL_STARS_TOO_MUCH:
-//  400 STARGIFT_OFFER_INVALID:
-//  400 STARGIFT_OFFER_NOT_ALLOWED:
-//  400 STARGIFT_SLUG_INVALID: The specified gift slug is invalid.
+//
+//	400 INPUT_STARS_AMOUNT_INVALID:
+//	400 INPUT_STARS_NANOS_INVALID:
+//	400 INVOICE_INVALID: The specified invoice is invalid.
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//	400 RESELL_STARS_TOO_FEW:
+//	400 RESELL_STARS_TOO_MUCH:
+//	400 STARGIFT_OFFER_INVALID:
+//	400 STARGIFT_OFFER_NOT_ALLOWED:
+//	400 STARGIFT_SLUG_INVALID: The specified gift slug is invalid.
 //
 // See https://core.telegram.org/method/payments.sendStarGiftOffer for reference.
 func (c *Client) PaymentsSendStarGiftOffer(ctx context.Context, request *PaymentsSendStarGiftOfferRequest) (UpdatesClass, error) {

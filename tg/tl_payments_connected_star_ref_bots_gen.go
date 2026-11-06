@@ -35,7 +35,7 @@ var (
 // Active affiliations¹
 //
 // Links:
-//  1) https://core.telegram.org/api/bots/referrals#becoming-an-affiliate
+//  1. https://core.telegram.org/api/bots/referrals#becoming-an-affiliate
 //
 // See https://core.telegram.org/constructor/payments.connectedStarRefBots for reference.
 type PaymentsConnectedStarRefBots struct {

@@ -35,7 +35,7 @@ var (
 // Indicates the price for a gift upgrade »¹ starting from a specific point in time.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/constructor/starGiftUpgradePrice for reference.
 type StarGiftUpgradePrice struct {

@@ -35,7 +35,7 @@ var (
 // Toggle autotranslation in a channel, for all users: see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/translation#autotranslation-for-channels
+//  1. https://core.telegram.org/api/translation#autotranslation-for-channels
 //
 // See https://core.telegram.org/method/channels.toggleAutotranslation for reference.
 type ChannelsToggleAutotranslationRequest struct {
@@ -205,10 +205,11 @@ func (t *ChannelsToggleAutotranslationRequest) GetChannelAsNotEmpty() (NotEmptyI
 // Toggle autotranslation in a channel, for all users: see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/translation#autotranslation-for-channels
+//  1. https://core.telegram.org/api/translation#autotranslation-for-channels
 //
 // Possible errors:
-//  400 CHANNEL_INVALID: The provided channel is invalid.
+//
+//	400 CHANNEL_INVALID: The provided channel is invalid.
 //
 // See https://core.telegram.org/method/channels.toggleAutotranslation for reference.
 func (c *Client) ChannelsToggleAutotranslation(ctx context.Context, request *ChannelsToggleAutotranslationRequest) (UpdatesClass, error) {

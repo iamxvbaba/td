@@ -36,8 +36,8 @@ var (
 // passkey »¹ and logging in with a passkey »² for the full flows.
 //
 // Links:
-//  1) https://core.telegram.org/api/passkeys#creating-a-passkey
-//  2) https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
+//  1. https://core.telegram.org/api/passkeys#creating-a-passkey
+//  2. https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
 //
 // See https://core.telegram.org/constructor/inputPasskeyCredentialPublicKey for reference.
 type InputPasskeyCredentialPublicKey struct {

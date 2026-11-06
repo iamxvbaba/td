@@ -3250,7 +3250,7 @@ func (i *InputMediaGame) GetID() (value InputGameClass) {
 // Generated invoice of a bot payment¹
 //
 // Links:
-//  1) https://core.telegram.org/bots/payments
+//  1. https://core.telegram.org/bots/payments
 //
 // See https://core.telegram.org/constructor/inputMediaInvoice for reference.
 type InputMediaInvoice struct {
@@ -3728,7 +3728,7 @@ func (i *InputMediaInvoice) GetExtendedMedia() (value InputMediaClass, ok bool) 
 // Live geolocation¹
 //
 // Links:
-//  1) https://core.telegram.org/api/live-location
+//  1. https://core.telegram.org/api/live-location
 //
 // See https://core.telegram.org/constructor/inputMediaGeoLive for reference.
 type InputMediaGeoLive struct {
@@ -4526,7 +4526,7 @@ func (i *InputMediaPoll) MapSolutionEntities() (value MessageEntityClassArray, o
 // Send a dice-based animated sticker¹
 //
 // Links:
-//  1) https://core.telegram.org/api/dice
+//  1. https://core.telegram.org/api/dice
 //
 // See https://core.telegram.org/constructor/inputMediaDice for reference.
 type InputMediaDice struct {
@@ -5096,7 +5096,7 @@ func (i *InputMediaWebPage) GetURL() (value string) {
 // Paid media, see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/paid-media
+//  1. https://core.telegram.org/api/paid-media
 //
 // See https://core.telegram.org/constructor/inputMediaPaidMedia for reference.
 type InputMediaPaidMedia struct {
@@ -5361,7 +5361,7 @@ func (i *InputMediaPaidMedia) MapExtendedMedia() (value InputMediaClassArray) {
 // Creates a todo list »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/todo
+//  1. https://core.telegram.org/api/todo
 //
 // See https://core.telegram.org/constructor/inputMediaTodo for reference.
 type InputMediaTodo struct {
@@ -6263,59 +6263,60 @@ const InputMediaClassName = "InputMedia"
 // See https://core.telegram.org/type/InputMedia for reference.
 //
 // Constructors:
-//  - [InputMediaEmpty]
-//  - [InputMediaUploadedPhoto]
-//  - [InputMediaPhoto]
-//  - [InputMediaGeoPoint]
-//  - [InputMediaContact]
-//  - [InputMediaUploadedDocument]
-//  - [InputMediaDocument]
-//  - [InputMediaVenue]
-//  - [InputMediaPhotoExternal]
-//  - [InputMediaDocumentExternal]
-//  - [InputMediaGame]
-//  - [InputMediaInvoice]
-//  - [InputMediaGeoLive]
-//  - [InputMediaPoll]
-//  - [InputMediaDice]
-//  - [InputMediaStory]
-//  - [InputMediaWebPage]
-//  - [InputMediaPaidMedia]
-//  - [InputMediaTodo]
-//  - [InputMediaStakeDice]
-//  - [InputMediaWidget]
-//  - [InputMediaWidgetID]
+//   - [InputMediaEmpty]
+//   - [InputMediaUploadedPhoto]
+//   - [InputMediaPhoto]
+//   - [InputMediaGeoPoint]
+//   - [InputMediaContact]
+//   - [InputMediaUploadedDocument]
+//   - [InputMediaDocument]
+//   - [InputMediaVenue]
+//   - [InputMediaPhotoExternal]
+//   - [InputMediaDocumentExternal]
+//   - [InputMediaGame]
+//   - [InputMediaInvoice]
+//   - [InputMediaGeoLive]
+//   - [InputMediaPoll]
+//   - [InputMediaDice]
+//   - [InputMediaStory]
+//   - [InputMediaWebPage]
+//   - [InputMediaPaidMedia]
+//   - [InputMediaTodo]
+//   - [InputMediaStakeDice]
+//   - [InputMediaWidget]
+//   - [InputMediaWidgetID]
 //
 // Example:
-//  g, err := tg.DecodeInputMedia(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.InputMediaEmpty: // inputMediaEmpty#9664f57f
-//  case *tg.InputMediaUploadedPhoto: // inputMediaUploadedPhoto#7d8375da
-//  case *tg.InputMediaPhoto: // inputMediaPhoto#e3af4434
-//  case *tg.InputMediaGeoPoint: // inputMediaGeoPoint#f9c44144
-//  case *tg.InputMediaContact: // inputMediaContact#f8ab7dfb
-//  case *tg.InputMediaUploadedDocument: // inputMediaUploadedDocument#37c9330
-//  case *tg.InputMediaDocument: // inputMediaDocument#a8763ab5
-//  case *tg.InputMediaVenue: // inputMediaVenue#c13d1c11
-//  case *tg.InputMediaPhotoExternal: // inputMediaPhotoExternal#e5bbfe1a
-//  case *tg.InputMediaDocumentExternal: // inputMediaDocumentExternal#779600f9
-//  case *tg.InputMediaGame: // inputMediaGame#d33f43f3
-//  case *tg.InputMediaInvoice: // inputMediaInvoice#405fef0d
-//  case *tg.InputMediaGeoLive: // inputMediaGeoLive#971fa843
-//  case *tg.InputMediaPoll: // inputMediaPoll#883a4108
-//  case *tg.InputMediaDice: // inputMediaDice#e66fbf7b
-//  case *tg.InputMediaStory: // inputMediaStory#89fdd778
-//  case *tg.InputMediaWebPage: // inputMediaWebPage#c21b8849
-//  case *tg.InputMediaPaidMedia: // inputMediaPaidMedia#c4103386
-//  case *tg.InputMediaTodo: // inputMediaTodo#9fc55fde
-//  case *tg.InputMediaStakeDice: // inputMediaStakeDice#f3a9244a
-//  case *tg.InputMediaWidget: // inputMediaWidget#44f6c04e
-//  case *tg.InputMediaWidgetID: // inputMediaWidgetId#7c855cb5
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeInputMedia(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.InputMediaEmpty: // inputMediaEmpty#9664f57f
+//	case *tg.InputMediaUploadedPhoto: // inputMediaUploadedPhoto#7d8375da
+//	case *tg.InputMediaPhoto: // inputMediaPhoto#e3af4434
+//	case *tg.InputMediaGeoPoint: // inputMediaGeoPoint#f9c44144
+//	case *tg.InputMediaContact: // inputMediaContact#f8ab7dfb
+//	case *tg.InputMediaUploadedDocument: // inputMediaUploadedDocument#37c9330
+//	case *tg.InputMediaDocument: // inputMediaDocument#a8763ab5
+//	case *tg.InputMediaVenue: // inputMediaVenue#c13d1c11
+//	case *tg.InputMediaPhotoExternal: // inputMediaPhotoExternal#e5bbfe1a
+//	case *tg.InputMediaDocumentExternal: // inputMediaDocumentExternal#779600f9
+//	case *tg.InputMediaGame: // inputMediaGame#d33f43f3
+//	case *tg.InputMediaInvoice: // inputMediaInvoice#405fef0d
+//	case *tg.InputMediaGeoLive: // inputMediaGeoLive#971fa843
+//	case *tg.InputMediaPoll: // inputMediaPoll#883a4108
+//	case *tg.InputMediaDice: // inputMediaDice#e66fbf7b
+//	case *tg.InputMediaStory: // inputMediaStory#89fdd778
+//	case *tg.InputMediaWebPage: // inputMediaWebPage#c21b8849
+//	case *tg.InputMediaPaidMedia: // inputMediaPaidMedia#c4103386
+//	case *tg.InputMediaTodo: // inputMediaTodo#9fc55fde
+//	case *tg.InputMediaStakeDice: // inputMediaStakeDice#f3a9244a
+//	case *tg.InputMediaWidget: // inputMediaWidget#44f6c04e
+//	case *tg.InputMediaWidgetID: // inputMediaWidgetId#7c855cb5
+//	default: panic(v)
+//	}
 type InputMediaClass interface {
 	bin.Encoder
 	bin.Decoder

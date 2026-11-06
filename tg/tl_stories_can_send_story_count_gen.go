@@ -37,7 +37,7 @@ var (
 // active stories).
 //
 // Links:
-//  1) https://core.telegram.org/api/config#story-expiring-limit-default
+//  1. https://core.telegram.org/api/config#story-expiring-limit-default
 //
 // See https://core.telegram.org/constructor/stories.canSendStoryCount for reference.
 type StoriesCanSendStoryCount struct {

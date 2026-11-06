@@ -346,7 +346,7 @@ func (i *InputSavedStarGiftChat) GetSavedID() (value int64) {
 // Points to a collectible gift obtained from a collectible gift link »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/links#collectible-gift-link
+//  1. https://core.telegram.org/api/links#collectible-gift-link
 //
 // See https://core.telegram.org/constructor/inputSavedStarGiftSlug for reference.
 type InputSavedStarGiftSlug struct {
@@ -488,21 +488,22 @@ const InputSavedStarGiftClassName = "InputSavedStarGift"
 // See https://core.telegram.org/type/InputSavedStarGift for reference.
 //
 // Constructors:
-//  - [InputSavedStarGiftUser]
-//  - [InputSavedStarGiftChat]
-//  - [InputSavedStarGiftSlug]
+//   - [InputSavedStarGiftUser]
+//   - [InputSavedStarGiftChat]
+//   - [InputSavedStarGiftSlug]
 //
 // Example:
-//  g, err := tg.DecodeInputSavedStarGift(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.InputSavedStarGiftUser: // inputSavedStarGiftUser#69279795
-//  case *tg.InputSavedStarGiftChat: // inputSavedStarGiftChat#f101aa7f
-//  case *tg.InputSavedStarGiftSlug: // inputSavedStarGiftSlug#2085c238
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeInputSavedStarGift(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.InputSavedStarGiftUser: // inputSavedStarGiftUser#69279795
+//	case *tg.InputSavedStarGiftChat: // inputSavedStarGiftChat#f101aa7f
+//	case *tg.InputSavedStarGiftSlug: // inputSavedStarGiftSlug#2085c238
+//	default: panic(v)
+//	}
 type InputSavedStarGiftClass interface {
 	bin.Encoder
 	bin.Decoder

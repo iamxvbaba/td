@@ -35,7 +35,7 @@ var (
 // Fetch the blocks of a conference blockchain »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/end-to-end/group-calls
+//  1. https://core.telegram.org/api/end-to-end/group-calls
 //
 // See https://core.telegram.org/method/phone.getGroupCallChainBlocks for reference.
 type PhoneGetGroupCallChainBlocksRequest struct {
@@ -257,10 +257,11 @@ func (g *PhoneGetGroupCallChainBlocksRequest) GetLimit() (value int) {
 // Fetch the blocks of a conference blockchain »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/end-to-end/group-calls
+//  1. https://core.telegram.org/api/end-to-end/group-calls
 //
 // Possible errors:
-//  400 GROUPCALL_INVALID: The specified group call is invalid.
+//
+//	400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.getGroupCallChainBlocks for reference.
 func (c *Client) PhoneGetGroupCallChainBlocks(ctx context.Context, request *PhoneGetGroupCallChainBlocksRequest) (UpdatesClass, error) {

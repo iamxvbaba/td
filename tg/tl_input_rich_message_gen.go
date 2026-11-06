@@ -1098,21 +1098,22 @@ const InputRichMessageClassName = "InputRichMessage"
 // See https://core.telegram.org/type/InputRichMessage for reference.
 //
 // Constructors:
-//  - [InputRichMessage]
-//  - [InputRichMessageHTML]
-//  - [InputRichMessageMarkdown]
+//   - [InputRichMessage]
+//   - [InputRichMessageHTML]
+//   - [InputRichMessageMarkdown]
 //
 // Example:
-//  g, err := tg.DecodeInputRichMessage(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.InputRichMessage: // inputRichMessage#e4c449fc
-//  case *tg.InputRichMessageHTML: // inputRichMessageHTML#dacb836a
-//  case *tg.InputRichMessageMarkdown: // inputRichMessageMarkdown#4b572c
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeInputRichMessage(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.InputRichMessage: // inputRichMessage#e4c449fc
+//	case *tg.InputRichMessageHTML: // inputRichMessageHTML#dacb836a
+//	case *tg.InputRichMessageMarkdown: // inputRichMessageMarkdown#4b572c
+//	default: panic(v)
+//	}
 type InputRichMessageClass interface {
 	bin.Encoder
 	bin.Decoder

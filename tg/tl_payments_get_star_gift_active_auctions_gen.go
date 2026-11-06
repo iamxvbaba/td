@@ -35,7 +35,7 @@ var (
 // Fetches all currently active gift auctions¹ where the user has placed a bid.
 //
 // Links:
-//  1) https://core.telegram.org/api/auctions
+//  1. https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/method/payments.getStarGiftActiveAuctions for reference.
 type PaymentsGetStarGiftActiveAuctionsRequest struct {
@@ -171,7 +171,7 @@ func (g *PaymentsGetStarGiftActiveAuctionsRequest) GetHash() (value int64) {
 // Fetches all currently active gift auctions¹ where the user has placed a bid.
 //
 // Links:
-//  1) https://core.telegram.org/api/auctions
+//  1. https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/method/payments.getStarGiftActiveAuctions for reference.
 func (c *Client) PaymentsGetStarGiftActiveAuctions(ctx context.Context, hash int64) (PaymentsStarGiftActiveAuctionsClass, error) {

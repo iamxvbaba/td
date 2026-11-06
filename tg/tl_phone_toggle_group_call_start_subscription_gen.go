@@ -35,7 +35,7 @@ var (
 // Subscribe or unsubscribe to a scheduled group call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#video-chats-livestreams
+//  1. https://core.telegram.org/api/group-calls#video-chats-livestreams
 //
 // See https://core.telegram.org/method/phone.toggleGroupCallStartSubscription for reference.
 type PhoneToggleGroupCallStartSubscriptionRequest struct {
@@ -200,11 +200,12 @@ func (t *PhoneToggleGroupCallStartSubscriptionRequest) GetSubscribed() (value bo
 // Subscribe or unsubscribe to a scheduled group call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#video-chats-livestreams
+//  1. https://core.telegram.org/api/group-calls#video-chats-livestreams
 //
 // Possible errors:
-//  403 GROUPCALL_ALREADY_STARTED: The groupcall has already started, you can join directly using phone.joinGroupCall.
-//  400 GROUPCALL_INVALID: The specified group call is invalid.
+//
+//	403 GROUPCALL_ALREADY_STARTED: The groupcall has already started, you can join directly using phone.joinGroupCall.
+//	400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.toggleGroupCallStartSubscription for reference.
 func (c *Client) PhoneToggleGroupCallStartSubscription(ctx context.Context, request *PhoneToggleGroupCallStartSubscriptionRequest) (UpdatesClass, error) {

@@ -199,8 +199,9 @@ func (a *PaymentsAssignAppStoreTransactionRequest) GetPurpose() (value InputStor
 // only.
 //
 // Possible errors:
-//  400 INPUT_PURPOSE_INVALID: The specified payment purpose is invalid.
-//  400 RECEIPT_EMPTY: The specified receipt is empty.
+//
+//	400 INPUT_PURPOSE_INVALID: The specified payment purpose is invalid.
+//	400 RECEIPT_EMPTY: The specified receipt is empty.
 //
 // See https://core.telegram.org/method/payments.assignAppStoreTransaction for reference.
 func (c *Client) PaymentsAssignAppStoreTransaction(ctx context.Context, request *PaymentsAssignAppStoreTransactionRequest) (UpdatesClass, error) {

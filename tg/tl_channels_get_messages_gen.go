@@ -35,7 +35,7 @@ var (
 // Get channel/supergroup¹ messages
 //
 // Links:
-//  1) https://core.telegram.org/api/channel
+//  1. https://core.telegram.org/api/channel
 //
 // See https://core.telegram.org/method/channels.getMessages for reference.
 type ChannelsGetMessagesRequest struct {
@@ -228,16 +228,17 @@ func (g *ChannelsGetMessagesRequest) MapID() (value InputMessageClassArray) {
 // Get channel/supergroup¹ messages
 //
 // Links:
-//  1) https://core.telegram.org/api/channel
+//  1. https://core.telegram.org/api/channel
 //
 // Possible errors:
-//  400 CHANNEL_INVALID: The provided channel is invalid.
-//  406 CHANNEL_PRIVATE: You haven't joined this channel/supergroup.
-//  400 CHAT_NOT_MODIFIED: No changes were made to chat information because the new information you passed is identical to the current information.
-//  400 FROZEN_PARTICIPANT_MISSING: The current account is frozen, and cannot access the specified peer.
-//  400 MESSAGE_IDS_EMPTY: No message ids were provided.
-//  400 MSG_ID_INVALID: Invalid message ID provided.
-//  400 USER_BANNED_IN_CHANNEL: You're banned from sending messages in supergroups/channels.
+//
+//	400 CHANNEL_INVALID: The provided channel is invalid.
+//	406 CHANNEL_PRIVATE: You haven't joined this channel/supergroup.
+//	400 CHAT_NOT_MODIFIED: No changes were made to chat information because the new information you passed is identical to the current information.
+//	400 FROZEN_PARTICIPANT_MISSING: The current account is frozen, and cannot access the specified peer.
+//	400 MESSAGE_IDS_EMPTY: No message ids were provided.
+//	400 MSG_ID_INVALID: Invalid message ID provided.
+//	400 USER_BANNED_IN_CHANNEL: You're banned from sending messages in supergroups/channels.
 //
 // See https://core.telegram.org/method/channels.getMessages for reference.
 func (c *Client) ChannelsGetMessages(ctx context.Context, request *ChannelsGetMessagesRequest) (MessagesMessagesClass, error) {

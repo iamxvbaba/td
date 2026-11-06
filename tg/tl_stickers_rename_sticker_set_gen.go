@@ -197,7 +197,8 @@ func (r *StickersRenameStickerSetRequest) GetTitle() (value string) {
 // Renames a stickerset.
 //
 // Possible errors:
-//  400 STICKERSET_INVALID: The provided sticker set is invalid.
+//
+//	400 STICKERSET_INVALID: The provided sticker set is invalid.
 //
 // See https://core.telegram.org/method/stickers.renameStickerSet for reference.
 func (c *Client) StickersRenameStickerSet(ctx context.Context, request *StickersRenameStickerSetRequest) (MessagesStickerSetClass, error) {

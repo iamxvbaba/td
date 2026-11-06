@@ -36,9 +36,9 @@ var (
 // after upgrading it to a collectible gift »², see here »³ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
-//  2) https://core.telegram.org/api/gifts#collectible-gifts
-//  3) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/gifts
+//  2. https://core.telegram.org/api/gifts#collectible-gifts
+//  3. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/method/payments.getStarGiftUpgradePreview for reference.
 type PaymentsGetStarGiftUpgradePreviewRequest struct {
@@ -172,13 +172,14 @@ func (g *PaymentsGetStarGiftUpgradePreviewRequest) GetGiftID() (value int64) {
 // after upgrading it to a collectible gift »², see here »³ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
-//  2) https://core.telegram.org/api/gifts#collectible-gifts
-//  3) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/gifts
+//  2. https://core.telegram.org/api/gifts#collectible-gifts
+//  3. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // Possible errors:
-//  400 STARGIFT_INVALID: The passed gift is invalid.
-//  400 STARGIFT_UPGRADE_UNAVAILABLE: A received gift can only be upgraded to a collectible gift if the messageActionStarGift/savedStarGift.can_upgrade flag is set.
+//
+//	400 STARGIFT_INVALID: The passed gift is invalid.
+//	400 STARGIFT_UPGRADE_UNAVAILABLE: A received gift can only be upgraded to a collectible gift if the messageActionStarGift/savedStarGift.can_upgrade flag is set.
 //
 // See https://core.telegram.org/method/payments.getStarGiftUpgradePreview for reference.
 func (c *Client) PaymentsGetStarGiftUpgradePreview(ctx context.Context, giftid int64) (*PaymentsStarGiftUpgradePreview, error) {

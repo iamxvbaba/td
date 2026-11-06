@@ -36,7 +36,7 @@ var (
 // click here »¹
 //
 // Links:
-//  1) https://core.telegram.org/api/url-authorization
+//  1. https://core.telegram.org/api/url-authorization
 //
 // See https://core.telegram.org/method/messages.acceptUrlAuth for reference.
 type MessagesAcceptURLAuthRequest struct {
@@ -541,7 +541,7 @@ func (a *MessagesAcceptURLAuthRequest) GetTonconnectSession() (value InputTonCon
 // click here »¹
 //
 // Links:
-//  1) https://core.telegram.org/api/url-authorization
+//  1. https://core.telegram.org/api/url-authorization
 //
 // See https://core.telegram.org/method/messages.acceptUrlAuth for reference.
 func (c *Client) MessagesAcceptURLAuth(ctx context.Context, request *MessagesAcceptURLAuthRequest) (URLAuthResultClass, error) {

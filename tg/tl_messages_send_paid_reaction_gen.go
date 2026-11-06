@@ -36,8 +36,8 @@ var (
 // to a channel's balance.
 //
 // Links:
-//  1) https://core.telegram.org/api/reactions#paid-reactions
-//  2) https://core.telegram.org/api/stars
+//  1. https://core.telegram.org/api/reactions#paid-reactions
+//  2. https://core.telegram.org/api/stars
 //
 // See https://core.telegram.org/method/messages.sendPaidReaction for reference.
 type MessagesSendPaidReactionRequest struct {
@@ -344,19 +344,20 @@ func (s *MessagesSendPaidReactionRequest) GetPrivate() (value PaidReactionPrivac
 // to a channel's balance.
 //
 // Links:
-//  1) https://core.telegram.org/api/reactions#paid-reactions
-//  2) https://core.telegram.org/api/stars
+//  1. https://core.telegram.org/api/reactions#paid-reactions
+//  2. https://core.telegram.org/api/stars
 //
 // Possible errors:
-//  400 BALANCE_TOO_LOW: The transaction cannot be completed because the current Telegram Stars balance is too low.
-//  400 CHANNEL_INVALID: The provided channel is invalid.
-//  403 CHAT_WRITE_FORBIDDEN: You can't write in this chat.
-//  400 MESSAGE_ID_INVALID: The provided message id is invalid.
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
-//  400 RANDOM_ID_EMPTY: Random ID empty.
-//  400 RANDOM_ID_EXPIRED: The specified random_id was expired (most likely it didn't follow the required `uint64_t random_id = (time() << 32)
-//  400 REACTIONS_COUNT_INVALID: The specified number of reactions is invalid.
-//  400 SEND_AS_PEER_INVALID: You can't send messages as the specified peer.
+//
+//	400 BALANCE_TOO_LOW: The transaction cannot be completed because the current Telegram Stars balance is too low.
+//	400 CHANNEL_INVALID: The provided channel is invalid.
+//	403 CHAT_WRITE_FORBIDDEN: You can't write in this chat.
+//	400 MESSAGE_ID_INVALID: The provided message id is invalid.
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//	400 RANDOM_ID_EMPTY: Random ID empty.
+//	400 RANDOM_ID_EXPIRED: The specified random_id was expired (most likely it didn't follow the required `uint64_t random_id = (time() << 32)
+//	400 REACTIONS_COUNT_INVALID: The specified number of reactions is invalid.
+//	400 SEND_AS_PEER_INVALID: You can't send messages as the specified peer.
 //
 // See https://core.telegram.org/method/messages.sendPaidReaction for reference.
 func (c *Client) MessagesSendPaidReaction(ctx context.Context, request *MessagesSendPaidReactionRequest) (UpdatesClass, error) {

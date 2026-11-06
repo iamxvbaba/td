@@ -36,7 +36,7 @@ var (
 // were banned.
 //
 // Links:
-//  1) https://core.telegram.org/api/channel#basic-groups
+//  1. https://core.telegram.org/api/channel#basic-groups
 //
 // See https://core.telegram.org/constructor/chatParticipantsForbidden for reference.
 type ChatParticipantsForbidden struct {
@@ -249,7 +249,7 @@ func (c *ChatParticipantsForbidden) GetSelfParticipant() (value ChatParticipantC
 // supergroups/channels.
 //
 // Links:
-//  1) https://core.telegram.org/api/channel#basic-groups
+//  1. https://core.telegram.org/api/channel#basic-groups
 //
 // See https://core.telegram.org/constructor/chatParticipants for reference.
 type ChatParticipants struct {
@@ -468,19 +468,20 @@ const ChatParticipantsClassName = "ChatParticipants"
 // See https://core.telegram.org/type/ChatParticipants for reference.
 //
 // Constructors:
-//  - [ChatParticipantsForbidden]
-//  - [ChatParticipants]
+//   - [ChatParticipantsForbidden]
+//   - [ChatParticipants]
 //
 // Example:
-//  g, err := tg.DecodeChatParticipants(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.ChatParticipantsForbidden: // chatParticipantsForbidden#8763d3e1
-//  case *tg.ChatParticipants: // chatParticipants#3cbc93f8
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeChatParticipants(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.ChatParticipantsForbidden: // chatParticipantsForbidden#8763d3e1
+//	case *tg.ChatParticipants: // chatParticipants#3cbc93f8
+//	default: panic(v)
+//	}
 type ChatParticipantsClass interface {
 	bin.Encoder
 	bin.Decoder

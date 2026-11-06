@@ -602,23 +602,24 @@ const InputAiComposeToneClassName = "InputAiComposeTone"
 // See https://core.telegram.org/type/InputAiComposeTone for reference.
 //
 // Constructors:
-//  - [InputAiComposeToneDefault]
-//  - [InputAiComposeToneID]
-//  - [InputAiComposeToneSlug]
-//  - [InputAiComposeToneSingleUse]
+//   - [InputAiComposeToneDefault]
+//   - [InputAiComposeToneID]
+//   - [InputAiComposeToneSlug]
+//   - [InputAiComposeToneSingleUse]
 //
 // Example:
-//  g, err := tg.DecodeInputAiComposeTone(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.InputAiComposeToneDefault: // inputAiComposeToneDefault#1fe9a9bf
-//  case *tg.InputAiComposeToneID: // inputAiComposeToneID#773c080
-//  case *tg.InputAiComposeToneSlug: // inputAiComposeToneSlug#1fa01357
-//  case *tg.InputAiComposeToneSingleUse: // inputAiComposeToneSingleUse#e0c35af
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeInputAiComposeTone(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.InputAiComposeToneDefault: // inputAiComposeToneDefault#1fe9a9bf
+//	case *tg.InputAiComposeToneID: // inputAiComposeToneID#773c080
+//	case *tg.InputAiComposeToneSlug: // inputAiComposeToneSlug#1fa01357
+//	case *tg.InputAiComposeToneSingleUse: // inputAiComposeToneSingleUse#e0c35af
+//	default: panic(v)
+//	}
 type InputAiComposeToneClass interface {
 	bin.Encoder
 	bin.Decoder

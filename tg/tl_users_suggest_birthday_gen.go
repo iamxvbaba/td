@@ -36,7 +36,7 @@ var (
 // API.
 //
 // Links:
-//  1) https://core.telegram.org/api/profile#birthday
+//  1. https://core.telegram.org/api/profile#birthday
 //
 // See https://core.telegram.org/method/users.suggestBirthday for reference.
 type UsersSuggestBirthdayRequest struct {
@@ -202,10 +202,11 @@ func (s *UsersSuggestBirthdayRequest) GetBirthday() (value Birthday) {
 // API.
 //
 // Links:
-//  1) https://core.telegram.org/api/profile#birthday
+//  1. https://core.telegram.org/api/profile#birthday
 //
 // Possible errors:
-//  400 USER_ID_INVALID: The provided user ID is invalid.
+//
+//	400 USER_ID_INVALID: The provided user ID is invalid.
 //
 // See https://core.telegram.org/method/users.suggestBirthday for reference.
 func (c *Client) UsersSuggestBirthday(ctx context.Context, request *UsersSuggestBirthdayRequest) (UpdatesClass, error) {

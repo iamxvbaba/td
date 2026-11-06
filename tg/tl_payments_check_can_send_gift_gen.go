@@ -35,7 +35,7 @@ var (
 // Check if the specified gift »¹ can be sent.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
+//  1. https://core.telegram.org/api/gifts
 //
 // See https://core.telegram.org/method/payments.checkCanSendGift for reference.
 type PaymentsCheckCanSendGiftRequest struct {
@@ -168,10 +168,11 @@ func (c *PaymentsCheckCanSendGiftRequest) GetGiftID() (value int64) {
 // Check if the specified gift »¹ can be sent.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
+//  1. https://core.telegram.org/api/gifts
 //
 // Possible errors:
-//  400 STARGIFT_INVALID: The passed gift is invalid.
+//
+//	400 STARGIFT_INVALID: The passed gift is invalid.
 //
 // See https://core.telegram.org/method/payments.checkCanSendGift for reference.
 func (c *Client) PaymentsCheckCanSendGift(ctx context.Context, giftid int64) (PaymentsCheckCanSendGiftResultClass, error) {

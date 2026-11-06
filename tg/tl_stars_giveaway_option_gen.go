@@ -35,7 +35,7 @@ var (
 // Contains info about a Telegram Star giveaway¹ option.
 //
 // Links:
-//  1) https://core.telegram.org/api/giveaways#star-giveaways
+//  1. https://core.telegram.org/api/giveaways#star-giveaways
 //
 // See https://core.telegram.org/constructor/starsGiveawayOption for reference.
 type StarsGiveawayOption struct {

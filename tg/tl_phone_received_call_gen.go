@@ -37,7 +37,7 @@ var (
 // see here »¹ for more info on the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/calls#one-to-one-calls
+//  1. https://core.telegram.org/api/calls#one-to-one-calls
 //
 // See https://core.telegram.org/method/phone.receivedCall for reference.
 type PhoneReceivedCallRequest struct {
@@ -172,11 +172,12 @@ func (r *PhoneReceivedCallRequest) GetPeer() (value InputPhoneCall) {
 // see here »¹ for more info on the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/calls#one-to-one-calls
+//  1. https://core.telegram.org/api/calls#one-to-one-calls
 //
 // Possible errors:
-//  400 CALL_ALREADY_DECLINED: The call was already declined.
-//  400 CALL_PEER_INVALID: The provided call peer object is invalid.
+//
+//	400 CALL_ALREADY_DECLINED: The call was already declined.
+//	400 CALL_PEER_INVALID: The provided call peer object is invalid.
 //
 // See https://core.telegram.org/method/phone.receivedCall for reference.
 func (c *Client) PhoneReceivedCall(ctx context.Context, peer InputPhoneCall) (bool, error) {

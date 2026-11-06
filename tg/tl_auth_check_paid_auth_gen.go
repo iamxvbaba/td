@@ -35,7 +35,7 @@ var (
 // Checks the status of a login payment¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/auth#paid-auth
+//  1. https://core.telegram.org/api/auth#paid-auth
 //
 // See https://core.telegram.org/method/auth.checkPaidAuth for reference.
 type AuthCheckPaidAuthRequest struct {
@@ -228,10 +228,11 @@ func (c *AuthCheckPaidAuthRequest) GetFormID() (value int64) {
 // Checks the status of a login payment¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/auth#paid-auth
+//  1. https://core.telegram.org/api/auth#paid-auth
 //
 // Possible errors:
-//  400 PHONE_NUMBER_INVALID: The phone number is invalid.
+//
+//	400 PHONE_NUMBER_INVALID: The phone number is invalid.
 //
 // See https://core.telegram.org/method/auth.checkPaidAuth for reference.
 func (c *Client) AuthCheckPaidAuth(ctx context.Context, request *AuthCheckPaidAuthRequest) (AuthSentCodeClass, error) {

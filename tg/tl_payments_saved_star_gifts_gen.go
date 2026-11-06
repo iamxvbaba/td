@@ -35,7 +35,7 @@ var (
 // Represents a list of gifts¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
+//  1. https://core.telegram.org/api/gifts
 //
 // See https://core.telegram.org/constructor/payments.savedStarGifts for reference.
 type PaymentsSavedStarGifts struct {

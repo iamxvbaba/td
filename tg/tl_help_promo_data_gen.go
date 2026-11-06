@@ -171,7 +171,7 @@ func (p *HelpPromoDataEmpty) GetExpires() (value int) {
 // info.
 //
 // Links:
-//  1) https://core.telegram.org/api/config#suggestions
+//  1. https://core.telegram.org/api/config#suggestions
 //
 // See https://core.telegram.org/constructor/help.promoData for reference.
 type HelpPromoData struct {
@@ -760,19 +760,20 @@ const HelpPromoDataClassName = "help.PromoData"
 // See https://core.telegram.org/type/help.PromoData for reference.
 //
 // Constructors:
-//  - [HelpPromoDataEmpty]
-//  - [HelpPromoData]
+//   - [HelpPromoDataEmpty]
+//   - [HelpPromoData]
 //
 // Example:
-//  g, err := tg.DecodeHelpPromoData(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.HelpPromoDataEmpty: // help.promoDataEmpty#98f6ac75
-//  case *tg.HelpPromoData: // help.promoData#8a4d87a
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeHelpPromoData(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.HelpPromoDataEmpty: // help.promoDataEmpty#98f6ac75
+//	case *tg.HelpPromoData: // help.promoData#8a4d87a
+//	default: panic(v)
+//	}
 type HelpPromoDataClass interface {
 	bin.Encoder
 	bin.Decoder

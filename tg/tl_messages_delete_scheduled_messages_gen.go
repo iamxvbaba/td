@@ -210,9 +210,10 @@ func (d *MessagesDeleteScheduledMessagesRequest) GetID() (value []int) {
 // Delete scheduled messages
 //
 // Possible errors:
-//  400 CHANNEL_INVALID: The provided channel is invalid.
-//  403 MESSAGE_DELETE_FORBIDDEN: You can't delete one of the messages you tried to delete, most likely because it is a service message.
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 CHANNEL_INVALID: The provided channel is invalid.
+//	403 MESSAGE_DELETE_FORBIDDEN: You can't delete one of the messages you tried to delete, most likely because it is a service message.
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/messages.deleteScheduledMessages for reference.
 func (c *Client) MessagesDeleteScheduledMessages(ctx context.Context, request *MessagesDeleteScheduledMessagesRequest) (UpdatesClass, error) {

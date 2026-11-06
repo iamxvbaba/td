@@ -389,19 +389,20 @@ const MessagesChatInviteJoinResultClassName = "messages.ChatInviteJoinResult"
 // See https://core.telegram.org/type/messages.ChatInviteJoinResult for reference.
 //
 // Constructors:
-//  - [MessagesChatInviteJoinResultOk]
-//  - [MessagesChatInviteJoinResultWebView]
+//   - [MessagesChatInviteJoinResultOk]
+//   - [MessagesChatInviteJoinResultWebView]
 //
 // Example:
-//  g, err := tg.DecodeMessagesChatInviteJoinResult(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.MessagesChatInviteJoinResultOk: // messages.chatInviteJoinResultOk#445663a7
-//  case *tg.MessagesChatInviteJoinResultWebView: // messages.chatInviteJoinResultWebView#61ca29d3
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeMessagesChatInviteJoinResult(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.MessagesChatInviteJoinResultOk: // messages.chatInviteJoinResultOk#445663a7
+//	case *tg.MessagesChatInviteJoinResultWebView: // messages.chatInviteJoinResultWebView#61ca29d3
+//	default: panic(v)
+//	}
 type MessagesChatInviteJoinResultClass interface {
 	bin.Encoder
 	bin.Decoder

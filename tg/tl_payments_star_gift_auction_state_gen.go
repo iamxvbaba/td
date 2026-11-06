@@ -35,7 +35,7 @@ var (
 // Describes a collectible gift auction »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/auctions
+//  1. https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/constructor/payments.starGiftAuctionState for reference.
 type PaymentsStarGiftAuctionState struct {

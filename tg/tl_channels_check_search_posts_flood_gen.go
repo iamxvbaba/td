@@ -35,7 +35,7 @@ var (
 // Check if the specified global post search »¹ requires payment.
 //
 // Links:
-//  1) https://core.telegram.org/api/search#posts-tab
+//  1. https://core.telegram.org/api/search#posts-tab
 //
 // See https://core.telegram.org/method/channels.checkSearchPostsFlood for reference.
 type ChannelsCheckSearchPostsFloodRequest struct {
@@ -210,7 +210,7 @@ func (c *ChannelsCheckSearchPostsFloodRequest) GetQuery() (value string, ok bool
 // Check if the specified global post search »¹ requires payment.
 //
 // Links:
-//  1) https://core.telegram.org/api/search#posts-tab
+//  1. https://core.telegram.org/api/search#posts-tab
 //
 // See https://core.telegram.org/method/channels.checkSearchPostsFlood for reference.
 func (c *Client) ChannelsCheckSearchPostsFlood(ctx context.Context, request *ChannelsCheckSearchPostsFloodRequest) (*SearchPostsFlood, error) {

@@ -665,23 +665,24 @@ const ShareThemeClassName = "ShareTheme"
 // See https://core.telegram.org/type/ShareTheme for reference.
 //
 // Constructors:
-//  - [ShareThemeDefault]
-//  - [ShareThemeEmojiBackdrop]
-//  - [ShareThemeGift]
-//  - [InputShareThemeGift]
+//   - [ShareThemeDefault]
+//   - [ShareThemeEmojiBackdrop]
+//   - [ShareThemeGift]
+//   - [InputShareThemeGift]
 //
 // Example:
-//  g, err := tg.DecodeShareTheme(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.ShareThemeDefault: // shareThemeDefault#95ace84f
-//  case *tg.ShareThemeEmojiBackdrop: // shareThemeEmojiBackdrop#64b334e1
-//  case *tg.ShareThemeGift: // shareThemeGift#ebece66d
-//  case *tg.InputShareThemeGift: // inputShareThemeGift#3fb92b5b
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeShareTheme(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.ShareThemeDefault: // shareThemeDefault#95ace84f
+//	case *tg.ShareThemeEmojiBackdrop: // shareThemeEmojiBackdrop#64b334e1
+//	case *tg.ShareThemeGift: // shareThemeGift#ebece66d
+//	case *tg.InputShareThemeGift: // inputShareThemeGift#3fb92b5b
+//	default: panic(v)
+//	}
 type ShareThemeClass interface {
 	bin.Encoder
 	bin.Decoder

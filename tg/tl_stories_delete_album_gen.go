@@ -35,7 +35,7 @@ var (
 // Delete a story album¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/stories#story-albums
+//  1. https://core.telegram.org/api/stories#story-albums
 //
 // See https://core.telegram.org/method/stories.deleteAlbum for reference.
 type StoriesDeleteAlbumRequest struct {
@@ -200,10 +200,11 @@ func (d *StoriesDeleteAlbumRequest) GetAlbumID() (value int) {
 // Delete a story album¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/stories#story-albums
+//  1. https://core.telegram.org/api/stories#story-albums
 //
 // Possible errors:
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/stories.deleteAlbum for reference.
 func (c *Client) StoriesDeleteAlbum(ctx context.Context, request *StoriesDeleteAlbumRequest) (bool, error) {

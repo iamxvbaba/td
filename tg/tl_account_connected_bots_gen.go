@@ -35,7 +35,7 @@ var (
 // Info about currently connected business bots¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/bots/connected-business-bots
+//  1. https://core.telegram.org/api/bots/connected-business-bots
 //
 // See https://core.telegram.org/constructor/account.connectedBots for reference.
 type AccountConnectedBots struct {

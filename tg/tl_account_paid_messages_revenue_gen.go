@@ -36,8 +36,8 @@ var (
 // either directly or through a channel, see here »² for more info on paid messages.
 //
 // Links:
-//  1) https://core.telegram.org/api/stars
-//  2) https://core.telegram.org/api/paid-messages
+//  1. https://core.telegram.org/api/stars
+//  2. https://core.telegram.org/api/paid-messages
 //
 // See https://core.telegram.org/constructor/account.paidMessagesRevenue for reference.
 type AccountPaidMessagesRevenue struct {

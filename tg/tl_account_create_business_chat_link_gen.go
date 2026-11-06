@@ -35,7 +35,7 @@ var (
 // Create a business chat deep link »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/business#business-chat-links
+//  1. https://core.telegram.org/api/business#business-chat-links
 //
 // See https://core.telegram.org/method/account.createBusinessChatLink for reference.
 type AccountCreateBusinessChatLinkRequest struct {
@@ -168,12 +168,13 @@ func (c *AccountCreateBusinessChatLinkRequest) GetLink() (value InputBusinessCha
 // Create a business chat deep link »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/business#business-chat-links
+//  1. https://core.telegram.org/api/business#business-chat-links
 //
 // Possible errors:
-//  400 CHATLINKS_TOO_MUCH: Too many business chat links were created, please delete some older links.
-//  400 DOCUMENT_INVALID: The specified document is invalid.
-//  403 PREMIUM_ACCOUNT_REQUIRED: A premium account is required to execute this action.
+//
+//	400 CHATLINKS_TOO_MUCH: Too many business chat links were created, please delete some older links.
+//	400 DOCUMENT_INVALID: The specified document is invalid.
+//	403 PREMIUM_ACCOUNT_REQUIRED: A premium account is required to execute this action.
 //
 // See https://core.telegram.org/method/account.createBusinessChatLink for reference.
 func (c *Client) AccountCreateBusinessChatLink(ctx context.Context, link InputBusinessChatLink) (*BusinessChatLink, error) {

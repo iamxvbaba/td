@@ -275,7 +275,8 @@ func (r *MessagesReorderPinnedForumTopicsRequest) GetOrder() (value []int) {
 // Reorder pinned forum topics
 //
 // Possible errors:
-//  400 CHANNEL_INVALID: The provided channel is invalid.
+//
+//	400 CHANNEL_INVALID: The provided channel is invalid.
 //
 // See https://core.telegram.org/method/messages.reorderPinnedForumTopics for reference.
 func (c *Client) MessagesReorderPinnedForumTopics(ctx context.Context, request *MessagesReorderPinnedForumTopicsRequest) (UpdatesClass, error) {

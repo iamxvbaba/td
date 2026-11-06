@@ -35,7 +35,7 @@ var (
 // Decline a conference call¹ invite.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  1. https://core.telegram.org/api/group-calls#conference-calls
 //
 // See https://core.telegram.org/method/phone.declineConferenceCallInvite for reference.
 type PhoneDeclineConferenceCallInviteRequest struct {
@@ -171,10 +171,11 @@ func (d *PhoneDeclineConferenceCallInviteRequest) GetMsgID() (value int) {
 // Decline a conference call¹ invite.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  1. https://core.telegram.org/api/group-calls#conference-calls
 //
 // Possible errors:
-//  400 MESSAGE_ID_INVALID: The provided message id is invalid.
+//
+//	400 MESSAGE_ID_INVALID: The provided message id is invalid.
 //
 // See https://core.telegram.org/method/phone.declineConferenceCallInvite for reference.
 func (c *Client) PhoneDeclineConferenceCallInvite(ctx context.Context, msgid int) (UpdatesClass, error) {

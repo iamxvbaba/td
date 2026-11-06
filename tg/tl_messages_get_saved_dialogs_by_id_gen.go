@@ -35,8 +35,8 @@ var (
 // Obtain information about specific saved message dialogs »¹ or monoforum topics »².
 //
 // Links:
-//  1) https://core.telegram.org/api/saved-messages#saved-message-dialogs
-//  2) https://core.telegram.org/api/monoforum
+//  1. https://core.telegram.org/api/saved-messages#saved-message-dialogs
+//  2. https://core.telegram.org/api/monoforum
 //
 // See https://core.telegram.org/method/messages.getSavedDialogsByID for reference.
 type MessagesGetSavedDialogsByIDRequest struct {
@@ -270,8 +270,8 @@ func (g *MessagesGetSavedDialogsByIDRequest) MapIDs() (value InputPeerClassArray
 // Obtain information about specific saved message dialogs »¹ or monoforum topics »².
 //
 // Links:
-//  1) https://core.telegram.org/api/saved-messages#saved-message-dialogs
-//  2) https://core.telegram.org/api/monoforum
+//  1. https://core.telegram.org/api/saved-messages#saved-message-dialogs
+//  2. https://core.telegram.org/api/monoforum
 //
 // See https://core.telegram.org/method/messages.getSavedDialogsByID for reference.
 func (c *Client) MessagesGetSavedDialogsByID(ctx context.Context, request *MessagesGetSavedDialogsByIDRequest) (MessagesSavedDialogsClass, error) {

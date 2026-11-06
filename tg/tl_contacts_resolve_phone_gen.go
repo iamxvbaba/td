@@ -173,7 +173,8 @@ func (r *ContactsResolvePhoneRequest) GetPhone() (value string) {
 // most 1 call every 3 seconds.
 //
 // Possible errors:
-//  400 PHONE_NOT_OCCUPIED: No user is associated to the specified phone number.
+//
+//	400 PHONE_NOT_OCCUPIED: No user is associated to the specified phone number.
 //
 // See https://core.telegram.org/method/contacts.resolvePhone for reference.
 func (c *Client) ContactsResolvePhone(ctx context.Context, phone string) (*ContactsResolvedPeer, error) {

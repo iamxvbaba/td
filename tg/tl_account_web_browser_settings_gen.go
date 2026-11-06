@@ -446,19 +446,20 @@ const AccountWebBrowserSettingsClassName = "account.WebBrowserSettings"
 // See https://core.telegram.org/type/account.WebBrowserSettings for reference.
 //
 // Constructors:
-//  - [AccountWebBrowserSettingsNotModified]
-//  - [AccountWebBrowserSettings]
+//   - [AccountWebBrowserSettingsNotModified]
+//   - [AccountWebBrowserSettings]
 //
 // Example:
-//  g, err := tg.DecodeAccountWebBrowserSettings(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.AccountWebBrowserSettingsNotModified: // account.webBrowserSettingsNotModified#c31c8f4e
-//  case *tg.AccountWebBrowserSettings: // account.webBrowserSettings#79eb8cb3
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeAccountWebBrowserSettings(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.AccountWebBrowserSettingsNotModified: // account.webBrowserSettingsNotModified#c31c8f4e
+//	case *tg.AccountWebBrowserSettings: // account.webBrowserSettings#79eb8cb3
+//	default: panic(v)
+//	}
 type AccountWebBrowserSettingsClass interface {
 	bin.Encoder
 	bin.Decoder

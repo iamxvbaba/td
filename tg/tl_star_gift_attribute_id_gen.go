@@ -35,7 +35,7 @@ var (
 // The ID of a model of a collectible gift »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/constructor/starGiftAttributeIdModel for reference.
 type StarGiftAttributeIDModel struct {
@@ -176,7 +176,7 @@ func (s *StarGiftAttributeIDModel) GetDocumentID() (value int64) {
 // The ID of a pattern of a collectible gift »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/constructor/starGiftAttributeIdPattern for reference.
 type StarGiftAttributeIDPattern struct {
@@ -317,7 +317,7 @@ func (s *StarGiftAttributeIDPattern) GetDocumentID() (value int64) {
 // The ID of a backdrop of a collectible gift »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/constructor/starGiftAttributeIdBackdrop for reference.
 type StarGiftAttributeIDBackdrop struct {
@@ -459,21 +459,22 @@ const StarGiftAttributeIDClassName = "StarGiftAttributeId"
 // See https://core.telegram.org/type/StarGiftAttributeId for reference.
 //
 // Constructors:
-//  - [StarGiftAttributeIDModel]
-//  - [StarGiftAttributeIDPattern]
-//  - [StarGiftAttributeIDBackdrop]
+//   - [StarGiftAttributeIDModel]
+//   - [StarGiftAttributeIDPattern]
+//   - [StarGiftAttributeIDBackdrop]
 //
 // Example:
-//  g, err := tg.DecodeStarGiftAttributeID(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.StarGiftAttributeIDModel: // starGiftAttributeIdModel#48aaae3c
-//  case *tg.StarGiftAttributeIDPattern: // starGiftAttributeIdPattern#4a162433
-//  case *tg.StarGiftAttributeIDBackdrop: // starGiftAttributeIdBackdrop#1f01c757
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeStarGiftAttributeID(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.StarGiftAttributeIDModel: // starGiftAttributeIdModel#48aaae3c
+//	case *tg.StarGiftAttributeIDPattern: // starGiftAttributeIdPattern#4a162433
+//	case *tg.StarGiftAttributeIDBackdrop: // starGiftAttributeIdBackdrop#1f01c757
+//	default: panic(v)
+//	}
 type StarGiftAttributeIDClass interface {
 	bin.Encoder
 	bin.Decoder

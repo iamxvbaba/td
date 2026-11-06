@@ -35,7 +35,7 @@ var (
 // Basic group¹ member (not usable by supergroups).
 //
 // Links:
-//  1) https://core.telegram.org/api/channel#basic-groups
+//  1. https://core.telegram.org/api/channel#basic-groups
 //
 // See https://core.telegram.org/constructor/chatParticipant for reference.
 type ChatParticipant struct {
@@ -299,7 +299,7 @@ func (c *ChatParticipant) GetRank() (value string, ok bool) {
 // Represents the creator of the basic group »¹
 //
 // Links:
-//  1) https://core.telegram.org/api/channel#basic-groups
+//  1. https://core.telegram.org/api/channel#basic-groups
 //
 // See https://core.telegram.org/constructor/chatParticipantCreator for reference.
 type ChatParticipantCreator struct {
@@ -509,7 +509,7 @@ func (c *ChatParticipantCreator) GetRank() (value string, ok bool) {
 // Basic group¹ admin (not usable by supergroups).
 //
 // Links:
-//  1) https://core.telegram.org/api/channel#basic-groups
+//  1. https://core.telegram.org/api/channel#basic-groups
 //
 // See https://core.telegram.org/constructor/chatParticipantAdmin for reference.
 type ChatParticipantAdmin struct {
@@ -777,21 +777,22 @@ const ChatParticipantClassName = "ChatParticipant"
 // See https://core.telegram.org/type/ChatParticipant for reference.
 //
 // Constructors:
-//  - [ChatParticipant]
-//  - [ChatParticipantCreator]
-//  - [ChatParticipantAdmin]
+//   - [ChatParticipant]
+//   - [ChatParticipantCreator]
+//   - [ChatParticipantAdmin]
 //
 // Example:
-//  g, err := tg.DecodeChatParticipant(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.ChatParticipant: // chatParticipant#38e79fde
-//  case *tg.ChatParticipantCreator: // chatParticipantCreator#e1f867b8
-//  case *tg.ChatParticipantAdmin: // chatParticipantAdmin#360d5d2
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeChatParticipant(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.ChatParticipant: // chatParticipant#38e79fde
+//	case *tg.ChatParticipantCreator: // chatParticipantCreator#e1f867b8
+//	case *tg.ChatParticipantAdmin: // chatParticipantAdmin#360d5d2
+//	default: panic(v)
+//	}
 type ChatParticipantClass interface {
 	bin.Encoder
 	bin.Decoder

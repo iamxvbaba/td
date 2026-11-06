@@ -38,7 +38,7 @@ var (
 // on the passed flags.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
+//  1. https://core.telegram.org/api/gifts
 //
 // See https://core.telegram.org/method/payments.getSavedStarGifts for reference.
 type PaymentsGetSavedStarGiftsRequest struct {
@@ -647,13 +647,14 @@ func (g *PaymentsGetSavedStarGiftsRequest) GetLimit() (value int) {
 // on the passed flags.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
+//  1. https://core.telegram.org/api/gifts
 //
 // Possible errors:
-//  400 BUSINESS_CONNECTION_INVALID: The connection_id passed to the wrapping invokeWithBusinessConnection call is invalid.
-//  400 COLLECTION_ID_INVALID:
-//  400 MSG_ID_INVALID: Invalid message ID provided.
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 BUSINESS_CONNECTION_INVALID: The connection_id passed to the wrapping invokeWithBusinessConnection call is invalid.
+//	400 COLLECTION_ID_INVALID:
+//	400 MSG_ID_INVALID: Invalid message ID provided.
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/payments.getSavedStarGifts for reference.
 func (c *Client) PaymentsGetSavedStarGifts(ctx context.Context, request *PaymentsGetSavedStarGiftsRequest) (*PaymentsSavedStarGifts, error) {

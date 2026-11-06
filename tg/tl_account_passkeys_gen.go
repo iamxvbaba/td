@@ -35,7 +35,7 @@ var (
 // List of passkeys »¹ associated to the current account.
 //
 // Links:
-//  1) https://core.telegram.org/api/passkeys#list-passkeys
+//  1. https://core.telegram.org/api/passkeys#list-passkeys
 //
 // See https://core.telegram.org/constructor/account.passkeys for reference.
 type AccountPasskeys struct {

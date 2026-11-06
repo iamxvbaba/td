@@ -361,19 +361,20 @@ const MessagesWidgetPublicDataClassName = "messages.WidgetPublicData"
 // See https://core.telegram.org/type/messages.WidgetPublicData for reference.
 //
 // Constructors:
-//  - [MessagesWidgetPublicDataNotModified]
-//  - [MessagesWidgetPublicData]
+//   - [MessagesWidgetPublicDataNotModified]
+//   - [MessagesWidgetPublicData]
 //
 // Example:
-//  g, err := tg.DecodeMessagesWidgetPublicData(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.MessagesWidgetPublicDataNotModified: // messages.widgetPublicDataNotModified#b9196e57
-//  case *tg.MessagesWidgetPublicData: // messages.widgetPublicData#4493bff
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeMessagesWidgetPublicData(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.MessagesWidgetPublicDataNotModified: // messages.widgetPublicDataNotModified#b9196e57
+//	case *tg.MessagesWidgetPublicData: // messages.widgetPublicData#4493bff
+//	default: panic(v)
+//	}
 type MessagesWidgetPublicDataClass interface {
 	bin.Encoder
 	bin.Decoder

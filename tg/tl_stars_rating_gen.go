@@ -35,7 +35,7 @@ var (
 // Represents the profile's star rating, see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/stars#star-rating
+//  1. https://core.telegram.org/api/stars#star-rating
 //
 // See https://core.telegram.org/constructor/starsRating for reference.
 type StarsRating struct {

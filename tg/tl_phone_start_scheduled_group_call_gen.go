@@ -35,7 +35,7 @@ var (
 // Start a scheduled group call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#video-chats-livestreams
+//  1. https://core.telegram.org/api/group-calls#video-chats-livestreams
 //
 // See https://core.telegram.org/method/phone.startScheduledGroupCall for reference.
 type PhoneStartScheduledGroupCallRequest struct {
@@ -173,11 +173,12 @@ func (s *PhoneStartScheduledGroupCallRequest) GetCall() (value InputGroupCallCla
 // Start a scheduled group call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#video-chats-livestreams
+//  1. https://core.telegram.org/api/group-calls#video-chats-livestreams
 //
 // Possible errors:
-//  403 GROUPCALL_ALREADY_STARTED: The groupcall has already started, you can join directly using phone.joinGroupCall.
-//  400 GROUPCALL_INVALID: The specified group call is invalid.
+//
+//	403 GROUPCALL_ALREADY_STARTED: The groupcall has already started, you can join directly using phone.joinGroupCall.
+//	400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.startScheduledGroupCall for reference.
 func (c *Client) PhoneStartScheduledGroupCall(ctx context.Context, call InputGroupCallClass) (UpdatesClass, error) {

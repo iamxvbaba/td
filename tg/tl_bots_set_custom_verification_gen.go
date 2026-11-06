@@ -35,7 +35,7 @@ var (
 // Verify a user or chat on behalf of an organization »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/bots/verification
+//  1. https://core.telegram.org/api/bots/verification
 //
 // See https://core.telegram.org/method/bots.setCustomVerification for reference.
 type BotsSetCustomVerificationRequest struct {
@@ -336,12 +336,13 @@ func (s *BotsSetCustomVerificationRequest) GetCustomDescription() (value TextWit
 // Verify a user or chat on behalf of an organization »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/bots/verification
+//  1. https://core.telegram.org/api/bots/verification
 //
 // Possible errors:
-//  400 BOT_INVALID: This is not a valid bot.
-//  403 BOT_VERIFIER_FORBIDDEN: This bot cannot assign verification icons.
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 BOT_INVALID: This is not a valid bot.
+//	403 BOT_VERIFIER_FORBIDDEN: This bot cannot assign verification icons.
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/bots.setCustomVerification for reference.
 func (c *Client) BotsSetCustomVerification(ctx context.Context, request *BotsSetCustomVerificationRequest) (bool, error) {

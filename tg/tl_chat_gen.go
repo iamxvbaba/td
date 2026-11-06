@@ -175,9 +175,9 @@ func (c *ChatEmpty) GetID() (value int64) {
 // peer database².
 //
 // Links:
-//  1) https://core.telegram.org/api/peers
-//  2) https://github.com/tdlib/td/blob/a24af0992245f838f2b4b418a0a2d5fa9caa27b5/td/telegram/ChatManager.cpp#L5152
-//  3) https://core.telegram.org/api/peers
+//  1. https://core.telegram.org/api/peers
+//  2. https://github.com/tdlib/td/blob/a24af0992245f838f2b4b418a0a2d5fa9caa27b5/td/telegram/ChatManager.cpp#L5152
+//  3. https://core.telegram.org/api/peers
 //
 // See https://core.telegram.org/constructor/chat for reference.
 type Chat struct {
@@ -1023,9 +1023,9 @@ func (c *ChatForbidden) GetTitle() (value string) {
 // peer database².
 //
 // Links:
-//  1) https://core.telegram.org/api/peers
-//  2) https://github.com/tdlib/td/blob/a24af0992245f838f2b4b418a0a2d5fa9caa27b5/td/telegram/ChatManager.cpp#L8329
-//  3) https://core.telegram.org/api/peers
+//  1. https://core.telegram.org/api/peers
+//  2. https://github.com/tdlib/td/blob/a24af0992245f838f2b4b418a0a2d5fa9caa27b5/td/telegram/ChatManager.cpp#L8329
+//  3. https://core.telegram.org/api/peers
 //
 // See https://core.telegram.org/constructor/channel for reference.
 type Channel struct {
@@ -4583,29 +4583,30 @@ const ChatClassName = "Chat"
 // See https://core.telegram.org/type/Chat for reference.
 //
 // Constructors:
-//  - [ChatEmpty]
-//  - [Chat]
-//  - [ChatForbidden]
-//  - [Channel]
-//  - [ChannelForbidden]
-//  - [CommunityForbidden]
-//  - [Community]
+//   - [ChatEmpty]
+//   - [Chat]
+//   - [ChatForbidden]
+//   - [Channel]
+//   - [ChannelForbidden]
+//   - [CommunityForbidden]
+//   - [Community]
 //
 // Example:
-//  g, err := tg.DecodeChat(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.ChatEmpty: // chatEmpty#29562865
-//  case *tg.Chat: // chat#41cbf256
-//  case *tg.ChatForbidden: // chatForbidden#6592a1a7
-//  case *tg.Channel: // channel#7ad15240
-//  case *tg.ChannelForbidden: // channelForbidden#17d493d5
-//  case *tg.CommunityForbidden: // communityForbidden#fd3cdab8
-//  case *tg.Community: // community#65efe954
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeChat(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.ChatEmpty: // chatEmpty#29562865
+//	case *tg.Chat: // chat#41cbf256
+//	case *tg.ChatForbidden: // chatForbidden#6592a1a7
+//	case *tg.Channel: // channel#7ad15240
+//	case *tg.ChannelForbidden: // channelForbidden#17d493d5
+//	case *tg.CommunityForbidden: // communityForbidden#fd3cdab8
+//	case *tg.Community: // community#65efe954
+//	default: panic(v)
+//	}
 type ChatClass interface {
 	bin.Encoder
 	bin.Decoder

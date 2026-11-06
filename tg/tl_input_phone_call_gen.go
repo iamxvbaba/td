@@ -35,7 +35,7 @@ var (
 // Identifies a phone call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/calls
+//  1. https://core.telegram.org/api/calls
 //
 // See https://core.telegram.org/constructor/inputPhoneCall for reference.
 type InputPhoneCall struct {

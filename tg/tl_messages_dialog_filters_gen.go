@@ -35,7 +35,7 @@ var (
 // Folder and folder tags¹ information
 //
 // Links:
-//  1) https://core.telegram.org/api/folders
+//  1. https://core.telegram.org/api/folders
 //
 // See https://core.telegram.org/constructor/messages.dialogFilters for reference.
 type MessagesDialogFilters struct {

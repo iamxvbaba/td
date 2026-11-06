@@ -39,9 +39,9 @@ var (
 // See here »¹ for detailed documentation on this method.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gifts
-//  2) https://core.telegram.org/api/gifts#reselling-collectible-gifts
-//  3) https://core.telegram.org/api/gifts#sending-gifts
+//  1. https://core.telegram.org/api/gifts#collectible-gifts
+//  2. https://core.telegram.org/api/gifts#reselling-collectible-gifts
+//  3. https://core.telegram.org/api/gifts#sending-gifts
 //
 // See https://core.telegram.org/method/payments.getResaleStarGifts for reference.
 type PaymentsGetResaleStarGiftsRequest struct {
@@ -542,13 +542,14 @@ func (g *PaymentsGetResaleStarGiftsRequest) MapAttributes() (value StarGiftAttri
 // See here »¹ for detailed documentation on this method.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gifts
-//  2) https://core.telegram.org/api/gifts#reselling-collectible-gifts
-//  3) https://core.telegram.org/api/gifts#sending-gifts
+//  1. https://core.telegram.org/api/gifts#collectible-gifts
+//  2. https://core.telegram.org/api/gifts#reselling-collectible-gifts
+//  3. https://core.telegram.org/api/gifts#sending-gifts
 //
 // Possible errors:
-//  400 STARGIFT_ATTRIBUTE_INVALID:
-//  400 STARGIFT_INVALID: The passed gift is invalid.
+//
+//	400 STARGIFT_ATTRIBUTE_INVALID:
+//	400 STARGIFT_INVALID: The passed gift is invalid.
 //
 // See https://core.telegram.org/method/payments.getResaleStarGifts for reference.
 func (c *Client) PaymentsGetResaleStarGifts(ctx context.Context, request *PaymentsGetResaleStarGiftsRequest) (*PaymentsResaleStarGifts, error) {

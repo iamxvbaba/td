@@ -35,7 +35,7 @@ var (
 // Send phone call¹ debug data to server.
 //
 // Links:
-//  1) https://core.telegram.org/api/calls#call-debug
+//  1. https://core.telegram.org/api/calls#call-debug
 //
 // See https://core.telegram.org/method/phone.saveCallDebug for reference.
 type PhoneSaveCallDebugRequest struct {
@@ -195,11 +195,12 @@ func (s *PhoneSaveCallDebugRequest) GetDebug() (value DataJSON) {
 // Send phone call¹ debug data to server.
 //
 // Links:
-//  1) https://core.telegram.org/api/calls#call-debug
+//  1. https://core.telegram.org/api/calls#call-debug
 //
 // Possible errors:
-//  400 CALL_PEER_INVALID: The provided call peer object is invalid.
-//  400 DATA_JSON_INVALID: The provided JSON data is invalid.
+//
+//	400 CALL_PEER_INVALID: The provided call peer object is invalid.
+//	400 DATA_JSON_INVALID: The provided JSON data is invalid.
 //
 // See https://core.telegram.org/method/phone.saveCallDebug for reference.
 func (c *Client) PhoneSaveCallDebug(ctx context.Context, request *PhoneSaveCallDebugRequest) (bool, error) {

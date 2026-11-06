@@ -36,8 +36,8 @@ var (
 // gift link »².
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gifts
-//  2) https://core.telegram.org/api/links#collectible-gift-link
+//  1. https://core.telegram.org/api/gifts#collectible-gifts
+//  2. https://core.telegram.org/api/links#collectible-gift-link
 //
 // See https://core.telegram.org/method/payments.getUniqueStarGift for reference.
 type PaymentsGetUniqueStarGiftRequest struct {
@@ -171,11 +171,12 @@ func (g *PaymentsGetUniqueStarGiftRequest) GetSlug() (value string) {
 // gift link »².
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gifts
-//  2) https://core.telegram.org/api/links#collectible-gift-link
+//  1. https://core.telegram.org/api/gifts#collectible-gifts
+//  2. https://core.telegram.org/api/links#collectible-gift-link
 //
 // Possible errors:
-//  400 STARGIFT_SLUG_INVALID: The specified gift slug is invalid.
+//
+//	400 STARGIFT_SLUG_INVALID: The specified gift slug is invalid.
 //
 // See https://core.telegram.org/method/payments.getUniqueStarGift for reference.
 func (c *Client) PaymentsGetUniqueStarGift(ctx context.Context, slug string) (*PaymentsUniqueStarGift, error) {

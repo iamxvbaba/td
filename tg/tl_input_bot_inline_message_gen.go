@@ -3921,37 +3921,38 @@ const InputBotInlineMessageClassName = "InputBotInlineMessage"
 // See https://core.telegram.org/type/InputBotInlineMessage for reference.
 //
 // Constructors:
-//  - [InputBotInlineMessageMediaAuto]
-//  - [InputBotInlineMessageText]
-//  - [InputBotInlineMessageMediaGeo]
-//  - [InputBotInlineMessageMediaVenue]
-//  - [InputBotInlineMessageMediaContact]
-//  - [InputBotInlineMessageGame]
-//  - [InputBotInlineMessageMediaInvoice]
-//  - [InputBotInlineMessageMediaWebPage]
-//  - [InputBotInlineMessageRichMessage]
-//  - [InputBotInlineMessageWidget]
-//  - [InputBotInlineMessageWidgetID]
+//   - [InputBotInlineMessageMediaAuto]
+//   - [InputBotInlineMessageText]
+//   - [InputBotInlineMessageMediaGeo]
+//   - [InputBotInlineMessageMediaVenue]
+//   - [InputBotInlineMessageMediaContact]
+//   - [InputBotInlineMessageGame]
+//   - [InputBotInlineMessageMediaInvoice]
+//   - [InputBotInlineMessageMediaWebPage]
+//   - [InputBotInlineMessageRichMessage]
+//   - [InputBotInlineMessageWidget]
+//   - [InputBotInlineMessageWidgetID]
 //
 // Example:
-//  g, err := tg.DecodeInputBotInlineMessage(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.InputBotInlineMessageMediaAuto: // inputBotInlineMessageMediaAuto#3380c786
-//  case *tg.InputBotInlineMessageText: // inputBotInlineMessageText#3dcd7a87
-//  case *tg.InputBotInlineMessageMediaGeo: // inputBotInlineMessageMediaGeo#96929a85
-//  case *tg.InputBotInlineMessageMediaVenue: // inputBotInlineMessageMediaVenue#417bbf11
-//  case *tg.InputBotInlineMessageMediaContact: // inputBotInlineMessageMediaContact#a6edbffd
-//  case *tg.InputBotInlineMessageGame: // inputBotInlineMessageGame#4b425864
-//  case *tg.InputBotInlineMessageMediaInvoice: // inputBotInlineMessageMediaInvoice#d7e78225
-//  case *tg.InputBotInlineMessageMediaWebPage: // inputBotInlineMessageMediaWebPage#bddcc510
-//  case *tg.InputBotInlineMessageRichMessage: // inputBotInlineMessageRichMessage#b43df56c
-//  case *tg.InputBotInlineMessageWidget: // inputBotInlineMessageWidget#f597a3f0
-//  case *tg.InputBotInlineMessageWidgetID: // inputBotInlineMessageWidgetId#fe8b792b
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeInputBotInlineMessage(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.InputBotInlineMessageMediaAuto: // inputBotInlineMessageMediaAuto#3380c786
+//	case *tg.InputBotInlineMessageText: // inputBotInlineMessageText#3dcd7a87
+//	case *tg.InputBotInlineMessageMediaGeo: // inputBotInlineMessageMediaGeo#96929a85
+//	case *tg.InputBotInlineMessageMediaVenue: // inputBotInlineMessageMediaVenue#417bbf11
+//	case *tg.InputBotInlineMessageMediaContact: // inputBotInlineMessageMediaContact#a6edbffd
+//	case *tg.InputBotInlineMessageGame: // inputBotInlineMessageGame#4b425864
+//	case *tg.InputBotInlineMessageMediaInvoice: // inputBotInlineMessageMediaInvoice#d7e78225
+//	case *tg.InputBotInlineMessageMediaWebPage: // inputBotInlineMessageMediaWebPage#bddcc510
+//	case *tg.InputBotInlineMessageRichMessage: // inputBotInlineMessageRichMessage#b43df56c
+//	case *tg.InputBotInlineMessageWidget: // inputBotInlineMessageWidget#f597a3f0
+//	case *tg.InputBotInlineMessageWidgetID: // inputBotInlineMessageWidgetId#fe8b792b
+//	default: panic(v)
+//	}
 type InputBotInlineMessageClass interface {
 	bin.Encoder
 	bin.Decoder

@@ -36,7 +36,7 @@ var (
 // Exactly one of the only_left and kick flags must be set.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  1. https://core.telegram.org/api/group-calls#conference-calls
 //
 // See https://core.telegram.org/method/phone.deleteConferenceCallParticipants for reference.
 type PhoneDeleteConferenceCallParticipantsRequest struct {
@@ -336,10 +336,11 @@ func (d *PhoneDeleteConferenceCallParticipantsRequest) GetBlock() (value []byte)
 // Exactly one of the only_left and kick flags must be set.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  1. https://core.telegram.org/api/group-calls#conference-calls
 //
 // Possible errors:
-//  400 GROUPCALL_INVALID: The specified group call is invalid.
+//
+//	400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.deleteConferenceCallParticipants for reference.
 func (c *Client) PhoneDeleteConferenceCallParticipants(ctx context.Context, request *PhoneDeleteConferenceCallParticipantsRequest) (UpdatesClass, error) {

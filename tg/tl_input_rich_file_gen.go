@@ -371,19 +371,20 @@ const InputRichFileClassName = "InputRichFile"
 // See https://core.telegram.org/type/InputRichFile for reference.
 //
 // Constructors:
-//  - [InputRichFilePhoto]
-//  - [InputRichFileDocument]
+//   - [InputRichFilePhoto]
+//   - [InputRichFileDocument]
 //
 // Example:
-//  g, err := tg.DecodeInputRichFile(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.InputRichFilePhoto: // inputRichFilePhoto#9b00622b
-//  case *tg.InputRichFileDocument: // inputRichFileDocument#83281dbd
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeInputRichFile(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.InputRichFilePhoto: // inputRichFilePhoto#9b00622b
+//	case *tg.InputRichFileDocument: // inputRichFileDocument#83281dbd
+//	default: panic(v)
+//	}
 type InputRichFileClass interface {
 	bin.Encoder
 	bin.Decoder

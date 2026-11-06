@@ -35,7 +35,7 @@ var (
 // Invite a user to a conference call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  1. https://core.telegram.org/api/group-calls#conference-calls
 //
 // See https://core.telegram.org/method/phone.inviteConferenceCallParticipant for reference.
 type PhoneInviteConferenceCallParticipantRequest struct {
@@ -261,10 +261,11 @@ func (i *PhoneInviteConferenceCallParticipantRequest) GetUserID() (value InputUs
 // Invite a user to a conference call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  1. https://core.telegram.org/api/group-calls#conference-calls
 //
 // Possible errors:
-//  400 GROUPCALL_INVALID: The specified group call is invalid.
+//
+//	400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.inviteConferenceCallParticipant for reference.
 func (c *Client) PhoneInviteConferenceCallParticipant(ctx context.Context, request *PhoneInviteConferenceCallParticipantRequest) (UpdatesClass, error) {

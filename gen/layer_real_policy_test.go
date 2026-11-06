@@ -341,13 +341,14 @@ func realRequiredLayerResolution(obligation LayerObligation) (LayerObligationRes
 			return adapter("layerRequireLegacyEphemeralDeletePeer")
 		}
 	case "channels.toggleForum":
-		// Layer 233 adds the required sidebar layout decision to the channel
-		// forum request. A historical request cannot express it, and defaulting
-		// it to false would let an old client silently overwrite the account's
-		// sidebar preference. Reject the historical request instead of
-		// inventing a value the client never sent.
+		// Layer 233 adds the required per-channel sidebar layout flag to the
+		// forum request. Historical clients only know the list and tabs
+		// layouts, so their request defaults sidebar to false, which is the
+		// layout they chose. Rejecting it would leave every 225-232 client
+		// unable to toggle forums, as the v1.6.0 withdrawal rejection did for
+		// collectible gift export.
 		if obligation.Direction == LayerDirectionProfileToCanonical && obligation.OtherField == "sidebar" {
-			return LayerObligationResolution{Action: LayerResolveReject}, true, nil
+			return defaulted()
 		}
 	case "auth.sentCodePaymentRequired", "pageListOrderedItemBlocks", "pageListOrderedItemText":
 		return defaulted()

@@ -1242,7 +1242,7 @@ func (m *MessageActionChannelCreate) GetTitle() (value string) {
 // Indicates the chat was migrated¹ to the specified supergroup
 //
 // Links:
-//  1) https://core.telegram.org/api/channel
+//  1. https://core.telegram.org/api/channel
 //
 // See https://core.telegram.org/constructor/messageActionChatMigrateTo for reference.
 type MessageActionChatMigrateTo struct {
@@ -1380,7 +1380,7 @@ func (m *MessageActionChatMigrateTo) GetChannelID() (value int64) {
 // Indicates the channel was migrated¹ from the specified chat
 //
 // Links:
-//  1) https://core.telegram.org/api/channel
+//  1. https://core.telegram.org/api/channel
 //
 // See https://core.telegram.org/constructor/messageActionChannelMigrateFrom for reference.
 type MessageActionChannelMigrateFrom struct {
@@ -3588,7 +3588,7 @@ func (m *MessageActionBotAllowed) GetApp() (value BotAppClass, ok bool) {
 // Secure telegram passport¹ values were received
 //
 // Links:
-//  1) https://core.telegram.org/passport
+//  1. https://core.telegram.org/passport
 //
 // See https://core.telegram.org/constructor/messageActionSecureValuesSentMe for reference.
 type MessageActionSecureValuesSentMe struct {
@@ -3769,7 +3769,7 @@ func (m *MessageActionSecureValuesSentMe) GetCredentials() (value SecureCredenti
 // Request for secure telegram passport¹ values was sent
 //
 // Links:
-//  1) https://core.telegram.org/passport
+//  1. https://core.telegram.org/passport
 //
 // See https://core.telegram.org/constructor/messageActionSecureValuesSent for reference.
 type MessageActionSecureValuesSent struct {
@@ -4234,7 +4234,7 @@ func (m *MessageActionGeoProximityReached) GetDistance() (value int) {
 // A video chat/livestream¹ was started or terminated.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#video-chats-livestreams
+//  1. https://core.telegram.org/api/group-calls#video-chats-livestreams
 //
 // See https://core.telegram.org/constructor/messageActionGroupCall for reference.
 type MessageActionGroupCall struct {
@@ -4446,7 +4446,7 @@ func (m *MessageActionGroupCall) GetDuration() (value int, ok bool) {
 // A set of users was invited to a group call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls
+//  1. https://core.telegram.org/api/group-calls
 //
 // See https://core.telegram.org/constructor/messageActionInviteToGroupCall for reference.
 type MessageActionInviteToGroupCall struct {
@@ -4840,7 +4840,7 @@ func (m *MessageActionSetMessagesTTL) GetAutoSettingFrom() (value int64, ok bool
 // A video chat/livestream¹ was scheduled.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#video-chats-livestreams
+//  1. https://core.telegram.org/api/group-calls#video-chats-livestreams
 //
 // See https://core.telegram.org/constructor/messageActionGroupCallScheduled for reference.
 type MessageActionGroupCallScheduled struct {
@@ -5253,7 +5253,7 @@ func (m *MessageActionChatJoinedByRequest) DecodeBare(b *bin.Buffer) error {
 // (bot side service message).
 //
 // Links:
-//  1) https://core.telegram.org/api/bots/webapps
+//  1. https://core.telegram.org/api/bots/webapps
 //
 // See https://core.telegram.org/constructor/messageActionWebViewDataSentMe for reference.
 type MessageActionWebViewDataSentMe struct {
@@ -5424,7 +5424,7 @@ func (m *MessageActionWebViewDataSentMe) GetData() (value string) {
 // was transferred to the bot.
 //
 // Links:
-//  1) https://core.telegram.org/api/bots/webapps
+//  1. https://core.telegram.org/api/bots/webapps
 //
 // See https://core.telegram.org/constructor/messageActionWebViewDataSent for reference.
 type MessageActionWebViewDataSent struct {
@@ -5567,8 +5567,8 @@ func (m *MessageActionWebViewDataSent) GetText() (value string) {
 // inputStickerSetPremiumGifts »¹ stickerset »²:
 //
 // Links:
-//  1) https://core.telegram.org/constructor/inputStickerSetPremiumGifts
-//  2) https://core.telegram.org/api/stickers#stickersets
+//  1. https://core.telegram.org/constructor/inputStickerSetPremiumGifts
+//  2. https://core.telegram.org/api/stickers#stickersets
 //
 // See https://core.telegram.org/constructor/messageActionGiftPremium for reference.
 type MessageActionGiftPremium struct {
@@ -5935,7 +5935,7 @@ func (m *MessageActionGiftPremium) GetMessage() (value TextWithEntities, ok bool
 // A forum topic¹ was created.
 //
 // Links:
-//  1) https://core.telegram.org/api/forum#forum-topics
+//  1. https://core.telegram.org/api/forum#forum-topics
 //
 // See https://core.telegram.org/constructor/messageActionTopicCreate for reference.
 type MessageActionTopicCreate struct {
@@ -6208,7 +6208,7 @@ func (m *MessageActionTopicCreate) GetIconEmojiID() (value int64, ok bool) {
 // Forum topic¹ information was edited.
 //
 // Links:
-//  1) https://core.telegram.org/api/forum#forum-topics
+//  1. https://core.telegram.org/api/forum#forum-topics
 //
 // See https://core.telegram.org/constructor/messageActionTopicEdit for reference.
 type MessageActionTopicEdit struct {
@@ -6535,7 +6535,7 @@ func (m *MessageActionTopicEdit) GetHidden() (value bool, ok bool) {
 // A new profile picture was suggested using photos.uploadContactProfilePhoto¹.
 //
 // Links:
-//  1) https://core.telegram.org/method/photos.uploadContactProfilePhoto
+//  1. https://core.telegram.org/method/photos.uploadContactProfilePhoto
 //
 // See https://core.telegram.org/constructor/messageActionSuggestProfilePhoto for reference.
 type MessageActionSuggestProfilePhoto struct {
@@ -6679,7 +6679,7 @@ func (m *MessageActionSuggestProfilePhoto) GetPhoto() (value PhotoClass) {
 // clicking on a keyboardButtonRequestPeer¹ button (service message sent by the user).
 //
 // Links:
-//  1) https://core.telegram.org/constructor/keyboardButtonRequestPeer
+//  1. https://core.telegram.org/constructor/keyboardButtonRequestPeer
 //
 // See https://core.telegram.org/constructor/messageActionRequestedPeer for reference.
 type MessageActionRequestedPeer struct {
@@ -6870,7 +6870,7 @@ func (m *MessageActionRequestedPeer) MapPeers() (value PeerClassArray) {
 // The wallpaper »¹ of the current chat was changed.
 //
 // Links:
-//  1) https://core.telegram.org/api/wallpapers
+//  1. https://core.telegram.org/api/wallpapers
 //
 // See https://core.telegram.org/constructor/messageActionSetChatWallPaper for reference.
 type MessageActionSetChatWallPaper struct {
@@ -7119,7 +7119,7 @@ func (m *MessageActionSetChatWallPaper) GetWallpaper() (value WallPaperClass) {
 // Contains a Telegram Premium giftcode link¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/links#premium-giftcode-links
+//  1. https://core.telegram.org/api/links#premium-giftcode-links
 //
 // See https://core.telegram.org/constructor/messageActionGiftCode for reference.
 type MessageActionGiftCode struct {
@@ -7694,7 +7694,7 @@ func (m *MessageActionGiftCode) GetMessage() (value TextWithEntities, ok bool) {
 // A giveaway¹ was started.
 //
 // Links:
-//  1) https://core.telegram.org/api/giveaways
+//  1. https://core.telegram.org/api/giveaways
 //
 // See https://core.telegram.org/constructor/messageActionGiveawayLaunch for reference.
 type MessageActionGiveawayLaunch struct {
@@ -7877,7 +7877,7 @@ func (m *MessageActionGiveawayLaunch) GetStars() (value int64, ok bool) {
 // A giveaway¹ has ended.
 //
 // Links:
-//  1) https://core.telegram.org/api/giveaways
+//  1. https://core.telegram.org/api/giveaways
 //
 // See https://core.telegram.org/constructor/messageActionGiveawayResults for reference.
 type MessageActionGiveawayResults struct {
@@ -8101,7 +8101,7 @@ func (m *MessageActionGiveawayResults) GetUnclaimedCount() (value int) {
 // Some boosts »¹ were applied to the channel or supergroup.
 //
 // Links:
-//  1) https://core.telegram.org/api/boost
+//  1. https://core.telegram.org/api/boost
 //
 // See https://core.telegram.org/constructor/messageActionBoostApply for reference.
 type MessageActionBoostApply struct {
@@ -8244,7 +8244,7 @@ func (m *MessageActionBoostApply) GetBoosts() (value int) {
 // the bot).
 //
 // Links:
-//  1) https://core.telegram.org/constructor/keyboardButtonRequestPeer
+//  1. https://core.telegram.org/constructor/keyboardButtonRequestPeer
 //
 // See https://core.telegram.org/constructor/messageActionRequestedPeerSentMe for reference.
 type MessageActionRequestedPeerSentMe struct {
@@ -8733,9 +8733,9 @@ func (m *MessageActionPaymentRefunded) GetCharge() (value PaymentCharge) {
 // inputStickerSetPremiumGifts »¹ stickerset »²:
 //
 // Links:
-//  1) https://core.telegram.org/api/stars
-//  2) https://core.telegram.org/constructor/inputStickerSetPremiumGifts
-//  3) https://core.telegram.org/api/stickers#stickersets
+//  1. https://core.telegram.org/api/stars
+//  2. https://core.telegram.org/constructor/inputStickerSetPremiumGifts
+//  3. https://core.telegram.org/api/stickers#stickersets
 //
 // See https://core.telegram.org/constructor/messageActionGiftStars for reference.
 type MessageActionGiftStars struct {
@@ -9104,10 +9104,10 @@ func (m *MessageActionGiftStars) GetTransactionID() (value string, ok bool) {
 // inputStickerSetPremiumGifts »¹ stickerset »²:
 //
 // Links:
-//  1) https://core.telegram.org/api/stars
-//  2) https://core.telegram.org/api/giveaways#star-giveaways
-//  3) https://core.telegram.org/constructor/inputStickerSetPremiumGifts
-//  4) https://core.telegram.org/api/stickers#stickersets
+//  1. https://core.telegram.org/api/stars
+//  2. https://core.telegram.org/api/giveaways#star-giveaways
+//  3. https://core.telegram.org/constructor/inputStickerSetPremiumGifts
+//  4. https://core.telegram.org/api/stickers#stickersets
 //
 // See https://core.telegram.org/constructor/messageActionPrizeStars for reference.
 type MessageActionPrizeStars struct {
@@ -9392,7 +9392,7 @@ func (m *MessageActionPrizeStars) GetGiveawayMsgID() (value int) {
 // You received a gift, see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
+//  1. https://core.telegram.org/api/gifts
 //
 // See https://core.telegram.org/constructor/messageActionStarGift for reference.
 type MessageActionStarGift struct {
@@ -10461,8 +10461,8 @@ func (m *MessageActionStarGift) GetGiftNum() (value int, ok bool) {
 // A gift »¹ was upgraded to a collectible gift »².
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
-//  2) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/gifts
+//  2. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/constructor/messageActionStarGiftUnique for reference.
 type MessageActionStarGiftUnique struct {
@@ -11539,8 +11539,8 @@ func (m *MessageActionStarGiftUnique) GetMessage() (value TextWithEntities, ok b
 // messages to A, see here »² for more info on paid messages.
 //
 // Links:
-//  1) https://core.telegram.org/api/stars
-//  2) https://core.telegram.org/api/paid-messages
+//  1. https://core.telegram.org/api/stars
+//  2. https://core.telegram.org/api/paid-messages
 //
 // See https://core.telegram.org/constructor/messageActionPaidMessagesRefunded for reference.
 type MessageActionPaidMessagesRefunded struct {
@@ -11705,7 +11705,7 @@ func (m *MessageActionPaidMessagesRefunded) GetStars() (value int64) {
 // The price of paid messages »¹ in this chat was changed.
 //
 // Links:
-//  1) https://core.telegram.org/api/paid-messages
+//  1. https://core.telegram.org/api/paid-messages
 //
 // See https://core.telegram.org/constructor/messageActionPaidMessagesPrice for reference.
 type MessageActionPaidMessagesPrice struct {
@@ -11912,9 +11912,9 @@ func (m *MessageActionPaidMessagesPrice) GetStars() (value int64) {
 // ringing and an incoming call screen, just like for one-on-one calls.
 //
 // Links:
-//  1) https://core.telegram.org/api/end-to-end/group-calls
-//  2) https://core.telegram.org/api/config#call-requests-disabled
-//  3) https://core.telegram.org/constructor/messageActionConferenceCall
+//  1. https://core.telegram.org/api/end-to-end/group-calls
+//  2. https://core.telegram.org/api/config#call-requests-disabled
+//  3. https://core.telegram.org/constructor/messageActionConferenceCall
 //
 // See https://core.telegram.org/constructor/messageActionConferenceCall for reference.
 type MessageActionConferenceCall struct {
@@ -12300,7 +12300,7 @@ func (m *MessageActionConferenceCall) MapOtherParticipants() (value PeerClassArr
 // Items were marked as completed or not completed in a todo list »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/todo
+//  1. https://core.telegram.org/api/todo
 //
 // See https://core.telegram.org/constructor/messageActionTodoCompletions for reference.
 type MessageActionTodoCompletions struct {
@@ -12491,7 +12491,7 @@ func (m *MessageActionTodoCompletions) GetIncompleted() (value []int) {
 // Items were appended to the todo list »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/todo
+//  1. https://core.telegram.org/api/todo
 //
 // See https://core.telegram.org/constructor/messageActionTodoAppendTasks for reference.
 type MessageActionTodoAppendTasks struct {
@@ -12644,7 +12644,7 @@ func (m *MessageActionTodoAppendTasks) GetList() (value []TodoItem) {
 // A suggested post »¹ was approved or rejected.
 //
 // Links:
-//  1) https://core.telegram.org/api/suggested-posts
+//  1. https://core.telegram.org/api/suggested-posts
 //
 // See https://core.telegram.org/constructor/messageActionSuggestedPostApproval for reference.
 type MessageActionSuggestedPostApproval struct {
@@ -12997,7 +12997,7 @@ func (m *MessageActionSuggestedPostApproval) GetPrice() (value StarsAmountClass,
 // received.
 //
 // Links:
-//  1) https://core.telegram.org/api/suggested-posts
+//  1. https://core.telegram.org/api/suggested-posts
 //
 // See https://core.telegram.org/constructor/messageActionSuggestedPostSuccess for reference.
 type MessageActionSuggestedPostSuccess struct {
@@ -13143,8 +13143,8 @@ func (m *MessageActionSuggestedPostSuccess) GetPrice() (value StarsAmountClass) 
 // post.
 //
 // Links:
-//  1) https://core.telegram.org/api/suggested-posts
-//  2) https://core.telegram.org/api/config#stars-suggested-post-age-min
+//  1. https://core.telegram.org/api/suggested-posts
+//  2. https://core.telegram.org/api/config#stars-suggested-post-age-min
 //
 // See https://core.telegram.org/constructor/messageActionSuggestedPostRefund for reference.
 type MessageActionSuggestedPostRefund struct {
@@ -13313,8 +13313,8 @@ func (m *MessageActionSuggestedPostRefund) GetPayerInitiated() (value bool) {
 // inputStickerSetTonGifts »¹ stickerset »²:
 //
 // Links:
-//  1) https://core.telegram.org/constructor/inputStickerSetTonGifts
-//  2) https://core.telegram.org/api/stickers#stickersets
+//  1. https://core.telegram.org/constructor/inputStickerSetTonGifts
+//  2. https://core.telegram.org/api/stickers#stickersets
 //
 // See https://core.telegram.org/constructor/messageActionGiftTon for reference.
 type MessageActionGiftTon struct {
@@ -13605,8 +13605,8 @@ func (m *MessageActionGiftTon) GetTransactionID() (value string, ok bool) {
 // info on birthdays in the API.
 //
 // Links:
-//  1) https://core.telegram.org/method/users.suggestBirthday
-//  2) https://core.telegram.org/api/profile#birthday
+//  1. https://core.telegram.org/method/users.suggestBirthday
+//  2. https://core.telegram.org/api/profile#birthday
 //
 // See https://core.telegram.org/constructor/messageActionSuggestBirthday for reference.
 type MessageActionSuggestBirthday struct {
@@ -13744,8 +13744,8 @@ func (m *MessageActionSuggestBirthday) GetBirthday() (value Birthday) {
 // Contains an offer to purchase a collectible gift »¹, see here »² for the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
-//  2) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  1. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  2. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
 //
 // See https://core.telegram.org/constructor/messageActionStarGiftPurchaseOffer for reference.
 type MessageActionStarGiftPurchaseOffer struct {
@@ -14040,8 +14040,8 @@ func (m *MessageActionStarGiftPurchaseOffer) GetExpiresAt() (value int) {
 // »² for the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
-//  2) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  1. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  2. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
 //
 // See https://core.telegram.org/constructor/messageActionStarGiftPurchaseOfferDeclined for reference.
 type MessageActionStarGiftPurchaseOfferDeclined struct {
@@ -14280,7 +14280,7 @@ func (m *MessageActionStarGiftPurchaseOfferDeclined) GetPrice() (value StarsAmou
 // Sent from the user ID of the old owner.
 //
 // Links:
-//  1) https://core.telegram.org/api/channel#leaving-groups-channels
+//  1. https://core.telegram.org/api/channel#leaving-groups-channels
 //
 // See https://core.telegram.org/constructor/messageActionNewCreatorPending for reference.
 type MessageActionNewCreatorPending struct {
@@ -14422,7 +14422,7 @@ func (m *MessageActionNewCreatorPending) GetNewCreatorID() (value int64) {
 // Sent from the user ID of the old owner.
 //
 // Links:
-//  1) https://core.telegram.org/api/channel#leaving-groups-channels
+//  1. https://core.telegram.org/api/channel#leaving-groups-channels
 //
 // See https://core.telegram.org/constructor/messageActionChangeCreator for reference.
 type MessageActionChangeCreator struct {
@@ -14560,7 +14560,7 @@ func (m *MessageActionChangeCreator) GetNewCreatorID() (value int64) {
 // Emitted only in private chats when enabling or disabling content protection »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/content-protection#for-users
+//  1. https://core.telegram.org/api/content-protection#for-users
 //
 // See https://core.telegram.org/constructor/messageActionNoForwardsToggle for reference.
 type MessageActionNoForwardsToggle struct {
@@ -14730,7 +14730,7 @@ func (m *MessageActionNoForwardsToggle) GetNewValue() (value bool) {
 // protection »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/content-protection#for-users
+//  1. https://core.telegram.org/api/content-protection#for-users
 //
 // See https://core.telegram.org/constructor/messageActionNoForwardsRequest for reference.
 type MessageActionNoForwardsRequest struct {
@@ -16458,159 +16458,160 @@ const MessageActionClassName = "MessageAction"
 // See https://core.telegram.org/type/MessageAction for reference.
 //
 // Constructors:
-//  - [MessageActionEmpty]
-//  - [MessageActionChatCreate]
-//  - [MessageActionChatEditTitle]
-//  - [MessageActionChatEditPhoto]
-//  - [MessageActionChatDeletePhoto]
-//  - [MessageActionChatAddUser]
-//  - [MessageActionChatDeleteUser]
-//  - [MessageActionChatJoinedByLink]
-//  - [MessageActionChannelCreate]
-//  - [MessageActionChatMigrateTo]
-//  - [MessageActionChannelMigrateFrom]
-//  - [MessageActionPinMessage]
-//  - [MessageActionHistoryClear]
-//  - [MessageActionGameScore]
-//  - [MessageActionPaymentSentMe]
-//  - [MessageActionPaymentSent]
-//  - [MessageActionPhoneCall]
-//  - [MessageActionScreenshotTaken]
-//  - [MessageActionCustomAction]
-//  - [MessageActionBotAllowed]
-//  - [MessageActionSecureValuesSentMe]
-//  - [MessageActionSecureValuesSent]
-//  - [MessageActionContactSignUp]
-//  - [MessageActionGeoProximityReached]
-//  - [MessageActionGroupCall]
-//  - [MessageActionInviteToGroupCall]
-//  - [MessageActionSetMessagesTTL]
-//  - [MessageActionGroupCallScheduled]
-//  - [MessageActionSetChatTheme]
-//  - [MessageActionChatJoinedByRequest]
-//  - [MessageActionWebViewDataSentMe]
-//  - [MessageActionWebViewDataSent]
-//  - [MessageActionGiftPremium]
-//  - [MessageActionTopicCreate]
-//  - [MessageActionTopicEdit]
-//  - [MessageActionSuggestProfilePhoto]
-//  - [MessageActionRequestedPeer]
-//  - [MessageActionSetChatWallPaper]
-//  - [MessageActionGiftCode]
-//  - [MessageActionGiveawayLaunch]
-//  - [MessageActionGiveawayResults]
-//  - [MessageActionBoostApply]
-//  - [MessageActionRequestedPeerSentMe]
-//  - [MessageActionPaymentRefunded]
-//  - [MessageActionGiftStars]
-//  - [MessageActionPrizeStars]
-//  - [MessageActionStarGift]
-//  - [MessageActionStarGiftUnique]
-//  - [MessageActionPaidMessagesRefunded]
-//  - [MessageActionPaidMessagesPrice]
-//  - [MessageActionConferenceCall]
-//  - [MessageActionTodoCompletions]
-//  - [MessageActionTodoAppendTasks]
-//  - [MessageActionSuggestedPostApproval]
-//  - [MessageActionSuggestedPostSuccess]
-//  - [MessageActionSuggestedPostRefund]
-//  - [MessageActionGiftTon]
-//  - [MessageActionSuggestBirthday]
-//  - [MessageActionStarGiftPurchaseOffer]
-//  - [MessageActionStarGiftPurchaseOfferDeclined]
-//  - [MessageActionNewCreatorPending]
-//  - [MessageActionChangeCreator]
-//  - [MessageActionNoForwardsToggle]
-//  - [MessageActionNoForwardsRequest]
-//  - [MessageActionPollAppendAnswer]
-//  - [MessageActionPollDeleteAnswer]
-//  - [MessageActionManagedBotCreated]
-//  - [MessageActionChangeCommunity]
-//  - [MessageActionChatJoinedViaCommunity]
-//  - [MessageActionGramTransfer]
-//  - [MessageActionWalletTonConnectRequest]
-//  - [MessageActionNoPaidMessagesTokenUsed]
+//   - [MessageActionEmpty]
+//   - [MessageActionChatCreate]
+//   - [MessageActionChatEditTitle]
+//   - [MessageActionChatEditPhoto]
+//   - [MessageActionChatDeletePhoto]
+//   - [MessageActionChatAddUser]
+//   - [MessageActionChatDeleteUser]
+//   - [MessageActionChatJoinedByLink]
+//   - [MessageActionChannelCreate]
+//   - [MessageActionChatMigrateTo]
+//   - [MessageActionChannelMigrateFrom]
+//   - [MessageActionPinMessage]
+//   - [MessageActionHistoryClear]
+//   - [MessageActionGameScore]
+//   - [MessageActionPaymentSentMe]
+//   - [MessageActionPaymentSent]
+//   - [MessageActionPhoneCall]
+//   - [MessageActionScreenshotTaken]
+//   - [MessageActionCustomAction]
+//   - [MessageActionBotAllowed]
+//   - [MessageActionSecureValuesSentMe]
+//   - [MessageActionSecureValuesSent]
+//   - [MessageActionContactSignUp]
+//   - [MessageActionGeoProximityReached]
+//   - [MessageActionGroupCall]
+//   - [MessageActionInviteToGroupCall]
+//   - [MessageActionSetMessagesTTL]
+//   - [MessageActionGroupCallScheduled]
+//   - [MessageActionSetChatTheme]
+//   - [MessageActionChatJoinedByRequest]
+//   - [MessageActionWebViewDataSentMe]
+//   - [MessageActionWebViewDataSent]
+//   - [MessageActionGiftPremium]
+//   - [MessageActionTopicCreate]
+//   - [MessageActionTopicEdit]
+//   - [MessageActionSuggestProfilePhoto]
+//   - [MessageActionRequestedPeer]
+//   - [MessageActionSetChatWallPaper]
+//   - [MessageActionGiftCode]
+//   - [MessageActionGiveawayLaunch]
+//   - [MessageActionGiveawayResults]
+//   - [MessageActionBoostApply]
+//   - [MessageActionRequestedPeerSentMe]
+//   - [MessageActionPaymentRefunded]
+//   - [MessageActionGiftStars]
+//   - [MessageActionPrizeStars]
+//   - [MessageActionStarGift]
+//   - [MessageActionStarGiftUnique]
+//   - [MessageActionPaidMessagesRefunded]
+//   - [MessageActionPaidMessagesPrice]
+//   - [MessageActionConferenceCall]
+//   - [MessageActionTodoCompletions]
+//   - [MessageActionTodoAppendTasks]
+//   - [MessageActionSuggestedPostApproval]
+//   - [MessageActionSuggestedPostSuccess]
+//   - [MessageActionSuggestedPostRefund]
+//   - [MessageActionGiftTon]
+//   - [MessageActionSuggestBirthday]
+//   - [MessageActionStarGiftPurchaseOffer]
+//   - [MessageActionStarGiftPurchaseOfferDeclined]
+//   - [MessageActionNewCreatorPending]
+//   - [MessageActionChangeCreator]
+//   - [MessageActionNoForwardsToggle]
+//   - [MessageActionNoForwardsRequest]
+//   - [MessageActionPollAppendAnswer]
+//   - [MessageActionPollDeleteAnswer]
+//   - [MessageActionManagedBotCreated]
+//   - [MessageActionChangeCommunity]
+//   - [MessageActionChatJoinedViaCommunity]
+//   - [MessageActionGramTransfer]
+//   - [MessageActionWalletTonConnectRequest]
+//   - [MessageActionNoPaidMessagesTokenUsed]
 //
 // Example:
-//  g, err := tg.DecodeMessageAction(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.MessageActionEmpty: // messageActionEmpty#b6aef7b0
-//  case *tg.MessageActionChatCreate: // messageActionChatCreate#bd47cbad
-//  case *tg.MessageActionChatEditTitle: // messageActionChatEditTitle#b5a1ce5a
-//  case *tg.MessageActionChatEditPhoto: // messageActionChatEditPhoto#7fcb13a8
-//  case *tg.MessageActionChatDeletePhoto: // messageActionChatDeletePhoto#95e3fbef
-//  case *tg.MessageActionChatAddUser: // messageActionChatAddUser#15cefd00
-//  case *tg.MessageActionChatDeleteUser: // messageActionChatDeleteUser#a43f30cc
-//  case *tg.MessageActionChatJoinedByLink: // messageActionChatJoinedByLink#31224c3
-//  case *tg.MessageActionChannelCreate: // messageActionChannelCreate#95d2ac92
-//  case *tg.MessageActionChatMigrateTo: // messageActionChatMigrateTo#e1037f92
-//  case *tg.MessageActionChannelMigrateFrom: // messageActionChannelMigrateFrom#ea3948e9
-//  case *tg.MessageActionPinMessage: // messageActionPinMessage#94bd38ed
-//  case *tg.MessageActionHistoryClear: // messageActionHistoryClear#9fbab604
-//  case *tg.MessageActionGameScore: // messageActionGameScore#92a72876
-//  case *tg.MessageActionPaymentSentMe: // messageActionPaymentSentMe#ffa00ccc
-//  case *tg.MessageActionPaymentSent: // messageActionPaymentSent#c624b16e
-//  case *tg.MessageActionPhoneCall: // messageActionPhoneCall#80e11a7f
-//  case *tg.MessageActionScreenshotTaken: // messageActionScreenshotTaken#4792929b
-//  case *tg.MessageActionCustomAction: // messageActionCustomAction#fae69f56
-//  case *tg.MessageActionBotAllowed: // messageActionBotAllowed#c516d679
-//  case *tg.MessageActionSecureValuesSentMe: // messageActionSecureValuesSentMe#1b287353
-//  case *tg.MessageActionSecureValuesSent: // messageActionSecureValuesSent#d95c6154
-//  case *tg.MessageActionContactSignUp: // messageActionContactSignUp#f3f25f76
-//  case *tg.MessageActionGeoProximityReached: // messageActionGeoProximityReached#98e0d697
-//  case *tg.MessageActionGroupCall: // messageActionGroupCall#7a0d7f42
-//  case *tg.MessageActionInviteToGroupCall: // messageActionInviteToGroupCall#502f92f7
-//  case *tg.MessageActionSetMessagesTTL: // messageActionSetMessagesTTL#3c134d7b
-//  case *tg.MessageActionGroupCallScheduled: // messageActionGroupCallScheduled#b3a07661
-//  case *tg.MessageActionSetChatTheme: // messageActionSetChatTheme#b91bbd3a
-//  case *tg.MessageActionChatJoinedByRequest: // messageActionChatJoinedByRequest#ebbca3cb
-//  case *tg.MessageActionWebViewDataSentMe: // messageActionWebViewDataSentMe#47dd8079
-//  case *tg.MessageActionWebViewDataSent: // messageActionWebViewDataSent#b4c38cb5
-//  case *tg.MessageActionGiftPremium: // messageActionGiftPremium#48e91302
-//  case *tg.MessageActionTopicCreate: // messageActionTopicCreate#d999256
-//  case *tg.MessageActionTopicEdit: // messageActionTopicEdit#c0944820
-//  case *tg.MessageActionSuggestProfilePhoto: // messageActionSuggestProfilePhoto#57de635e
-//  case *tg.MessageActionRequestedPeer: // messageActionRequestedPeer#31518e9b
-//  case *tg.MessageActionSetChatWallPaper: // messageActionSetChatWallPaper#5060a3f4
-//  case *tg.MessageActionGiftCode: // messageActionGiftCode#31c48347
-//  case *tg.MessageActionGiveawayLaunch: // messageActionGiveawayLaunch#a80f51e4
-//  case *tg.MessageActionGiveawayResults: // messageActionGiveawayResults#87e2f155
-//  case *tg.MessageActionBoostApply: // messageActionBoostApply#cc02aa6d
-//  case *tg.MessageActionRequestedPeerSentMe: // messageActionRequestedPeerSentMe#93b31848
-//  case *tg.MessageActionPaymentRefunded: // messageActionPaymentRefunded#41b3e202
-//  case *tg.MessageActionGiftStars: // messageActionGiftStars#45d5b021
-//  case *tg.MessageActionPrizeStars: // messageActionPrizeStars#b00c47a2
-//  case *tg.MessageActionStarGift: // messageActionStarGift#ea2c31d3
-//  case *tg.MessageActionStarGiftUnique: // messageActionStarGiftUnique#7e1c1187
-//  case *tg.MessageActionPaidMessagesRefunded: // messageActionPaidMessagesRefunded#ac1f1fcd
-//  case *tg.MessageActionPaidMessagesPrice: // messageActionPaidMessagesPrice#84b88578
-//  case *tg.MessageActionConferenceCall: // messageActionConferenceCall#2ffe2f7a
-//  case *tg.MessageActionTodoCompletions: // messageActionTodoCompletions#cc7c5c89
-//  case *tg.MessageActionTodoAppendTasks: // messageActionTodoAppendTasks#c7edbc83
-//  case *tg.MessageActionSuggestedPostApproval: // messageActionSuggestedPostApproval#ee7a1596
-//  case *tg.MessageActionSuggestedPostSuccess: // messageActionSuggestedPostSuccess#95ddcf69
-//  case *tg.MessageActionSuggestedPostRefund: // messageActionSuggestedPostRefund#69f916f8
-//  case *tg.MessageActionGiftTon: // messageActionGiftTon#a8a3c699
-//  case *tg.MessageActionSuggestBirthday: // messageActionSuggestBirthday#2c8f2a25
-//  case *tg.MessageActionStarGiftPurchaseOffer: // messageActionStarGiftPurchaseOffer#774278d4
-//  case *tg.MessageActionStarGiftPurchaseOfferDeclined: // messageActionStarGiftPurchaseOfferDeclined#73ada76b
-//  case *tg.MessageActionNewCreatorPending: // messageActionNewCreatorPending#b07ed085
-//  case *tg.MessageActionChangeCreator: // messageActionChangeCreator#e188503b
-//  case *tg.MessageActionNoForwardsToggle: // messageActionNoForwardsToggle#bf7d6572
-//  case *tg.MessageActionNoForwardsRequest: // messageActionNoForwardsRequest#3e2793ba
-//  case *tg.MessageActionPollAppendAnswer: // messageActionPollAppendAnswer#9da1cd6c
-//  case *tg.MessageActionPollDeleteAnswer: // messageActionPollDeleteAnswer#399674dc
-//  case *tg.MessageActionManagedBotCreated: // messageActionManagedBotCreated#16605e3e
-//  case *tg.MessageActionChangeCommunity: // messageActionChangeCommunity#5d20bae8
-//  case *tg.MessageActionChatJoinedViaCommunity: // messageActionChatJoinedViaCommunity#4a8bfe80
-//  case *tg.MessageActionGramTransfer: // messageActionGramTransfer#9329ea33
-//  case *tg.MessageActionWalletTonConnectRequest: // messageActionWalletTonConnectRequest#69b8c4bf
-//  case *tg.MessageActionNoPaidMessagesTokenUsed: // messageActionNoPaidMessagesTokenUsed#c1d2f1c6
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeMessageAction(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.MessageActionEmpty: // messageActionEmpty#b6aef7b0
+//	case *tg.MessageActionChatCreate: // messageActionChatCreate#bd47cbad
+//	case *tg.MessageActionChatEditTitle: // messageActionChatEditTitle#b5a1ce5a
+//	case *tg.MessageActionChatEditPhoto: // messageActionChatEditPhoto#7fcb13a8
+//	case *tg.MessageActionChatDeletePhoto: // messageActionChatDeletePhoto#95e3fbef
+//	case *tg.MessageActionChatAddUser: // messageActionChatAddUser#15cefd00
+//	case *tg.MessageActionChatDeleteUser: // messageActionChatDeleteUser#a43f30cc
+//	case *tg.MessageActionChatJoinedByLink: // messageActionChatJoinedByLink#31224c3
+//	case *tg.MessageActionChannelCreate: // messageActionChannelCreate#95d2ac92
+//	case *tg.MessageActionChatMigrateTo: // messageActionChatMigrateTo#e1037f92
+//	case *tg.MessageActionChannelMigrateFrom: // messageActionChannelMigrateFrom#ea3948e9
+//	case *tg.MessageActionPinMessage: // messageActionPinMessage#94bd38ed
+//	case *tg.MessageActionHistoryClear: // messageActionHistoryClear#9fbab604
+//	case *tg.MessageActionGameScore: // messageActionGameScore#92a72876
+//	case *tg.MessageActionPaymentSentMe: // messageActionPaymentSentMe#ffa00ccc
+//	case *tg.MessageActionPaymentSent: // messageActionPaymentSent#c624b16e
+//	case *tg.MessageActionPhoneCall: // messageActionPhoneCall#80e11a7f
+//	case *tg.MessageActionScreenshotTaken: // messageActionScreenshotTaken#4792929b
+//	case *tg.MessageActionCustomAction: // messageActionCustomAction#fae69f56
+//	case *tg.MessageActionBotAllowed: // messageActionBotAllowed#c516d679
+//	case *tg.MessageActionSecureValuesSentMe: // messageActionSecureValuesSentMe#1b287353
+//	case *tg.MessageActionSecureValuesSent: // messageActionSecureValuesSent#d95c6154
+//	case *tg.MessageActionContactSignUp: // messageActionContactSignUp#f3f25f76
+//	case *tg.MessageActionGeoProximityReached: // messageActionGeoProximityReached#98e0d697
+//	case *tg.MessageActionGroupCall: // messageActionGroupCall#7a0d7f42
+//	case *tg.MessageActionInviteToGroupCall: // messageActionInviteToGroupCall#502f92f7
+//	case *tg.MessageActionSetMessagesTTL: // messageActionSetMessagesTTL#3c134d7b
+//	case *tg.MessageActionGroupCallScheduled: // messageActionGroupCallScheduled#b3a07661
+//	case *tg.MessageActionSetChatTheme: // messageActionSetChatTheme#b91bbd3a
+//	case *tg.MessageActionChatJoinedByRequest: // messageActionChatJoinedByRequest#ebbca3cb
+//	case *tg.MessageActionWebViewDataSentMe: // messageActionWebViewDataSentMe#47dd8079
+//	case *tg.MessageActionWebViewDataSent: // messageActionWebViewDataSent#b4c38cb5
+//	case *tg.MessageActionGiftPremium: // messageActionGiftPremium#48e91302
+//	case *tg.MessageActionTopicCreate: // messageActionTopicCreate#d999256
+//	case *tg.MessageActionTopicEdit: // messageActionTopicEdit#c0944820
+//	case *tg.MessageActionSuggestProfilePhoto: // messageActionSuggestProfilePhoto#57de635e
+//	case *tg.MessageActionRequestedPeer: // messageActionRequestedPeer#31518e9b
+//	case *tg.MessageActionSetChatWallPaper: // messageActionSetChatWallPaper#5060a3f4
+//	case *tg.MessageActionGiftCode: // messageActionGiftCode#31c48347
+//	case *tg.MessageActionGiveawayLaunch: // messageActionGiveawayLaunch#a80f51e4
+//	case *tg.MessageActionGiveawayResults: // messageActionGiveawayResults#87e2f155
+//	case *tg.MessageActionBoostApply: // messageActionBoostApply#cc02aa6d
+//	case *tg.MessageActionRequestedPeerSentMe: // messageActionRequestedPeerSentMe#93b31848
+//	case *tg.MessageActionPaymentRefunded: // messageActionPaymentRefunded#41b3e202
+//	case *tg.MessageActionGiftStars: // messageActionGiftStars#45d5b021
+//	case *tg.MessageActionPrizeStars: // messageActionPrizeStars#b00c47a2
+//	case *tg.MessageActionStarGift: // messageActionStarGift#ea2c31d3
+//	case *tg.MessageActionStarGiftUnique: // messageActionStarGiftUnique#7e1c1187
+//	case *tg.MessageActionPaidMessagesRefunded: // messageActionPaidMessagesRefunded#ac1f1fcd
+//	case *tg.MessageActionPaidMessagesPrice: // messageActionPaidMessagesPrice#84b88578
+//	case *tg.MessageActionConferenceCall: // messageActionConferenceCall#2ffe2f7a
+//	case *tg.MessageActionTodoCompletions: // messageActionTodoCompletions#cc7c5c89
+//	case *tg.MessageActionTodoAppendTasks: // messageActionTodoAppendTasks#c7edbc83
+//	case *tg.MessageActionSuggestedPostApproval: // messageActionSuggestedPostApproval#ee7a1596
+//	case *tg.MessageActionSuggestedPostSuccess: // messageActionSuggestedPostSuccess#95ddcf69
+//	case *tg.MessageActionSuggestedPostRefund: // messageActionSuggestedPostRefund#69f916f8
+//	case *tg.MessageActionGiftTon: // messageActionGiftTon#a8a3c699
+//	case *tg.MessageActionSuggestBirthday: // messageActionSuggestBirthday#2c8f2a25
+//	case *tg.MessageActionStarGiftPurchaseOffer: // messageActionStarGiftPurchaseOffer#774278d4
+//	case *tg.MessageActionStarGiftPurchaseOfferDeclined: // messageActionStarGiftPurchaseOfferDeclined#73ada76b
+//	case *tg.MessageActionNewCreatorPending: // messageActionNewCreatorPending#b07ed085
+//	case *tg.MessageActionChangeCreator: // messageActionChangeCreator#e188503b
+//	case *tg.MessageActionNoForwardsToggle: // messageActionNoForwardsToggle#bf7d6572
+//	case *tg.MessageActionNoForwardsRequest: // messageActionNoForwardsRequest#3e2793ba
+//	case *tg.MessageActionPollAppendAnswer: // messageActionPollAppendAnswer#9da1cd6c
+//	case *tg.MessageActionPollDeleteAnswer: // messageActionPollDeleteAnswer#399674dc
+//	case *tg.MessageActionManagedBotCreated: // messageActionManagedBotCreated#16605e3e
+//	case *tg.MessageActionChangeCommunity: // messageActionChangeCommunity#5d20bae8
+//	case *tg.MessageActionChatJoinedViaCommunity: // messageActionChatJoinedViaCommunity#4a8bfe80
+//	case *tg.MessageActionGramTransfer: // messageActionGramTransfer#9329ea33
+//	case *tg.MessageActionWalletTonConnectRequest: // messageActionWalletTonConnectRequest#69b8c4bf
+//	case *tg.MessageActionNoPaidMessagesTokenUsed: // messageActionNoPaidMessagesTokenUsed#c1d2f1c6
+//	default: panic(v)
+//	}
 type MessageActionClass interface {
 	bin.Encoder
 	bin.Decoder

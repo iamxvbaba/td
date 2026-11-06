@@ -35,7 +35,7 @@ var (
 // A completed todo list »¹ item.
 //
 // Links:
-//  1) https://core.telegram.org/api/todo
+//  1. https://core.telegram.org/api/todo
 //
 // See https://core.telegram.org/constructor/todoCompletion for reference.
 type TodoCompletion struct {

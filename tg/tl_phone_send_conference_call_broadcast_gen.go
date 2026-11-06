@@ -36,7 +36,7 @@ var (
 // more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/end-to-end/group-calls
+//  1. https://core.telegram.org/api/end-to-end/group-calls
 //
 // See https://core.telegram.org/method/phone.sendConferenceCallBroadcast for reference.
 type PhoneSendConferenceCallBroadcastRequest struct {
@@ -202,10 +202,11 @@ func (s *PhoneSendConferenceCallBroadcastRequest) GetBlock() (value []byte) {
 // more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/end-to-end/group-calls
+//  1. https://core.telegram.org/api/end-to-end/group-calls
 //
 // Possible errors:
-//  400 GROUPCALL_INVALID: The specified group call is invalid.
+//
+//	400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.sendConferenceCallBroadcast for reference.
 func (c *Client) PhoneSendConferenceCallBroadcast(ctx context.Context, request *PhoneSendConferenceCallBroadcastRequest) (UpdatesClass, error) {

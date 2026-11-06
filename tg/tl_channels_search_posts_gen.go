@@ -37,7 +37,7 @@ var (
 // Exactly one of query and hashtag must be set.
 //
 // Links:
-//  1) https://core.telegram.org/api/channel
+//  1. https://core.telegram.org/api/channel
 //
 // See https://core.telegram.org/method/channels.searchPosts for reference.
 type ChannelsSearchPostsRequest struct {
@@ -444,11 +444,12 @@ func (s *ChannelsSearchPostsRequest) GetAllowPaidStars() (value int64, ok bool) 
 // Exactly one of query and hashtag must be set.
 //
 // Links:
-//  1) https://core.telegram.org/api/channel
+//  1. https://core.telegram.org/api/channel
 //
 // Possible errors:
-//  420 FROZEN_METHOD_INVALID: The current account is frozen, and thus cannot execute the specified action.
-//  403 PREMIUM_ACCOUNT_REQUIRED: A premium account is required to execute this action.
+//
+//	420 FROZEN_METHOD_INVALID: The current account is frozen, and thus cannot execute the specified action.
+//	403 PREMIUM_ACCOUNT_REQUIRED: A premium account is required to execute this action.
 //
 // See https://core.telegram.org/method/channels.searchPosts for reference.
 func (c *Client) ChannelsSearchPosts(ctx context.Context, request *ChannelsSearchPostsRequest) (MessagesMessagesClass, error) {

@@ -35,8 +35,8 @@ var (
 // Join a group call¹, see here »² for the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls
-//  2) https://core.telegram.org/api/group-calls
+//  1. https://core.telegram.org/api/group-calls
+//  2. https://core.telegram.org/api/group-calls
 //
 // See https://core.telegram.org/method/phone.joinGroupCall for reference.
 type PhoneJoinGroupCallRequest struct {
@@ -475,18 +475,19 @@ func (j *PhoneJoinGroupCallRequest) GetParams() (value DataJSON) {
 // Join a group call¹, see here »² for the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls
-//  2) https://core.telegram.org/api/group-calls
+//  1. https://core.telegram.org/api/group-calls
+//  2. https://core.telegram.org/api/group-calls
 //
 // Possible errors:
-//  400 CHAT_ADMIN_REQUIRED: You must be an admin in this chat to do this.
-//  403 CHAT_WRITE_FORBIDDEN: You can't write in this chat.
-//  400 DATA_JSON_INVALID: The provided JSON data is invalid.
-//  500 GROUPCALL_ADD_PARTICIPANTS_FAILED:
-//  403 GROUPCALL_FORBIDDEN: The group call has already ended.
-//  400 GROUPCALL_INVALID: The specified group call is invalid.
-//  400 GROUPCALL_SSRC_DUPLICATE_MUCH: The app needs to retry joining the group call with a new SSRC value.
-//  400 JOIN_AS_PEER_INVALID: The specified peer cannot be used to join a group call.
+//
+//	400 CHAT_ADMIN_REQUIRED: You must be an admin in this chat to do this.
+//	403 CHAT_WRITE_FORBIDDEN: You can't write in this chat.
+//	400 DATA_JSON_INVALID: The provided JSON data is invalid.
+//	500 GROUPCALL_ADD_PARTICIPANTS_FAILED:
+//	403 GROUPCALL_FORBIDDEN: The group call has already ended.
+//	400 GROUPCALL_INVALID: The specified group call is invalid.
+//	400 GROUPCALL_SSRC_DUPLICATE_MUCH: The app needs to retry joining the group call with a new SSRC value.
+//	400 JOIN_AS_PEER_INVALID: The specified peer cannot be used to join a group call.
 //
 // See https://core.telegram.org/method/phone.joinGroupCall for reference.
 func (c *Client) PhoneJoinGroupCall(ctx context.Context, request *PhoneJoinGroupCallRequest) (UpdatesClass, error) {

@@ -1176,29 +1176,30 @@ const ButtonTypeClassName = "ButtonType"
 // See https://core.telegram.org/type/ButtonType for reference.
 //
 // Constructors:
-//  - [ButtonTypeDefault]
-//  - [ButtonTypeRequestPhone]
-//  - [ButtonTypeRequestGeoLocation]
-//  - [ButtonTypeRequestPoll]
-//  - [ButtonTypeRequestPeer]
-//  - [InputButtonTypeRequestPeer]
-//  - [ButtonTypeSimpleWebView]
+//   - [ButtonTypeDefault]
+//   - [ButtonTypeRequestPhone]
+//   - [ButtonTypeRequestGeoLocation]
+//   - [ButtonTypeRequestPoll]
+//   - [ButtonTypeRequestPeer]
+//   - [InputButtonTypeRequestPeer]
+//   - [ButtonTypeSimpleWebView]
 //
 // Example:
-//  g, err := tg.DecodeButtonType(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.ButtonTypeDefault: // buttonTypeDefault#c9dd90e9
-//  case *tg.ButtonTypeRequestPhone: // buttonTypeRequestPhone#df3d36f9
-//  case *tg.ButtonTypeRequestGeoLocation: // buttonTypeRequestGeoLocation#9beee140
-//  case *tg.ButtonTypeRequestPoll: // buttonTypeRequestPoll#aacfff84
-//  case *tg.ButtonTypeRequestPeer: // buttonTypeRequestPeer#4f58a237
-//  case *tg.InputButtonTypeRequestPeer: // inputButtonTypeRequestPeer#3fe268fe
-//  case *tg.ButtonTypeSimpleWebView: // buttonTypeSimpleWebView#c01a597a
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeButtonType(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.ButtonTypeDefault: // buttonTypeDefault#c9dd90e9
+//	case *tg.ButtonTypeRequestPhone: // buttonTypeRequestPhone#df3d36f9
+//	case *tg.ButtonTypeRequestGeoLocation: // buttonTypeRequestGeoLocation#9beee140
+//	case *tg.ButtonTypeRequestPoll: // buttonTypeRequestPoll#aacfff84
+//	case *tg.ButtonTypeRequestPeer: // buttonTypeRequestPeer#4f58a237
+//	case *tg.InputButtonTypeRequestPeer: // inputButtonTypeRequestPeer#3fe268fe
+//	case *tg.ButtonTypeSimpleWebView: // buttonTypeSimpleWebView#c01a597a
+//	default: panic(v)
+//	}
 type ButtonTypeClass interface {
 	bin.Encoder
 	bin.Decoder

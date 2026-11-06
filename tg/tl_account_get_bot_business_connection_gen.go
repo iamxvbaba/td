@@ -48,12 +48,12 @@ var (
 // bot using the usual update delivery methods »⁶.
 //
 // Links:
-//  1) https://core.telegram.org/constructor/updateBotBusinessConnect
-//  2) https://core.telegram.org/api/bots/connected-business-bots
-//  3) https://core.telegram.org/constructor/updateBotNewBusinessMessage
-//  4) https://core.telegram.org/constructor/updateBotBusinessConnect
-//  5) https://core.telegram.org/constructor/updateBotBusinessConnect
-//  6) https://core.telegram.org/api/updates
+//  1. https://core.telegram.org/constructor/updateBotBusinessConnect
+//  2. https://core.telegram.org/api/bots/connected-business-bots
+//  3. https://core.telegram.org/constructor/updateBotNewBusinessMessage
+//  4. https://core.telegram.org/constructor/updateBotBusinessConnect
+//  5. https://core.telegram.org/constructor/updateBotBusinessConnect
+//  6. https://core.telegram.org/api/updates
 //
 // See https://core.telegram.org/method/account.getBotBusinessConnection for reference.
 type AccountGetBotBusinessConnectionRequest struct {
@@ -202,15 +202,16 @@ func (g *AccountGetBotBusinessConnectionRequest) GetConnectionID() (value string
 // bot using the usual update delivery methods »⁶.
 //
 // Links:
-//  1) https://core.telegram.org/constructor/updateBotBusinessConnect
-//  2) https://core.telegram.org/api/bots/connected-business-bots
-//  3) https://core.telegram.org/constructor/updateBotNewBusinessMessage
-//  4) https://core.telegram.org/constructor/updateBotBusinessConnect
-//  5) https://core.telegram.org/constructor/updateBotBusinessConnect
-//  6) https://core.telegram.org/api/updates
+//  1. https://core.telegram.org/constructor/updateBotBusinessConnect
+//  2. https://core.telegram.org/api/bots/connected-business-bots
+//  3. https://core.telegram.org/constructor/updateBotNewBusinessMessage
+//  4. https://core.telegram.org/constructor/updateBotBusinessConnect
+//  5. https://core.telegram.org/constructor/updateBotBusinessConnect
+//  6. https://core.telegram.org/api/updates
 //
 // Possible errors:
-//  400 CONNECTION_ID_INVALID: The specified connection ID is invalid.
+//
+//	400 CONNECTION_ID_INVALID: The specified connection ID is invalid.
 //
 // See https://core.telegram.org/method/account.getBotBusinessConnection for reference.
 func (c *Client) AccountGetBotBusinessConnection(ctx context.Context, connectionid string) (UpdatesClass, error) {

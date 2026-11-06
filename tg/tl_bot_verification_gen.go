@@ -35,7 +35,7 @@ var (
 // Describes a bot verification icon »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/bots/verification
+//  1. https://core.telegram.org/api/bots/verification
 //
 // See https://core.telegram.org/constructor/botVerification for reference.
 type BotVerification struct {

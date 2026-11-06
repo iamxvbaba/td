@@ -561,25 +561,16 @@ func layerEncodeWire3ff75734BareBody(profile LayerProfile, value *tg.ChannelsTog
 
 func layerDecodeWire3ff75734(profile LayerProfile, b *bin.Buffer, state *layerCodecState) (*tg.ChannelsToggleForumRequest, error) {
 	switch profile {
-	case LayerProfile225:
-		return nil, &LayerCodecError{Operation: "decode", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/5feef02527906dfaa7e54a9ba97a326b3a0b01d28c12461ac9dad25f116b3513 rejects profile-to-canonical"}
-	case LayerProfile226:
-		return nil, &LayerCodecError{Operation: "decode", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/f571e55bda0dc954bbe572cc6fb852818a20bd8c79748cfc4701227edf8d3967 rejects profile-to-canonical"}
-	case LayerProfile227:
-		return nil, &LayerCodecError{Operation: "decode", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/10bca969b78ebc1afa7196b98afb92650a0db2a674de1153b75a31bd30cf7f75 rejects profile-to-canonical"}
-	case LayerProfile228:
-		return nil, &LayerCodecError{Operation: "decode", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/52452976d2febe9fed86d5b45e885672993307a4751d9f7fefec71283f6df4f2 rejects profile-to-canonical"}
-	case LayerProfile229:
-		return nil, &LayerCodecError{Operation: "decode", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/8e8967365359350add44feec605aa631b4928f68e7d5273093592a7d3a22ad24 rejects profile-to-canonical"}
-	case LayerProfile230:
-		return nil, &LayerCodecError{Operation: "decode", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/057483ac77470a69ba8d4c4d25f1790d29e079047a6e9c624c265cb46843b6da rejects profile-to-canonical"}
-	case LayerProfile231:
-		return nil, &LayerCodecError{Operation: "decode", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/f5e9c5a308adae2a25d7e2f13b1ad386f449b5b9925154123d3b424851793bc3 rejects profile-to-canonical"}
-	case LayerProfile232:
-		return nil, &LayerCodecError{Operation: "decode", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/e93cd64176e5431e873c9f103c54f8e22a1eca48031ec88196fa6918949b97fc rejects profile-to-canonical"}
+	case LayerProfile225, LayerProfile226, LayerProfile227, LayerProfile228, LayerProfile229, LayerProfile230, LayerProfile231, LayerProfile232:
+
 	default:
 		return nil, &LayerCodecError{Operation: "decode", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "wire ID is unavailable in exact profile"}
 	}
+
+	if err := b.ConsumeID(0x3ff75734); err != nil {
+		return nil, fmt.Errorf("consume layer wire 0x3ff75734: %w", err)
+	}
+	return layerDecodeWire3ff75734Bare(profile, b, state)
 
 }
 
@@ -592,37 +583,37 @@ func layerDecodeWire3ff75734Bare(profile LayerProfile, b *bin.Buffer, state *lay
 	value := new(tg.ChannelsToggleForumRequest)
 	_ = value
 	switch profile {
-	case LayerProfile225:
+	case LayerProfile225, LayerProfile226, LayerProfile227, LayerProfile228, LayerProfile229, LayerProfile230, LayerProfile231, LayerProfile232:
 		{
-			return nil, &LayerCodecError{Operation: "decode-bare", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/5feef02527906dfaa7e54a9ba97a326b3a0b01d28c12461ac9dad25f116b3513 rejects profile-to-canonical"}
-		}
-	case LayerProfile226:
-		{
-			return nil, &LayerCodecError{Operation: "decode-bare", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/f571e55bda0dc954bbe572cc6fb852818a20bd8c79748cfc4701227edf8d3967 rejects profile-to-canonical"}
-		}
-	case LayerProfile227:
-		{
-			return nil, &LayerCodecError{Operation: "decode-bare", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/10bca969b78ebc1afa7196b98afb92650a0db2a674de1153b75a31bd30cf7f75 rejects profile-to-canonical"}
-		}
-	case LayerProfile228:
-		{
-			return nil, &LayerCodecError{Operation: "decode-bare", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/52452976d2febe9fed86d5b45e885672993307a4751d9f7fefec71283f6df4f2 rejects profile-to-canonical"}
-		}
-	case LayerProfile229:
-		{
-			return nil, &LayerCodecError{Operation: "decode-bare", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/8e8967365359350add44feec605aa631b4928f68e7d5273093592a7d3a22ad24 rejects profile-to-canonical"}
-		}
-	case LayerProfile230:
-		{
-			return nil, &LayerCodecError{Operation: "decode-bare", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/057483ac77470a69ba8d4c4d25f1790d29e079047a6e9c624c265cb46843b6da rejects profile-to-canonical"}
-		}
-	case LayerProfile231:
-		{
-			return nil, &LayerCodecError{Operation: "decode-bare", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/f5e9c5a308adae2a25d7e2f13b1ad386f449b5b9925154123d3b424851793bc3 rejects profile-to-canonical"}
-		}
-	case LayerProfile232:
-		{
-			return nil, &LayerCodecError{Operation: "decode-bare", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "policy layer-obligation/v1/required/e93cd64176e5431e873c9f103c54f8e22a1eca48031ec88196fa6918949b97fc rejects profile-to-canonical"}
+			var layerDecoded2 tg.InputChannelClass
+			layerClass3, err := layerDecodeClassInputChannel(profile, b, state)
+			if err != nil {
+				return nil, fmt.Errorf("decode field channel: %w", err)
+			}
+			layerDecoded2 = layerClass3
+			var layerDecoded4 bool
+			layerPrimitive5, err := b.Bool()
+			if err != nil {
+				return nil, fmt.Errorf("decode field enabled: %w", err)
+			}
+			layerDecoded4 = layerPrimitive5
+			var layerDecoded6 bool
+			layerPrimitive7, err := b.Bool()
+			if err != nil {
+				return nil, fmt.Errorf("decode field tabs: %w", err)
+			}
+			layerDecoded6 = layerPrimitive7
+			if true {
+				value.Channel = layerDecoded2
+			}
+			if true {
+				value.Enabled = layerDecoded4
+			}
+			if true {
+				value.Tabs = layerDecoded6
+			}
+			return value, nil
+
 		}
 	default:
 		return nil, &LayerCodecError{Operation: "decode-bare", Profile: profile, Semantic: LayerSemanticMethodChannelsToggleForum, WireID: 0x3ff75734, Reason: "wire ID is unavailable in exact profile"}

@@ -36,7 +36,7 @@ var (
 // changed.
 //
 // Links:
-//  1) https://core.telegram.org/api/auctions
+//  1. https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/constructor/payments.starGiftActiveAuctionsNotModified for reference.
 type PaymentsStarGiftActiveAuctionsNotModified struct {
@@ -143,7 +143,7 @@ func (s *PaymentsStarGiftActiveAuctionsNotModified) DecodeBare(b *bin.Buffer) er
 // Describes all currently active gift auctions¹ where the user has placed a bid.
 //
 // Links:
-//  1) https://core.telegram.org/api/auctions
+//  1. https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/constructor/payments.starGiftActiveAuctions for reference.
 type PaymentsStarGiftActiveAuctions struct {
@@ -400,19 +400,20 @@ const PaymentsStarGiftActiveAuctionsClassName = "payments.StarGiftActiveAuctions
 // See https://core.telegram.org/type/payments.StarGiftActiveAuctions for reference.
 //
 // Constructors:
-//  - [PaymentsStarGiftActiveAuctionsNotModified]
-//  - [PaymentsStarGiftActiveAuctions]
+//   - [PaymentsStarGiftActiveAuctionsNotModified]
+//   - [PaymentsStarGiftActiveAuctions]
 //
 // Example:
-//  g, err := tg.DecodePaymentsStarGiftActiveAuctions(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.PaymentsStarGiftActiveAuctionsNotModified: // payments.starGiftActiveAuctionsNotModified#db33dad0
-//  case *tg.PaymentsStarGiftActiveAuctions: // payments.starGiftActiveAuctions#aef6abbc
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodePaymentsStarGiftActiveAuctions(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.PaymentsStarGiftActiveAuctionsNotModified: // payments.starGiftActiveAuctionsNotModified#db33dad0
+//	case *tg.PaymentsStarGiftActiveAuctions: // payments.starGiftActiveAuctions#aef6abbc
+//	default: panic(v)
+//	}
 type PaymentsStarGiftActiveAuctionsClass interface {
 	bin.Encoder
 	bin.Decoder

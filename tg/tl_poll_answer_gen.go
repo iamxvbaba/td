@@ -589,19 +589,20 @@ const PollAnswerClassName = "PollAnswer"
 // See https://core.telegram.org/type/PollAnswer for reference.
 //
 // Constructors:
-//  - [PollAnswer]
-//  - [InputPollAnswer]
+//   - [PollAnswer]
+//   - [InputPollAnswer]
 //
 // Example:
-//  g, err := tg.DecodePollAnswer(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.PollAnswer: // pollAnswer#4b7d786a
-//  case *tg.InputPollAnswer: // inputPollAnswer#199fed96
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodePollAnswer(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.PollAnswer: // pollAnswer#4b7d786a
+//	case *tg.InputPollAnswer: // inputPollAnswer#199fed96
+//	default: panic(v)
+//	}
 type PollAnswerClass interface {
 	bin.Encoder
 	bin.Decoder

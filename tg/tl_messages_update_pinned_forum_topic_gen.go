@@ -35,7 +35,7 @@ var (
 // Pin or unpin forum topics¹
 //
 // Links:
-//  1) https://core.telegram.org/api/forum
+//  1. https://core.telegram.org/api/forum
 //
 // See https://core.telegram.org/method/messages.updatePinnedForumTopic for reference.
 type MessagesUpdatePinnedForumTopicRequest struct {
@@ -231,10 +231,11 @@ func (u *MessagesUpdatePinnedForumTopicRequest) GetPinned() (value bool) {
 // Pin or unpin forum topics¹
 //
 // Links:
-//  1) https://core.telegram.org/api/forum
+//  1. https://core.telegram.org/api/forum
 //
 // Possible errors:
-//  400 CHANNEL_INVALID: The provided channel is invalid.
+//
+//	400 CHANNEL_INVALID: The provided channel is invalid.
 //
 // See https://core.telegram.org/method/messages.updatePinnedForumTopic for reference.
 func (c *Client) MessagesUpdatePinnedForumTopic(ctx context.Context, request *MessagesUpdatePinnedForumTopicRequest) (UpdatesClass, error) {

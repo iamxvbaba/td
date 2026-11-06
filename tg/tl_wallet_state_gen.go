@@ -510,19 +510,20 @@ const WalletStateClassName = "WalletState"
 // See https://core.telegram.org/type/WalletState for reference.
 //
 // Constructors:
-//  - [WalletStateEmpty]
-//  - [WalletState]
+//   - [WalletStateEmpty]
+//   - [WalletState]
 //
 // Example:
-//  g, err := tg.DecodeWalletState(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.WalletStateEmpty: // walletStateEmpty#9cb9b2ec
-//  case *tg.WalletState: // walletState#95c5346b
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeWalletState(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.WalletStateEmpty: // walletStateEmpty#9cb9b2ec
+//	case *tg.WalletState: // walletState#95c5346b
+//	default: panic(v)
+//	}
 type WalletStateClass interface {
 	bin.Encoder
 	bin.Decoder

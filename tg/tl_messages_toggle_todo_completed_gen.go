@@ -35,7 +35,7 @@ var (
 // Mark one or more items of a todo list »¹ as completed or not completed.
 //
 // Links:
-//  1) https://core.telegram.org/api/todo
+//  1. https://core.telegram.org/api/todo
 //
 // See https://core.telegram.org/method/messages.toggleTodoCompleted for reference.
 type MessagesToggleTodoCompletedRequest struct {
@@ -280,10 +280,11 @@ func (t *MessagesToggleTodoCompletedRequest) GetIncompleted() (value []int) {
 // Mark one or more items of a todo list »¹ as completed or not completed.
 //
 // Links:
-//  1) https://core.telegram.org/api/todo
+//  1. https://core.telegram.org/api/todo
 //
 // Possible errors:
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/messages.toggleTodoCompleted for reference.
 func (c *Client) MessagesToggleTodoCompleted(ctx context.Context, request *MessagesToggleTodoCompletedRequest) (UpdatesClass, error) {

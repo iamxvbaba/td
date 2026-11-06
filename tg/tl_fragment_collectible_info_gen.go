@@ -35,7 +35,7 @@ var (
 // Info about a fragment collectible¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/fragment
+//  1. https://core.telegram.org/api/fragment
 //
 // See https://core.telegram.org/constructor/fragment.collectibleInfo for reference.
 type FragmentCollectibleInfo struct {

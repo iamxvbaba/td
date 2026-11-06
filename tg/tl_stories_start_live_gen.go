@@ -592,7 +592,8 @@ func (s *StoriesStartLiveRequest) MapPrivacyRules() (value InputPrivacyRuleClass
 // StoriesStartLive invokes method stories.startLive#d069ccde returning error if any.
 //
 // Possible errors:
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/stories.startLive for reference.
 func (c *Client) StoriesStartLive(ctx context.Context, request *StoriesStartLiveRequest) (UpdatesClass, error) {

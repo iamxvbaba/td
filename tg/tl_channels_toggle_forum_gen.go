@@ -35,7 +35,7 @@ var (
 // Enable or disable forum functionality¹ in a supergroup.
 //
 // Links:
-//  1) https://core.telegram.org/api/forum
+//  1. https://core.telegram.org/api/forum
 //
 // See https://core.telegram.org/method/channels.toggleForum for reference.
 type ChannelsToggleForumRequest struct {
@@ -259,14 +259,15 @@ func (t *ChannelsToggleForumRequest) GetChannelAsNotEmpty() (NotEmptyInputChanne
 // Enable or disable forum functionality¹ in a supergroup.
 //
 // Links:
-//  1) https://core.telegram.org/api/forum
+//  1. https://core.telegram.org/api/forum
 //
 // Possible errors:
-//  400 CHANNEL_INVALID: The provided channel is invalid.
-//  400 CHAT_ADMIN_REQUIRED: You must be an admin in this chat to do this.
-//  400 CHAT_DISCUSSION_UNALLOWED: You can't enable forum topics in a discussion group linked to a channel.
-//  400 CHAT_ID_INVALID: The provided chat id is invalid.
-//  400 CHAT_NOT_MODIFIED: No changes were made to chat information because the new information you passed is identical to the current information.
+//
+//	400 CHANNEL_INVALID: The provided channel is invalid.
+//	400 CHAT_ADMIN_REQUIRED: You must be an admin in this chat to do this.
+//	400 CHAT_DISCUSSION_UNALLOWED: You can't enable forum topics in a discussion group linked to a channel.
+//	400 CHAT_ID_INVALID: The provided chat id is invalid.
+//	400 CHAT_NOT_MODIFIED: No changes were made to chat information because the new information you passed is identical to the current information.
 //
 // See https://core.telegram.org/method/channels.toggleForum for reference.
 func (c *Client) ChannelsToggleForum(ctx context.Context, request *ChannelsToggleForumRequest) (UpdatesClass, error) {

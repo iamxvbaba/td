@@ -35,7 +35,7 @@ var (
 // Terminate a group call¹, ending the room for all participants.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls
+//  1. https://core.telegram.org/api/group-calls
 //
 // See https://core.telegram.org/method/phone.discardGroupCall for reference.
 type PhoneDiscardGroupCallRequest struct {
@@ -173,12 +173,13 @@ func (d *PhoneDiscardGroupCallRequest) GetCall() (value InputGroupCallClass) {
 // Terminate a group call¹, ending the room for all participants.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls
+//  1. https://core.telegram.org/api/group-calls
 //
 // Possible errors:
-//  400 GROUPCALL_ALREADY_DISCARDED: The group call was already discarded.
-//  403 GROUPCALL_FORBIDDEN: The group call has already ended.
-//  400 GROUPCALL_INVALID: The specified group call is invalid.
+//
+//	400 GROUPCALL_ALREADY_DISCARDED: The group call was already discarded.
+//	403 GROUPCALL_FORBIDDEN: The group call has already ended.
+//	400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.discardGroupCall for reference.
 func (c *Client) PhoneDiscardGroupCall(ctx context.Context, call InputGroupCallClass) (UpdatesClass, error) {

@@ -36,7 +36,7 @@ var (
 // here »¹ for the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/channel#transferring-ownership-of-a-groupchannel
+//  1. https://core.telegram.org/api/channel#transferring-ownership-of-a-groupchannel
 //
 // See https://core.telegram.org/method/messages.editChatCreator for reference.
 type MessagesEditChatCreatorRequest struct {
@@ -247,7 +247,7 @@ func (e *MessagesEditChatCreatorRequest) GetPasswordAsNotEmpty() (*InputCheckPas
 // here »¹ for the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/channel#transferring-ownership-of-a-groupchannel
+//  1. https://core.telegram.org/api/channel#transferring-ownership-of-a-groupchannel
 //
 // See https://core.telegram.org/method/messages.editChatCreator for reference.
 func (c *Client) MessagesEditChatCreator(ctx context.Context, request *MessagesEditChatCreatorRequest) (UpdatesClass, error) {

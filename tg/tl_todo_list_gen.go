@@ -35,7 +35,7 @@ var (
 // Represents a todo list »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/todo
+//  1. https://core.telegram.org/api/todo
 //
 // See https://core.telegram.org/constructor/todoList for reference.
 type TodoList struct {

@@ -35,8 +35,8 @@ var (
 // Obtain a list of emoji statuses »¹ for owned collectible gifts².
 //
 // Links:
-//  1) https://core.telegram.org/api/emoji-status
-//  2) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/emoji-status
+//  2. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/method/account.getCollectibleEmojiStatuses for reference.
 type AccountGetCollectibleEmojiStatusesRequest struct {
@@ -172,8 +172,8 @@ func (g *AccountGetCollectibleEmojiStatusesRequest) GetHash() (value int64) {
 // Obtain a list of emoji statuses »¹ for owned collectible gifts².
 //
 // Links:
-//  1) https://core.telegram.org/api/emoji-status
-//  2) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/emoji-status
+//  2. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/method/account.getCollectibleEmojiStatuses for reference.
 func (c *Client) AccountGetCollectibleEmojiStatuses(ctx context.Context, hash int64) (AccountEmojiStatusesClass, error) {

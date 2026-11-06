@@ -37,10 +37,10 @@ var (
 // report_delivery_until_date flag or the equivalent flag in push notifications⁴.
 //
 // Links:
-//  1) https://telegram.org/blog/star-messages-gateway-2-0-and-more#save-even-more-on-user-verification
-//  2) https://core.telegram.org/constructor/message
-//  3) https://core.telegram.org/constructor/message
-//  4) https://core.telegram.org/api/push-updates
+//  1. https://telegram.org/blog/star-messages-gateway-2-0-and-more#save-even-more-on-user-verification
+//  2. https://core.telegram.org/constructor/message
+//  3. https://core.telegram.org/constructor/message
+//  4. https://core.telegram.org/api/push-updates
 //
 // See https://core.telegram.org/method/messages.reportMessagesDelivery for reference.
 type MessagesReportMessagesDeliveryRequest struct {
@@ -279,13 +279,14 @@ func (r *MessagesReportMessagesDeliveryRequest) GetID() (value []int) {
 // report_delivery_until_date flag or the equivalent flag in push notifications⁴.
 //
 // Links:
-//  1) https://telegram.org/blog/star-messages-gateway-2-0-and-more#save-even-more-on-user-verification
-//  2) https://core.telegram.org/constructor/message
-//  3) https://core.telegram.org/constructor/message
-//  4) https://core.telegram.org/api/push-updates
+//  1. https://telegram.org/blog/star-messages-gateway-2-0-and-more#save-even-more-on-user-verification
+//  2. https://core.telegram.org/constructor/message
+//  3. https://core.telegram.org/constructor/message
+//  4. https://core.telegram.org/api/push-updates
 //
 // Possible errors:
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/messages.reportMessagesDelivery for reference.
 func (c *Client) MessagesReportMessagesDelivery(ctx context.Context, request *MessagesReportMessagesDeliveryRequest) (bool, error) {

@@ -8,9 +8,10 @@ Source: official Telegram Desktop `ready@a6df181ac41763a9ff9edae264dad407fb1c35e
 TDesktop source path is clean and this schema commit is reachable from
 `origin/ready`. No client patch is part of the schema import.
 
-Relative to Layer 232 the schema adds 27 constructors, three new functions
-groups and changes two wire-visible definitions. Canonical moves to 233; exact
-profiles 225–232 remain generated.
+Relative to Layer 232 the schema adds 27 definitions (19 constructors and 8
+functions) and changes three: `user` and `channel` gain flags under unchanged
+IDs, and `channels.toggleForum` gains a required field and a new ID. Canonical
+moves to 233; exact profiles 225–232 remain generated.
 
 ## Constructor changes
 
@@ -39,22 +40,24 @@ New functions: `messages.getBotWidgetQueryAnswer#5c550579`,
 `messages.transcribeAudioFile#72d2ef7`, `messages.getTranscriptionLangs#ba6cd9aa`.
 
 The six new `Update` constructors are added, but no existing update's
-`pts`/`pts_count` field changes; the MTProto service schema is unchanged.
+`pts`/`pts_count` field changes; the MTProto service schema is unchanged. One
+new update, `updateMessageWidgetData`, carries `pts`/`pts_count` (see its
+decision below).
 
 ## Compatibility decisions
 
 | Scenario | Decision |
 |---|---|
-| `channels.toggleForum` in 225–232 (profile→canonical) | Reject admission. A historical request cannot express the required `sidebar` layout decision; defaulting it to `false` would let an old client silently overwrite the account's sidebar preference. This matches the only prior request-required-field decisions (`inputStorePaymentAuthCode.premium_days`, `payments.getStarGiftWithdrawalUrl.tmp_password`), which reject rather than invent a value. |
-| Canonical `channels.toggleForum` encoded for 225–232 (canonical→profile) | The required-field projection mechanically drops `sidebar` and emits the historical `#3ff75734` body. Server obligation: a request admitted as the canonical `#a2952b54` must treat `sidebar` as the client's explicit choice; a rejected historical body must never be re-interpreted as a sidebar change. |
+| `channels.toggleForum` in 225–232 (profile→canonical) | Default `sidebar` to `false`. `sidebar` is per-channel layout metadata (`channel.forum_sidebar`). An old client only knows the list and tabs layouts, and the `tabs` flag it sends still chooses between them, so `sidebar=false` is exactly the layout it asked for. Every client in use at import time sends `#3ff75734` (Telegram Desktop 7.3.1 and Telegram Android 13.0.3 at Layer 231, TDLib 1.8.69 at Layer 232); rejecting it would leave all of them unable to turn forums on or off, as the v1.6.0 `getStarGiftWithdrawalUrl` rejection left historical clients without gift export until v1.7.0 promoted the legacy method. Required profile→canonical precedent: `keyboardButton.type` (typed default adapter) and `auth.sentCodePaymentRequired.premium_days` (`default`). |
+| Canonical `channels.toggleForum` encoded for 225–232 (canonical→profile) | The required-field projection mechanically drops `sidebar` and emits the historical `#3ff75734` body. Server obligation: a canonical `#a2952b54` request carries the client's explicit `sidebar`; a historical request arrives with `sidebar=false`. A server that wants to keep a sidebar layout chosen by a Layer 233 client may preserve it for historical sessions. |
 | `channel.forum_sidebar`, `user.bot_forum_sidebar` encoded for 225–232 | Drop (generic optional-field default). Layout metadata only: no permission, consent, credential or PTS meaning, and the historical constructor keeps its field set. Wire IDs are unchanged, so the flags are canonical-only for 225–232. |
-| Six new updates (`updateEditForumTopic`, `updateBotWidgetQuery`, `updateInlineBotWidgetQuery`, `updateBotWidgetCopyQuery`, `updateMessageWidgetData`, `updateTranscribedAudioFile`) projected to 225–232 | Drop. Every prior non-wallet update added in Layers 225–229 was dropped (`updateJoinChatWebViewDecision`, `updateNewBotConnection`, `updateWebBrowserException`, `updateWebBrowserSettings`, the four ephemeral updates, and `updateEphemeralBotCallbackQuery`); only the Layer 230 wallet/TON-session updates were rejected. The widget, transcription and forum-UI features are unavailable to old profiles, and a dropped interactive widget query cannot authorize a wallet transaction. |
-| New widget methods, results and `WidgetQueryType`/`UserWallet` types in historical profiles | Unavailable (generic canonical-only default). No alias and no byte bridge. |
+| Six new updates (`updateEditForumTopic`, `updateBotWidgetQuery`, `updateInlineBotWidgetQuery`, `updateBotWidgetCopyQuery`, `updateMessageWidgetData`, `updateTranscribedAudioFile`) projected to 225–232 | Drop. Every prior non-wallet update added in Layers 225–229 was dropped (`updateJoinChatWebViewDecision`, `updateNewBotConnection`, `updateWebBrowserException`, `updateWebBrowserSettings`, the four ephemeral updates, and `updateEphemeralBotCallbackQuery`); only the Layer 230 wallet/TON-session updates were rejected. The widget, transcription and forum-UI features are unavailable to old profiles, and a dropped interactive widget query cannot authorize a wallet transaction. `updateMessageWidgetData` is the first dropped update with `pts`/`pts_count`: a 225–232 session sees a pts gap when it is emitted and recovers through `updates.getDifference`/`updates.getChannelDifference`, where the update is dropped again from `other_updates` while the returned state still covers its pts. A server emitting it must account for that gap. |
+| New widget methods, results and `WidgetQueryType`/`UserWallet` types in historical profiles | Unavailable (generic canonical-only default). No alias and no byte bridge. `messageMediaWidget` in the optional `message.media` falls under the generic optional-field drop: 225–232 receive the message without media, so a widget-only message arrives empty. A server that wants an "unsupported message" placeholder must substitute `messageMediaUnsupported` itself. |
 | Legacy `payments.getStarGiftWithdrawalUrlLegacy#d06e93a8` | Still owned by the canonical Go model. Exact profile 232 defines the temporary-password method `#c8ca817b`, not `#d06e93a8`, so unlike the Layer 232 record it no longer admits the promoted legacy wire; the SRP constructor remains available in exact profiles 225–231. |
 
 The policy has 305 entries: the 249 reviewed decisions are retained unchanged,
 and 56 new obligations are explicit (eight `channels.toggleForum` request
-rejections and 48 update drops, six constructors × eight historical profiles).
+defaults and 48 update drops, six constructors × eight historical profiles).
 No obligation uses a hook; no stale key remains.
 
 ## Verification matrix
@@ -63,9 +66,9 @@ No obligation uses a hook; no stale key remains.
 `channel`/`user` wire IDs with literal canonical IDs and non-leakage of the two
 new layout flags into 225–232; the literal `#a2952b54` canonical
 `channels.toggleForum` round trip versus the dropped `#3ff75734` historical
-encoding, with rejection and an untouched cursor when a historical request is
-admitted; and canonical round trips plus historical rejection for all six new
-updates. Keep every prior exact profile wire ID and the existing Layer 230/231/232
+encoding, with historical admission as `sidebar=false`; and, for all six new
+updates, canonical round trips, bare-encode rejection and drops inside an
+`updates` container that keep the neighbouring update. Keep every prior exact profile wire ID and the existing Layer 230/231/232
 oracles. Run deterministic generation, protocol tests and `go vet`, then
 downstream RPC/edge tests and command builds against the published module
 without a permanent local `replace`. This protocol change allocates no PTS/QTS,
@@ -90,5 +93,19 @@ On Windows/amd64, Go 1.27.3:
 - `go test ./... -count=1`, `go build ./...` and `go vet ./gen ./gen/semantic
   ./cmd/gotdgen ./tlprofile ./mtproto ./tg` pass, including the new
   `tlprofile/layer233_test.go`.
+
+Maintainer re-verification on macOS/arm64, Go 1.27.0, from an LF checkout:
+
+- The Windows run had checked out `gen/_template` with CRLF. `go/scanner`
+  strips `\r` from line comments, so `go/printer` skipped doc-comment
+  reformatting and 1121 `tg`, `tg/e2e` and `mt` files differed from an LF
+  generation in comment layout only. `.gitattributes` now pins `*.tmpl` to LF,
+  and the files are regenerated.
+- The `channels.toggleForum` requests switched from reject to default; the
+  execution-plan audit and `tlprofile` were regenerated, and a second
+  `go generate .` run is byte-identical.
+- `go build ./...`, the `go vet` set above and `go test ./... -count=1` pass.
+  A downstream server build against this tree through a temporary `go.work`
+  passes its edge tests.
 
 No client UI session or deployment is part of this verification.

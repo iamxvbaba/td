@@ -75,21 +75,26 @@ func TestLayer233ToggleForumSidebarPolicy(t *testing.T) {
 	if got := layer232RoundTrip(t, Profile233, request); !reflect.DeepEqual(got, request) {
 		t.Fatalf("canonical toggleForum round trip = %#v", got)
 	}
-	// A historical request cannot express the required sidebar decision. The
-	// canonical-to-profile encoder drops the field, but the profile-to-canonical
-	// admission path rejects the historical wire instead of inventing a value.
+	// A historical request cannot express the sidebar layout. The
+	// canonical-to-profile encoder drops the field; the profile-to-canonical
+	// path admits the historical wire with sidebar=false. An old client only
+	// knows the list and tabs layouts, and its tabs flag still chooses
+	// between them.
+	historical := &tg.ChannelsToggleForumRequest{Channel: &tg.InputChannelEmpty{}, Enabled: true, Tabs: true}
 	for profile := Profile225; profile <= Profile232; profile++ {
 		old := layer232Encode(t, profile, request)
 		if id := binary32(old); id != 0x3ff75734 {
 			t.Fatalf("profile %d toggleForum id = %#08x, want 0x3ff75734", profile, id)
 		}
-		wire := &bin.Buffer{Buf: append([]byte(nil), old...)}
-		before := wire.Copy()
-		if _, err := NewDispatcher().Admit(profile, wire, Limits{}); err == nil {
-			t.Fatalf("profile %d admitted a toggleForum request without sidebar", profile)
+		if !bytes.Equal(old, layer232Encode(t, profile, historical)) {
+			t.Fatalf("profile %d toggleForum encoding depends on sidebar", profile)
 		}
-		if !bytes.Equal(before, wire.Raw()) {
-			t.Fatalf("profile %d rejected toggleForum consumed its cursor", profile)
+		wire := &bin.Buffer{Buf: append([]byte(nil), old...)}
+		if _, err := NewDispatcher().Admit(profile, wire, Limits{}); err != nil {
+			t.Fatalf("profile %d rejected a historical toggleForum request: %v", profile, err)
+		}
+		if got := layer232RoundTrip(t, profile, request); !reflect.DeepEqual(got, historical) {
+			t.Fatalf("profile %d historical toggleForum = %#v, want sidebar=false", profile, got)
 		}
 	}
 }
@@ -121,6 +126,13 @@ func TestLayer233NewUpdatesDropInHistoricalProfiles(t *testing.T) {
 		}
 		for profile := Profile225; profile <= Profile232; profile++ {
 			assert230EncodeRejected(t, profile, update)
+			// Inside a container the update is dropped and its neighbours stay.
+			known := &tg.UpdateConfig{}
+			container := &tg.Updates{Updates: []tg.UpdateClass{update, known}, Users: []tg.UserClass{}, Chats: []tg.ChatClass{}, Date: 1, Seq: 1}
+			got := layer232RoundTrip(t, profile, container).(*tg.Updates)
+			if len(got.Updates) != 1 || !reflect.DeepEqual(got.Updates[0], known) {
+				t.Fatalf("profile %d %T container = %#v, want only the known update", profile, update, got.Updates)
+			}
 		}
 	}
 }

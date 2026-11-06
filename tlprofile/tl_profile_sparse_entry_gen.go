@@ -5365,7 +5365,7 @@ func tlLookupResultPlan(profile Profile, semantic SemanticID) (int, bool) {
 		}
 	case SemanticMethodChannelsToggleForum:
 		switch profile {
-		case Profile233:
+		case Profile225, Profile226, Profile227, Profile228, Profile229, Profile230, Profile231, Profile232, Profile233:
 			return 11, true
 		}
 	case SemanticMethodChannelsToggleJoinRequest:

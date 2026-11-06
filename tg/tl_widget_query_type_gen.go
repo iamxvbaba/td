@@ -521,21 +521,22 @@ const WidgetQueryTypeClassName = "WidgetQueryType"
 // See https://core.telegram.org/type/WidgetQueryType for reference.
 //
 // Constructors:
-//  - [WidgetQueryTypeData]
-//  - [WidgetQueryTypeSignData]
-//  - [WidgetQueryTypeSentTransaction]
+//   - [WidgetQueryTypeData]
+//   - [WidgetQueryTypeSignData]
+//   - [WidgetQueryTypeSentTransaction]
 //
 // Example:
-//  g, err := tg.DecodeWidgetQueryType(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.WidgetQueryTypeData: // widgetQueryTypeData#16d8cf0b
-//  case *tg.WidgetQueryTypeSignData: // widgetQueryTypeSignData#192047dc
-//  case *tg.WidgetQueryTypeSentTransaction: // widgetQueryTypeSentTransaction#ff3b33b4
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeWidgetQueryType(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.WidgetQueryTypeData: // widgetQueryTypeData#16d8cf0b
+//	case *tg.WidgetQueryTypeSignData: // widgetQueryTypeSignData#192047dc
+//	case *tg.WidgetQueryTypeSentTransaction: // widgetQueryTypeSentTransaction#ff3b33b4
+//	default: panic(v)
+//	}
 type WidgetQueryTypeClass interface {
 	bin.Encoder
 	bin.Decoder

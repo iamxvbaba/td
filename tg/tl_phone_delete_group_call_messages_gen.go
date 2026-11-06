@@ -35,7 +35,7 @@ var (
 // Delete messages from the in-call message overlay of a group call or livestream¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  1. https://core.telegram.org/api/group-calls#conference-calls
 //
 // See https://core.telegram.org/method/phone.deleteGroupCallMessages for reference.
 type PhoneDeleteGroupCallMessagesRequest struct {
@@ -269,10 +269,11 @@ func (d *PhoneDeleteGroupCallMessagesRequest) GetMessages() (value []int) {
 // Delete messages from the in-call message overlay of a group call or livestream¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  1. https://core.telegram.org/api/group-calls#conference-calls
 //
 // Possible errors:
-//  400 GROUPCALL_INVALID: The specified group call is invalid.
+//
+//	400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.deleteGroupCallMessages for reference.
 func (c *Client) PhoneDeleteGroupCallMessages(ctx context.Context, request *PhoneDeleteGroupCallMessagesRequest) (UpdatesClass, error) {

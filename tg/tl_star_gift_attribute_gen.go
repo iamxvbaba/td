@@ -35,7 +35,7 @@ var (
 // The model of a collectible gift »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/constructor/starGiftAttributeModel for reference.
 type StarGiftAttributeModel struct {
@@ -301,8 +301,8 @@ func (s *StarGiftAttributeModel) GetRarity() (value StarGiftAttributeRarityClass
 // pattern.
 //
 // Links:
-//  1) https://core.telegram.org/api/stickers
-//  2) https://core.telegram.org/api/gifts
+//  1. https://core.telegram.org/api/stickers
+//  2. https://core.telegram.org/api/gifts
 //
 // See https://core.telegram.org/constructor/starGiftAttributePattern for reference.
 type StarGiftAttributePattern struct {
@@ -504,7 +504,7 @@ func (s *StarGiftAttributePattern) GetRarity() (value StarGiftAttributeRarityCla
 // The backdrop of a collectible gift »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/constructor/starGiftAttributeBackdrop for reference.
 type StarGiftAttributeBackdrop struct {
@@ -813,8 +813,8 @@ func (s *StarGiftAttributeBackdrop) GetRarity() (value StarGiftAttributeRarityCl
 // it was upgraded to a collectible gift »².
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
-//  2) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/gifts
+//  2. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/constructor/starGiftAttributeOriginalDetails for reference.
 type StarGiftAttributeOriginalDetails struct {
@@ -1110,23 +1110,24 @@ const StarGiftAttributeClassName = "StarGiftAttribute"
 // See https://core.telegram.org/type/StarGiftAttribute for reference.
 //
 // Constructors:
-//  - [StarGiftAttributeModel]
-//  - [StarGiftAttributePattern]
-//  - [StarGiftAttributeBackdrop]
-//  - [StarGiftAttributeOriginalDetails]
+//   - [StarGiftAttributeModel]
+//   - [StarGiftAttributePattern]
+//   - [StarGiftAttributeBackdrop]
+//   - [StarGiftAttributeOriginalDetails]
 //
 // Example:
-//  g, err := tg.DecodeStarGiftAttribute(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.StarGiftAttributeModel: // starGiftAttributeModel#565251e2
-//  case *tg.StarGiftAttributePattern: // starGiftAttributePattern#4e7085ea
-//  case *tg.StarGiftAttributeBackdrop: // starGiftAttributeBackdrop#9f2504e4
-//  case *tg.StarGiftAttributeOriginalDetails: // starGiftAttributeOriginalDetails#e0bff26c
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeStarGiftAttribute(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.StarGiftAttributeModel: // starGiftAttributeModel#565251e2
+//	case *tg.StarGiftAttributePattern: // starGiftAttributePattern#4e7085ea
+//	case *tg.StarGiftAttributeBackdrop: // starGiftAttributeBackdrop#9f2504e4
+//	case *tg.StarGiftAttributeOriginalDetails: // starGiftAttributeOriginalDetails#e0bff26c
+//	default: panic(v)
+//	}
 type StarGiftAttributeClass interface {
 	bin.Encoder
 	bin.Decoder

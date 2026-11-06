@@ -36,8 +36,8 @@ var (
 // monoforum topic »².
 //
 // Links:
-//  1) https://core.telegram.org/api/saved-messages
-//  2) https://core.telegram.org/api/monoforum
+//  1. https://core.telegram.org/api/saved-messages
+//  2. https://core.telegram.org/api/monoforum
 //
 // See https://core.telegram.org/method/messages.getSavedHistory for reference.
 type MessagesGetSavedHistoryRequest struct {
@@ -445,11 +445,12 @@ func (g *MessagesGetSavedHistoryRequest) GetHash() (value int64) {
 // monoforum topic »².
 //
 // Links:
-//  1) https://core.telegram.org/api/saved-messages
-//  2) https://core.telegram.org/api/monoforum
+//  1. https://core.telegram.org/api/saved-messages
+//  2. https://core.telegram.org/api/monoforum
 //
 // Possible errors:
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/messages.getSavedHistory for reference.
 func (c *Client) MessagesGetSavedHistory(ctx context.Context, request *MessagesGetSavedHistoryRequest) (MessagesMessagesClass, error) {

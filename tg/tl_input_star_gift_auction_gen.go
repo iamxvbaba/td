@@ -35,8 +35,8 @@ var (
 // Used to fetch auctions¹ using the ID of the linked collectible gift².
 //
 // Links:
-//  1) https://core.telegram.org/api/auctions
-//  2) https://core.telegram.org/api/gifts#collectible-gifts
+//  1. https://core.telegram.org/api/auctions
+//  2. https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/constructor/inputStarGiftAuction for reference.
 type InputStarGiftAuction struct {
@@ -177,8 +177,8 @@ func (i *InputStarGiftAuction) GetGiftID() (value int64) {
 // Used to fetch auctions¹ using the slug of an auction deep link »².
 //
 // Links:
-//  1) https://core.telegram.org/api/auctions
-//  2) https://core.telegram.org/api/links#auction-links
+//  1. https://core.telegram.org/api/auctions
+//  2. https://core.telegram.org/api/links#auction-links
 //
 // See https://core.telegram.org/constructor/inputStarGiftAuctionSlug for reference.
 type InputStarGiftAuctionSlug struct {
@@ -323,19 +323,20 @@ const InputStarGiftAuctionClassName = "InputStarGiftAuction"
 // See https://core.telegram.org/type/InputStarGiftAuction for reference.
 //
 // Constructors:
-//  - [InputStarGiftAuction]
-//  - [InputStarGiftAuctionSlug]
+//   - [InputStarGiftAuction]
+//   - [InputStarGiftAuctionSlug]
 //
 // Example:
-//  g, err := tg.DecodeInputStarGiftAuction(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.InputStarGiftAuction: // inputStarGiftAuction#2e16c98
-//  case *tg.InputStarGiftAuctionSlug: // inputStarGiftAuctionSlug#7ab58308
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeInputStarGiftAuction(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.InputStarGiftAuction: // inputStarGiftAuction#2e16c98
+//	case *tg.InputStarGiftAuctionSlug: // inputStarGiftAuctionSlug#7ab58308
+//	default: panic(v)
+//	}
 type InputStarGiftAuctionClass interface {
 	bin.Encoder
 	bin.Decoder

@@ -40,11 +40,11 @@ var (
 // messages.acceptUrlAuth⁴.match_code.
 //
 // Links:
-//  1) https://core.telegram.org/api/url-authorization#oauth-authorization
-//  2) https://core.telegram.org/constructor/urlAuthResultRequest
-//  3) https://core.telegram.org/method/messages.requestUrlAuth
-//  4) https://core.telegram.org/constructor/boolTrue
-//  5) https://core.telegram.org/method/messages.acceptUrlAuth
+//  1. https://core.telegram.org/api/url-authorization#oauth-authorization
+//  2. https://core.telegram.org/constructor/urlAuthResultRequest
+//  3. https://core.telegram.org/method/messages.requestUrlAuth
+//  4. https://core.telegram.org/constructor/boolTrue
+//  5. https://core.telegram.org/method/messages.acceptUrlAuth
 //
 // See https://core.telegram.org/method/messages.checkUrlAuthMatchCode for reference.
 type MessagesCheckURLAuthMatchCodeRequest struct {
@@ -213,11 +213,11 @@ func (c *MessagesCheckURLAuthMatchCodeRequest) GetMatchCode() (value string) {
 // messages.acceptUrlAuth⁴.match_code.
 //
 // Links:
-//  1) https://core.telegram.org/api/url-authorization#oauth-authorization
-//  2) https://core.telegram.org/constructor/urlAuthResultRequest
-//  3) https://core.telegram.org/method/messages.requestUrlAuth
-//  4) https://core.telegram.org/constructor/boolTrue
-//  5) https://core.telegram.org/method/messages.acceptUrlAuth
+//  1. https://core.telegram.org/api/url-authorization#oauth-authorization
+//  2. https://core.telegram.org/constructor/urlAuthResultRequest
+//  3. https://core.telegram.org/method/messages.requestUrlAuth
+//  4. https://core.telegram.org/constructor/boolTrue
+//  5. https://core.telegram.org/method/messages.acceptUrlAuth
 //
 // See https://core.telegram.org/method/messages.checkUrlAuthMatchCode for reference.
 func (c *Client) MessagesCheckURLAuthMatchCode(ctx context.Context, request *MessagesCheckURLAuthMatchCodeRequest) (bool, error) {

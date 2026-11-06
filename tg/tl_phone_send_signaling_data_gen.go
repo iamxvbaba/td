@@ -35,7 +35,7 @@ var (
 // Send VoIP signaling data¹ for an ongoing phone call.
 //
 // Links:
-//  1) https://core.telegram.org/api/calls#signaling-data
+//  1. https://core.telegram.org/api/calls#signaling-data
 //
 // See https://core.telegram.org/method/phone.sendSignalingData for reference.
 type PhoneSendSignalingDataRequest struct {
@@ -195,10 +195,11 @@ func (s *PhoneSendSignalingDataRequest) GetData() (value []byte) {
 // Send VoIP signaling data¹ for an ongoing phone call.
 //
 // Links:
-//  1) https://core.telegram.org/api/calls#signaling-data
+//  1. https://core.telegram.org/api/calls#signaling-data
 //
 // Possible errors:
-//  400 CALL_PEER_INVALID: The provided call peer object is invalid.
+//
+//	400 CALL_PEER_INVALID: The provided call peer object is invalid.
 //
 // See https://core.telegram.org/method/phone.sendSignalingData for reference.
 func (c *Client) PhoneSendSignalingData(ctx context.Context, request *PhoneSendSignalingDataRequest) (bool, error) {

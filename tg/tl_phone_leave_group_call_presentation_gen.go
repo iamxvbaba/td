@@ -35,7 +35,7 @@ var (
 // Stop screen sharing in a group call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls
+//  1. https://core.telegram.org/api/group-calls
 //
 // See https://core.telegram.org/method/phone.leaveGroupCallPresentation for reference.
 type PhoneLeaveGroupCallPresentationRequest struct {
@@ -173,10 +173,11 @@ func (l *PhoneLeaveGroupCallPresentationRequest) GetCall() (value InputGroupCall
 // Stop screen sharing in a group call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls
+//  1. https://core.telegram.org/api/group-calls
 //
 // Possible errors:
-//  400 GROUPCALL_INVALID: The specified group call is invalid.
+//
+//	400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.leaveGroupCallPresentation for reference.
 func (c *Client) PhoneLeaveGroupCallPresentation(ctx context.Context, call InputGroupCallClass) (UpdatesClass, error) {

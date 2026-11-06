@@ -37,8 +37,8 @@ var (
 // rights².
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
-//  2) https://core.telegram.org/constructor/chatAdminRights
+//  1. https://core.telegram.org/api/gifts
+//  2. https://core.telegram.org/constructor/chatAdminRights
 //
 // See https://core.telegram.org/method/payments.toggleChatStarGiftNotifications for reference.
 type PaymentsToggleChatStarGiftNotificationsRequest struct {
@@ -240,11 +240,12 @@ func (t *PaymentsToggleChatStarGiftNotificationsRequest) GetPeer() (value InputP
 // rights².
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts
-//  2) https://core.telegram.org/constructor/chatAdminRights
+//  1. https://core.telegram.org/api/gifts
+//  2. https://core.telegram.org/constructor/chatAdminRights
 //
 // Possible errors:
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/payments.toggleChatStarGiftNotifications for reference.
 func (c *Client) PaymentsToggleChatStarGiftNotifications(ctx context.Context, request *PaymentsToggleChatStarGiftNotificationsRequest) (bool, error) {

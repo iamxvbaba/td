@@ -36,7 +36,7 @@ var (
 // video, emitting an updateReadMessagesContents¹.
 //
 // Links:
-//  1) https://core.telegram.org/constructor/updateReadMessagesContents
+//  1. https://core.telegram.org/constructor/updateReadMessagesContents
 //
 // See https://core.telegram.org/method/messages.readMessageContents for reference.
 type MessagesReadMessageContentsRequest struct {
@@ -183,7 +183,7 @@ func (r *MessagesReadMessageContentsRequest) GetID() (value []int) {
 // video, emitting an updateReadMessagesContents¹.
 //
 // Links:
-//  1) https://core.telegram.org/constructor/updateReadMessagesContents
+//  1. https://core.telegram.org/constructor/updateReadMessagesContents
 //
 // See https://core.telegram.org/method/messages.readMessageContents for reference.
 func (c *Client) MessagesReadMessageContents(ctx context.Context, id []int) (*MessagesAffectedMessages, error) {

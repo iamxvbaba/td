@@ -437,19 +437,20 @@ const MessagesEmojiGameInfoClassName = "messages.EmojiGameInfo"
 // See https://core.telegram.org/type/messages.EmojiGameInfo for reference.
 //
 // Constructors:
-//  - [MessagesEmojiGameUnavailable]
-//  - [MessagesEmojiGameDiceInfo]
+//   - [MessagesEmojiGameUnavailable]
+//   - [MessagesEmojiGameDiceInfo]
 //
 // Example:
-//  g, err := tg.DecodeMessagesEmojiGameInfo(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.MessagesEmojiGameUnavailable: // messages.emojiGameUnavailable#59e65335
-//  case *tg.MessagesEmojiGameDiceInfo: // messages.emojiGameDiceInfo#44e56023
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeMessagesEmojiGameInfo(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.MessagesEmojiGameUnavailable: // messages.emojiGameUnavailable#59e65335
+//	case *tg.MessagesEmojiGameDiceInfo: // messages.emojiGameDiceInfo#44e56023
+//	default: panic(v)
+//	}
 type MessagesEmojiGameInfoClass interface {
 	bin.Encoder
 	bin.Decoder

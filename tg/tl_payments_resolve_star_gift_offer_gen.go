@@ -36,8 +36,8 @@ var (
 // »² for the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
-//  2) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  1. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  2. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
 //
 // See https://core.telegram.org/method/payments.resolveStarGiftOffer for reference.
 type PaymentsResolveStarGiftOfferRequest struct {
@@ -231,11 +231,12 @@ func (r *PaymentsResolveStarGiftOfferRequest) GetOfferMsgID() (value int) {
 // »² for the full flow.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
-//  2) https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  1. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
+//  2. https://core.telegram.org/api/gifts#collectible-gift-purchase-offers
 //
 // Possible errors:
-//  400 MESSAGE_ID_INVALID: The provided message id is invalid.
+//
+//	400 MESSAGE_ID_INVALID: The provided message id is invalid.
 //
 // See https://core.telegram.org/method/payments.resolveStarGiftOffer for reference.
 func (c *Client) PaymentsResolveStarGiftOffer(ctx context.Context, request *PaymentsResolveStarGiftOfferRequest) (UpdatesClass, error) {

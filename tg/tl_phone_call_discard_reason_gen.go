@@ -35,7 +35,7 @@ var (
 // The phone call was missed, see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/calls
+//  1. https://core.telegram.org/api/calls
 //
 // See https://core.telegram.org/constructor/phoneCallDiscardReasonMissed for reference.
 type PhoneCallDiscardReasonMissed struct {
@@ -140,7 +140,7 @@ func (p *PhoneCallDiscardReasonMissed) DecodeBare(b *bin.Buffer) error {
 // The phone call was disconnected, see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/calls
+//  1. https://core.telegram.org/api/calls
 //
 // See https://core.telegram.org/constructor/phoneCallDiscardReasonDisconnect for reference.
 type PhoneCallDiscardReasonDisconnect struct {
@@ -245,7 +245,7 @@ func (p *PhoneCallDiscardReasonDisconnect) DecodeBare(b *bin.Buffer) error {
 // The phone call was ended normally, see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/calls
+//  1. https://core.telegram.org/api/calls
 //
 // See https://core.telegram.org/constructor/phoneCallDiscardReasonHangup for reference.
 type PhoneCallDiscardReasonHangup struct {
@@ -351,7 +351,7 @@ func (p *PhoneCallDiscardReasonHangup) DecodeBare(b *bin.Buffer) error {
 // for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/calls
+//  1. https://core.telegram.org/api/calls
 //
 // See https://core.telegram.org/constructor/phoneCallDiscardReasonBusy for reference.
 type PhoneCallDiscardReasonBusy struct {
@@ -456,7 +456,7 @@ func (p *PhoneCallDiscardReasonBusy) DecodeBare(b *bin.Buffer) error {
 // This phone call was migrated to a conference call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/end-to-end/group-calls
+//  1. https://core.telegram.org/api/end-to-end/group-calls
 //
 // See https://core.telegram.org/constructor/phoneCallDiscardReasonMigrateConferenceCall for reference.
 type PhoneCallDiscardReasonMigrateConferenceCall struct {
@@ -603,25 +603,26 @@ const PhoneCallDiscardReasonClassName = "PhoneCallDiscardReason"
 // See https://core.telegram.org/type/PhoneCallDiscardReason for reference.
 //
 // Constructors:
-//  - [PhoneCallDiscardReasonMissed]
-//  - [PhoneCallDiscardReasonDisconnect]
-//  - [PhoneCallDiscardReasonHangup]
-//  - [PhoneCallDiscardReasonBusy]
-//  - [PhoneCallDiscardReasonMigrateConferenceCall]
+//   - [PhoneCallDiscardReasonMissed]
+//   - [PhoneCallDiscardReasonDisconnect]
+//   - [PhoneCallDiscardReasonHangup]
+//   - [PhoneCallDiscardReasonBusy]
+//   - [PhoneCallDiscardReasonMigrateConferenceCall]
 //
 // Example:
-//  g, err := tg.DecodePhoneCallDiscardReason(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.PhoneCallDiscardReasonMissed: // phoneCallDiscardReasonMissed#85e42301
-//  case *tg.PhoneCallDiscardReasonDisconnect: // phoneCallDiscardReasonDisconnect#e095c1a0
-//  case *tg.PhoneCallDiscardReasonHangup: // phoneCallDiscardReasonHangup#57adc690
-//  case *tg.PhoneCallDiscardReasonBusy: // phoneCallDiscardReasonBusy#faf7e8c9
-//  case *tg.PhoneCallDiscardReasonMigrateConferenceCall: // phoneCallDiscardReasonMigrateConferenceCall#9fbbf1f7
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodePhoneCallDiscardReason(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.PhoneCallDiscardReasonMissed: // phoneCallDiscardReasonMissed#85e42301
+//	case *tg.PhoneCallDiscardReasonDisconnect: // phoneCallDiscardReasonDisconnect#e095c1a0
+//	case *tg.PhoneCallDiscardReasonHangup: // phoneCallDiscardReasonHangup#57adc690
+//	case *tg.PhoneCallDiscardReasonBusy: // phoneCallDiscardReasonBusy#faf7e8c9
+//	case *tg.PhoneCallDiscardReasonMigrateConferenceCall: // phoneCallDiscardReasonMigrateConferenceCall#9fbbf1f7
+//	default: panic(v)
+//	}
 type PhoneCallDiscardReasonClass interface {
 	bin.Encoder
 	bin.Decoder

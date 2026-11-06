@@ -35,7 +35,7 @@ var (
 // Create and optionally join a new conference call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  1. https://core.telegram.org/api/group-calls#conference-calls
 //
 // See https://core.telegram.org/method/phone.createConferenceCall for reference.
 type PhoneCreateConferenceCallRequest struct {
@@ -438,7 +438,7 @@ func (c *PhoneCreateConferenceCallRequest) GetParams() (value DataJSON, ok bool)
 // Create and optionally join a new conference call¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  1. https://core.telegram.org/api/group-calls#conference-calls
 //
 // See https://core.telegram.org/method/phone.createConferenceCall for reference.
 func (c *Client) PhoneCreateConferenceCall(ctx context.Context, request *PhoneCreateConferenceCallRequest) (UpdatesClass, error) {

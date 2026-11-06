@@ -36,8 +36,8 @@ var (
 // passkey »¹ or listing passkeys »².
 //
 // Links:
-//  1) https://core.telegram.org/api/passkeys#creating-a-passkey
-//  2) https://core.telegram.org/api/passkeys#list-passkeys
+//  1. https://core.telegram.org/api/passkeys#creating-a-passkey
+//  2. https://core.telegram.org/api/passkeys#list-passkeys
 //
 // See https://core.telegram.org/constructor/passkey for reference.
 type Passkey struct {

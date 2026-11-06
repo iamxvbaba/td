@@ -204,7 +204,8 @@ func (c *StickersChangeStickerPositionRequest) GetStickerAsNotEmpty() (*InputDoc
 // set must have been created by the current user/bot.
 //
 // Possible errors:
-//  400 STICKER_INVALID: The provided sticker is invalid.
+//
+//	400 STICKER_INVALID: The provided sticker is invalid.
 //
 // See https://core.telegram.org/method/stickers.changeStickerPosition for reference.
 func (c *Client) StickersChangeStickerPosition(ctx context.Context, request *StickersChangeStickerPositionRequest) (MessagesStickerSetClass, error) {

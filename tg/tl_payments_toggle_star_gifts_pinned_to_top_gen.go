@@ -36,7 +36,7 @@ var (
 // payments.toggleStarGiftsPinnedToTop¹.
 //
 // Links:
-//  1) https://core.telegram.org/method/payments.toggleStarGiftsPinnedToTop
+//  1. https://core.telegram.org/method/payments.toggleStarGiftsPinnedToTop
 //
 // See https://core.telegram.org/method/payments.toggleStarGiftsPinnedToTop for reference.
 type PaymentsToggleStarGiftsPinnedToTopRequest struct {
@@ -225,10 +225,11 @@ func (t *PaymentsToggleStarGiftsPinnedToTopRequest) MapStargift() (value InputSa
 // payments.toggleStarGiftsPinnedToTop¹.
 //
 // Links:
-//  1) https://core.telegram.org/method/payments.toggleStarGiftsPinnedToTop
+//  1. https://core.telegram.org/method/payments.toggleStarGiftsPinnedToTop
 //
 // Possible errors:
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/payments.toggleStarGiftsPinnedToTop for reference.
 func (c *Client) PaymentsToggleStarGiftsPinnedToTop(ctx context.Context, request *PaymentsToggleStarGiftsPinnedToTopRequest) (bool, error) {

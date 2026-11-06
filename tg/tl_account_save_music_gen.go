@@ -36,7 +36,7 @@ var (
 // the music tab of the profile page.
 //
 // Links:
-//  1) https://core.telegram.org/api/profile#music
+//  1. https://core.telegram.org/api/profile#music
 //
 // See https://core.telegram.org/method/account.saveMusic for reference.
 type AccountSaveMusicRequest struct {
@@ -301,10 +301,11 @@ func (s *AccountSaveMusicRequest) GetAfterIDAsNotEmpty() (*InputDocument, bool) 
 // the music tab of the profile page.
 //
 // Links:
-//  1) https://core.telegram.org/api/profile#music
+//  1. https://core.telegram.org/api/profile#music
 //
 // Possible errors:
-//  400 DOCUMENT_INVALID: The specified document is invalid.
+//
+//	400 DOCUMENT_INVALID: The specified document is invalid.
 //
 // See https://core.telegram.org/method/account.saveMusic for reference.
 func (c *Client) AccountSaveMusic(ctx context.Context, request *AccountSaveMusicRequest) (bool, error) {

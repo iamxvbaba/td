@@ -35,7 +35,7 @@ var (
 // Describes all the gifts that the current user won in an auction¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/auctions
+//  1. https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/constructor/payments.starGiftAuctionAcquiredGifts for reference.
 type PaymentsStarGiftAuctionAcquiredGifts struct {

@@ -35,7 +35,7 @@ var (
 // Represents a story album »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/stories#story-albums
+//  1. https://core.telegram.org/api/stories#story-albums
 //
 // See https://core.telegram.org/constructor/storyAlbum for reference.
 type StoryAlbum struct {

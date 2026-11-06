@@ -36,7 +36,7 @@ var (
 // button, see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/bots/buttons#button-styles
+//  1. https://core.telegram.org/api/bots/buttons#button-styles
 //
 // See https://core.telegram.org/constructor/keyboardButtonStyle for reference.
 type KeyboardButtonStyle struct {

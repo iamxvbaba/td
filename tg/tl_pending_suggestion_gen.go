@@ -35,7 +35,7 @@ var (
 // Represents a custom pending suggestion »¹.
 //
 // Links:
-//  1) https://core.telegram.org/api/config#custom-suggestions
+//  1. https://core.telegram.org/api/config#custom-suggestions
 //
 // See https://core.telegram.org/constructor/pendingSuggestion for reference.
 type PendingSuggestion struct {

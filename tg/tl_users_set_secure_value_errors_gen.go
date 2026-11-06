@@ -41,7 +41,7 @@ var (
 // the error message to make sure the user knows how to correct the issues.
 //
 // Links:
-//  1) https://core.telegram.org/passport
+//  1. https://core.telegram.org/passport
 //
 // See https://core.telegram.org/method/users.setSecureValueErrors for reference.
 type UsersSetSecureValueErrorsRequest struct {
@@ -235,13 +235,14 @@ func (s *UsersSetSecureValueErrorsRequest) MapErrors() (value SecureValueErrorCl
 // the error message to make sure the user knows how to correct the issues.
 //
 // Links:
-//  1) https://core.telegram.org/passport
+//  1. https://core.telegram.org/passport
 //
 // Possible errors:
-//  400 DATA_HASH_SIZE_INVALID: The size of the specified secureValueErrorData.data_hash is invalid.
-//  400 HASH_SIZE_INVALID: The size of the specified secureValueError.hash is invalid.
-//  400 USER_BOT_REQUIRED: This method can only be called by a bot.
-//  400 USER_ID_INVALID: The provided user ID is invalid.
+//
+//	400 DATA_HASH_SIZE_INVALID: The size of the specified secureValueErrorData.data_hash is invalid.
+//	400 HASH_SIZE_INVALID: The size of the specified secureValueError.hash is invalid.
+//	400 USER_BOT_REQUIRED: This method can only be called by a bot.
+//	400 USER_ID_INVALID: The provided user ID is invalid.
 //
 // See https://core.telegram.org/method/users.setSecureValueErrors for reference.
 func (c *Client) UsersSetSecureValueErrors(ctx context.Context, request *UsersSetSecureValueErrorsRequest) (bool, error) {

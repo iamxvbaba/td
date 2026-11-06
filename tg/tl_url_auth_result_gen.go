@@ -35,7 +35,7 @@ var (
 // Details about the authorization request, for more info click here »¹
 //
 // Links:
-//  1) https://core.telegram.org/api/url-authorization
+//  1. https://core.telegram.org/api/url-authorization
 //
 // See https://core.telegram.org/constructor/urlAuthResultRequest for reference.
 type URLAuthResultRequest struct {
@@ -873,7 +873,7 @@ func (u *URLAuthResultRequest) GetTcClientID() (value string, ok bool) {
 // Details about an accepted authorization request, for more info click here »¹
 //
 // Links:
-//  1) https://core.telegram.org/api/url-authorization
+//  1. https://core.telegram.org/api/url-authorization
 //
 // See https://core.telegram.org/constructor/urlAuthResultAccepted for reference.
 type URLAuthResultAccepted struct {
@@ -1060,7 +1060,7 @@ func (u *URLAuthResultAccepted) GetURL() (value string, ok bool) {
 // Details about an accepted authorization request, for more info click here »¹
 //
 // Links:
-//  1) https://core.telegram.org/api/url-authorization
+//  1. https://core.telegram.org/api/url-authorization
 //
 // See https://core.telegram.org/constructor/urlAuthResultDefault for reference.
 type URLAuthResultDefault struct {
@@ -1169,21 +1169,22 @@ const URLAuthResultClassName = "UrlAuthResult"
 // See https://core.telegram.org/type/UrlAuthResult for reference.
 //
 // Constructors:
-//  - [URLAuthResultRequest]
-//  - [URLAuthResultAccepted]
-//  - [URLAuthResultDefault]
+//   - [URLAuthResultRequest]
+//   - [URLAuthResultAccepted]
+//   - [URLAuthResultDefault]
 //
 // Example:
-//  g, err := tg.DecodeURLAuthResult(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.URLAuthResultRequest: // urlAuthResultRequest#bdca6167
-//  case *tg.URLAuthResultAccepted: // urlAuthResultAccepted#623a8fa0
-//  case *tg.URLAuthResultDefault: // urlAuthResultDefault#a9d6db1f
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeURLAuthResult(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.URLAuthResultRequest: // urlAuthResultRequest#bdca6167
+//	case *tg.URLAuthResultAccepted: // urlAuthResultAccepted#623a8fa0
+//	case *tg.URLAuthResultDefault: // urlAuthResultDefault#a9d6db1f
+//	default: panic(v)
+//	}
 type URLAuthResultClass interface {
 	bin.Encoder
 	bin.Decoder

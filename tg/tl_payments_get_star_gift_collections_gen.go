@@ -35,7 +35,7 @@ var (
 // Fetches all star gift collections »¹ of a peer.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#gift-collections
+//  1. https://core.telegram.org/api/gifts#gift-collections
 //
 // See https://core.telegram.org/method/payments.getStarGiftCollections for reference.
 type PaymentsGetStarGiftCollectionsRequest struct {
@@ -206,10 +206,11 @@ func (g *PaymentsGetStarGiftCollectionsRequest) GetHash() (value int64) {
 // Fetches all star gift collections »¹ of a peer.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#gift-collections
+//  1. https://core.telegram.org/api/gifts#gift-collections
 //
 // Possible errors:
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/payments.getStarGiftCollections for reference.
 func (c *Client) PaymentsGetStarGiftCollections(ctx context.Context, request *PaymentsGetStarGiftCollectionsRequest) (PaymentsStarGiftCollectionsClass, error) {

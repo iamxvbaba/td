@@ -35,7 +35,7 @@ var (
 // Add or remove gifts from a star gift collection »¹, or rename the collection.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#gift-collections
+//  1. https://core.telegram.org/api/gifts#gift-collections
 //
 // See https://core.telegram.org/method/payments.updateStarGiftCollection for reference.
 type PaymentsUpdateStarGiftCollectionRequest struct {
@@ -491,10 +491,11 @@ func (u *PaymentsUpdateStarGiftCollectionRequest) MapOrder() (value InputSavedSt
 // Add or remove gifts from a star gift collection »¹, or rename the collection.
 //
 // Links:
-//  1) https://core.telegram.org/api/gifts#gift-collections
+//  1. https://core.telegram.org/api/gifts#gift-collections
 //
 // Possible errors:
-//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//
+//	400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/payments.updateStarGiftCollection for reference.
 func (c *Client) PaymentsUpdateStarGiftCollection(ctx context.Context, request *PaymentsUpdateStarGiftCollectionRequest) (*StarGiftCollection, error) {

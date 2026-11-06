@@ -40,9 +40,9 @@ var (
 // delivered passively through the socket.
 //
 // Links:
-//  1) https://core.telegram.org/method/updates.getDifference
-//  2) https://core.telegram.org/api/updates
-//  3) https://core.telegram.org/api/updates#recovering-gaps-for-very-old-messages
+//  1. https://core.telegram.org/method/updates.getDifference
+//  2. https://core.telegram.org/api/updates
+//  3. https://core.telegram.org/api/updates#recovering-gaps-for-very-old-messages
 //
 // See https://core.telegram.org/constructor/updatesTooLong for reference.
 type UpdatesTooLong struct {
@@ -2890,29 +2890,30 @@ const UpdatesClassName = "Updates"
 // See https://core.telegram.org/type/Updates for reference.
 //
 // Constructors:
-//  - [UpdatesTooLong]
-//  - [UpdateShortMessage]
-//  - [UpdateShortChatMessage]
-//  - [UpdateShort]
-//  - [UpdatesCombined]
-//  - [Updates]
-//  - [UpdateShortSentMessage]
+//   - [UpdatesTooLong]
+//   - [UpdateShortMessage]
+//   - [UpdateShortChatMessage]
+//   - [UpdateShort]
+//   - [UpdatesCombined]
+//   - [Updates]
+//   - [UpdateShortSentMessage]
 //
 // Example:
-//  g, err := tg.DecodeUpdates(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.UpdatesTooLong: // updatesTooLong#e317af7e
-//  case *tg.UpdateShortMessage: // updateShortMessage#313bc7f8
-//  case *tg.UpdateShortChatMessage: // updateShortChatMessage#4d6deea5
-//  case *tg.UpdateShort: // updateShort#78d4dec1
-//  case *tg.UpdatesCombined: // updatesCombined#725b04c3
-//  case *tg.Updates: // updates#74ae4240
-//  case *tg.UpdateShortSentMessage: // updateShortSentMessage#9015e101
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeUpdates(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.UpdatesTooLong: // updatesTooLong#e317af7e
+//	case *tg.UpdateShortMessage: // updateShortMessage#313bc7f8
+//	case *tg.UpdateShortChatMessage: // updateShortChatMessage#4d6deea5
+//	case *tg.UpdateShort: // updateShort#78d4dec1
+//	case *tg.UpdatesCombined: // updatesCombined#725b04c3
+//	case *tg.Updates: // updates#74ae4240
+//	case *tg.UpdateShortSentMessage: // updateShortSentMessage#9015e101
+//	default: panic(v)
+//	}
 type UpdatesClass interface {
 	bin.Encoder
 	bin.Decoder

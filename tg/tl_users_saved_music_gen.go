@@ -36,7 +36,7 @@ var (
 // »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/profile#music
+//  1. https://core.telegram.org/api/profile#music
 //
 // See https://core.telegram.org/constructor/users.savedMusicNotModified for reference.
 type UsersSavedMusicNotModified struct {
@@ -174,7 +174,7 @@ func (s *UsersSavedMusicNotModified) GetCount() (value int) {
 // List of songs currently pinned on a user's profile, see here »¹ for more info.
 //
 // Links:
-//  1) https://core.telegram.org/api/profile#music
+//  1. https://core.telegram.org/api/profile#music
 //
 // See https://core.telegram.org/constructor/users.savedMusic for reference.
 type UsersSavedMusic struct {
@@ -367,19 +367,20 @@ const UsersSavedMusicClassName = "users.SavedMusic"
 // See https://core.telegram.org/type/users.SavedMusic for reference.
 //
 // Constructors:
-//  - [UsersSavedMusicNotModified]
-//  - [UsersSavedMusic]
+//   - [UsersSavedMusicNotModified]
+//   - [UsersSavedMusic]
 //
 // Example:
-//  g, err := tg.DecodeUsersSavedMusic(buf)
-//  if err != nil {
-//      panic(err)
-//  }
-//  switch v := g.(type) {
-//  case *tg.UsersSavedMusicNotModified: // users.savedMusicNotModified#e3878aa4
-//  case *tg.UsersSavedMusic: // users.savedMusic#34a2f297
-//  default: panic(v)
-//  }
+//
+//	g, err := tg.DecodeUsersSavedMusic(buf)
+//	if err != nil {
+//	    panic(err)
+//	}
+//	switch v := g.(type) {
+//	case *tg.UsersSavedMusicNotModified: // users.savedMusicNotModified#e3878aa4
+//	case *tg.UsersSavedMusic: // users.savedMusic#34a2f297
+//	default: panic(v)
+//	}
 type UsersSavedMusicClass interface {
 	bin.Encoder
 	bin.Decoder
