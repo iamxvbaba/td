@@ -6,12 +6,12 @@ import (
 	"testing"
 )
 
-func TestTelegramLayers225Through232(t *testing.T) {
+func TestTelegramLayers225Through233(t *testing.T) {
 	universe, err := LoadUniverse("../../_schema/layers/manifest.json")
 	if err != nil {
 		t.Fatal(err)
 	}
-	if got, want := universe.Layers(), []int{225, 226, 227, 228, 229, 230, 231, 232}; !equalInts(got, want) {
+	if got, want := universe.Layers(), []int{225, 226, 227, 228, 229, 230, 231, 232, 233}; !equalInts(got, want) {
 		t.Fatalf("layers = %v, want %v", got, want)
 	}
 
@@ -41,8 +41,8 @@ func TestTelegramLayers225Through232(t *testing.T) {
 		}
 	}
 
-	assertKeyCount(t, "signature changes", signature, 61)
-	assertKeyCount(t, "same-ID signature changes", sameWire, 12)
+	assertKeyCount(t, "signature changes", signature, 62)
+	assertKeyCount(t, "same-ID signature changes", sameWire, 14)
 	assertKeyCount(t, "result-only changes", resultOnly, 4)
 	assertKeyCount(t, "old-only definitions", oldOnly, 18)
 
@@ -63,7 +63,7 @@ func TestTelegramLayers225Through232(t *testing.T) {
 	if wireConflicts != 0 {
 		t.Fatalf("cross-profile wire conflicts = %d, want 0", wireConflicts)
 	}
-	if got, want := len(semanticVariants), 15; got != want {
+	if got, want := len(semanticVariants), 17; got != want {
 		sort.Strings(semanticVariants)
 		t.Fatalf("same-ID semantic variants = %d, want %d:\n%s", got, want, semanticVariants)
 	}
@@ -92,7 +92,7 @@ func TestTelegramLayers225Through232(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if got, want := len(diff225.SignatureChanges()), 52; got != want {
+	if got, want := len(diff225.SignatureChanges()), 53; got != want {
 		t.Fatalf("layer 225 signature changes = %d, want %d", got, want)
 	}
 	if got, want := len(diff225.SameWireSignatureChanges()), 12; got != want {

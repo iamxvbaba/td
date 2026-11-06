@@ -12,8 +12,9 @@ import (
 )
 
 func TestLayer232CanonicalProfile(t *testing.T) {
-	if tg.Layer != 232 || ProfileCanonical != Profile232 {
-		t.Fatalf("canonical Layer = tg:%d profile:%d, want 232", tg.Layer, ProfileCanonical)
+	// Layer 233 is canonical; Layer 232 remains a supported exact profile.
+	if tg.Layer != int(ProfileCanonical) || ProfileCanonical < Profile232 {
+		t.Fatalf("canonical Layer = tg:%d profile:%d, want >= 232", tg.Layer, ProfileCanonical)
 	}
 }
 
@@ -240,7 +241,9 @@ func TestLayer232LegacyStarGiftWithdrawalKeepsSRPProof(t *testing.T) {
 			Password: password,
 		}
 		wire := layer232HistoricalWithdrawalWire(password)
-		for profile := Profile225; profile <= Profile232; profile++ {
+		// Layer 232 defines the temporary-password method, not the promoted
+		// legacy wire, so only 225-231 admit the SRP constructor.
+		for profile := Profile225; profile <= Profile231; profile++ {
 			if got := layer232Encode(t, profile, want); !bytes.Equal(got, wire) {
 				t.Fatalf("%d legacy withdrawal wire %x != literal %x", profile, got, wire)
 			}

@@ -28,6 +28,7 @@ const (
 	LayerProfile230       = Profile230
 	LayerProfile231       = Profile231
 	LayerProfile232       = Profile232
+	LayerProfile233       = Profile233
 	LayerProfileCanonical = ProfileCanonical
 )
 
@@ -163,6 +164,7 @@ const (
 	LayerSemanticTypeBotInlineMessageMediaWebPage                                      = SemanticTypeBotInlineMessageMediaWebPage
 	LayerSemanticTypeBotInlineMessageRichMessage                                       = SemanticTypeBotInlineMessageRichMessage
 	LayerSemanticTypeBotInlineMessageText                                              = SemanticTypeBotInlineMessageText
+	LayerSemanticTypeBotInlineMessageWidget                                            = SemanticTypeBotInlineMessageWidget
 	LayerSemanticTypeBotInlineResult                                                   = SemanticTypeBotInlineResult
 	LayerSemanticTypeBotMenuButton                                                     = SemanticTypeBotMenuButton
 	LayerSemanticTypeBotMenuButtonCommands                                             = SemanticTypeBotMenuButtonCommands
@@ -495,6 +497,8 @@ const (
 	LayerSemanticTypeInputBotInlineMessageMediaWebPage                                 = SemanticTypeInputBotInlineMessageMediaWebPage
 	LayerSemanticTypeInputBotInlineMessageRichMessage                                  = SemanticTypeInputBotInlineMessageRichMessage
 	LayerSemanticTypeInputBotInlineMessageText                                         = SemanticTypeInputBotInlineMessageText
+	LayerSemanticTypeInputBotInlineMessageWidget                                       = SemanticTypeInputBotInlineMessageWidget
+	LayerSemanticTypeInputBotInlineMessageWidgetID                                     = SemanticTypeInputBotInlineMessageWidgetID
 	LayerSemanticTypeInputBotInlineResult                                              = SemanticTypeInputBotInlineResult
 	LayerSemanticTypeInputBotInlineResultDocument                                      = SemanticTypeInputBotInlineResultDocument
 	LayerSemanticTypeInputBotInlineResultGame                                          = SemanticTypeInputBotInlineResultGame
@@ -589,6 +593,8 @@ const (
 	LayerSemanticTypeInputMediaUploadedPhoto                                           = SemanticTypeInputMediaUploadedPhoto
 	LayerSemanticTypeInputMediaVenue                                                   = SemanticTypeInputMediaVenue
 	LayerSemanticTypeInputMediaWebPage                                                 = SemanticTypeInputMediaWebPage
+	LayerSemanticTypeInputMediaWidget                                                  = SemanticTypeInputMediaWidget
+	LayerSemanticTypeInputMediaWidgetID                                                = SemanticTypeInputMediaWidgetID
 	LayerSemanticTypeInputMessageCallbackQuery                                         = SemanticTypeInputMessageCallbackQuery
 	LayerSemanticTypeInputMessageEntityMentionName                                     = SemanticTypeInputMessageEntityMentionName
 	LayerSemanticTypeInputMessageID                                                    = SemanticTypeInputMessageID
@@ -921,6 +927,7 @@ const (
 	LayerSemanticTypeMessageMediaVenue                                                 = SemanticTypeMessageMediaVenue
 	LayerSemanticTypeMessageMediaVideoStream                                           = SemanticTypeMessageMediaVideoStream
 	LayerSemanticTypeMessageMediaWebPage                                               = SemanticTypeMessageMediaWebPage
+	LayerSemanticTypeMessageMediaWidget                                                = SemanticTypeMessageMediaWidget
 	LayerSemanticTypeMessagePeerReaction                                               = SemanticTypeMessagePeerReaction
 	LayerSemanticTypeMessagePeerVote                                                   = SemanticTypeMessagePeerVote
 	LayerSemanticTypeMessagePeerVoteInputOption                                        = SemanticTypeMessagePeerVoteInputOption
@@ -948,6 +955,7 @@ const (
 	LayerSemanticTypeMessagesBotCallbackAnswer                                         = SemanticTypeMessagesBotCallbackAnswer
 	LayerSemanticTypeMessagesBotPreparedInlineMessage                                  = SemanticTypeMessagesBotPreparedInlineMessage
 	LayerSemanticTypeMessagesBotResults                                                = SemanticTypeMessagesBotResults
+	LayerSemanticTypeMessagesBotWidgetQueryAnswer                                      = SemanticTypeMessagesBotWidgetQueryAnswer
 	LayerSemanticTypeMessagesChannelMessages                                           = SemanticTypeMessagesChannelMessages
 	LayerSemanticTypeMessagesChatAdminsWithInvites                                     = SemanticTypeMessagesChatAdminsWithInvites
 	LayerSemanticTypeMessagesChatFull                                                  = SemanticTypeMessagesChatFull
@@ -1030,6 +1038,8 @@ const (
 	LayerSemanticTypeMessagesVotesList                                                 = SemanticTypeMessagesVotesList
 	LayerSemanticTypeMessagesWebPage                                                   = SemanticTypeMessagesWebPage
 	LayerSemanticTypeMessagesWebPagePreview                                            = SemanticTypeMessagesWebPagePreview
+	LayerSemanticTypeMessagesWidgetPublicData                                          = SemanticTypeMessagesWidgetPublicData
+	LayerSemanticTypeMessagesWidgetPublicDataNotModified                               = SemanticTypeMessagesWidgetPublicDataNotModified
 	LayerSemanticTypeMissingInvitee                                                    = SemanticTypeMissingInvitee
 	LayerSemanticTypeMonoForumDialog                                                   = SemanticTypeMonoForumDialog
 	LayerSemanticTypeMyBoost                                                           = SemanticTypeMyBoost
@@ -1550,6 +1560,8 @@ const (
 	LayerSemanticTypeUpdateBotStopped                                                  = SemanticTypeUpdateBotStopped
 	LayerSemanticTypeUpdateBotWebhookJSON                                              = SemanticTypeUpdateBotWebhookJSON
 	LayerSemanticTypeUpdateBotWebhookJSONQuery                                         = SemanticTypeUpdateBotWebhookJSONQuery
+	LayerSemanticTypeUpdateBotWidgetCopyQuery                                          = SemanticTypeUpdateBotWidgetCopyQuery
+	LayerSemanticTypeUpdateBotWidgetQuery                                              = SemanticTypeUpdateBotWidgetQuery
 	LayerSemanticTypeUpdateBusinessBotCallbackQuery                                    = SemanticTypeUpdateBusinessBotCallbackQuery
 	LayerSemanticTypeUpdateChannel                                                     = SemanticTypeUpdateChannel
 	LayerSemanticTypeUpdateChannelAvailableMessages                                    = SemanticTypeUpdateChannelAvailableMessages
@@ -1588,6 +1600,7 @@ const (
 	LayerSemanticTypeUpdateDraftMessage                                                = SemanticTypeUpdateDraftMessage
 	LayerSemanticTypeUpdateEditChannelMessage                                          = SemanticTypeUpdateEditChannelMessage
 	LayerSemanticTypeUpdateEditEphemeralMessage                                        = SemanticTypeUpdateEditEphemeralMessage
+	LayerSemanticTypeUpdateEditForumTopic                                              = SemanticTypeUpdateEditForumTopic
 	LayerSemanticTypeUpdateEditMessage                                                 = SemanticTypeUpdateEditMessage
 	LayerSemanticTypeUpdateEmojiGameInfo                                               = SemanticTypeUpdateEmojiGameInfo
 	LayerSemanticTypeUpdateEncryptedChatTyping                                         = SemanticTypeUpdateEncryptedChatTyping
@@ -1604,6 +1617,7 @@ const (
 	LayerSemanticTypeUpdateGroupCallMessage                                            = SemanticTypeUpdateGroupCallMessage
 	LayerSemanticTypeUpdateGroupCallParticipants                                       = SemanticTypeUpdateGroupCallParticipants
 	LayerSemanticTypeUpdateInlineBotCallbackQuery                                      = SemanticTypeUpdateInlineBotCallbackQuery
+	LayerSemanticTypeUpdateInlineBotWidgetQuery                                        = SemanticTypeUpdateInlineBotWidgetQuery
 	LayerSemanticTypeUpdateJoinChatWebViewDecision                                     = SemanticTypeUpdateJoinChatWebViewDecision
 	LayerSemanticTypeUpdateLangPack                                                    = SemanticTypeUpdateLangPack
 	LayerSemanticTypeUpdateLangPackTooLong                                             = SemanticTypeUpdateLangPackTooLong
@@ -1614,6 +1628,7 @@ const (
 	LayerSemanticTypeUpdateMessagePoll                                                 = SemanticTypeUpdateMessagePoll
 	LayerSemanticTypeUpdateMessagePollVote                                             = SemanticTypeUpdateMessagePollVote
 	LayerSemanticTypeUpdateMessageReactions                                            = SemanticTypeUpdateMessageReactions
+	LayerSemanticTypeUpdateMessageWidgetData                                           = SemanticTypeUpdateMessageWidgetData
 	LayerSemanticTypeUpdateMonoForumNoPaidException                                    = SemanticTypeUpdateMonoForumNoPaidException
 	LayerSemanticTypeUpdateMoveStickerSetToTop                                         = SemanticTypeUpdateMoveStickerSetToTop
 	LayerSemanticTypeUpdateNewAuthorization                                            = SemanticTypeUpdateNewAuthorization
@@ -1686,6 +1701,7 @@ const (
 	LayerSemanticTypeUpdateStoryID                                                     = SemanticTypeUpdateStoryID
 	LayerSemanticTypeUpdateTheme                                                       = SemanticTypeUpdateTheme
 	LayerSemanticTypeUpdateTranscribedAudio                                            = SemanticTypeUpdateTranscribedAudio
+	LayerSemanticTypeUpdateTranscribedAudioFile                                        = SemanticTypeUpdateTranscribedAudioFile
 	LayerSemanticTypeUpdateUser                                                        = SemanticTypeUpdateUser
 	LayerSemanticTypeUpdateUserEmojiStatus                                             = SemanticTypeUpdateUserEmojiStatus
 	LayerSemanticTypeUpdateUserName                                                    = SemanticTypeUpdateUserName
@@ -1730,6 +1746,7 @@ const (
 	LayerSemanticTypeUserStatusOffline                                                 = SemanticTypeUserStatusOffline
 	LayerSemanticTypeUserStatusOnline                                                  = SemanticTypeUserStatusOnline
 	LayerSemanticTypeUserStatusRecently                                                = SemanticTypeUserStatusRecently
+	LayerSemanticTypeUserWallet                                                        = SemanticTypeUserWallet
 	LayerSemanticTypeUsername                                                          = SemanticTypeUsername
 	LayerSemanticTypeUsersSavedMusic                                                   = SemanticTypeUsersSavedMusic
 	LayerSemanticTypeUsersSavedMusicNotModified                                        = SemanticTypeUsersSavedMusicNotModified
@@ -1785,6 +1802,9 @@ const (
 	LayerSemanticTypeWebPagePending                                                    = SemanticTypeWebPagePending
 	LayerSemanticTypeWebViewMessageSent                                                = SemanticTypeWebViewMessageSent
 	LayerSemanticTypeWebViewResultURL                                                  = SemanticTypeWebViewResultURL
+	LayerSemanticTypeWidgetQueryTypeData                                               = SemanticTypeWidgetQueryTypeData
+	LayerSemanticTypeWidgetQueryTypeSentTransaction                                    = SemanticTypeWidgetQueryTypeSentTransaction
+	LayerSemanticTypeWidgetQueryTypeSignData                                           = SemanticTypeWidgetQueryTypeSignData
 	LayerSemanticMethodAccountAcceptAuthorization                                      = SemanticMethodAccountAcceptAuthorization
 	LayerSemanticMethodAccountCancelPasswordEmail                                      = SemanticMethodAccountCancelPasswordEmail
 	LayerSemanticMethodAccountChangeAuthorizationSettings                              = SemanticMethodAccountChangeAuthorizationSettings
@@ -2196,8 +2216,11 @@ const (
 	LayerSemanticMethodMessagesEditFactCheck                                           = SemanticMethodMessagesEditFactCheck
 	LayerSemanticMethodMessagesEditForumTopic                                          = SemanticMethodMessagesEditForumTopic
 	LayerSemanticMethodMessagesEditInlineBotMessage                                    = SemanticMethodMessagesEditInlineBotMessage
+	LayerSemanticMethodMessagesEditInlineBotMessageWidgetData                          = SemanticMethodMessagesEditInlineBotMessageWidgetData
 	LayerSemanticMethodMessagesEditMessage                                             = SemanticMethodMessagesEditMessage
+	LayerSemanticMethodMessagesEditMessageWidgetData                                   = SemanticMethodMessagesEditMessageWidgetData
 	LayerSemanticMethodMessagesEditQuickReplyShortcut                                  = SemanticMethodMessagesEditQuickReplyShortcut
+	LayerSemanticMethodMessagesEditWidgetData                                          = SemanticMethodMessagesEditWidgetData
 	LayerSemanticMethodMessagesExportChatInvite                                        = SemanticMethodMessagesExportChatInvite
 	LayerSemanticMethodMessagesFaveSticker                                             = SemanticMethodMessagesFaveSticker
 	LayerSemanticMethodMessagesForwardMessages                                         = SemanticMethodMessagesForwardMessages
@@ -2212,6 +2235,7 @@ const (
 	LayerSemanticMethodMessagesGetAvailableReactions                                   = SemanticMethodMessagesGetAvailableReactions
 	LayerSemanticMethodMessagesGetBotApp                                               = SemanticMethodMessagesGetBotApp
 	LayerSemanticMethodMessagesGetBotCallbackAnswer                                    = SemanticMethodMessagesGetBotCallbackAnswer
+	LayerSemanticMethodMessagesGetBotWidgetQueryAnswer                                 = SemanticMethodMessagesGetBotWidgetQueryAnswer
 	LayerSemanticMethodMessagesGetChatInviteImporters                                  = SemanticMethodMessagesGetChatInviteImporters
 	LayerSemanticMethodMessagesGetChats                                                = SemanticMethodMessagesGetChats
 	LayerSemanticMethodMessagesGetCommonChats                                          = SemanticMethodMessagesGetCommonChats
@@ -2293,11 +2317,13 @@ const (
 	LayerSemanticMethodMessagesGetStickers                                             = SemanticMethodMessagesGetStickers
 	LayerSemanticMethodMessagesGetSuggestedDialogFilters                               = SemanticMethodMessagesGetSuggestedDialogFilters
 	LayerSemanticMethodMessagesGetTopReactions                                         = SemanticMethodMessagesGetTopReactions
+	LayerSemanticMethodMessagesGetTranscriptionLangs                                   = SemanticMethodMessagesGetTranscriptionLangs
 	LayerSemanticMethodMessagesGetUnreadMentions                                       = SemanticMethodMessagesGetUnreadMentions
 	LayerSemanticMethodMessagesGetUnreadPollVotes                                      = SemanticMethodMessagesGetUnreadPollVotes
 	LayerSemanticMethodMessagesGetUnreadReactions                                      = SemanticMethodMessagesGetUnreadReactions
 	LayerSemanticMethodMessagesGetWebPage                                              = SemanticMethodMessagesGetWebPage
 	LayerSemanticMethodMessagesGetWebPagePreview                                       = SemanticMethodMessagesGetWebPagePreview
+	LayerSemanticMethodMessagesGetWidgetPublicData                                     = SemanticMethodMessagesGetWidgetPublicData
 	LayerSemanticMethodMessagesHideAllChatJoinRequests                                 = SemanticMethodMessagesHideAllChatJoinRequests
 	LayerSemanticMethodMessagesHideChatJoinRequest                                     = SemanticMethodMessagesHideChatJoinRequest
 	LayerSemanticMethodMessagesHidePeerSettingsBar                                     = SemanticMethodMessagesHidePeerSettingsBar
@@ -2371,6 +2397,7 @@ const (
 	LayerSemanticMethodMessagesSetBotGuestChatResult                                   = SemanticMethodMessagesSetBotGuestChatResult
 	LayerSemanticMethodMessagesSetBotPrecheckoutResults                                = SemanticMethodMessagesSetBotPrecheckoutResults
 	LayerSemanticMethodMessagesSetBotShippingResults                                   = SemanticMethodMessagesSetBotShippingResults
+	LayerSemanticMethodMessagesSetBotWidgetQueryAnswer                                 = SemanticMethodMessagesSetBotWidgetQueryAnswer
 	LayerSemanticMethodMessagesSetChatAvailableReactions                               = SemanticMethodMessagesSetChatAvailableReactions
 	LayerSemanticMethodMessagesSetChatTheme                                            = SemanticMethodMessagesSetChatTheme
 	LayerSemanticMethodMessagesSetChatWallPaper                                        = SemanticMethodMessagesSetChatWallPaper
@@ -2397,6 +2424,7 @@ const (
 	LayerSemanticMethodMessagesToggleSuggestedPostApproval                             = SemanticMethodMessagesToggleSuggestedPostApproval
 	LayerSemanticMethodMessagesToggleTodoCompleted                                     = SemanticMethodMessagesToggleTodoCompleted
 	LayerSemanticMethodMessagesTranscribeAudio                                         = SemanticMethodMessagesTranscribeAudio
+	LayerSemanticMethodMessagesTranscribeAudioFile                                     = SemanticMethodMessagesTranscribeAudioFile
 	LayerSemanticMethodMessagesTranslateRichMessage                                    = SemanticMethodMessagesTranslateRichMessage
 	LayerSemanticMethodMessagesTranslateText                                           = SemanticMethodMessagesTranslateText
 	LayerSemanticMethodMessagesUninstallStickerSet                                     = SemanticMethodMessagesUninstallStickerSet

@@ -56,7 +56,7 @@ func TestRealLayerPolicy(t *testing.T) {
 	if unresolved := resolved.LayerConversionPlan().Report.Unresolved(); len(unresolved) != 0 {
 		t.Fatalf("real policy leaves %d unresolved obligations; first=%+v", len(unresolved), unresolved[0])
 	}
-	if got, want := len(document.Entries), 249; got != want {
+	if got, want := len(document.Entries), 305; got != want {
 		t.Fatalf("reviewed policy entry count = %d, want %d", got, want)
 	}
 	codec, err := resolved.buildLayerCodecModel("tg")
@@ -339,6 +339,16 @@ func realRequiredLayerResolution(obligation LayerObligation) (LayerObligationRes
 	case "ephemeral.deleteMessage":
 		if obligation.OtherField == "peer" {
 			return adapter("layerRequireLegacyEphemeralDeletePeer")
+		}
+	case "channels.toggleForum":
+		// Layer 233 adds the required per-channel sidebar layout flag to the
+		// forum request. Historical clients only know the list and tabs
+		// layouts, so their request defaults sidebar to false, which is the
+		// layout they chose. Rejecting it would leave every 225-232 client
+		// unable to toggle forums, as the v1.6.0 withdrawal rejection did for
+		// collectible gift export.
+		if obligation.Direction == LayerDirectionProfileToCanonical && obligation.OtherField == "sidebar" {
+			return defaulted()
 		}
 	case "auth.sentCodePaymentRequired", "pageListOrderedItemBlocks", "pageListOrderedItemText":
 		return defaulted()
