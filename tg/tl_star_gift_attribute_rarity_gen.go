@@ -582,26 +582,25 @@ const StarGiftAttributeRarityClassName = "StarGiftAttributeRarity"
 // See https://core.telegram.org/type/StarGiftAttributeRarity for reference.
 //
 // Constructors:
-//   - [StarGiftAttributeRarity]
-//   - [StarGiftAttributeRarityUncommon]
-//   - [StarGiftAttributeRarityRare]
-//   - [StarGiftAttributeRarityEpic]
-//   - [StarGiftAttributeRarityLegendary]
+//  - [StarGiftAttributeRarity]
+//  - [StarGiftAttributeRarityUncommon]
+//  - [StarGiftAttributeRarityRare]
+//  - [StarGiftAttributeRarityEpic]
+//  - [StarGiftAttributeRarityLegendary]
 //
 // Example:
-//
-//	g, err := tg.DecodeStarGiftAttributeRarity(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.StarGiftAttributeRarity: // starGiftAttributeRarity#36437737
-//	case *tg.StarGiftAttributeRarityUncommon: // starGiftAttributeRarityUncommon#dbce6389
-//	case *tg.StarGiftAttributeRarityRare: // starGiftAttributeRarityRare#f08d516b
-//	case *tg.StarGiftAttributeRarityEpic: // starGiftAttributeRarityEpic#78fbf3a8
-//	case *tg.StarGiftAttributeRarityLegendary: // starGiftAttributeRarityLegendary#cef7e7a8
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeStarGiftAttributeRarity(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.StarGiftAttributeRarity: // starGiftAttributeRarity#36437737
+//  case *tg.StarGiftAttributeRarityUncommon: // starGiftAttributeRarityUncommon#dbce6389
+//  case *tg.StarGiftAttributeRarityRare: // starGiftAttributeRarityRare#f08d516b
+//  case *tg.StarGiftAttributeRarityEpic: // starGiftAttributeRarityEpic#78fbf3a8
+//  case *tg.StarGiftAttributeRarityLegendary: // starGiftAttributeRarityLegendary#cef7e7a8
+//  default: panic(v)
+//  }
 type StarGiftAttributeRarityClass interface {
 	bin.Encoder
 	bin.Decoder

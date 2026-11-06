@@ -36,8 +36,8 @@ var (
 // »².
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#collectible-gifts
-//  2. https://core.telegram.org/api/gifts#crafting-collectible-gifts
+//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  2) https://core.telegram.org/api/gifts#crafting-collectible-gifts
 //
 // See https://core.telegram.org/method/payments.getCraftStarGifts for reference.
 type PaymentsGetCraftStarGiftsRequest struct {
@@ -232,12 +232,11 @@ func (g *PaymentsGetCraftStarGiftsRequest) GetLimit() (value int) {
 // »².
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#collectible-gifts
-//  2. https://core.telegram.org/api/gifts#crafting-collectible-gifts
+//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  2) https://core.telegram.org/api/gifts#crafting-collectible-gifts
 //
 // Possible errors:
-//
-//	400 STARGIFT_INVALID: The passed gift is invalid.
+//  400 STARGIFT_INVALID: The passed gift is invalid.
 //
 // See https://core.telegram.org/method/payments.getCraftStarGifts for reference.
 func (c *Client) PaymentsGetCraftStarGifts(ctx context.Context, request *PaymentsGetCraftStarGiftsRequest) (*PaymentsSavedStarGifts, error) {

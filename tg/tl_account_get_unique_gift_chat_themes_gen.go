@@ -35,8 +35,8 @@ var (
 // Obtain all chat themes »¹ associated to owned collectible gifts »².
 //
 // Links:
-//  1. https://core.telegram.org/api/themes#chat-themes
-//  2. https://core.telegram.org/api/gifts#collectible-gifts
+//  1) https://core.telegram.org/api/themes#chat-themes
+//  2) https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/method/account.getUniqueGiftChatThemes for reference.
 type AccountGetUniqueGiftChatThemesRequest struct {
@@ -237,8 +237,8 @@ func (g *AccountGetUniqueGiftChatThemesRequest) GetHash() (value int64) {
 // Obtain all chat themes »¹ associated to owned collectible gifts »².
 //
 // Links:
-//  1. https://core.telegram.org/api/themes#chat-themes
-//  2. https://core.telegram.org/api/gifts#collectible-gifts
+//  1) https://core.telegram.org/api/themes#chat-themes
+//  2) https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/method/account.getUniqueGiftChatThemes for reference.
 func (c *Client) AccountGetUniqueGiftChatThemes(ctx context.Context, request *AccountGetUniqueGiftChatThemesRequest) (AccountChatThemesClass, error) {

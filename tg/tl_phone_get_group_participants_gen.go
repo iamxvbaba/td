@@ -35,7 +35,7 @@ var (
 // Get group call¹ participants.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#getting-info-about-a-group-call
+//  1) https://core.telegram.org/api/group-calls#getting-info-about-a-group-call
 //
 // See https://core.telegram.org/method/phone.getGroupParticipants for reference.
 type PhoneGetGroupParticipantsRequest struct {
@@ -329,11 +329,10 @@ func (g *PhoneGetGroupParticipantsRequest) MapIDs() (value InputPeerClassArray) 
 // Get group call¹ participants.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#getting-info-about-a-group-call
+//  1) https://core.telegram.org/api/group-calls#getting-info-about-a-group-call
 //
 // Possible errors:
-//
-//	400 GROUPCALL_INVALID: The specified group call is invalid.
+//  400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.getGroupParticipants for reference.
 func (c *Client) PhoneGetGroupParticipants(ctx context.Context, request *PhoneGetGroupParticipantsRequest) (*PhoneGroupParticipants, error) {

@@ -35,7 +35,7 @@ var (
 // Leave a group call¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls
+//  1) https://core.telegram.org/api/group-calls
 //
 // See https://core.telegram.org/method/phone.leaveGroupCall for reference.
 type PhoneLeaveGroupCallRequest struct {
@@ -200,11 +200,10 @@ func (l *PhoneLeaveGroupCallRequest) GetSource() (value int) {
 // Leave a group call¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls
+//  1) https://core.telegram.org/api/group-calls
 //
 // Possible errors:
-//
-//	400 GROUPCALL_INVALID: The specified group call is invalid.
+//  400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.leaveGroupCall for reference.
 func (c *Client) PhoneLeaveGroupCall(ctx context.Context, request *PhoneLeaveGroupCallRequest) (UpdatesClass, error) {

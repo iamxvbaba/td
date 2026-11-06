@@ -35,7 +35,7 @@ var (
 // Get a list of sponsored messages for a peer, see here »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/sponsored-messages
+//  1) https://core.telegram.org/api/sponsored-messages
 //
 // See https://core.telegram.org/method/messages.getSponsoredMessages for reference.
 type MessagesGetSponsoredMessagesRequest struct {
@@ -245,13 +245,12 @@ func (g *MessagesGetSponsoredMessagesRequest) GetMsgID() (value int, ok bool) {
 // Get a list of sponsored messages for a peer, see here »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/sponsored-messages
+//  1) https://core.telegram.org/api/sponsored-messages
 //
 // Possible errors:
-//
-//	400 CHANNEL_INVALID: The provided channel is invalid.
-//	400 CHANNEL_PRIVATE: You haven't joined this channel/supergroup.
-//	400 MSG_ID_INVALID: Invalid message ID provided.
+//  400 CHANNEL_INVALID: The provided channel is invalid.
+//  400 CHANNEL_PRIVATE: You haven't joined this channel/supergroup.
+//  400 MSG_ID_INVALID: Invalid message ID provided.
 //
 // See https://core.telegram.org/method/messages.getSponsoredMessages for reference.
 func (c *Client) MessagesGetSponsoredMessages(ctx context.Context, request *MessagesGetSponsoredMessagesRequest) (MessagesSponsoredMessagesClass, error) {

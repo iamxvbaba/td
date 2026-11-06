@@ -35,7 +35,7 @@ var (
 // Summarize the contents of a message with AI, see here »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/ai#summarize-messages
+//  1) https://core.telegram.org/api/ai#summarize-messages
 //
 // See https://core.telegram.org/method/messages.summarizeText for reference.
 type MessagesSummarizeTextRequest struct {
@@ -317,11 +317,10 @@ func (s *MessagesSummarizeTextRequest) GetTone() (value string, ok bool) {
 // Summarize the contents of a message with AI, see here »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/ai#summarize-messages
+//  1) https://core.telegram.org/api/ai#summarize-messages
 //
 // Possible errors:
-//
-//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//  400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/messages.summarizeText for reference.
 func (c *Client) MessagesSummarizeText(ctx context.Context, request *MessagesSummarizeTextRequest) (*TextWithEntities, error) {

@@ -172,9 +172,8 @@ func (c *PaymentsCanPurchaseStoreRequest) GetPurpose() (value InputStorePaymentP
 // official apps only.
 //
 // Possible errors:
-//
-//	400 INPUT_PURPOSE_INVALID: The specified payment purpose is invalid.
-//	406 PREMIUM_CURRENTLY_UNAVAILABLE: You cannot currently purchase a Premium subscription.
+//  400 INPUT_PURPOSE_INVALID: The specified payment purpose is invalid.
+//  406 PREMIUM_CURRENTLY_UNAVAILABLE: You cannot currently purchase a Premium subscription.
 //
 // See https://core.telegram.org/method/payments.canPurchaseStore for reference.
 func (c *Client) PaymentsCanPurchaseStore(ctx context.Context, purpose InputStorePaymentPurposeClass) (bool, error) {

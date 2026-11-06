@@ -38,9 +38,9 @@ var (
 // in the vector) containing requirements to contact them.
 //
 // Links:
-//  1. https://core.telegram.org/api/privacy#require-premium-for-new-non-contact-users
-//  2. https://core.telegram.org/api/paid-messages
-//  3. https://core.telegram.org/type/RequirementToContact
+//  1) https://core.telegram.org/api/privacy#require-premium-for-new-non-contact-users
+//  2) https://core.telegram.org/api/paid-messages
+//  3) https://core.telegram.org/type/RequirementToContact
 //
 // See https://core.telegram.org/method/users.getRequirementsToContact for reference.
 type UsersGetRequirementsToContactRequest struct {
@@ -199,9 +199,9 @@ func (g *UsersGetRequirementsToContactRequest) MapID() (value InputUserClassArra
 // in the vector) containing requirements to contact them.
 //
 // Links:
-//  1. https://core.telegram.org/api/privacy#require-premium-for-new-non-contact-users
-//  2. https://core.telegram.org/api/paid-messages
-//  3. https://core.telegram.org/type/RequirementToContact
+//  1) https://core.telegram.org/api/privacy#require-premium-for-new-non-contact-users
+//  2) https://core.telegram.org/api/paid-messages
+//  3) https://core.telegram.org/type/RequirementToContact
 //
 // See https://core.telegram.org/method/users.getRequirementsToContact for reference.
 func (c *Client) UsersGetRequirementsToContact(ctx context.Context, id []InputUserClass) ([]RequirementToContactClass, error) {

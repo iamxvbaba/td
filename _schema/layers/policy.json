@@ -1444,6 +1444,13 @@
       }
     },
     {
+      "key": "layer-obligation/v1/required/057483ac77470a69ba8d4c4d25f1790d29e079047a6e9c624c265cb46843b6da",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=230; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
+      }
+    },
+    {
       "key": "layer-obligation/v1/required/0c6cb2271ca5901d9c9de5b357ecf292420516611ff6b6f86b1f6a0d91c319a8",
       "resolution": {
         "action": "default",
@@ -1467,6 +1474,13 @@
       }
     },
     {
+      "key": "layer-obligation/v1/required/10bca969b78ebc1afa7196b98afb92650a0db2a674de1153b75a31bd30cf7f75",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=227; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
+      }
+    },
+    {
       "key": "layer-obligation/v1/required/2072300214e3cfa3c116c30d1ede4877a543cfe09b85d295290019734417a379",
       "resolution": {
         "action": "default",
@@ -1478,6 +1492,20 @@
       "resolution": {
         "action": "default",
         "note": "kind=required; layer=225; direction=canonical-to-profile; semantic=type:pageListOrderedItemBlocks; wire=0x8ff2d5f0-\u003e0x98dd8936; field=num-\u003enum; type=string-\u003estring; source_shape=2daa98691b9e948d7b4edff85bef4932815116ed884963efd9b83631edfc948f; target_shape=3cd6031c308bc9b8275f84a965877b23f8e24725b238a372c673f28380214619"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/52452976d2febe9fed86d5b45e885672993307a4751d9f7fefec71283f6df4f2",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=228; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/5feef02527906dfaa7e54a9ba97a326b3a0b01d28c12461ac9dad25f116b3513",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=225; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
       }
     },
     {
@@ -1515,6 +1543,13 @@
         "action": "adapter",
         "hook": "layerDefaultLegacyKeyboardButtonType",
         "note": "kind=required; layer=226; direction=profile-to-canonical; semantic=type:keyboardButton; wire=0x7d170cff-\u003e0x2f67a72f; field=-\u003etype; type=-\u003eButtonType; source_shape=d5de65f73914c8ec962960b97070a20b698fe29e5dccd18b0735273b38010d31; target_shape=f58bb0f4c175be9e8798770d8b6173fed7e5340b641f1e9a8679e54d235f4b43"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/8e8967365359350add44feec605aa631b4928f68e7d5273093592a7d3a22ad24",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=229; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
       }
     },
     {
@@ -1561,6 +1596,27 @@
         "action": "adapter",
         "hook": "layerRequireLegacyEphemeralDeletePeer",
         "note": "kind=required; layer=228; direction=canonical-to-profile; semantic=function:ephemeral.deleteMessage; wire=0x92f6e797-\u003e0xa3c0d511; field=peer-\u003epeer; type=InputPeer-\u003eInputPeer; source_shape=35174d25a41609c9f3447fce9f9d280c2c4fae5127d693ff0c735be95d3395ac; target_shape=badf9af5f17cc4e1483dbb0f31f4c7ce4290ebd2fcab01fd27adb187c78ee3fa"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/e93cd64176e5431e873c9f103c54f8e22a1eca48031ec88196fa6918949b97fc",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=232; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/f571e55bda0dc954bbe572cc6fb852818a20bd8c79748cfc4701227edf8d3967",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=226; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/required/f5e9c5a308adae2a25d7e2f13b1ad386f449b5b9925154123d3b424851793bc3",
+      "resolution": {
+        "action": "reject",
+        "note": "kind=required; layer=231; direction=profile-to-canonical; semantic=function:channels.toggleForum; wire=0x3ff75734-\u003e0xa2952b54; field=-\u003esidebar; type=-\u003eBool; source_shape=927f46f88733dce79ec18f6fe890c2d0dbb865de2dcb3b1e6ba59869a690524d; target_shape=735e78a99718471404872982b57d8b036f0067a8a2e627977c3931c876c0cfb7"
       }
     },
     {
@@ -1654,6 +1710,13 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/069870d4b794a81beb72208806ee437543ba81b230e7b5b03171c3b44e75f1e4",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=229; direction=canonical-to-profile; semantic=type:updateEditForumTopic; wire=0x2366665c-\u003e0x00000000; type=Update-\u003e; source_shape=5b0c4662e3b657f543027133490024d7370de8e2e6033111f6250d172ccddaae; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/0f15711037597488a8a4469fe20bfcba7f878e9e71141c0b6b6cd8b93a22b65d",
       "resolution": {
         "action": "drop",
@@ -1661,10 +1724,24 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/100dd8ac2836bfdfdba1047e80d25faebf44bace86ab7a34c1664252beb70f00",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=227; direction=canonical-to-profile; semantic=type:updateInlineBotWidgetQuery; wire=0xa5f07e08-\u003e0x00000000; type=Update-\u003e; source_shape=8463bc5b2a506ce683a4f61c86df5b7b6e9ae10ed68744ff792ce3d07dcaa2fc; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/11cd6d26cb992fc18ed0555c5271754f3c9c2c413d0ee8a5ccefcec463393163",
       "resolution": {
         "action": "drop",
         "note": "kind=update-projection; layer=225; direction=canonical-to-profile; semantic=type:updateBotStarsSubscription; wire=0x6c0d8e23-\u003e0x00000000; type=Update-\u003e; source_shape=39ca7dd39714a785025057f9edb30debfaeb6bc68d4e287bde2151f1e6a1684a; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/12ec9930838010aeeb110b58a1ece54a8fc0eccd113814b159ec489ac7e4e606",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=225; direction=canonical-to-profile; semantic=type:updateInlineBotWidgetQuery; wire=0xa5f07e08-\u003e0x00000000; type=Update-\u003e; source_shape=8463bc5b2a506ce683a4f61c86df5b7b6e9ae10ed68744ff792ce3d07dcaa2fc; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
       }
     },
     {
@@ -1696,10 +1773,31 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/262d808f922466eb3a7d0a17201d661b3c1399e8642f89b44e2b92a528713741",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=227; direction=canonical-to-profile; semantic=type:updateBotWidgetQuery; wire=0xb373fe68-\u003e0x00000000; type=Update-\u003e; source_shape=5b6426894b42bc0550f7d44b062122986f9ce035add61b7c18ad0746db489469; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/271000da001ffda681cb5818a9c1c40c7d0673756ec5aef6b3a5d2b0e68e7a2e",
       "resolution": {
         "action": "reject",
         "note": "kind=update-projection; layer=227; direction=canonical-to-profile; semantic=type:updateWalletTonConnectPendingDisconnect; wire=0xd1ee8199-\u003e0x00000000; type=Update-\u003e; source_shape=10a18b8cda0db6320259f0227d7eb9d20387887d736eca4706213f3bdd83e331; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/296817d26dd177a5aa847d2be64226644abf54ce539ea213be1bdc69e4d7cca1",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=225; direction=canonical-to-profile; semantic=type:updateEditForumTopic; wire=0x2366665c-\u003e0x00000000; type=Update-\u003e; source_shape=5b0c4662e3b657f543027133490024d7370de8e2e6033111f6250d172ccddaae; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/29a44f2607ddceb933dd775cbde32facf170d5a05c9b91bde801d8a6744ce25a",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=231; direction=canonical-to-profile; semantic=type:updateMessageWidgetData; wire=0xbbb078dd-\u003e0x00000000; type=Update-\u003e; source_shape=e33e1a820e04b96fdc8c1eba8ecf5562e4c6fea26fd329f043e6e927c3bb827c; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
       }
     },
     {
@@ -1710,10 +1808,45 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/3417dcb45103c63011e17cf9222b5c965d2d51ab4fb6057afa39c9b06dd4f78a",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=232; direction=canonical-to-profile; semantic=type:updateBotWidgetCopyQuery; wire=0xfa89bef7-\u003e0x00000000; type=Update-\u003e; source_shape=82f4af1d3c89b6334b3dfb093e5a3f2c7a6db4f404476e6528ac2bb5a448e615; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/348f263ce95b73b39c99bc45aa7575928c3f4e063bd0941879409bf41b4b282c",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=229; direction=canonical-to-profile; semantic=type:updateTranscribedAudioFile; wire=0x734c2e7b-\u003e0x00000000; type=Update-\u003e; source_shape=3b3b538e1f56716b477f85390e31544d1efd09a60be4bf51502e7734c230f9fd; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/358578e569dbdffa92aae88873b1bc4fd2c2716d8ec0f3a3e2e1b643536f353e",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=225; direction=canonical-to-profile; semantic=type:updateMessageWidgetData; wire=0xbbb078dd-\u003e0x00000000; type=Update-\u003e; source_shape=e33e1a820e04b96fdc8c1eba8ecf5562e4c6fea26fd329f043e6e927c3bb827c; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/359a5eb4bcdae54972f7565a24dce4458a09c1e87d9cf000435d233f947bf20c",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=229; direction=canonical-to-profile; semantic=type:updateBotWidgetCopyQuery; wire=0xfa89bef7-\u003e0x00000000; type=Update-\u003e; source_shape=82f4af1d3c89b6334b3dfb093e5a3f2c7a6db4f404476e6528ac2bb5a448e615; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/3851e40f74fb153c9d8274684d378096e5dbbd3e0f46a999c312bc1d8d24710c",
       "resolution": {
         "action": "reject",
         "note": "kind=update-projection; layer=226; direction=canonical-to-profile; semantic=type:updateSentWalletTransaction; wire=0xb1434d4a-\u003e0x00000000; type=Update-\u003e; source_shape=7598b5d9c6fa74ad798b0be1f030494abf6b51a16adcb62b5cdb1cb6bf370c32; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/3941aeaf6250ad6176e6aee91ab71b64ef2eefe0908f193c5808a04145356fbe",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=231; direction=canonical-to-profile; semantic=type:updateBotWidgetCopyQuery; wire=0xfa89bef7-\u003e0x00000000; type=Update-\u003e; source_shape=82f4af1d3c89b6334b3dfb093e5a3f2c7a6db4f404476e6528ac2bb5a448e615; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
       }
     },
     {
@@ -1745,6 +1878,13 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/4d206ecab8c6435efbf89283b069829b0e1be99ca9ac92f4f02ac70164f477fb",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=226; direction=canonical-to-profile; semantic=type:updateBotWidgetQuery; wire=0xb373fe68-\u003e0x00000000; type=Update-\u003e; source_shape=5b6426894b42bc0550f7d44b062122986f9ce035add61b7c18ad0746db489469; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/4ed0def22e23d45c9f47175fcaa7daa9bf8fb8a2ad7810dd96127bfc7bbd64c3",
       "resolution": {
         "action": "reject",
@@ -1773,6 +1913,13 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/5152a41b52d5131fdbf0800a53c869bc7ca259dbd50beeeecb31bb944aff3e27",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=226; direction=canonical-to-profile; semantic=type:updateTranscribedAudioFile; wire=0x734c2e7b-\u003e0x00000000; type=Update-\u003e; source_shape=3b3b538e1f56716b477f85390e31544d1efd09a60be4bf51502e7734c230f9fd; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/51b67248ab9901093d542da0d8d8e039ead9ea507b09a1449ba5c79f05105c5d",
       "resolution": {
         "action": "drop",
@@ -1780,10 +1927,59 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/554d34092084984a1ab48fa670eefd8d35b7a65ac71ba7862fed88ae3d234da6",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=228; direction=canonical-to-profile; semantic=type:updateTranscribedAudioFile; wire=0x734c2e7b-\u003e0x00000000; type=Update-\u003e; source_shape=3b3b538e1f56716b477f85390e31544d1efd09a60be4bf51502e7734c230f9fd; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/556255c51d50a90310cb303abec3d2209c7e54fa31cabdad3b2043be7c66ce8b",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=228; direction=canonical-to-profile; semantic=type:updateEditForumTopic; wire=0x2366665c-\u003e0x00000000; type=Update-\u003e; source_shape=5b0c4662e3b657f543027133490024d7370de8e2e6033111f6250d172ccddaae; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/58ec67025f3ac84e4fbcc0a4e25d62556579118acfe1ef7efea5ba2c22c2b8ca",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=230; direction=canonical-to-profile; semantic=type:updateEditForumTopic; wire=0x2366665c-\u003e0x00000000; type=Update-\u003e; source_shape=5b0c4662e3b657f543027133490024d7370de8e2e6033111f6250d172ccddaae; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/5a817e19333bec8ef28e0b61dcaba9f8b9ae93e088f89b2fd62742a0d38bc458",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=228; direction=canonical-to-profile; semantic=type:updateInlineBotWidgetQuery; wire=0xa5f07e08-\u003e0x00000000; type=Update-\u003e; source_shape=8463bc5b2a506ce683a4f61c86df5b7b6e9ae10ed68744ff792ce3d07dcaa2fc; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/5b32a76bf8d5c23ea1dbefbec8cca6d13e5e2c481f69241505a06d2b96dbbcbd",
       "resolution": {
         "action": "reject",
         "note": "kind=update-projection; layer=228; direction=canonical-to-profile; semantic=type:updateSentWalletTransaction; wire=0xb1434d4a-\u003e0x00000000; type=Update-\u003e; source_shape=7598b5d9c6fa74ad798b0be1f030494abf6b51a16adcb62b5cdb1cb6bf370c32; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/5fce5d586bf0c887c07cd9cdddc0bf9669d1b44af1ba23b7c03083957a1025ed",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=225; direction=canonical-to-profile; semantic=type:updateBotWidgetQuery; wire=0xb373fe68-\u003e0x00000000; type=Update-\u003e; source_shape=5b6426894b42bc0550f7d44b062122986f9ce035add61b7c18ad0746db489469; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/66e27b10ca4529a14cd34220cce60ac76d11144f5351bffa2966b666cd8a171d",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=229; direction=canonical-to-profile; semantic=type:updateInlineBotWidgetQuery; wire=0xa5f07e08-\u003e0x00000000; type=Update-\u003e; source_shape=8463bc5b2a506ce683a4f61c86df5b7b6e9ae10ed68744ff792ce3d07dcaa2fc; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/677d2be82e8ef8c6ed074f52210da120cfe53a4dac91aec7950bd097ec6128a4",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=226; direction=canonical-to-profile; semantic=type:updateBotWidgetCopyQuery; wire=0xfa89bef7-\u003e0x00000000; type=Update-\u003e; source_shape=82f4af1d3c89b6334b3dfb093e5a3f2c7a6db4f404476e6528ac2bb5a448e615; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
       }
     },
     {
@@ -1801,10 +1997,38 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/6ec2d691d837aeca02d72c3e9e537c181a8d0407674f80e049bbcd1ecf36bb81",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=225; direction=canonical-to-profile; semantic=type:updateBotWidgetCopyQuery; wire=0xfa89bef7-\u003e0x00000000; type=Update-\u003e; source_shape=82f4af1d3c89b6334b3dfb093e5a3f2c7a6db4f404476e6528ac2bb5a448e615; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/738cd447d688d03c445293ee45b971905cc0436da2b89a47331681ba3e1cdcbd",
       "resolution": {
         "action": "reject",
         "note": "kind=update-projection; layer=227; direction=canonical-to-profile; semantic=type:updateWalletGaslessInfo; wire=0xa8ae1cac-\u003e0x00000000; type=Update-\u003e; source_shape=2f0b753be6cdef26da88f6898ee8a7b6e520a8e5efd9eb093fcd09c9460a68e6; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/7544496ecc8a0a24695e3b423bd4bfcef09869c11819874d729741f02173661c",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=227; direction=canonical-to-profile; semantic=type:updateBotWidgetCopyQuery; wire=0xfa89bef7-\u003e0x00000000; type=Update-\u003e; source_shape=82f4af1d3c89b6334b3dfb093e5a3f2c7a6db4f404476e6528ac2bb5a448e615; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/7cd11d218521f42f332f84441c80fcd998079bb80d89e30ffbe15bfd2e8b29fa",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=232; direction=canonical-to-profile; semantic=type:updateMessageWidgetData; wire=0xbbb078dd-\u003e0x00000000; type=Update-\u003e; source_shape=e33e1a820e04b96fdc8c1eba8ecf5562e4c6fea26fd329f043e6e927c3bb827c; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/8307b5ac1fd2f7dd480a32797c41308198c2fcc2f2ba2d0d9bd65e60d348bfd6",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=232; direction=canonical-to-profile; semantic=type:updateInlineBotWidgetQuery; wire=0xa5f07e08-\u003e0x00000000; type=Update-\u003e; source_shape=8463bc5b2a506ce683a4f61c86df5b7b6e9ae10ed68744ff792ce3d07dcaa2fc; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
       }
     },
     {
@@ -1815,10 +2039,31 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/87f2b3d97eb7c371665a6c108ae2a06db5b7b39c5efff4c1582c62b49b2178e7",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=226; direction=canonical-to-profile; semantic=type:updateEditForumTopic; wire=0x2366665c-\u003e0x00000000; type=Update-\u003e; source_shape=5b0c4662e3b657f543027133490024d7370de8e2e6033111f6250d172ccddaae; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/88f0ef7f63d3edef308ab1a2284a58ae5c91be3f39382d28215841fa6faf8f6e",
       "resolution": {
         "action": "reject",
         "note": "kind=update-projection; layer=228; direction=canonical-to-profile; semantic=type:updateWalletState; wire=0x6ac3f2aa-\u003e0x00000000; type=Update-\u003e; source_shape=f85d4d1a35892e97133551f55923cc2d5f71ae9ee1c608019adbbbf33612a7a3; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/89f78ae371c4f50d72e61301d43c636f6ce1f6afc5d7df6a871fdc6c4b8ef42c",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=227; direction=canonical-to-profile; semantic=type:updateMessageWidgetData; wire=0xbbb078dd-\u003e0x00000000; type=Update-\u003e; source_shape=e33e1a820e04b96fdc8c1eba8ecf5562e4c6fea26fd329f043e6e927c3bb827c; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/8ea71ebc7a953fe9e950f100631a6bb97a0ff6d1c6f37e9a25c19e3d03f2b834",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=229; direction=canonical-to-profile; semantic=type:updateBotWidgetQuery; wire=0xb373fe68-\u003e0x00000000; type=Update-\u003e; source_shape=5b6426894b42bc0550f7d44b062122986f9ce035add61b7c18ad0746db489469; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
       }
     },
     {
@@ -1850,6 +2095,13 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/9ff00f75f81109bbf1bff9267095c454f44276b9b467bd141379a3444b6d45a4",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=228; direction=canonical-to-profile; semantic=type:updateMessageWidgetData; wire=0xbbb078dd-\u003e0x00000000; type=Update-\u003e; source_shape=e33e1a820e04b96fdc8c1eba8ecf5562e4c6fea26fd329f043e6e927c3bb827c; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/a302e6aa91797d0e3108bc5d61f8ab123d968dda78d4fa7b30b12183eb9bf402",
       "resolution": {
         "action": "reject",
@@ -1861,6 +2113,27 @@
       "resolution": {
         "action": "reject",
         "note": "kind=update-projection; layer=226; direction=canonical-to-profile; semantic=type:updateWalletTonConnectSession; wire=0x50a38e0e-\u003e0x00000000; type=Update-\u003e; source_shape=f575985d7cff886dc65ff0542052323208159ca35551c576cc79e30a8d4db752; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/a6f852607f5c4c0fc02994172c1410000f3dc3fe9e8b68bdee05a13711e9229d",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=225; direction=canonical-to-profile; semantic=type:updateTranscribedAudioFile; wire=0x734c2e7b-\u003e0x00000000; type=Update-\u003e; source_shape=3b3b538e1f56716b477f85390e31544d1efd09a60be4bf51502e7734c230f9fd; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/b35eb5d50917d9298587fb88922fa4bedba2c92666cfd6c7735b6be77be2934f",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=230; direction=canonical-to-profile; semantic=type:updateMessageWidgetData; wire=0xbbb078dd-\u003e0x00000000; type=Update-\u003e; source_shape=e33e1a820e04b96fdc8c1eba8ecf5562e4c6fea26fd329f043e6e927c3bb827c; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/b83328525d3cc2a1f0504ee624123b8a5e3b2a161d9aa6f8cabcd0eba8f5bbf4",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=231; direction=canonical-to-profile; semantic=type:updateInlineBotWidgetQuery; wire=0xa5f07e08-\u003e0x00000000; type=Update-\u003e; source_shape=8463bc5b2a506ce683a4f61c86df5b7b6e9ae10ed68744ff792ce3d07dcaa2fc; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
       }
     },
     {
@@ -1892,10 +2165,52 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/c35099308b98c65fd91cf338e9e4a332b418de6788647165e423a1fed4b20540",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=231; direction=canonical-to-profile; semantic=type:updateBotWidgetQuery; wire=0xb373fe68-\u003e0x00000000; type=Update-\u003e; source_shape=5b6426894b42bc0550f7d44b062122986f9ce035add61b7c18ad0746db489469; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/c57bd16a7b531b0b3945a085059a4158b5c256f62c30611df49581cc7ece60a5",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=230; direction=canonical-to-profile; semantic=type:updateBotWidgetQuery; wire=0xb373fe68-\u003e0x00000000; type=Update-\u003e; source_shape=5b6426894b42bc0550f7d44b062122986f9ce035add61b7c18ad0746db489469; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/c5a3a693570ffbe846db5703f62fbc6f93fcf5a7470735648db0c05e8270326f",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=232; direction=canonical-to-profile; semantic=type:updateBotWidgetQuery; wire=0xb373fe68-\u003e0x00000000; type=Update-\u003e; source_shape=5b6426894b42bc0550f7d44b062122986f9ce035add61b7c18ad0746db489469; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/c5b3d05396f3e80e5b1dcc64371b90c61c2ba5095c694f455d0d85aa58e953b7",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=230; direction=canonical-to-profile; semantic=type:updateBotWidgetCopyQuery; wire=0xfa89bef7-\u003e0x00000000; type=Update-\u003e; source_shape=82f4af1d3c89b6334b3dfb093e5a3f2c7a6db4f404476e6528ac2bb5a448e615; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/c76e03e632fb56b61e0267006ff88e1a1cdb900c70884fa7448ac4ecd9ca856d",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=231; direction=canonical-to-profile; semantic=type:updateTranscribedAudioFile; wire=0x734c2e7b-\u003e0x00000000; type=Update-\u003e; source_shape=3b3b538e1f56716b477f85390e31544d1efd09a60be4bf51502e7734c230f9fd; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/c7b08bec006528961981bf19582d95b487b8dae3a5ce2cf29a43b3059f0f2dd3",
       "resolution": {
         "action": "drop",
         "note": "kind=update-projection; layer=226; direction=canonical-to-profile; semantic=type:updateBotStarsSubscription; wire=0x6c0d8e23-\u003e0x00000000; type=Update-\u003e; source_shape=39ca7dd39714a785025057f9edb30debfaeb6bc68d4e287bde2151f1e6a1684a; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/cf723d07b323d543e90ff5d038a1df5ec940b40414aaf43444bafb5ab8aae89e",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=230; direction=canonical-to-profile; semantic=type:updateTranscribedAudioFile; wire=0x734c2e7b-\u003e0x00000000; type=Update-\u003e; source_shape=3b3b538e1f56716b477f85390e31544d1efd09a60be4bf51502e7734c230f9fd; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
       }
     },
     {
@@ -1906,10 +2221,38 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/d1f86dd56a2db26ca3e35ee1eb5e83cb163143fd7ce07fc0b103643e1eed3780",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=228; direction=canonical-to-profile; semantic=type:updateBotWidgetQuery; wire=0xb373fe68-\u003e0x00000000; type=Update-\u003e; source_shape=5b6426894b42bc0550f7d44b062122986f9ce035add61b7c18ad0746db489469; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/d7de62b4b98106e64e51e678bd624557e213e08d9180dc4db1d3a261d08c6ed5",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=228; direction=canonical-to-profile; semantic=type:updateBotWidgetCopyQuery; wire=0xfa89bef7-\u003e0x00000000; type=Update-\u003e; source_shape=82f4af1d3c89b6334b3dfb093e5a3f2c7a6db4f404476e6528ac2bb5a448e615; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/d839079b1403ffda26bbb209045c377f7c5eccb5a8b7c235a95af9ff316fa73b",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=231; direction=canonical-to-profile; semantic=type:updateEditForumTopic; wire=0x2366665c-\u003e0x00000000; type=Update-\u003e; source_shape=5b0c4662e3b657f543027133490024d7370de8e2e6033111f6250d172ccddaae; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/d95417857b0e7716838853cf9ea21509fe1ea2435b7ec6e9f647f0e603a8bbea",
       "resolution": {
         "action": "drop",
         "note": "kind=update-projection; layer=225; direction=canonical-to-profile; semantic=type:updateEditEphemeralMessage; wire=0x4bbb8f01-\u003e0x00000000; type=Update-\u003e; source_shape=4e57255a3465abc2665cf75c44ab703bef2e78ff555c288a18479afa9a57a990; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/dc7a88f1d3d2c723b6d51cc433cd1f59fa12a66fb6da77d92bdb3fd462168cd4",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=227; direction=canonical-to-profile; semantic=type:updateTranscribedAudioFile; wire=0x734c2e7b-\u003e0x00000000; type=Update-\u003e; source_shape=3b3b538e1f56716b477f85390e31544d1efd09a60be4bf51502e7734c230f9fd; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
       }
     },
     {
@@ -1927,6 +2270,48 @@
       }
     },
     {
+      "key": "layer-obligation/v1/update-projection/efc18a9b42f3742b7fb7ceb6304256f7720671bb329c633c218f7139e70cf693",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=226; direction=canonical-to-profile; semantic=type:updateMessageWidgetData; wire=0xbbb078dd-\u003e0x00000000; type=Update-\u003e; source_shape=e33e1a820e04b96fdc8c1eba8ecf5562e4c6fea26fd329f043e6e927c3bb827c; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/f0d922451624b8d4279dfcca2b79604c8b1df2374e565cc2c2b72eb28a57b3ba",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=232; direction=canonical-to-profile; semantic=type:updateEditForumTopic; wire=0x2366665c-\u003e0x00000000; type=Update-\u003e; source_shape=5b0c4662e3b657f543027133490024d7370de8e2e6033111f6250d172ccddaae; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/f0f4bcd482f2143519dc9cee79fc8f6da9f8cd6d7830f76f4bcb91427f912c4f",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=227; direction=canonical-to-profile; semantic=type:updateEditForumTopic; wire=0x2366665c-\u003e0x00000000; type=Update-\u003e; source_shape=5b0c4662e3b657f543027133490024d7370de8e2e6033111f6250d172ccddaae; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/f137553bc47766f69ae2de462b9d775255deeee82242c510a5f14d966e35a5f7",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=226; direction=canonical-to-profile; semantic=type:updateInlineBotWidgetQuery; wire=0xa5f07e08-\u003e0x00000000; type=Update-\u003e; source_shape=8463bc5b2a506ce683a4f61c86df5b7b6e9ae10ed68744ff792ce3d07dcaa2fc; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/f41759f80451fdd6e7237fefbe6e33242d8b38fc2408d3d704c64e754a30016f",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=229; direction=canonical-to-profile; semantic=type:updateMessageWidgetData; wire=0xbbb078dd-\u003e0x00000000; type=Update-\u003e; source_shape=e33e1a820e04b96fdc8c1eba8ecf5562e4c6fea26fd329f043e6e927c3bb827c; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/f620615c202e7123e5ae5e821f9e7bf54bc924f2460a5994d294409b8f54e2e8",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=232; direction=canonical-to-profile; semantic=type:updateTranscribedAudioFile; wire=0x734c2e7b-\u003e0x00000000; type=Update-\u003e; source_shape=3b3b538e1f56716b477f85390e31544d1efd09a60be4bf51502e7734c230f9fd; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/update-projection/faa6a4b768c1c73b3b9ad5b6376dbf119ea1e184d5421ed64789ee497f899366",
       "resolution": {
         "action": "drop",
@@ -1938,6 +2323,13 @@
       "resolution": {
         "action": "reject",
         "note": "kind=update-projection; layer=229; direction=canonical-to-profile; semantic=type:updateWalletTonConnectPendingDisconnect; wire=0xd1ee8199-\u003e0x00000000; type=Update-\u003e; source_shape=10a18b8cda0db6320259f0227d7eb9d20387887d736eca4706213f3bdd83e331; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/update-projection/fcfde665eda327d23ab89bc6e45497fba53eaa2152ccac279d75208ca1406c7d",
+      "resolution": {
+        "action": "drop",
+        "note": "kind=update-projection; layer=230; direction=canonical-to-profile; semantic=type:updateInlineBotWidgetQuery; wire=0xa5f07e08-\u003e0x00000000; type=Update-\u003e; source_shape=8463bc5b2a506ce683a4f61c86df5b7b6e9ae10ed68744ff792ce3d07dcaa2fc; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
       }
     }
   ]

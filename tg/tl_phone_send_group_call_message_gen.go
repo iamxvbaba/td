@@ -35,7 +35,7 @@ var (
 // Send a transient in-call message to all participants of a group call or livestream¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#conference-calls
+//  1) https://core.telegram.org/api/group-calls#conference-calls
 //
 // See https://core.telegram.org/method/phone.sendGroupCallMessage for reference.
 type PhoneSendGroupCallMessageRequest struct {
@@ -349,11 +349,10 @@ func (s *PhoneSendGroupCallMessageRequest) GetSendAs() (value InputPeerClass, ok
 // Send a transient in-call message to all participants of a group call or livestream¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#conference-calls
+//  1) https://core.telegram.org/api/group-calls#conference-calls
 //
 // Possible errors:
-//
-//	400 GROUPCALL_INVALID: The specified group call is invalid.
+//  400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.sendGroupCallMessage for reference.
 func (c *Client) PhoneSendGroupCallMessage(ctx context.Context, request *PhoneSendGroupCallMessageRequest) (UpdatesClass, error) {

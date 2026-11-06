@@ -36,7 +36,7 @@ var (
 // on the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#creating-a-passkey
+//  1) https://core.telegram.org/api/passkeys#creating-a-passkey
 //
 // See https://core.telegram.org/method/account.initPasskeyRegistration for reference.
 type AccountInitPasskeyRegistrationRequest struct {
@@ -137,11 +137,10 @@ func (i *AccountInitPasskeyRegistrationRequest) DecodeBare(b *bin.Buffer) error 
 // on the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#creating-a-passkey
+//  1) https://core.telegram.org/api/passkeys#creating-a-passkey
 //
 // Possible errors:
-//
-//	403 ACCESS_DENIED:
+//  403 ACCESS_DENIED:
 //
 // See https://core.telegram.org/method/account.initPasskeyRegistration for reference.
 func (c *Client) AccountInitPasskeyRegistration(ctx context.Context) (*AccountPasskeyRegistrationOptions, error) {

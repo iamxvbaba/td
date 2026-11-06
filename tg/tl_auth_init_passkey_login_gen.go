@@ -36,7 +36,7 @@ var (
 // more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
+//  1) https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
 //
 // See https://core.telegram.org/method/auth.initPasskeyLogin for reference.
 type AuthInitPasskeyLoginRequest struct {
@@ -203,13 +203,12 @@ func (i *AuthInitPasskeyLoginRequest) GetAPIHash() (value string) {
 // more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
+//  1) https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
 //
 // Possible errors:
-//
-//	400 API_ID_INVALID: API ID invalid.
-//	500 AUTH_RESTART: Restart the authorization process.
-//	500 PASSKEY_AUTH_RESTART:
+//  400 API_ID_INVALID: API ID invalid.
+//  500 AUTH_RESTART: Restart the authorization process.
+//  500 PASSKEY_AUTH_RESTART:
 //
 // See https://core.telegram.org/method/auth.initPasskeyLogin for reference.
 func (c *Client) AuthInitPasskeyLogin(ctx context.Context, request *AuthInitPasskeyLoginRequest) (*AuthPasskeyLoginOptions, error) {

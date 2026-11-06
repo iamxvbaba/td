@@ -36,8 +36,8 @@ var (
 // auction updates, see here »² for more info on the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/auctions
-//  2. https://core.telegram.org/api/auctions
+//  1) https://core.telegram.org/api/auctions
+//  2) https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/method/payments.getStarGiftAuctionState for reference.
 type PaymentsGetStarGiftAuctionStateRequest struct {
@@ -210,12 +210,11 @@ func (g *PaymentsGetStarGiftAuctionStateRequest) GetVersion() (value int) {
 // auction updates, see here »² for more info on the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/auctions
-//  2. https://core.telegram.org/api/auctions
+//  1) https://core.telegram.org/api/auctions
+//  2) https://core.telegram.org/api/auctions
 //
 // Possible errors:
-//
-//	400 STARGIFT_INVALID: The passed gift is invalid.
+//  400 STARGIFT_INVALID: The passed gift is invalid.
 //
 // See https://core.telegram.org/method/payments.getStarGiftAuctionState for reference.
 func (c *Client) PaymentsGetStarGiftAuctionState(ctx context.Context, request *PaymentsGetStarGiftAuctionStateRequest) (*PaymentsStarGiftAuctionState, error) {

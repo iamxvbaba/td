@@ -35,7 +35,7 @@ var (
 // Get stories in a story album »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/stories#story-albums
+//  1) https://core.telegram.org/api/stories#story-albums
 //
 // See https://core.telegram.org/method/stories.getAlbumStories for reference.
 type StoriesGetAlbumStoriesRequest struct {
@@ -260,11 +260,10 @@ func (g *StoriesGetAlbumStoriesRequest) GetLimit() (value int) {
 // Get stories in a story album »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/stories#story-albums
+//  1) https://core.telegram.org/api/stories#story-albums
 //
 // Possible errors:
-//
-//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//  400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/stories.getAlbumStories for reference.
 func (c *Client) StoriesGetAlbumStories(ctx context.Context, request *StoriesGetAlbumStoriesRequest) (*StoriesStories, error) {

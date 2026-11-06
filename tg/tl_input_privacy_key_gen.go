@@ -42,10 +42,10 @@ var (
 // userStatusLastWeek², userStatusLastMonth³ will be set.
 //
 // Links:
-//  1. https://core.telegram.org/api/premium
-//  2. https://core.telegram.org/constructor/userStatusRecently
-//  3. https://core.telegram.org/constructor/userStatusLastWeek
-//  4. https://core.telegram.org/constructor/userStatusLastMonth
+//  1) https://core.telegram.org/api/premium
+//  2) https://core.telegram.org/constructor/userStatusRecently
+//  3) https://core.telegram.org/constructor/userStatusLastWeek
+//  4) https://core.telegram.org/constructor/userStatusLastMonth
 //
 // See https://core.telegram.org/constructor/inputPrivacyKeyStatusTimestamp for reference.
 type InputPrivacyKeyStatusTimestamp struct {
@@ -456,7 +456,7 @@ func (i *InputPrivacyKeyPhoneP2P) DecodeBare(b *bin.Buffer) error {
 // Whether messages forwarded from you will be anonymous¹
 //
 // Links:
-//  1. https://telegram.org/blog/unsend-privacy-emoji#anonymous-forwarding
+//  1) https://telegram.org/blog/unsend-privacy-emoji#anonymous-forwarding
 //
 // See https://core.telegram.org/constructor/inputPrivacyKeyForwards for reference.
 type InputPrivacyKeyForwards struct {
@@ -867,7 +867,7 @@ func (i *InputPrivacyKeyAddedByPhone) DecodeBare(b *bin.Buffer) error {
 // Whether people can send you voice messages or round videos (Premium¹ users only).
 //
 // Links:
-//  1. https://core.telegram.org/api/premium
+//  1) https://core.telegram.org/api/premium
 //
 // See https://core.telegram.org/constructor/inputPrivacyKeyVoiceMessages for reference.
 type InputPrivacyKeyVoiceMessages struct {
@@ -1176,7 +1176,7 @@ func (i *InputPrivacyKeyBirthday) DecodeBare(b *bin.Buffer) error {
 // Whether received gifts¹ will be automatically displayed on our profile
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts
+//  1) https://core.telegram.org/api/gifts
 //
 // See https://core.telegram.org/constructor/inputPrivacyKeyStarGiftsAutoSave for reference.
 type InputPrivacyKeyStarGiftsAutoSave struct {
@@ -1281,7 +1281,7 @@ func (i *InputPrivacyKeyStarGiftsAutoSave) DecodeBare(b *bin.Buffer) error {
 // Who can send you messages without paying, if paid messages »¹ are enabled.
 //
 // Links:
-//  1. https://core.telegram.org/api/paid-messages
+//  1) https://core.telegram.org/api/paid-messages
 //
 // See https://core.telegram.org/constructor/inputPrivacyKeyNoPaidMessages for reference.
 type InputPrivacyKeyNoPaidMessages struct {
@@ -1386,7 +1386,7 @@ func (i *InputPrivacyKeyNoPaidMessages) DecodeBare(b *bin.Buffer) error {
 // Whether the user can see the songs we pinned to our profile »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/profile#music
+//  1) https://core.telegram.org/api/profile#music
 //
 // See https://core.telegram.org/constructor/inputPrivacyKeySavedMusic for reference.
 type InputPrivacyKeySavedMusic struct {
@@ -1495,44 +1495,43 @@ const InputPrivacyKeyClassName = "InputPrivacyKey"
 // See https://core.telegram.org/type/InputPrivacyKey for reference.
 //
 // Constructors:
-//   - [InputPrivacyKeyStatusTimestamp]
-//   - [InputPrivacyKeyChatInvite]
-//   - [InputPrivacyKeyPhoneCall]
-//   - [InputPrivacyKeyPhoneP2P]
-//   - [InputPrivacyKeyForwards]
-//   - [InputPrivacyKeyProfilePhoto]
-//   - [InputPrivacyKeyPhoneNumber]
-//   - [InputPrivacyKeyAddedByPhone]
-//   - [InputPrivacyKeyVoiceMessages]
-//   - [InputPrivacyKeyAbout]
-//   - [InputPrivacyKeyBirthday]
-//   - [InputPrivacyKeyStarGiftsAutoSave]
-//   - [InputPrivacyKeyNoPaidMessages]
-//   - [InputPrivacyKeySavedMusic]
+//  - [InputPrivacyKeyStatusTimestamp]
+//  - [InputPrivacyKeyChatInvite]
+//  - [InputPrivacyKeyPhoneCall]
+//  - [InputPrivacyKeyPhoneP2P]
+//  - [InputPrivacyKeyForwards]
+//  - [InputPrivacyKeyProfilePhoto]
+//  - [InputPrivacyKeyPhoneNumber]
+//  - [InputPrivacyKeyAddedByPhone]
+//  - [InputPrivacyKeyVoiceMessages]
+//  - [InputPrivacyKeyAbout]
+//  - [InputPrivacyKeyBirthday]
+//  - [InputPrivacyKeyStarGiftsAutoSave]
+//  - [InputPrivacyKeyNoPaidMessages]
+//  - [InputPrivacyKeySavedMusic]
 //
 // Example:
-//
-//	g, err := tg.DecodeInputPrivacyKey(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.InputPrivacyKeyStatusTimestamp: // inputPrivacyKeyStatusTimestamp#4f96cb18
-//	case *tg.InputPrivacyKeyChatInvite: // inputPrivacyKeyChatInvite#bdfb0426
-//	case *tg.InputPrivacyKeyPhoneCall: // inputPrivacyKeyPhoneCall#fabadc5f
-//	case *tg.InputPrivacyKeyPhoneP2P: // inputPrivacyKeyPhoneP2P#db9e70d2
-//	case *tg.InputPrivacyKeyForwards: // inputPrivacyKeyForwards#a4dd4c08
-//	case *tg.InputPrivacyKeyProfilePhoto: // inputPrivacyKeyProfilePhoto#5719bacc
-//	case *tg.InputPrivacyKeyPhoneNumber: // inputPrivacyKeyPhoneNumber#352dafa
-//	case *tg.InputPrivacyKeyAddedByPhone: // inputPrivacyKeyAddedByPhone#d1219bdd
-//	case *tg.InputPrivacyKeyVoiceMessages: // inputPrivacyKeyVoiceMessages#aee69d68
-//	case *tg.InputPrivacyKeyAbout: // inputPrivacyKeyAbout#3823cc40
-//	case *tg.InputPrivacyKeyBirthday: // inputPrivacyKeyBirthday#d65a11cc
-//	case *tg.InputPrivacyKeyStarGiftsAutoSave: // inputPrivacyKeyStarGiftsAutoSave#e1732341
-//	case *tg.InputPrivacyKeyNoPaidMessages: // inputPrivacyKeyNoPaidMessages#bdc597b4
-//	case *tg.InputPrivacyKeySavedMusic: // inputPrivacyKeySavedMusic#4dbe9226
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeInputPrivacyKey(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.InputPrivacyKeyStatusTimestamp: // inputPrivacyKeyStatusTimestamp#4f96cb18
+//  case *tg.InputPrivacyKeyChatInvite: // inputPrivacyKeyChatInvite#bdfb0426
+//  case *tg.InputPrivacyKeyPhoneCall: // inputPrivacyKeyPhoneCall#fabadc5f
+//  case *tg.InputPrivacyKeyPhoneP2P: // inputPrivacyKeyPhoneP2P#db9e70d2
+//  case *tg.InputPrivacyKeyForwards: // inputPrivacyKeyForwards#a4dd4c08
+//  case *tg.InputPrivacyKeyProfilePhoto: // inputPrivacyKeyProfilePhoto#5719bacc
+//  case *tg.InputPrivacyKeyPhoneNumber: // inputPrivacyKeyPhoneNumber#352dafa
+//  case *tg.InputPrivacyKeyAddedByPhone: // inputPrivacyKeyAddedByPhone#d1219bdd
+//  case *tg.InputPrivacyKeyVoiceMessages: // inputPrivacyKeyVoiceMessages#aee69d68
+//  case *tg.InputPrivacyKeyAbout: // inputPrivacyKeyAbout#3823cc40
+//  case *tg.InputPrivacyKeyBirthday: // inputPrivacyKeyBirthday#d65a11cc
+//  case *tg.InputPrivacyKeyStarGiftsAutoSave: // inputPrivacyKeyStarGiftsAutoSave#e1732341
+//  case *tg.InputPrivacyKeyNoPaidMessages: // inputPrivacyKeyNoPaidMessages#bdc597b4
+//  case *tg.InputPrivacyKeySavedMusic: // inputPrivacyKeySavedMusic#4dbe9226
+//  default: panic(v)
+//  }
 type InputPrivacyKeyClass interface {
 	bin.Encoder
 	bin.Decoder

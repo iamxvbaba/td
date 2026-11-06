@@ -35,7 +35,7 @@ var (
 // Approve or reject a suggested post »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/suggested-posts
+//  1) https://core.telegram.org/api/suggested-posts
 //
 // See https://core.telegram.org/method/messages.toggleSuggestedPostApproval for reference.
 type MessagesToggleSuggestedPostApprovalRequest struct {
@@ -356,11 +356,10 @@ func (t *MessagesToggleSuggestedPostApprovalRequest) GetRejectComment() (value s
 // Approve or reject a suggested post »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/suggested-posts
+//  1) https://core.telegram.org/api/suggested-posts
 //
 // Possible errors:
-//
-//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//  400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/messages.toggleSuggestedPostApproval for reference.
 func (c *Client) MessagesToggleSuggestedPostApproval(ctx context.Context, request *MessagesToggleSuggestedPostApprovalRequest) (UpdatesClass, error) {

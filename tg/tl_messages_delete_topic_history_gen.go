@@ -35,7 +35,7 @@ var (
 // Delete message history of a forum topic¹
 //
 // Links:
-//  1. https://core.telegram.org/api/forum
+//  1) https://core.telegram.org/api/forum
 //
 // See https://core.telegram.org/method/messages.deleteTopicHistory for reference.
 type MessagesDeleteTopicHistoryRequest struct {
@@ -201,11 +201,10 @@ func (d *MessagesDeleteTopicHistoryRequest) GetTopMsgID() (value int) {
 // Delete message history of a forum topic¹
 //
 // Links:
-//  1. https://core.telegram.org/api/forum
+//  1) https://core.telegram.org/api/forum
 //
 // Possible errors:
-//
-//	400 CHANNEL_INVALID: The provided channel is invalid.
+//  400 CHANNEL_INVALID: The provided channel is invalid.
 //
 // See https://core.telegram.org/method/messages.deleteTopicHistory for reference.
 func (c *Client) MessagesDeleteTopicHistory(ctx context.Context, request *MessagesDeleteTopicHistoryRequest) (*MessagesAffectedHistory, error) {

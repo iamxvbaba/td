@@ -407,7 +407,7 @@ func (p *PageListOrderedItemText) GetType() (value string, ok bool) {
 // Ordered list of IV¹ blocks
 //
 // Links:
-//  1. https://instantview.telegram.org
+//  1) https://instantview.telegram.org
 //
 // See https://core.telegram.org/constructor/pageListOrderedItemBlocks for reference.
 type PageListOrderedItemBlocks struct {
@@ -804,20 +804,19 @@ const PageListOrderedItemClassName = "PageListOrderedItem"
 // See https://core.telegram.org/type/PageListOrderedItem for reference.
 //
 // Constructors:
-//   - [PageListOrderedItemText]
-//   - [PageListOrderedItemBlocks]
+//  - [PageListOrderedItemText]
+//  - [PageListOrderedItemBlocks]
 //
 // Example:
-//
-//	g, err := tg.DecodePageListOrderedItem(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.PageListOrderedItemText: // pageListOrderedItemText#15031189
-//	case *tg.PageListOrderedItemBlocks: // pageListOrderedItemBlocks#8ff2d5f0
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodePageListOrderedItem(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.PageListOrderedItemText: // pageListOrderedItemText#15031189
+//  case *tg.PageListOrderedItemBlocks: // pageListOrderedItemBlocks#8ff2d5f0
+//  default: panic(v)
+//  }
 type PageListOrderedItemClass interface {
 	bin.Encoder
 	bin.Decoder

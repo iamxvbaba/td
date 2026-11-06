@@ -35,7 +35,7 @@ var (
 // Mark messages as read in a monoforum topic »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/monoforum
+//  1) https://core.telegram.org/api/monoforum
 //
 // See https://core.telegram.org/method/messages.readSavedHistory for reference.
 type MessagesReadSavedHistoryRequest struct {
@@ -233,12 +233,11 @@ func (r *MessagesReadSavedHistoryRequest) GetMaxID() (value int) {
 // Mark messages as read in a monoforum topic »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/monoforum
+//  1) https://core.telegram.org/api/monoforum
 //
 // Possible errors:
-//
-//	400 CHAT_ADMIN_REQUIRED: You must be an admin in this chat to do this.
-//	400 PARENT_PEER_INVALID: The specified parent_peer is invalid.
+//  400 CHAT_ADMIN_REQUIRED: You must be an admin in this chat to do this.
+//  400 PARENT_PEER_INVALID: The specified parent_peer is invalid.
 //
 // See https://core.telegram.org/method/messages.readSavedHistory for reference.
 func (c *Client) MessagesReadSavedHistory(ctx context.Context, request *MessagesReadSavedHistoryRequest) (bool, error) {

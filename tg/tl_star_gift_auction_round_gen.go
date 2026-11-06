@@ -35,7 +35,7 @@ var (
 // Describes one or more collectible gift auction rounds »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/auctions
+//  1) https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/constructor/starGiftAuctionRound for reference.
 type StarGiftAuctionRound struct {
@@ -204,7 +204,7 @@ func (s *StarGiftAuctionRound) GetDuration() (value int) {
 // Describes one or more extendable collectible gift auction rounds »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/auctions
+//  1) https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/constructor/starGiftAuctionRoundExtendable for reference.
 type StarGiftAuctionRoundExtendable struct {
@@ -433,20 +433,19 @@ const StarGiftAuctionRoundClassName = "StarGiftAuctionRound"
 // See https://core.telegram.org/type/StarGiftAuctionRound for reference.
 //
 // Constructors:
-//   - [StarGiftAuctionRound]
-//   - [StarGiftAuctionRoundExtendable]
+//  - [StarGiftAuctionRound]
+//  - [StarGiftAuctionRoundExtendable]
 //
 // Example:
-//
-//	g, err := tg.DecodeStarGiftAuctionRound(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.StarGiftAuctionRound: // starGiftAuctionRound#3aae0528
-//	case *tg.StarGiftAuctionRoundExtendable: // starGiftAuctionRoundExtendable#aa021e5
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeStarGiftAuctionRound(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.StarGiftAuctionRound: // starGiftAuctionRound#3aae0528
+//  case *tg.StarGiftAuctionRoundExtendable: // starGiftAuctionRoundExtendable#aa021e5
+//  default: panic(v)
+//  }
 type StarGiftAuctionRoundClass interface {
 	bin.Encoder
 	bin.Decoder

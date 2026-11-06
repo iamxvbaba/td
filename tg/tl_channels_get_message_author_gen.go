@@ -37,7 +37,7 @@ var (
 // associated to the monoforum.
 //
 // Links:
-//  1. https://core.telegram.org/api/monoforum
+//  1) https://core.telegram.org/api/monoforum
 //
 // See https://core.telegram.org/method/channels.getMessageAuthor for reference.
 type ChannelsGetMessageAuthorRequest struct {
@@ -209,11 +209,10 @@ func (g *ChannelsGetMessageAuthorRequest) GetChannelAsNotEmpty() (NotEmptyInputC
 // associated to the monoforum.
 //
 // Links:
-//  1. https://core.telegram.org/api/monoforum
+//  1) https://core.telegram.org/api/monoforum
 //
 // Possible errors:
-//
-//	400 CHANNEL_INVALID: The provided channel is invalid.
+//  400 CHANNEL_INVALID: The provided channel is invalid.
 //
 // See https://core.telegram.org/method/channels.getMessageAuthor for reference.
 func (c *Client) ChannelsGetMessageAuthor(ctx context.Context, request *ChannelsGetMessageAuthorRequest) (UserClass, error) {

@@ -35,7 +35,7 @@ var (
 // Allow a user to send us messages without paying if paid messages »¹ are enabled.
 //
 // Links:
-//  1. https://core.telegram.org/api/paid-messages
+//  1) https://core.telegram.org/api/paid-messages
 //
 // See https://core.telegram.org/method/account.toggleNoPaidMessagesException for reference.
 type AccountToggleNoPaidMessagesExceptionRequest struct {
@@ -329,13 +329,12 @@ func (t *AccountToggleNoPaidMessagesExceptionRequest) GetUserID() (value InputUs
 // Allow a user to send us messages without paying if paid messages »¹ are enabled.
 //
 // Links:
-//  1. https://core.telegram.org/api/paid-messages
+//  1) https://core.telegram.org/api/paid-messages
 //
 // Possible errors:
-//
-//	400 PARENT_PEER_INVALID: The specified parent_peer is invalid.
-//	400 UNSUPPORTED: require_payment cannot be set by users, only by monoforums: users must instead use the inputPrivacyKeyNoPaidMessages privacy setting to remove a previously added exemption.
-//	400 USER_ID_INVALID: The provided user ID is invalid.
+//  400 PARENT_PEER_INVALID: The specified parent_peer is invalid.
+//  400 UNSUPPORTED: require_payment cannot be set by users, only by monoforums: users must instead use the inputPrivacyKeyNoPaidMessages privacy setting to remove a previously added exemption.
+//  400 USER_ID_INVALID: The provided user ID is invalid.
 //
 // See https://core.telegram.org/method/account.toggleNoPaidMessagesException for reference.
 func (c *Client) AccountToggleNoPaidMessagesException(ctx context.Context, request *AccountToggleNoPaidMessagesExceptionRequest) (bool, error) {

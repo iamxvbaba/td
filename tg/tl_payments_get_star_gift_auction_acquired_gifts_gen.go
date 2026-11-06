@@ -35,7 +35,7 @@ var (
 // Fetches all the gifts that the current user won in an auction¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/auctions
+//  1) https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/method/payments.getStarGiftAuctionAcquiredGifts for reference.
 type PaymentsGetStarGiftAuctionAcquiredGiftsRequest struct {
@@ -168,11 +168,10 @@ func (g *PaymentsGetStarGiftAuctionAcquiredGiftsRequest) GetGiftID() (value int6
 // Fetches all the gifts that the current user won in an auction¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/auctions
+//  1) https://core.telegram.org/api/auctions
 //
 // Possible errors:
-//
-//	400 STARGIFT_INVALID: The passed gift is invalid.
+//  400 STARGIFT_INVALID: The passed gift is invalid.
 //
 // See https://core.telegram.org/method/payments.getStarGiftAuctionAcquiredGifts for reference.
 func (c *Client) PaymentsGetStarGiftAuctionAcquiredGifts(ctx context.Context, giftid int64) (*PaymentsStarGiftAuctionAcquiredGifts, error) {

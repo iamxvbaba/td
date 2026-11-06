@@ -5091,80 +5091,79 @@ const RichTextClassName = "RichText"
 // See https://core.telegram.org/type/RichText for reference.
 //
 // Constructors:
-//   - [TextEmpty]
-//   - [TextPlain]
-//   - [TextBold]
-//   - [TextItalic]
-//   - [TextUnderline]
-//   - [TextStrike]
-//   - [TextFixed]
-//   - [TextURL]
-//   - [TextEmail]
-//   - [TextConcat]
-//   - [TextSubscript]
-//   - [TextSuperscript]
-//   - [TextMarked]
-//   - [TextPhone]
-//   - [TextImage]
-//   - [TextAnchor]
-//   - [TextMath]
-//   - [TextCustomEmoji]
-//   - [TextSpoiler]
-//   - [TextMention]
-//   - [TextHashtag]
-//   - [TextBotCommand]
-//   - [TextCashtag]
-//   - [TextAutoURL]
-//   - [TextAutoEmail]
-//   - [TextAutoPhone]
-//   - [TextBankCard]
-//   - [TextMentionName]
-//   - [TextDate]
-//   - [TextDiff]
-//   - [TextButton]
-//   - [TextTonAddress]
+//  - [TextEmpty]
+//  - [TextPlain]
+//  - [TextBold]
+//  - [TextItalic]
+//  - [TextUnderline]
+//  - [TextStrike]
+//  - [TextFixed]
+//  - [TextURL]
+//  - [TextEmail]
+//  - [TextConcat]
+//  - [TextSubscript]
+//  - [TextSuperscript]
+//  - [TextMarked]
+//  - [TextPhone]
+//  - [TextImage]
+//  - [TextAnchor]
+//  - [TextMath]
+//  - [TextCustomEmoji]
+//  - [TextSpoiler]
+//  - [TextMention]
+//  - [TextHashtag]
+//  - [TextBotCommand]
+//  - [TextCashtag]
+//  - [TextAutoURL]
+//  - [TextAutoEmail]
+//  - [TextAutoPhone]
+//  - [TextBankCard]
+//  - [TextMentionName]
+//  - [TextDate]
+//  - [TextDiff]
+//  - [TextButton]
+//  - [TextTonAddress]
 //
 // Example:
-//
-//	g, err := tg.DecodeRichText(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.TextEmpty: // textEmpty#dc3d824f
-//	case *tg.TextPlain: // textPlain#744694e0
-//	case *tg.TextBold: // textBold#6724abc4
-//	case *tg.TextItalic: // textItalic#d912a59c
-//	case *tg.TextUnderline: // textUnderline#c12622c4
-//	case *tg.TextStrike: // textStrike#9bf8bb95
-//	case *tg.TextFixed: // textFixed#6c3f19b9
-//	case *tg.TextURL: // textUrl#3c2884c1
-//	case *tg.TextEmail: // textEmail#de5a0dd6
-//	case *tg.TextConcat: // textConcat#7e6260d7
-//	case *tg.TextSubscript: // textSubscript#ed6a8504
-//	case *tg.TextSuperscript: // textSuperscript#c7fb5e01
-//	case *tg.TextMarked: // textMarked#34b8621
-//	case *tg.TextPhone: // textPhone#1ccb966a
-//	case *tg.TextImage: // textImage#81ccf4f
-//	case *tg.TextAnchor: // textAnchor#35553762
-//	case *tg.TextMath: // textMath#9d2eac97
-//	case *tg.TextCustomEmoji: // textCustomEmoji#a26156c0
-//	case *tg.TextSpoiler: // textSpoiler#4c2a5d62
-//	case *tg.TextMention: // textMention#cd24cf44
-//	case *tg.TextHashtag: // textHashtag#519524ea
-//	case *tg.TextBotCommand: // textBotCommand#2ff29d3
-//	case *tg.TextCashtag: // textCashtag#7b9e1801
-//	case *tg.TextAutoURL: // textAutoUrl#ac6a83aa
-//	case *tg.TextAutoEmail: // textAutoEmail#c556a45d
-//	case *tg.TextAutoPhone: // textAutoPhone#24c26789
-//	case *tg.TextBankCard: // textBankCard#b956812d
-//	case *tg.TextMentionName: // textMentionName#1a9fbfc
-//	case *tg.TextDate: // textDate#a5b45e2b
-//	case *tg.TextDiff: // textDiff#9686cb50
-//	case *tg.TextButton: // textButton#afc79cd6
-//	case *tg.TextTonAddress: // textTonAddress#3cd2a36a
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeRichText(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.TextEmpty: // textEmpty#dc3d824f
+//  case *tg.TextPlain: // textPlain#744694e0
+//  case *tg.TextBold: // textBold#6724abc4
+//  case *tg.TextItalic: // textItalic#d912a59c
+//  case *tg.TextUnderline: // textUnderline#c12622c4
+//  case *tg.TextStrike: // textStrike#9bf8bb95
+//  case *tg.TextFixed: // textFixed#6c3f19b9
+//  case *tg.TextURL: // textUrl#3c2884c1
+//  case *tg.TextEmail: // textEmail#de5a0dd6
+//  case *tg.TextConcat: // textConcat#7e6260d7
+//  case *tg.TextSubscript: // textSubscript#ed6a8504
+//  case *tg.TextSuperscript: // textSuperscript#c7fb5e01
+//  case *tg.TextMarked: // textMarked#34b8621
+//  case *tg.TextPhone: // textPhone#1ccb966a
+//  case *tg.TextImage: // textImage#81ccf4f
+//  case *tg.TextAnchor: // textAnchor#35553762
+//  case *tg.TextMath: // textMath#9d2eac97
+//  case *tg.TextCustomEmoji: // textCustomEmoji#a26156c0
+//  case *tg.TextSpoiler: // textSpoiler#4c2a5d62
+//  case *tg.TextMention: // textMention#cd24cf44
+//  case *tg.TextHashtag: // textHashtag#519524ea
+//  case *tg.TextBotCommand: // textBotCommand#2ff29d3
+//  case *tg.TextCashtag: // textCashtag#7b9e1801
+//  case *tg.TextAutoURL: // textAutoUrl#ac6a83aa
+//  case *tg.TextAutoEmail: // textAutoEmail#c556a45d
+//  case *tg.TextAutoPhone: // textAutoPhone#24c26789
+//  case *tg.TextBankCard: // textBankCard#b956812d
+//  case *tg.TextMentionName: // textMentionName#1a9fbfc
+//  case *tg.TextDate: // textDate#a5b45e2b
+//  case *tg.TextDiff: // textDiff#9686cb50
+//  case *tg.TextButton: // textButton#afc79cd6
+//  case *tg.TextTonAddress: // textTonAddress#3cd2a36a
+//  default: panic(v)
+//  }
 type RichTextClass interface {
 	bin.Encoder
 	bin.Decoder

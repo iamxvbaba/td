@@ -36,9 +36,9 @@ var (
 // upgrading it to a collectible gift »², see here »³ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts
-//  2. https://core.telegram.org/api/gifts#collectible-gifts
-//  3. https://core.telegram.org/api/gifts#collectible-gifts
+//  1) https://core.telegram.org/api/gifts
+//  2) https://core.telegram.org/api/gifts#collectible-gifts
+//  3) https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/constructor/payments.starGiftUpgradePreview for reference.
 type PaymentsStarGiftUpgradePreview struct {

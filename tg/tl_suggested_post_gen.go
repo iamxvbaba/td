@@ -35,7 +35,7 @@ var (
 // Contains info about a suggested post »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/suggested-posts
+//  1) https://core.telegram.org/api/suggested-posts
 //
 // See https://core.telegram.org/constructor/suggestedPost for reference.
 type SuggestedPost struct {

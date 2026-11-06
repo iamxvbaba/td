@@ -36,7 +36,7 @@ var (
 // »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/profile#music
+//  1) https://core.telegram.org/api/profile#music
 //
 // See https://core.telegram.org/method/account.getSavedMusicIds for reference.
 type AccountGetSavedMusicIDsRequest struct {
@@ -173,7 +173,7 @@ func (g *AccountGetSavedMusicIDsRequest) GetHash() (value int64) {
 // »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/profile#music
+//  1) https://core.telegram.org/api/profile#music
 //
 // See https://core.telegram.org/method/account.getSavedMusicIds for reference.
 func (c *Client) AccountGetSavedMusicIDs(ctx context.Context, hash int64) (AccountSavedMusicIDsClass, error) {

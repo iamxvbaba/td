@@ -35,7 +35,7 @@ var (
 // Indicates if the specified global post search »¹ requires payment.
 //
 // Links:
-//  1. https://core.telegram.org/api/search#posts-tab
+//  1) https://core.telegram.org/api/search#posts-tab
 //
 // See https://core.telegram.org/constructor/searchPostsFlood for reference.
 type SearchPostsFlood struct {

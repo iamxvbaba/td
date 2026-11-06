@@ -36,7 +36,7 @@ var (
 // topic, or a direct messages topic¹ (all features ultimately based on message threads).
 //
 // Links:
-//  1. https://core.telegram.org/api/threads
+//  1) https://core.telegram.org/api/threads
 //
 // See https://core.telegram.org/constructor/messageReplies for reference.
 type MessageReplies struct {

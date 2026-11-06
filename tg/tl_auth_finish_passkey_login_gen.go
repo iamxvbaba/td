@@ -38,8 +38,8 @@ var (
 // returned in the passkey assertion, see here »¹ for the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
-//  2. https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
+//  1) https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
+//  2) https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
 //
 // See https://core.telegram.org/method/auth.finishPasskeyLogin for reference.
 type AuthFinishPasskeyLoginRequest struct {
@@ -302,14 +302,13 @@ func (f *AuthFinishPasskeyLoginRequest) GetFromAuthKeyID() (value int64, ok bool
 // returned in the passkey assertion, see here »¹ for the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
-//  2. https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
+//  1) https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
+//  2) https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
 //
 // Possible errors:
-//
-//	500 AUTH_RESTART: Restart the authorization process.
-//	400 CREDENTIAL_INVALID:
-//	500 PASSKEY_AUTH_RESTART:
+//  500 AUTH_RESTART: Restart the authorization process.
+//  400 CREDENTIAL_INVALID:
+//  500 PASSKEY_AUTH_RESTART:
 //
 // See https://core.telegram.org/method/auth.finishPasskeyLogin for reference.
 func (c *Client) AuthFinishPasskeyLogin(ctx context.Context, request *AuthFinishPasskeyLoginRequest) (AuthAuthorizationClass, error) {

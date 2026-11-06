@@ -211,8 +211,7 @@ func (g *MessagesGetForumTopicsByIDRequest) GetTopics() (value []int) {
 // Get forum topics by their ID
 //
 // Possible errors:
-//
-//	400 CHANNEL_INVALID: The provided channel is invalid.
+//  400 CHANNEL_INVALID: The provided channel is invalid.
 //
 // See https://core.telegram.org/method/messages.getForumTopicsByID for reference.
 func (c *Client) MessagesGetForumTopicsByID(ctx context.Context, request *MessagesGetForumTopicsByIDRequest) (*MessagesForumTopics, error) {

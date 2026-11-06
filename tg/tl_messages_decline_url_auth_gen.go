@@ -36,7 +36,7 @@ var (
 // user refused the login request.
 //
 // Links:
-//  1. https://core.telegram.org/api/url-authorization#oauth-authorization
+//  1) https://core.telegram.org/api/url-authorization#oauth-authorization
 //
 // See https://core.telegram.org/method/messages.declineUrlAuth for reference.
 type MessagesDeclineURLAuthRequest struct {
@@ -175,7 +175,7 @@ func (d *MessagesDeclineURLAuthRequest) GetURL() (value string) {
 // user refused the login request.
 //
 // Links:
-//  1. https://core.telegram.org/api/url-authorization#oauth-authorization
+//  1) https://core.telegram.org/api/url-authorization#oauth-authorization
 //
 // See https://core.telegram.org/method/messages.declineUrlAuth for reference.
 func (c *Client) MessagesDeclineURLAuth(ctx context.Context, url string) (bool, error) {

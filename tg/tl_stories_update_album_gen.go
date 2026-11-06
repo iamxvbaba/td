@@ -35,7 +35,7 @@ var (
 // Rename a story albums »¹, or add, delete or reorder stories in it.
 //
 // Links:
-//  1. https://core.telegram.org/api/stories#story-albums
+//  1) https://core.telegram.org/api/stories#story-albums
 //
 // See https://core.telegram.org/method/stories.updateAlbum for reference.
 type StoriesUpdateAlbumRequest struct {
@@ -452,11 +452,10 @@ func (u *StoriesUpdateAlbumRequest) GetOrder() (value []int, ok bool) {
 // Rename a story albums »¹, or add, delete or reorder stories in it.
 //
 // Links:
-//  1. https://core.telegram.org/api/stories#story-albums
+//  1) https://core.telegram.org/api/stories#story-albums
 //
 // Possible errors:
-//
-//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//  400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/stories.updateAlbum for reference.
 func (c *Client) StoriesUpdateAlbum(ctx context.Context, request *StoriesUpdateAlbumRequest) (*StoryAlbum, error) {

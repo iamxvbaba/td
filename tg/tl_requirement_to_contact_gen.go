@@ -137,7 +137,7 @@ func (r *RequirementToContactEmpty) DecodeBare(b *bin.Buffer) error {
 // This user requires us to buy a Premium¹ subscription in order to contact them.
 //
 // Links:
-//  1. https://core.telegram.org/api/premium
+//  1) https://core.telegram.org/api/premium
 //
 // See https://core.telegram.org/constructor/requirementToContactPremium for reference.
 type RequirementToContactPremium struct {
@@ -243,8 +243,8 @@ func (r *RequirementToContactPremium) DecodeBare(b *bin.Buffer) error {
 // message, see here »² for the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/stars
-//  2. https://core.telegram.org/api/paid-messages
+//  1) https://core.telegram.org/api/stars
+//  2) https://core.telegram.org/api/paid-messages
 //
 // See https://core.telegram.org/constructor/requirementToContactPaidMessages for reference.
 type RequirementToContactPaidMessages struct {
@@ -389,22 +389,21 @@ const RequirementToContactClassName = "RequirementToContact"
 // See https://core.telegram.org/type/RequirementToContact for reference.
 //
 // Constructors:
-//   - [RequirementToContactEmpty]
-//   - [RequirementToContactPremium]
-//   - [RequirementToContactPaidMessages]
+//  - [RequirementToContactEmpty]
+//  - [RequirementToContactPremium]
+//  - [RequirementToContactPaidMessages]
 //
 // Example:
-//
-//	g, err := tg.DecodeRequirementToContact(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.RequirementToContactEmpty: // requirementToContactEmpty#50a9839
-//	case *tg.RequirementToContactPremium: // requirementToContactPremium#e581e4e9
-//	case *tg.RequirementToContactPaidMessages: // requirementToContactPaidMessages#b4f67e93
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeRequirementToContact(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.RequirementToContactEmpty: // requirementToContactEmpty#50a9839
+//  case *tg.RequirementToContactPremium: // requirementToContactPremium#e581e4e9
+//  case *tg.RequirementToContactPaidMessages: // requirementToContactPaidMessages#b4f67e93
+//  default: panic(v)
+//  }
 type RequirementToContactClass interface {
 	bin.Encoder
 	bin.Decoder

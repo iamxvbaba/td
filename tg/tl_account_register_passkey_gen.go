@@ -36,7 +36,7 @@ var (
 // the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#creating-a-passkey
+//  1) https://core.telegram.org/api/passkeys#creating-a-passkey
 //
 // See https://core.telegram.org/method/account.registerPasskey for reference.
 type AccountRegisterPasskeyRequest struct {
@@ -170,11 +170,10 @@ func (r *AccountRegisterPasskeyRequest) GetCredential() (value InputPasskeyCrede
 // the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#creating-a-passkey
+//  1) https://core.telegram.org/api/passkeys#creating-a-passkey
 //
 // Possible errors:
-//
-//	400 CREDENTIAL_INVALID:
+//  400 CREDENTIAL_INVALID:
 //
 // See https://core.telegram.org/method/account.registerPasskey for reference.
 func (c *Client) AccountRegisterPasskey(ctx context.Context, credential InputPasskeyCredentialPublicKey) (*Passkey, error) {

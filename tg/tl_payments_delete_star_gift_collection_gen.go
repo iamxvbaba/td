@@ -35,7 +35,7 @@ var (
 // Delete a star gift collection »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#gift-collections
+//  1) https://core.telegram.org/api/gifts#gift-collections
 //
 // See https://core.telegram.org/method/payments.deleteStarGiftCollection for reference.
 type PaymentsDeleteStarGiftCollectionRequest struct {
@@ -200,11 +200,10 @@ func (d *PaymentsDeleteStarGiftCollectionRequest) GetCollectionID() (value int) 
 // Delete a star gift collection »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#gift-collections
+//  1) https://core.telegram.org/api/gifts#gift-collections
 //
 // Possible errors:
-//
-//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//  400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/payments.deleteStarGiftCollection for reference.
 func (c *Client) PaymentsDeleteStarGiftCollection(ctx context.Context, request *PaymentsDeleteStarGiftCollectionRequest) (bool, error) {

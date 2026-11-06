@@ -35,7 +35,7 @@ var (
 // Convert a collectible gift »¹ to an NFT on the TON blockchain.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts
+//  1) https://core.telegram.org/api/gifts
 //
 // See https://core.telegram.org/method/payments.getStarGiftWithdrawalUrl for reference.
 type PaymentsGetStarGiftWithdrawalURLRequest struct {
@@ -218,13 +218,12 @@ func (g *PaymentsGetStarGiftWithdrawalURLRequest) GetTmpPassword() (value []byte
 // Convert a collectible gift »¹ to an NFT on the TON blockchain.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts
+//  1) https://core.telegram.org/api/gifts
 //
 // Possible errors:
-//
-//	400 PASSWORD_HASH_INVALID: The provided password hash is invalid.
-//	400 PASSWORD_TOO_FRESH_%d: The password was modified less than 24 hours ago, try again in %d seconds.
-//	400 SESSION_TOO_FRESH_%d: This session was created less than 24 hours ago, try again in %d seconds.
+//  400 PASSWORD_HASH_INVALID: The provided password hash is invalid.
+//  400 PASSWORD_TOO_FRESH_%d: The password was modified less than 24 hours ago, try again in %d seconds.
+//  400 SESSION_TOO_FRESH_%d: This session was created less than 24 hours ago, try again in %d seconds.
 //
 // See https://core.telegram.org/method/payments.getStarGiftWithdrawalUrl for reference.
 func (c *Client) PaymentsGetStarGiftWithdrawalURL(ctx context.Context, request *PaymentsGetStarGiftWithdrawalURLRequest) (*PaymentsStarGiftWithdrawalURL, error) {

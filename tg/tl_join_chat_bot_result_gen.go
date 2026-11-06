@@ -476,24 +476,23 @@ const JoinChatBotResultClassName = "JoinChatBotResult"
 // See https://core.telegram.org/type/JoinChatBotResult for reference.
 //
 // Constructors:
-//   - [JoinChatBotResultApproved]
-//   - [JoinChatBotResultDeclined]
-//   - [JoinChatBotResultQueued]
-//   - [JoinChatBotResultWebView]
+//  - [JoinChatBotResultApproved]
+//  - [JoinChatBotResultDeclined]
+//  - [JoinChatBotResultQueued]
+//  - [JoinChatBotResultWebView]
 //
 // Example:
-//
-//	g, err := tg.DecodeJoinChatBotResult(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.JoinChatBotResultApproved: // joinChatBotResultApproved#ae152a69
-//	case *tg.JoinChatBotResultDeclined: // joinChatBotResultDeclined#efa0194
-//	case *tg.JoinChatBotResultQueued: // joinChatBotResultQueued#98a3a840
-//	case *tg.JoinChatBotResultWebView: // joinChatBotResultWebView#d6e3b813
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeJoinChatBotResult(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.JoinChatBotResultApproved: // joinChatBotResultApproved#ae152a69
+//  case *tg.JoinChatBotResultDeclined: // joinChatBotResultDeclined#efa0194
+//  case *tg.JoinChatBotResultQueued: // joinChatBotResultQueued#98a3a840
+//  case *tg.JoinChatBotResultWebView: // joinChatBotResultWebView#d6e3b813
+//  default: panic(v)
+//  }
 type JoinChatBotResultClass interface {
 	bin.Encoder
 	bin.Decoder

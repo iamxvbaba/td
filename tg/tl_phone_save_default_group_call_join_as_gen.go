@@ -35,7 +35,7 @@ var (
 // Set the default peer that will be used to join a group call¹ in a specific dialog.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#creating-joining-a-group-call-on-behalf-of-owned-channels
+//  1) https://core.telegram.org/api/group-calls#creating-joining-a-group-call-on-behalf-of-owned-channels
 //
 // See https://core.telegram.org/method/phone.saveDefaultGroupCallJoinAs for reference.
 type PhoneSaveDefaultGroupCallJoinAsRequest struct {
@@ -206,12 +206,11 @@ func (s *PhoneSaveDefaultGroupCallJoinAsRequest) GetJoinAs() (value InputPeerCla
 // Set the default peer that will be used to join a group call¹ in a specific dialog.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#creating-joining-a-group-call-on-behalf-of-owned-channels
+//  1) https://core.telegram.org/api/group-calls#creating-joining-a-group-call-on-behalf-of-owned-channels
 //
 // Possible errors:
-//
-//	400 JOIN_AS_PEER_INVALID: The specified peer cannot be used to join a group call.
-//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//  400 JOIN_AS_PEER_INVALID: The specified peer cannot be used to join a group call.
+//  400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/phone.saveDefaultGroupCallJoinAs for reference.
 func (c *Client) PhoneSaveDefaultGroupCallJoinAs(ctx context.Context, request *PhoneSaveDefaultGroupCallJoinAsRequest) (bool, error) {

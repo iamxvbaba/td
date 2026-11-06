@@ -35,7 +35,7 @@ var (
 // Create a star gift collection »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#gift-collections
+//  1) https://core.telegram.org/api/gifts#gift-collections
 //
 // See https://core.telegram.org/method/payments.createStarGiftCollection for reference.
 type PaymentsCreateStarGiftCollectionRequest struct {
@@ -250,11 +250,10 @@ func (c *PaymentsCreateStarGiftCollectionRequest) MapStargift() (value InputSave
 // Create a star gift collection »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#gift-collections
+//  1) https://core.telegram.org/api/gifts#gift-collections
 //
 // Possible errors:
-//
-//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//  400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/payments.createStarGiftCollection for reference.
 func (c *Client) PaymentsCreateStarGiftCollection(ctx context.Context, request *PaymentsCreateStarGiftCollectionRequest) (*StarGiftCollection, error) {

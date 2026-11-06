@@ -1980,40 +1980,39 @@ const InlineButtonTypeClassName = "InlineButtonType"
 // See https://core.telegram.org/type/InlineButtonType for reference.
 //
 // Constructors:
-//   - [InlineButtonTypeURL]
-//   - [InlineButtonTypeURLAuth]
-//   - [InputInlineButtonTypeURLAuth]
-//   - [InlineButtonTypeWebView]
-//   - [InlineButtonTypeCallback]
-//   - [InlineButtonTypeGame]
-//   - [InlineButtonTypeBuy]
-//   - [InlineButtonTypeSwitchInline]
-//   - [InlineButtonTypeUserProfile]
-//   - [InputInlineButtonTypeUserProfile]
-//   - [InlineButtonTypeCopy]
-//   - [InlineButtonTypeDisabled]
+//  - [InlineButtonTypeURL]
+//  - [InlineButtonTypeURLAuth]
+//  - [InputInlineButtonTypeURLAuth]
+//  - [InlineButtonTypeWebView]
+//  - [InlineButtonTypeCallback]
+//  - [InlineButtonTypeGame]
+//  - [InlineButtonTypeBuy]
+//  - [InlineButtonTypeSwitchInline]
+//  - [InlineButtonTypeUserProfile]
+//  - [InputInlineButtonTypeUserProfile]
+//  - [InlineButtonTypeCopy]
+//  - [InlineButtonTypeDisabled]
 //
 // Example:
-//
-//	g, err := tg.DecodeInlineButtonType(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.InlineButtonTypeURL: // inlineButtonTypeUrl#eca4f8d4
-//	case *tg.InlineButtonTypeURLAuth: // inlineButtonTypeUrlAuth#bfd02da2
-//	case *tg.InputInlineButtonTypeURLAuth: // inputInlineButtonTypeUrlAuth#9961bcb4
-//	case *tg.InlineButtonTypeWebView: // inlineButtonTypeWebView#3bcab5b4
-//	case *tg.InlineButtonTypeCallback: // inlineButtonTypeCallback#2955bc38
-//	case *tg.InlineButtonTypeGame: // inlineButtonTypeGame#5cd3709d
-//	case *tg.InlineButtonTypeBuy: // inlineButtonTypeBuy#48bad7a5
-//	case *tg.InlineButtonTypeSwitchInline: // inlineButtonTypeSwitchInline#93773ff5
-//	case *tg.InlineButtonTypeUserProfile: // inlineButtonTypeUserProfile#3fa33fcf
-//	case *tg.InputInlineButtonTypeUserProfile: // inputInlineButtonTypeUserProfile#53f3ce5a
-//	case *tg.InlineButtonTypeCopy: // inlineButtonTypeCopy#b41d3272
-//	case *tg.InlineButtonTypeDisabled: // inlineButtonTypeDisabled#a438619d
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeInlineButtonType(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.InlineButtonTypeURL: // inlineButtonTypeUrl#eca4f8d4
+//  case *tg.InlineButtonTypeURLAuth: // inlineButtonTypeUrlAuth#bfd02da2
+//  case *tg.InputInlineButtonTypeURLAuth: // inputInlineButtonTypeUrlAuth#9961bcb4
+//  case *tg.InlineButtonTypeWebView: // inlineButtonTypeWebView#3bcab5b4
+//  case *tg.InlineButtonTypeCallback: // inlineButtonTypeCallback#2955bc38
+//  case *tg.InlineButtonTypeGame: // inlineButtonTypeGame#5cd3709d
+//  case *tg.InlineButtonTypeBuy: // inlineButtonTypeBuy#48bad7a5
+//  case *tg.InlineButtonTypeSwitchInline: // inlineButtonTypeSwitchInline#93773ff5
+//  case *tg.InlineButtonTypeUserProfile: // inlineButtonTypeUserProfile#3fa33fcf
+//  case *tg.InputInlineButtonTypeUserProfile: // inputInlineButtonTypeUserProfile#53f3ce5a
+//  case *tg.InlineButtonTypeCopy: // inlineButtonTypeCopy#b41d3272
+//  case *tg.InlineButtonTypeDisabled: // inlineButtonTypeDisabled#a438619d
+//  default: panic(v)
+//  }
 type InlineButtonTypeClass interface {
 	bin.Encoder
 	bin.Decoder

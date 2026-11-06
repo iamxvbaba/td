@@ -36,7 +36,7 @@ var (
 // more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/config#suggestions
+//  1) https://core.telegram.org/api/config#suggestions
 //
 // See https://core.telegram.org/method/help.getPromoData for reference.
 type HelpGetPromoDataRequest struct {
@@ -137,7 +137,7 @@ func (g *HelpGetPromoDataRequest) DecodeBare(b *bin.Buffer) error {
 // more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/config#suggestions
+//  1) https://core.telegram.org/api/config#suggestions
 //
 // See https://core.telegram.org/method/help.getPromoData for reference.
 func (c *Client) HelpGetPromoData(ctx context.Context) (HelpPromoDataClass, error) {

@@ -39,10 +39,10 @@ var (
 // settings of the associated monoforum, instead.
 //
 // Links:
-//  1. https://core.telegram.org/api/paid-messages
-//  2. https://core.telegram.org/api/channel
-//  3. https://core.telegram.org/api/monoforum
-//  4. https://core.telegram.org/api/monoforum
+//  1) https://core.telegram.org/api/paid-messages
+//  2) https://core.telegram.org/api/channel
+//  3) https://core.telegram.org/api/monoforum
+//  4) https://core.telegram.org/api/monoforum
 //
 // See https://core.telegram.org/method/channels.updatePaidMessagesPrice for reference.
 type ChannelsUpdatePaidMessagesPriceRequest struct {
@@ -284,17 +284,16 @@ func (u *ChannelsUpdatePaidMessagesPriceRequest) GetChannelAsNotEmpty() (NotEmpt
 // settings of the associated monoforum, instead.
 //
 // Links:
-//  1. https://core.telegram.org/api/paid-messages
-//  2. https://core.telegram.org/api/channel
-//  3. https://core.telegram.org/api/monoforum
-//  4. https://core.telegram.org/api/monoforum
+//  1) https://core.telegram.org/api/paid-messages
+//  2) https://core.telegram.org/api/channel
+//  3) https://core.telegram.org/api/monoforum
+//  4) https://core.telegram.org/api/monoforum
 //
 // Possible errors:
-//
-//	400 CHANNEL_INVALID: The provided channel is invalid.
-//	400 CHANNEL_MONOFORUM_UNSUPPORTED: Monoforums do not support this feature.
-//	400 CHAT_NOT_MODIFIED: No changes were made to chat information because the new information you passed is identical to the current information.
-//	400 STARS_AMOUNT_INVALID: The specified amount in stars is invalid.
+//  400 CHANNEL_INVALID: The provided channel is invalid.
+//  400 CHANNEL_MONOFORUM_UNSUPPORTED: Monoforums do not support this feature.
+//  400 CHAT_NOT_MODIFIED: No changes were made to chat information because the new information you passed is identical to the current information.
+//  400 STARS_AMOUNT_INVALID: The specified amount in stars is invalid.
 //
 // See https://core.telegram.org/method/channels.updatePaidMessagesPrice for reference.
 func (c *Client) ChannelsUpdatePaidMessagesPrice(ctx context.Context, request *ChannelsUpdatePaidMessagesPriceRequest) (UpdatesClass, error) {

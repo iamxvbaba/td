@@ -367,20 +367,19 @@ const InputWalletReplacementClassName = "InputWalletReplacement"
 // See https://core.telegram.org/type/InputWalletReplacement for reference.
 //
 // Constructors:
-//   - [InputWalletNew]
-//   - [InputWalletImported]
+//  - [InputWalletNew]
+//  - [InputWalletImported]
 //
 // Example:
-//
-//	g, err := tg.DecodeInputWalletReplacement(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.InputWalletNew: // inputWalletNew#63a440dc
-//	case *tg.InputWalletImported: // inputWalletImported#66a66a3b
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeInputWalletReplacement(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.InputWalletNew: // inputWalletNew#63a440dc
+//  case *tg.InputWalletImported: // inputWalletImported#66a66a3b
+//  default: panic(v)
+//  }
 type InputWalletReplacementClass interface {
 	bin.Encoder
 	bin.Decoder

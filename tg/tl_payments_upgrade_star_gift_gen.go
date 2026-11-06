@@ -37,9 +37,9 @@ var (
 // different flow to use in case the upgrade was not paid by the gift sender).
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts
-//  2. https://core.telegram.org/api/gifts#collectible-gifts
-//  3. https://core.telegram.org/api/gifts#upgrade-a-gift-to-a-collectible-gift
+//  1) https://core.telegram.org/api/gifts
+//  2) https://core.telegram.org/api/gifts#collectible-gifts
+//  3) https://core.telegram.org/api/gifts#upgrade-a-gift-to-a-collectible-gift
 //
 // See https://core.telegram.org/method/payments.upgradeStarGift for reference.
 type PaymentsUpgradeStarGiftRequest struct {
@@ -239,19 +239,18 @@ func (u *PaymentsUpgradeStarGiftRequest) GetStargift() (value InputSavedStarGift
 // different flow to use in case the upgrade was not paid by the gift sender).
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts
-//  2. https://core.telegram.org/api/gifts#collectible-gifts
-//  3. https://core.telegram.org/api/gifts#upgrade-a-gift-to-a-collectible-gift
+//  1) https://core.telegram.org/api/gifts
+//  2) https://core.telegram.org/api/gifts#collectible-gifts
+//  3) https://core.telegram.org/api/gifts#upgrade-a-gift-to-a-collectible-gift
 //
 // Possible errors:
-//
-//	400 BUSINESS_CONNECTION_INVALID: The connection_id passed to the wrapping invokeWithBusinessConnection call is invalid.
-//	400 MESSAGE_ID_INVALID: The provided message id is invalid.
-//	400 PAYMENT_REQUIRED: Payment is required for this action, see here » for more info.
-//	400 SAVED_ID_EMPTY: The passed inputSavedStarGiftChat.saved_id is empty.
-//	400 STARGIFT_ALREADY_CONVERTED: The specified star gift was already converted to Stars.
-//	400 STARGIFT_ALREADY_UPGRADED: The specified gift was already upgraded to a collectible gift.
-//	400 STARGIFT_UPGRADE_UNAVAILABLE: A received gift can only be upgraded to a collectible gift if the messageActionStarGift/savedStarGift.can_upgrade flag is set.
+//  400 BUSINESS_CONNECTION_INVALID: The connection_id passed to the wrapping invokeWithBusinessConnection call is invalid.
+//  400 MESSAGE_ID_INVALID: The provided message id is invalid.
+//  400 PAYMENT_REQUIRED: Payment is required for this action, see here » for more info.
+//  400 SAVED_ID_EMPTY: The passed inputSavedStarGiftChat.saved_id is empty.
+//  400 STARGIFT_ALREADY_CONVERTED: The specified star gift was already converted to Stars.
+//  400 STARGIFT_ALREADY_UPGRADED: The specified gift was already upgraded to a collectible gift.
+//  400 STARGIFT_UPGRADE_UNAVAILABLE: A received gift can only be upgraded to a collectible gift if the messageActionStarGift/savedStarGift.can_upgrade flag is set.
 //
 // See https://core.telegram.org/method/payments.upgradeStarGift for reference.
 func (c *Client) PaymentsUpgradeStarGift(ctx context.Context, request *PaymentsUpgradeStarGiftRequest) (UpdatesClass, error) {

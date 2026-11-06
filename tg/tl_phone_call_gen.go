@@ -170,7 +170,7 @@ func (p *PhoneCallEmpty) GetID() (value int64) {
 // Incoming phone call, see here »¹ for more info on the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/calls
+//  1) https://core.telegram.org/api/calls
 //
 // See https://core.telegram.org/constructor/phoneCallWaiting for reference.
 type PhoneCallWaiting struct {
@@ -547,7 +547,7 @@ func (p *PhoneCallWaiting) GetReceiveDate() (value int, ok bool) {
 // Requested phone call, see here »¹ for more info on the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/calls
+//  1) https://core.telegram.org/api/calls
 //
 // See https://core.telegram.org/constructor/phoneCallRequested for reference.
 type PhoneCallRequested struct {
@@ -906,7 +906,7 @@ func (p *PhoneCallRequested) GetProtocol() (value PhoneCallProtocol) {
 // An accepted phone call, see here »¹ for more info on the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/calls
+//  1) https://core.telegram.org/api/calls
 //
 // See https://core.telegram.org/constructor/phoneCallAccepted for reference.
 type PhoneCallAccepted struct {
@@ -1265,7 +1265,7 @@ func (p *PhoneCallAccepted) GetProtocol() (value PhoneCallProtocol) {
 // Phone call, see here »¹ for more info on the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/calls
+//  1) https://core.telegram.org/api/calls
 //
 // See https://core.telegram.org/constructor/phoneCall for reference.
 type PhoneCall struct {
@@ -1852,7 +1852,7 @@ func (p *PhoneCall) MapConnections() (value PhoneConnectionClassArray) {
 // Indicates a discarded phone call, see here »¹ for more info on the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/calls
+//  1) https://core.telegram.org/api/calls
 //
 // See https://core.telegram.org/constructor/phoneCallDiscarded for reference.
 type PhoneCallDiscarded struct {
@@ -2227,28 +2227,27 @@ const PhoneCallClassName = "PhoneCall"
 // See https://core.telegram.org/type/PhoneCall for reference.
 //
 // Constructors:
-//   - [PhoneCallEmpty]
-//   - [PhoneCallWaiting]
-//   - [PhoneCallRequested]
-//   - [PhoneCallAccepted]
-//   - [PhoneCall]
-//   - [PhoneCallDiscarded]
+//  - [PhoneCallEmpty]
+//  - [PhoneCallWaiting]
+//  - [PhoneCallRequested]
+//  - [PhoneCallAccepted]
+//  - [PhoneCall]
+//  - [PhoneCallDiscarded]
 //
 // Example:
-//
-//	g, err := tg.DecodePhoneCall(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.PhoneCallEmpty: // phoneCallEmpty#5366c915
-//	case *tg.PhoneCallWaiting: // phoneCallWaiting#c5226f17
-//	case *tg.PhoneCallRequested: // phoneCallRequested#14b0ed0c
-//	case *tg.PhoneCallAccepted: // phoneCallAccepted#3660c311
-//	case *tg.PhoneCall: // phoneCall#30535af5
-//	case *tg.PhoneCallDiscarded: // phoneCallDiscarded#50ca4de1
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodePhoneCall(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.PhoneCallEmpty: // phoneCallEmpty#5366c915
+//  case *tg.PhoneCallWaiting: // phoneCallWaiting#c5226f17
+//  case *tg.PhoneCallRequested: // phoneCallRequested#14b0ed0c
+//  case *tg.PhoneCallAccepted: // phoneCallAccepted#3660c311
+//  case *tg.PhoneCall: // phoneCall#30535af5
+//  case *tg.PhoneCallDiscarded: // phoneCallDiscarded#50ca4de1
+//  default: panic(v)
+//  }
 type PhoneCallClass interface {
 	bin.Encoder
 	bin.Decoder

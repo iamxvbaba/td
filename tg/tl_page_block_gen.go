@@ -7717,98 +7717,97 @@ const PageBlockClassName = "PageBlock"
 // See https://core.telegram.org/type/PageBlock for reference.
 //
 // Constructors:
-//   - [PageBlockUnsupported]
-//   - [PageBlockTitle]
-//   - [PageBlockSubtitle]
-//   - [PageBlockAuthorDate]
-//   - [PageBlockHeader]
-//   - [PageBlockSubheader]
-//   - [PageBlockParagraph]
-//   - [PageBlockPreformatted]
-//   - [PageBlockFooter]
-//   - [PageBlockDivider]
-//   - [PageBlockAnchor]
-//   - [PageBlockList]
-//   - [PageBlockBlockquote]
-//   - [PageBlockPullquote]
-//   - [PageBlockPhoto]
-//   - [PageBlockVideo]
-//   - [PageBlockCover]
-//   - [PageBlockEmbed]
-//   - [PageBlockEmbedPost]
-//   - [PageBlockCollage]
-//   - [PageBlockSlideshow]
-//   - [PageBlockChannel]
-//   - [PageBlockAudio]
-//   - [PageBlockKicker]
-//   - [PageBlockTable]
-//   - [PageBlockOrderedList]
-//   - [PageBlockDetails]
-//   - [PageBlockRelatedArticles]
-//   - [PageBlockMap]
-//   - [PageBlockHeading1]
-//   - [PageBlockHeading2]
-//   - [PageBlockHeading3]
-//   - [PageBlockHeading4]
-//   - [PageBlockHeading5]
-//   - [PageBlockHeading6]
-//   - [PageBlockMath]
-//   - [PageBlockThinking]
-//   - [InputPageBlockMap]
-//   - [PageBlockBlockquoteBlocks]
-//   - [PageBlockButtonRow]
-//   - [PageBlockDocument]
+//  - [PageBlockUnsupported]
+//  - [PageBlockTitle]
+//  - [PageBlockSubtitle]
+//  - [PageBlockAuthorDate]
+//  - [PageBlockHeader]
+//  - [PageBlockSubheader]
+//  - [PageBlockParagraph]
+//  - [PageBlockPreformatted]
+//  - [PageBlockFooter]
+//  - [PageBlockDivider]
+//  - [PageBlockAnchor]
+//  - [PageBlockList]
+//  - [PageBlockBlockquote]
+//  - [PageBlockPullquote]
+//  - [PageBlockPhoto]
+//  - [PageBlockVideo]
+//  - [PageBlockCover]
+//  - [PageBlockEmbed]
+//  - [PageBlockEmbedPost]
+//  - [PageBlockCollage]
+//  - [PageBlockSlideshow]
+//  - [PageBlockChannel]
+//  - [PageBlockAudio]
+//  - [PageBlockKicker]
+//  - [PageBlockTable]
+//  - [PageBlockOrderedList]
+//  - [PageBlockDetails]
+//  - [PageBlockRelatedArticles]
+//  - [PageBlockMap]
+//  - [PageBlockHeading1]
+//  - [PageBlockHeading2]
+//  - [PageBlockHeading3]
+//  - [PageBlockHeading4]
+//  - [PageBlockHeading5]
+//  - [PageBlockHeading6]
+//  - [PageBlockMath]
+//  - [PageBlockThinking]
+//  - [InputPageBlockMap]
+//  - [PageBlockBlockquoteBlocks]
+//  - [PageBlockButtonRow]
+//  - [PageBlockDocument]
 //
 // Example:
-//
-//	g, err := tg.DecodePageBlock(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.PageBlockUnsupported: // pageBlockUnsupported#13567e8a
-//	case *tg.PageBlockTitle: // pageBlockTitle#70abc3fd
-//	case *tg.PageBlockSubtitle: // pageBlockSubtitle#8ffa9a1f
-//	case *tg.PageBlockAuthorDate: // pageBlockAuthorDate#baafe5e0
-//	case *tg.PageBlockHeader: // pageBlockHeader#bfd064ec
-//	case *tg.PageBlockSubheader: // pageBlockSubheader#f12bb6e1
-//	case *tg.PageBlockParagraph: // pageBlockParagraph#467a0766
-//	case *tg.PageBlockPreformatted: // pageBlockPreformatted#c070d93e
-//	case *tg.PageBlockFooter: // pageBlockFooter#48870999
-//	case *tg.PageBlockDivider: // pageBlockDivider#db20b188
-//	case *tg.PageBlockAnchor: // pageBlockAnchor#ce0d37b0
-//	case *tg.PageBlockList: // pageBlockList#e4e88011
-//	case *tg.PageBlockBlockquote: // pageBlockBlockquote#66d1670b
-//	case *tg.PageBlockPullquote: // pageBlockPullquote#4f4456d3
-//	case *tg.PageBlockPhoto: // pageBlockPhoto#1759c560
-//	case *tg.PageBlockVideo: // pageBlockVideo#7c8fe7b6
-//	case *tg.PageBlockCover: // pageBlockCover#39f23300
-//	case *tg.PageBlockEmbed: // pageBlockEmbed#a8718dc5
-//	case *tg.PageBlockEmbedPost: // pageBlockEmbedPost#f259a80b
-//	case *tg.PageBlockCollage: // pageBlockCollage#65a0fa4d
-//	case *tg.PageBlockSlideshow: // pageBlockSlideshow#31f9590
-//	case *tg.PageBlockChannel: // pageBlockChannel#ef1751b5
-//	case *tg.PageBlockAudio: // pageBlockAudio#804361ea
-//	case *tg.PageBlockKicker: // pageBlockKicker#1e148390
-//	case *tg.PageBlockTable: // pageBlockTable#bf4dea82
-//	case *tg.PageBlockOrderedList: // pageBlockOrderedList#1fd6f6c1
-//	case *tg.PageBlockDetails: // pageBlockDetails#76768bed
-//	case *tg.PageBlockRelatedArticles: // pageBlockRelatedArticles#16115a96
-//	case *tg.PageBlockMap: // pageBlockMap#a44f3ef6
-//	case *tg.PageBlockHeading1: // pageBlockHeading1#baff072f
-//	case *tg.PageBlockHeading2: // pageBlockHeading2#96b2aec
-//	case *tg.PageBlockHeading3: // pageBlockHeading3#67e731ad
-//	case *tg.PageBlockHeading4: // pageBlockHeading4#b532772b
-//	case *tg.PageBlockHeading5: // pageBlockHeading5#dbbe6c6a
-//	case *tg.PageBlockHeading6: // pageBlockHeading6#682a41a9
-//	case *tg.PageBlockMath: // pageBlockMath#59080c20
-//	case *tg.PageBlockThinking: // pageBlockThinking#3c29a3e2
-//	case *tg.InputPageBlockMap: // inputPageBlockMap#574b617f
-//	case *tg.PageBlockBlockquoteBlocks: // pageBlockBlockquoteBlocks#e6e47c4
-//	case *tg.PageBlockButtonRow: // pageBlockButtonRow#6d640318
-//	case *tg.PageBlockDocument: // pageBlockDocument#38fa3ba3
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodePageBlock(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.PageBlockUnsupported: // pageBlockUnsupported#13567e8a
+//  case *tg.PageBlockTitle: // pageBlockTitle#70abc3fd
+//  case *tg.PageBlockSubtitle: // pageBlockSubtitle#8ffa9a1f
+//  case *tg.PageBlockAuthorDate: // pageBlockAuthorDate#baafe5e0
+//  case *tg.PageBlockHeader: // pageBlockHeader#bfd064ec
+//  case *tg.PageBlockSubheader: // pageBlockSubheader#f12bb6e1
+//  case *tg.PageBlockParagraph: // pageBlockParagraph#467a0766
+//  case *tg.PageBlockPreformatted: // pageBlockPreformatted#c070d93e
+//  case *tg.PageBlockFooter: // pageBlockFooter#48870999
+//  case *tg.PageBlockDivider: // pageBlockDivider#db20b188
+//  case *tg.PageBlockAnchor: // pageBlockAnchor#ce0d37b0
+//  case *tg.PageBlockList: // pageBlockList#e4e88011
+//  case *tg.PageBlockBlockquote: // pageBlockBlockquote#66d1670b
+//  case *tg.PageBlockPullquote: // pageBlockPullquote#4f4456d3
+//  case *tg.PageBlockPhoto: // pageBlockPhoto#1759c560
+//  case *tg.PageBlockVideo: // pageBlockVideo#7c8fe7b6
+//  case *tg.PageBlockCover: // pageBlockCover#39f23300
+//  case *tg.PageBlockEmbed: // pageBlockEmbed#a8718dc5
+//  case *tg.PageBlockEmbedPost: // pageBlockEmbedPost#f259a80b
+//  case *tg.PageBlockCollage: // pageBlockCollage#65a0fa4d
+//  case *tg.PageBlockSlideshow: // pageBlockSlideshow#31f9590
+//  case *tg.PageBlockChannel: // pageBlockChannel#ef1751b5
+//  case *tg.PageBlockAudio: // pageBlockAudio#804361ea
+//  case *tg.PageBlockKicker: // pageBlockKicker#1e148390
+//  case *tg.PageBlockTable: // pageBlockTable#bf4dea82
+//  case *tg.PageBlockOrderedList: // pageBlockOrderedList#1fd6f6c1
+//  case *tg.PageBlockDetails: // pageBlockDetails#76768bed
+//  case *tg.PageBlockRelatedArticles: // pageBlockRelatedArticles#16115a96
+//  case *tg.PageBlockMap: // pageBlockMap#a44f3ef6
+//  case *tg.PageBlockHeading1: // pageBlockHeading1#baff072f
+//  case *tg.PageBlockHeading2: // pageBlockHeading2#96b2aec
+//  case *tg.PageBlockHeading3: // pageBlockHeading3#67e731ad
+//  case *tg.PageBlockHeading4: // pageBlockHeading4#b532772b
+//  case *tg.PageBlockHeading5: // pageBlockHeading5#dbbe6c6a
+//  case *tg.PageBlockHeading6: // pageBlockHeading6#682a41a9
+//  case *tg.PageBlockMath: // pageBlockMath#59080c20
+//  case *tg.PageBlockThinking: // pageBlockThinking#3c29a3e2
+//  case *tg.InputPageBlockMap: // inputPageBlockMap#574b617f
+//  case *tg.PageBlockBlockquoteBlocks: // pageBlockBlockquoteBlocks#e6e47c4
+//  case *tg.PageBlockButtonRow: // pageBlockButtonRow#6d640318
+//  case *tg.PageBlockDocument: // pageBlockDocument#38fa3ba3
+//  default: panic(v)
+//  }
 type PageBlockClass interface {
 	bin.Encoder
 	bin.Decoder

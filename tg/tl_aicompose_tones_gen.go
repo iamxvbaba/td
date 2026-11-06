@@ -374,20 +374,19 @@ const AicomposeTonesClassName = "aicompose.Tones"
 // See https://core.telegram.org/type/aicompose.Tones for reference.
 //
 // Constructors:
-//   - [AicomposeTonesNotModified]
-//   - [AicomposeTones]
+//  - [AicomposeTonesNotModified]
+//  - [AicomposeTones]
 //
 // Example:
-//
-//	g, err := tg.DecodeAicomposeTones(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.AicomposeTonesNotModified: // aicompose.tonesNotModified#c1f46103
-//	case *tg.AicomposeTones: // aicompose.tones#6c9d0efe
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeAicomposeTones(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.AicomposeTonesNotModified: // aicompose.tonesNotModified#c1f46103
+//  case *tg.AicomposeTones: // aicompose.tones#6c9d0efe
+//  default: panic(v)
+//  }
 type AicomposeTonesClass interface {
 	bin.Encoder
 	bin.Decoder

@@ -35,7 +35,7 @@ var (
 // Disallow the reception of specific gift¹ types.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts
+//  1) https://core.telegram.org/api/gifts
 //
 // See https://core.telegram.org/constructor/disallowedGiftsSettings for reference.
 type DisallowedGiftsSettings struct {

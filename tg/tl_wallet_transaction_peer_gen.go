@@ -1181,28 +1181,27 @@ const WalletTransactionPeerClassName = "WalletTransactionPeer"
 // See https://core.telegram.org/type/WalletTransactionPeer for reference.
 //
 // Constructors:
-//   - [WalletTransactionPeerUser]
-//   - [WalletTransactionPeerAddress]
-//   - [WalletTransactionPeerOnramp]
-//   - [WalletTransactionPeerUnsupported]
-//   - [WalletTransactionPeerChannel]
-//   - [WalletTransactionPeerTelegramGift]
+//  - [WalletTransactionPeerUser]
+//  - [WalletTransactionPeerAddress]
+//  - [WalletTransactionPeerOnramp]
+//  - [WalletTransactionPeerUnsupported]
+//  - [WalletTransactionPeerChannel]
+//  - [WalletTransactionPeerTelegramGift]
 //
 // Example:
-//
-//	g, err := tg.DecodeWalletTransactionPeer(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.WalletTransactionPeerUser: // walletTransactionPeerUser#d4ea706d
-//	case *tg.WalletTransactionPeerAddress: // walletTransactionPeerAddress#62cc1bc
-//	case *tg.WalletTransactionPeerOnramp: // walletTransactionPeerOnramp#e595186e
-//	case *tg.WalletTransactionPeerUnsupported: // walletTransactionPeerUnsupported#728bed5a
-//	case *tg.WalletTransactionPeerChannel: // walletTransactionPeerChannel#54e70c31
-//	case *tg.WalletTransactionPeerTelegramGift: // walletTransactionPeerTelegramGift#f4729499
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeWalletTransactionPeer(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.WalletTransactionPeerUser: // walletTransactionPeerUser#d4ea706d
+//  case *tg.WalletTransactionPeerAddress: // walletTransactionPeerAddress#62cc1bc
+//  case *tg.WalletTransactionPeerOnramp: // walletTransactionPeerOnramp#e595186e
+//  case *tg.WalletTransactionPeerUnsupported: // walletTransactionPeerUnsupported#728bed5a
+//  case *tg.WalletTransactionPeerChannel: // walletTransactionPeerChannel#54e70c31
+//  case *tg.WalletTransactionPeerTelegramGift: // walletTransactionPeerTelegramGift#f4729499
+//  default: panic(v)
+//  }
 type WalletTransactionPeerClass interface {
 	bin.Encoder
 	bin.Decoder

@@ -35,7 +35,7 @@ var (
 // Info about the current verifier bot »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/bots/verification
+//  1) https://core.telegram.org/api/bots/verification
 //
 // See https://core.telegram.org/constructor/botVerifierSettings for reference.
 type BotVerifierSettings struct {

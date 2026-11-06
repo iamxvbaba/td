@@ -37,8 +37,8 @@ var (
 // stars_paid_message_commission_permille² divided by 1000.
 //
 // Links:
-//  1. https://core.telegram.org/api/paid-messages
-//  2. https://core.telegram.org/api/config#stars-paid-message-commission-permille
+//  1) https://core.telegram.org/api/paid-messages
+//  2) https://core.telegram.org/api/config#stars-paid-message-commission-permille
 //
 // See https://core.telegram.org/method/account.getPaidMessagesRevenue for reference.
 type AccountGetPaidMessagesRevenueRequest struct {
@@ -256,13 +256,12 @@ func (g *AccountGetPaidMessagesRevenueRequest) GetUserID() (value InputUserClass
 // stars_paid_message_commission_permille² divided by 1000.
 //
 // Links:
-//  1. https://core.telegram.org/api/paid-messages
-//  2. https://core.telegram.org/api/config#stars-paid-message-commission-permille
+//  1) https://core.telegram.org/api/paid-messages
+//  2) https://core.telegram.org/api/config#stars-paid-message-commission-permille
 //
 // Possible errors:
-//
-//	400 PARENT_PEER_INVALID: The specified parent_peer is invalid.
-//	400 USER_ID_INVALID: The provided user ID is invalid.
+//  400 PARENT_PEER_INVALID: The specified parent_peer is invalid.
+//  400 USER_ID_INVALID: The provided user ID is invalid.
 //
 // See https://core.telegram.org/method/account.getPaidMessagesRevenue for reference.
 func (c *Client) AccountGetPaidMessagesRevenue(ctx context.Context, request *AccountGetPaidMessagesRevenueRequest) (*AccountPaidMessagesRevenue, error) {

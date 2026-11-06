@@ -56,7 +56,7 @@ func TestRealLayerPolicy(t *testing.T) {
 	if unresolved := resolved.LayerConversionPlan().Report.Unresolved(); len(unresolved) != 0 {
 		t.Fatalf("real policy leaves %d unresolved obligations; first=%+v", len(unresolved), unresolved[0])
 	}
-	if got, want := len(document.Entries), 249; got != want {
+	if got, want := len(document.Entries), 305; got != want {
 		t.Fatalf("reviewed policy entry count = %d, want %d", got, want)
 	}
 	codec, err := resolved.buildLayerCodecModel("tg")
@@ -339,6 +339,15 @@ func realRequiredLayerResolution(obligation LayerObligation) (LayerObligationRes
 	case "ephemeral.deleteMessage":
 		if obligation.OtherField == "peer" {
 			return adapter("layerRequireLegacyEphemeralDeletePeer")
+		}
+	case "channels.toggleForum":
+		// Layer 233 adds the required sidebar layout decision to the channel
+		// forum request. A historical request cannot express it, and defaulting
+		// it to false would let an old client silently overwrite the account's
+		// sidebar preference. Reject the historical request instead of
+		// inventing a value the client never sent.
+		if obligation.Direction == LayerDirectionProfileToCanonical && obligation.OtherField == "sidebar" {
+			return LayerObligationResolution{Action: LayerResolveReject}, true, nil
 		}
 	case "auth.sentCodePaymentRequired", "pageListOrderedItemBlocks", "pageListOrderedItemText":
 		return defaulted()

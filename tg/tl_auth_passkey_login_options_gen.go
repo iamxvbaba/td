@@ -35,7 +35,7 @@ var (
 // Passkey login options, see here »¹ for more info on the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
+//  1) https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
 //
 // See https://core.telegram.org/constructor/auth.passkeyLoginOptions for reference.
 type AuthPasskeyLoginOptions struct {

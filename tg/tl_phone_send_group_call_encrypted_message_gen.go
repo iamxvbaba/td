@@ -36,8 +36,8 @@ var (
 // E2E encryption protocol².
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#conference-calls
-//  2. https://core.telegram.org/api/end-to-end/group-calls#encryption-protocol
+//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  2) https://core.telegram.org/api/end-to-end/group-calls#encryption-protocol
 //
 // See https://core.telegram.org/method/phone.sendGroupCallEncryptedMessage for reference.
 type PhoneSendGroupCallEncryptedMessageRequest struct {
@@ -203,12 +203,11 @@ func (s *PhoneSendGroupCallEncryptedMessageRequest) GetEncryptedMessage() (value
 // E2E encryption protocol².
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#conference-calls
-//  2. https://core.telegram.org/api/end-to-end/group-calls#encryption-protocol
+//  1) https://core.telegram.org/api/group-calls#conference-calls
+//  2) https://core.telegram.org/api/end-to-end/group-calls#encryption-protocol
 //
 // Possible errors:
-//
-//	400 GROUPCALL_INVALID: The specified group call is invalid.
+//  400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.sendGroupCallEncryptedMessage for reference.
 func (c *Client) PhoneSendGroupCallEncryptedMessage(ctx context.Context, request *PhoneSendGroupCallEncryptedMessageRequest) (bool, error) {

@@ -36,7 +36,7 @@ var (
 // group call or livestream¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#conference-calls
+//  1) https://core.telegram.org/api/group-calls#conference-calls
 //
 // See https://core.telegram.org/method/phone.deleteGroupCallParticipantMessages for reference.
 type PhoneDeleteGroupCallParticipantMessagesRequest struct {
@@ -263,11 +263,10 @@ func (d *PhoneDeleteGroupCallParticipantMessagesRequest) GetParticipant() (value
 // group call or livestream¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#conference-calls
+//  1) https://core.telegram.org/api/group-calls#conference-calls
 //
 // Possible errors:
-//
-//	400 GROUPCALL_INVALID: The specified group call is invalid.
+//  400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.deleteGroupCallParticipantMessages for reference.
 func (c *Client) PhoneDeleteGroupCallParticipantMessages(ctx context.Context, request *PhoneDeleteGroupCallParticipantMessagesRequest) (UpdatesClass, error) {

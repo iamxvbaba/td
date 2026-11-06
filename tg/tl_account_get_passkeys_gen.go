@@ -36,7 +36,7 @@ var (
 // here »¹ for more info on passkeys.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#list-passkeys
+//  1) https://core.telegram.org/api/passkeys#list-passkeys
 //
 // See https://core.telegram.org/method/account.getPasskeys for reference.
 type AccountGetPasskeysRequest struct {
@@ -137,7 +137,7 @@ func (g *AccountGetPasskeysRequest) DecodeBare(b *bin.Buffer) error {
 // here »¹ for more info on passkeys.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#list-passkeys
+//  1) https://core.telegram.org/api/passkeys#list-passkeys
 //
 // See https://core.telegram.org/method/account.getPasskeys for reference.
 func (c *Client) AccountGetPasskeys(ctx context.Context) (*AccountPasskeys, error) {

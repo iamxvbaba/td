@@ -316,20 +316,19 @@ const ShareThemeBackdropsClassName = "ShareThemeBackdrops"
 // See https://core.telegram.org/type/ShareThemeBackdrops for reference.
 //
 // Constructors:
-//   - [ShareThemeBackdropsNotModified]
-//   - [ShareThemeBackdrops]
+//  - [ShareThemeBackdropsNotModified]
+//  - [ShareThemeBackdrops]
 //
 // Example:
-//
-//	g, err := tg.DecodeShareThemeBackdrops(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.ShareThemeBackdropsNotModified: // shareThemeBackdropsNotModified#7a3f6dff
-//	case *tg.ShareThemeBackdrops: // shareThemeBackdrops#aaeadce0
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeShareThemeBackdrops(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.ShareThemeBackdropsNotModified: // shareThemeBackdropsNotModified#7a3f6dff
+//  case *tg.ShareThemeBackdrops: // shareThemeBackdrops#aaeadce0
+//  default: panic(v)
+//  }
 type ShareThemeBackdropsClass interface {
 	bin.Encoder
 	bin.Decoder

@@ -35,7 +35,7 @@ var (
 // Represents a star gift collection »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#gift-collections
+//  1) https://core.telegram.org/api/gifts#gift-collections
 //
 // See https://core.telegram.org/constructor/starGiftCollection for reference.
 type StarGiftCollection struct {

@@ -165,8 +165,7 @@ func (g *ContactsGetSponsoredPeersRequest) GetQ() (value string) {
 // Obtain a list of sponsored peer search results for a given query
 //
 // Possible errors:
-//
-//	400 SEARCH_QUERY_EMPTY: The search query is empty.
+//  400 SEARCH_QUERY_EMPTY: The search query is empty.
 //
 // See https://core.telegram.org/method/contacts.getSponsoredPeers for reference.
 func (c *Client) ContactsGetSponsoredPeers(ctx context.Context, q string) (ContactsSponsoredPeersClass, error) {

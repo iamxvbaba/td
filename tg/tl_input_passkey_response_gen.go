@@ -37,8 +37,8 @@ var (
 // Generated from the AuthenticatorAttestationResponse¹ object.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#creating-a-passkey
-//  2. https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse
+//  1) https://core.telegram.org/api/passkeys#creating-a-passkey
+//  2) https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse
 //
 // See https://core.telegram.org/constructor/inputPasskeyResponseRegister for reference.
 type InputPasskeyResponseRegister struct {
@@ -213,8 +213,8 @@ func (i *InputPasskeyResponseRegister) GetAttestationData() (value []byte) {
 // Generated from the AuthenticatorAssertionResponse¹ object.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
-//  2. https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse
+//  1) https://core.telegram.org/api/passkeys#logging-in-with-a-passkey
+//  2) https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse
 //
 // See https://core.telegram.org/constructor/inputPasskeyResponseLogin for reference.
 type InputPasskeyResponseLogin struct {
@@ -452,20 +452,19 @@ const InputPasskeyResponseClassName = "InputPasskeyResponse"
 // See https://core.telegram.org/type/InputPasskeyResponse for reference.
 //
 // Constructors:
-//   - [InputPasskeyResponseRegister]
-//   - [InputPasskeyResponseLogin]
+//  - [InputPasskeyResponseRegister]
+//  - [InputPasskeyResponseLogin]
 //
 // Example:
-//
-//	g, err := tg.DecodeInputPasskeyResponse(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.InputPasskeyResponseRegister: // inputPasskeyResponseRegister#3e63935c
-//	case *tg.InputPasskeyResponseLogin: // inputPasskeyResponseLogin#c31fc14a
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeInputPasskeyResponse(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.InputPasskeyResponseRegister: // inputPasskeyResponseRegister#3e63935c
+//  case *tg.InputPasskeyResponseLogin: // inputPasskeyResponseLogin#c31fc14a
+//  default: panic(v)
+//  }
 type InputPasskeyResponseClass interface {
 	bin.Encoder
 	bin.Decoder

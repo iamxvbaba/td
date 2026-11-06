@@ -35,7 +35,7 @@ var (
 // Edit forum topic¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/forum
+//  1) https://core.telegram.org/api/forum
 //
 // See https://core.telegram.org/method/messages.editForumTopic for reference.
 type MessagesEditForumTopicRequest struct {
@@ -422,11 +422,10 @@ func (e *MessagesEditForumTopicRequest) GetHidden() (value bool, ok bool) {
 // Edit forum topic¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/forum
+//  1) https://core.telegram.org/api/forum
 //
 // Possible errors:
-//
-//	400 CHANNEL_INVALID: The provided channel is invalid.
+//  400 CHANNEL_INVALID: The provided channel is invalid.
 //
 // See https://core.telegram.org/method/messages.editForumTopic for reference.
 func (c *Client) MessagesEditForumTopic(ctx context.Context, request *MessagesEditForumTopicRequest) (UpdatesClass, error) {

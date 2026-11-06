@@ -37,7 +37,7 @@ var (
 // and "unsaved" gifts (aka gifts both pinned and not pinned to the profile).
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts
+//  1) https://core.telegram.org/api/gifts
 //
 // See https://core.telegram.org/method/payments.getSavedStarGift for reference.
 type PaymentsGetSavedStarGiftRequest struct {
@@ -195,13 +195,12 @@ func (g *PaymentsGetSavedStarGiftRequest) MapStargift() (value InputSavedStarGif
 // and "unsaved" gifts (aka gifts both pinned and not pinned to the profile).
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts
+//  1) https://core.telegram.org/api/gifts
 //
 // Possible errors:
-//
-//	400 SAVED_ID_EMPTY: The passed inputSavedStarGiftChat.saved_id is empty.
-//	400 STARGIFT_OWNER_INVALID: You cannot transfer or sell a gift owned by another user.
-//	400 STARGIFT_SLUG_INVALID: The specified gift slug is invalid.
+//  400 SAVED_ID_EMPTY: The passed inputSavedStarGiftChat.saved_id is empty.
+//  400 STARGIFT_OWNER_INVALID: You cannot transfer or sell a gift owned by another user.
+//  400 STARGIFT_SLUG_INVALID: The specified gift slug is invalid.
 //
 // See https://core.telegram.org/method/payments.getSavedStarGift for reference.
 func (c *Client) PaymentsGetSavedStarGift(ctx context.Context, stargift []InputSavedStarGiftClass) (*PaymentsSavedStarGifts, error) {

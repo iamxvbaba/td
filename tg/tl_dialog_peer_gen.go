@@ -175,7 +175,7 @@ func (d *DialogPeer) GetPeer() (value PeerClass) {
 // Peer folder¹
 //
 // Links:
-//  1. https://core.telegram.org/api/folders#peer-folders
+//  1) https://core.telegram.org/api/folders#peer-folders
 //
 // See https://core.telegram.org/constructor/dialogPeerFolder for reference.
 type DialogPeerFolder struct {
@@ -454,22 +454,21 @@ const DialogPeerClassName = "DialogPeer"
 // See https://core.telegram.org/type/DialogPeer for reference.
 //
 // Constructors:
-//   - [DialogPeer]
-//   - [DialogPeerFolder]
-//   - [DialogPeerCommunity]
+//  - [DialogPeer]
+//  - [DialogPeerFolder]
+//  - [DialogPeerCommunity]
 //
 // Example:
-//
-//	g, err := tg.DecodeDialogPeer(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.DialogPeer: // dialogPeer#e56dbf05
-//	case *tg.DialogPeerFolder: // dialogPeerFolder#514519e2
-//	case *tg.DialogPeerCommunity: // dialogPeerCommunity#2f65c8e4
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeDialogPeer(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.DialogPeer: // dialogPeer#e56dbf05
+//  case *tg.DialogPeerFolder: // dialogPeerFolder#514519e2
+//  case *tg.DialogPeerCommunity: // dialogPeerCommunity#2f65c8e4
+//  default: panic(v)
+//  }
 type DialogPeerClass interface {
 	bin.Encoder
 	bin.Decoder

@@ -35,7 +35,7 @@ var (
 // List of gifts currently on resale »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#reselling-collectible-gifts
+//  1) https://core.telegram.org/api/gifts#reselling-collectible-gifts
 //
 // See https://core.telegram.org/constructor/payments.resaleStarGifts for reference.
 type PaymentsResaleStarGifts struct {

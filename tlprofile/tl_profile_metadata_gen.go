@@ -44,7 +44,8 @@ const (
 	Profile230       Profile = 230
 	Profile231       Profile = 231
 	Profile232       Profile = 232
-	ProfileCanonical Profile = 232
+	Profile233       Profile = 233
+	ProfileCanonical Profile = 233
 )
 
 // ResolveProfile accepts only exact generated profiles.
@@ -66,6 +67,8 @@ func ResolveProfile(layer int) (Profile, bool) {
 		return Profile231, true
 	case Profile232:
 		return Profile232, true
+	case Profile233:
+		return Profile233, true
 	default:
 		return 0, false
 	}
@@ -203,6 +206,7 @@ const (
 	SemanticTypeBotInlineMessageMediaWebPage                                      SemanticID = 0xf8a88a48870a8377
 	SemanticTypeBotInlineMessageRichMessage                                       SemanticID = 0x3271ea653a6ac86e
 	SemanticTypeBotInlineMessageText                                              SemanticID = 0x7f624ce0aefe166f
+	SemanticTypeBotInlineMessageWidget                                            SemanticID = 0x2041da6800e7cc58
 	SemanticTypeBotInlineResult                                                   SemanticID = 0x687f972643b05dc2
 	SemanticTypeBotMenuButton                                                     SemanticID = 0x1d4ebd69c920b488
 	SemanticTypeBotMenuButtonCommands                                             SemanticID = 0xdab4280615d5e46d
@@ -535,6 +539,8 @@ const (
 	SemanticTypeInputBotInlineMessageMediaWebPage                                 SemanticID = 0xe16054e73c64b349
 	SemanticTypeInputBotInlineMessageRichMessage                                  SemanticID = 0xbe573474705d9921
 	SemanticTypeInputBotInlineMessageText                                         SemanticID = 0x0120599e0422e2ba
+	SemanticTypeInputBotInlineMessageWidget                                       SemanticID = 0x928c44916c29e170
+	SemanticTypeInputBotInlineMessageWidgetID                                     SemanticID = 0x9c2c03d5374c8206
 	SemanticTypeInputBotInlineResult                                              SemanticID = 0x01e7378bf99bf8c6
 	SemanticTypeInputBotInlineResultDocument                                      SemanticID = 0xc5c98d3cbdb05539
 	SemanticTypeInputBotInlineResultGame                                          SemanticID = 0x60a252c8cacf9b58
@@ -629,6 +635,8 @@ const (
 	SemanticTypeInputMediaUploadedPhoto                                           SemanticID = 0x186f7c9eb722512d
 	SemanticTypeInputMediaVenue                                                   SemanticID = 0x022cb8173ac3db06
 	SemanticTypeInputMediaWebPage                                                 SemanticID = 0xd4b5ff83d0586edf
+	SemanticTypeInputMediaWidget                                                  SemanticID = 0x92bd1e1d998064fd
+	SemanticTypeInputMediaWidgetID                                                SemanticID = 0xeef448313841784c
 	SemanticTypeInputMessageCallbackQuery                                         SemanticID = 0x6b29e6b4f5a110d3
 	SemanticTypeInputMessageEntityMentionName                                     SemanticID = 0x114cbfcdd4f2327f
 	SemanticTypeInputMessageID                                                    SemanticID = 0xb31a04f57812454e
@@ -961,6 +969,7 @@ const (
 	SemanticTypeMessageMediaVenue                                                 SemanticID = 0x94117a34884a7bc3
 	SemanticTypeMessageMediaVideoStream                                           SemanticID = 0x601c277ab927928c
 	SemanticTypeMessageMediaWebPage                                               SemanticID = 0x83b7f750bd005200
+	SemanticTypeMessageMediaWidget                                                SemanticID = 0x57e0e699f58d2a26
 	SemanticTypeMessagePeerReaction                                               SemanticID = 0x23e45410708fd2a2
 	SemanticTypeMessagePeerVote                                                   SemanticID = 0x29c1ea8028ba5a88
 	SemanticTypeMessagePeerVoteInputOption                                        SemanticID = 0x79fe9abceda92e0f
@@ -988,6 +997,7 @@ const (
 	SemanticTypeMessagesBotCallbackAnswer                                         SemanticID = 0xf575b096db603391
 	SemanticTypeMessagesBotPreparedInlineMessage                                  SemanticID = 0x54788ec9a4705ecd
 	SemanticTypeMessagesBotResults                                                SemanticID = 0x0b484049c3d9fb94
+	SemanticTypeMessagesBotWidgetQueryAnswer                                      SemanticID = 0xcc58bbe8f01e2c53
 	SemanticTypeMessagesChannelMessages                                           SemanticID = 0x86edab684809996a
 	SemanticTypeMessagesChatAdminsWithInvites                                     SemanticID = 0xbb0a8ea929b8bc14
 	SemanticTypeMessagesChatFull                                                  SemanticID = 0x0834c97cacd2a1d7
@@ -1070,6 +1080,8 @@ const (
 	SemanticTypeMessagesVotesList                                                 SemanticID = 0x937100cbb0764efa
 	SemanticTypeMessagesWebPage                                                   SemanticID = 0x45717ba4270b82b4
 	SemanticTypeMessagesWebPagePreview                                            SemanticID = 0x61ce96d54eec0e12
+	SemanticTypeMessagesWidgetPublicData                                          SemanticID = 0xffc90993499a4338
+	SemanticTypeMessagesWidgetPublicDataNotModified                               SemanticID = 0xb5a0c9b49e6ce42b
 	SemanticTypeMissingInvitee                                                    SemanticID = 0x09f62e2d5e587b02
 	SemanticTypeMonoForumDialog                                                   SemanticID = 0x600dc6fc8f6e1405
 	SemanticTypeMyBoost                                                           SemanticID = 0x44f8029b0e0f3a86
@@ -1590,6 +1602,8 @@ const (
 	SemanticTypeUpdateBotStopped                                                  SemanticID = 0x7482d562d7361c0c
 	SemanticTypeUpdateBotWebhookJSON                                              SemanticID = 0xd074a5a9fd2cddca
 	SemanticTypeUpdateBotWebhookJSONQuery                                         SemanticID = 0x5c9ba9769cc13e4c
+	SemanticTypeUpdateBotWidgetCopyQuery                                          SemanticID = 0x46728e969dc7fe3c
+	SemanticTypeUpdateBotWidgetQuery                                              SemanticID = 0xf054fd0c9c7ea2e5
 	SemanticTypeUpdateBusinessBotCallbackQuery                                    SemanticID = 0x41d60318edcebb95
 	SemanticTypeUpdateChannel                                                     SemanticID = 0xde6aa5c51146ddf8
 	SemanticTypeUpdateChannelAvailableMessages                                    SemanticID = 0x573164e84bb4b971
@@ -1628,6 +1642,7 @@ const (
 	SemanticTypeUpdateDraftMessage                                                SemanticID = 0xbcd1893fb6eb7cf2
 	SemanticTypeUpdateEditChannelMessage                                          SemanticID = 0x37c789380972065b
 	SemanticTypeUpdateEditEphemeralMessage                                        SemanticID = 0x74acd7129fa055c7
+	SemanticTypeUpdateEditForumTopic                                              SemanticID = 0x381f94e7db160b9c
 	SemanticTypeUpdateEditMessage                                                 SemanticID = 0x155662cf73aea559
 	SemanticTypeUpdateEmojiGameInfo                                               SemanticID = 0x1051126ccb7f796f
 	SemanticTypeUpdateEncryptedChatTyping                                         SemanticID = 0xf1632c646536c1d1
@@ -1644,6 +1659,7 @@ const (
 	SemanticTypeUpdateGroupCallMessage                                            SemanticID = 0x7cdf8b4eda2039aa
 	SemanticTypeUpdateGroupCallParticipants                                       SemanticID = 0x8b162d9c59737831
 	SemanticTypeUpdateInlineBotCallbackQuery                                      SemanticID = 0xa471a892a351014d
+	SemanticTypeUpdateInlineBotWidgetQuery                                        SemanticID = 0xcdc7cc3e29f8f4b8
 	SemanticTypeUpdateJoinChatWebViewDecision                                     SemanticID = 0xe897060c66c05087
 	SemanticTypeUpdateLangPack                                                    SemanticID = 0x647cf8b650a8d188
 	SemanticTypeUpdateLangPackTooLong                                             SemanticID = 0x101bc88a1f5b8978
@@ -1654,6 +1670,7 @@ const (
 	SemanticTypeUpdateMessagePoll                                                 SemanticID = 0x5ef2211c1c611458
 	SemanticTypeUpdateMessagePollVote                                             SemanticID = 0x64a627f72f0c8137
 	SemanticTypeUpdateMessageReactions                                            SemanticID = 0x9aa025a352445a51
+	SemanticTypeUpdateMessageWidgetData                                           SemanticID = 0xf57dfe4fee6dac53
 	SemanticTypeUpdateMonoForumNoPaidException                                    SemanticID = 0x0f13b5b69850e506
 	SemanticTypeUpdateMoveStickerSetToTop                                         SemanticID = 0x6ac8d2af0d29d75d
 	SemanticTypeUpdateNewAuthorization                                            SemanticID = 0xefc9fe0f1f6191d7
@@ -1726,6 +1743,7 @@ const (
 	SemanticTypeUpdateStoryID                                                     SemanticID = 0x3ed51747aa928d31
 	SemanticTypeUpdateTheme                                                       SemanticID = 0x2dd6a0f812aa52fb
 	SemanticTypeUpdateTranscribedAudio                                            SemanticID = 0x4ca685fe07ed67fc
+	SemanticTypeUpdateTranscribedAudioFile                                        SemanticID = 0xd5a4548810efb469
 	SemanticTypeUpdateUser                                                        SemanticID = 0xb8a4749956a1db84
 	SemanticTypeUpdateUserEmojiStatus                                             SemanticID = 0x401957812e74f107
 	SemanticTypeUpdateUserName                                                    SemanticID = 0x9905a221ec52b8e1
@@ -1770,6 +1788,7 @@ const (
 	SemanticTypeUserStatusOffline                                                 SemanticID = 0xdec04d46e1da79e2
 	SemanticTypeUserStatusOnline                                                  SemanticID = 0xef1afe9aa55f00dc
 	SemanticTypeUserStatusRecently                                                SemanticID = 0xe52db7aedb5306c6
+	SemanticTypeUserWallet                                                        SemanticID = 0xaca5d7618881dc1a
 	SemanticTypeUsername                                                          SemanticID = 0x8d1e90556141a5c7
 	SemanticTypeUsersSavedMusic                                                   SemanticID = 0xbdef4db6efe01166
 	SemanticTypeUsersSavedMusicNotModified                                        SemanticID = 0x6dd81be3c041ed10
@@ -1825,6 +1844,9 @@ const (
 	SemanticTypeWebPagePending                                                    SemanticID = 0xc3c530e2d3fc25d8
 	SemanticTypeWebViewMessageSent                                                SemanticID = 0xb0ba732891977cfb
 	SemanticTypeWebViewResultURL                                                  SemanticID = 0x81ffedeff84e1e06
+	SemanticTypeWidgetQueryTypeData                                               SemanticID = 0x2e3ad9826e7a55c4
+	SemanticTypeWidgetQueryTypeSentTransaction                                    SemanticID = 0xe29312f934c1feab
+	SemanticTypeWidgetQueryTypeSignData                                           SemanticID = 0xd5ac8f1851bad6bc
 	SemanticMethodAccountAcceptAuthorization                                      SemanticID = 0x376043b78e013fad
 	SemanticMethodAccountCancelPasswordEmail                                      SemanticID = 0xa0630134940f241f
 	SemanticMethodAccountChangeAuthorizationSettings                              SemanticID = 0x22817dd17b1890dc
@@ -2236,8 +2258,11 @@ const (
 	SemanticMethodMessagesEditFactCheck                                           SemanticID = 0xc65959c28cb4b093
 	SemanticMethodMessagesEditForumTopic                                          SemanticID = 0x3cfd66ccf9016458
 	SemanticMethodMessagesEditInlineBotMessage                                    SemanticID = 0x1e4edb6fad6d2d79
+	SemanticMethodMessagesEditInlineBotMessageWidgetData                          SemanticID = 0xd529f471e1079df9
 	SemanticMethodMessagesEditMessage                                             SemanticID = 0xe51de4ede4e5dd3b
+	SemanticMethodMessagesEditMessageWidgetData                                   SemanticID = 0xb4c08ee8a9e9f0a1
 	SemanticMethodMessagesEditQuickReplyShortcut                                  SemanticID = 0xc6cd23f3eb0f0d8e
+	SemanticMethodMessagesEditWidgetData                                          SemanticID = 0xfa53fb3b29cb6142
 	SemanticMethodMessagesExportChatInvite                                        SemanticID = 0x5824abe48e8f049e
 	SemanticMethodMessagesFaveSticker                                             SemanticID = 0x18a7b81b08d19a29
 	SemanticMethodMessagesForwardMessages                                         SemanticID = 0x0c4419268bea10c6
@@ -2252,6 +2277,7 @@ const (
 	SemanticMethodMessagesGetAvailableReactions                                   SemanticID = 0x5bad2c00a1e7f5e0
 	SemanticMethodMessagesGetBotApp                                               SemanticID = 0x4f562ee29a9defb8
 	SemanticMethodMessagesGetBotCallbackAnswer                                    SemanticID = 0xfc4bfae9906d9f1e
+	SemanticMethodMessagesGetBotWidgetQueryAnswer                                 SemanticID = 0xf1e46edc9ca018ad
 	SemanticMethodMessagesGetChatInviteImporters                                  SemanticID = 0x70cea4a69e2e3a10
 	SemanticMethodMessagesGetChats                                                SemanticID = 0x50f60b9258779726
 	SemanticMethodMessagesGetCommonChats                                          SemanticID = 0x15e696bef746783b
@@ -2333,11 +2359,13 @@ const (
 	SemanticMethodMessagesGetStickers                                             SemanticID = 0xe91a63c6909ddff6
 	SemanticMethodMessagesGetSuggestedDialogFilters                               SemanticID = 0xe4ef069f18698ce3
 	SemanticMethodMessagesGetTopReactions                                         SemanticID = 0xd92cd027d4b4959f
+	SemanticMethodMessagesGetTranscriptionLangs                                   SemanticID = 0x5d7344ae5c54d332
 	SemanticMethodMessagesGetUnreadMentions                                       SemanticID = 0x5835d0af8da24607
 	SemanticMethodMessagesGetUnreadPollVotes                                      SemanticID = 0x5ac54065ec3f1f64
 	SemanticMethodMessagesGetUnreadReactions                                      SemanticID = 0xbb9f4a1623043fa4
 	SemanticMethodMessagesGetWebPage                                              SemanticID = 0x8f2e1917dec7edfe
 	SemanticMethodMessagesGetWebPagePreview                                       SemanticID = 0x046eb498a08a3d77
+	SemanticMethodMessagesGetWidgetPublicData                                     SemanticID = 0x86dc2c53e1721881
 	SemanticMethodMessagesHideAllChatJoinRequests                                 SemanticID = 0xff680be537c39139
 	SemanticMethodMessagesHideChatJoinRequest                                     SemanticID = 0x0d90fb4495e81b1f
 	SemanticMethodMessagesHidePeerSettingsBar                                     SemanticID = 0x04f70207ec6076f9
@@ -2411,6 +2439,7 @@ const (
 	SemanticMethodMessagesSetBotGuestChatResult                                   SemanticID = 0x1682b76e09b9d5f5
 	SemanticMethodMessagesSetBotPrecheckoutResults                                SemanticID = 0x10913f52749d55a4
 	SemanticMethodMessagesSetBotShippingResults                                   SemanticID = 0xd122d8cd8feaef9e
+	SemanticMethodMessagesSetBotWidgetQueryAnswer                                 SemanticID = 0x40201e39a583121b
 	SemanticMethodMessagesSetChatAvailableReactions                               SemanticID = 0x9707fd1317c15ee4
 	SemanticMethodMessagesSetChatTheme                                            SemanticID = 0x5f43eb673080d48d
 	SemanticMethodMessagesSetChatWallPaper                                        SemanticID = 0x7fcbfe9152c303ef
@@ -2437,6 +2466,7 @@ const (
 	SemanticMethodMessagesToggleSuggestedPostApproval                             SemanticID = 0x6a9016f49e5c38ba
 	SemanticMethodMessagesToggleTodoCompleted                                     SemanticID = 0x91d0bd12682635ae
 	SemanticMethodMessagesTranscribeAudio                                         SemanticID = 0xbb02445848c6842f
+	SemanticMethodMessagesTranscribeAudioFile                                     SemanticID = 0xbad8f04f721f4315
 	SemanticMethodMessagesTranslateRichMessage                                    SemanticID = 0x7070bf59c60a751a
 	SemanticMethodMessagesTranslateText                                           SemanticID = 0x92d06598bd322163
 	SemanticMethodMessagesUninstallStickerSet                                     SemanticID = 0x24e287a8119212a0
@@ -3021,14 +3051,21 @@ const (
 	FieldMessagesEditForumTopicTopicID                      FieldID = 0xa0bce325453d3948
 	FieldMessagesEditInlineBotMessageEntities               FieldID = 0x60fa73ef30e97197
 	FieldMessagesEditInlineBotMessageMessage                FieldID = 0x65408ca2e9c9588f
+	FieldMessagesEditInlineBotMessageWidgetDataChatData     FieldID = 0xdd47236b7f331dee
+	FieldMessagesEditInlineBotMessageWidgetDataPublicData   FieldID = 0xaf899b593fc737aa
 	FieldMessagesEditMessageEntities                        FieldID = 0xc1b09d5989395602
 	FieldMessagesEditMessageID                              FieldID = 0x4c9b12d63750de0e
 	FieldMessagesEditMessageMessage                         FieldID = 0x1f153866a6887ea2
 	FieldMessagesEditMessageQuickReplyShortcutID            FieldID = 0x49622b90b0c7621c
 	FieldMessagesEditMessageScheduleDate                    FieldID = 0x0d134e9e8abd7b02
 	FieldMessagesEditMessageScheduleRepeatPeriod            FieldID = 0x19792c14fc22d680
+	FieldMessagesEditMessageWidgetDataChatData              FieldID = 0x8c69336608c0528e
+	FieldMessagesEditMessageWidgetDataID                    FieldID = 0xaea0afe81b7a59cb
+	FieldMessagesEditMessageWidgetDataPublicData            FieldID = 0x78f3b5bf947c392a
 	FieldMessagesEditQuickReplyShortcutShortcut             FieldID = 0x8e0952aa8185da30
 	FieldMessagesEditQuickReplyShortcutShortcutID           FieldID = 0xa6adc8108d98d006
+	FieldMessagesEditWidgetDataCacheTime                    FieldID = 0xd8b5040f6908fdf8
+	FieldMessagesEditWidgetDataPublicData                   FieldID = 0x8ce30e2e4a26386e
 	FieldMessagesExportChatInviteExpireDate                 FieldID = 0x1b86cbab871a38ff
 	FieldMessagesExportChatInviteTitle                      FieldID = 0x8a69a53150e72b6a
 	FieldMessagesExportChatInviteUsageLimit                 FieldID = 0x35fe16f373cabbfc
@@ -3043,6 +3080,8 @@ const (
 	FieldMessagesGetAvailableReactionsHash                  FieldID = 0xb389bd3cad0c1c9c
 	FieldMessagesGetBotCallbackAnswerData                   FieldID = 0xd3397b796cb36370
 	FieldMessagesGetBotCallbackAnswerMsgID                  FieldID = 0x38669879969bf12d
+	FieldMessagesGetBotWidgetQueryAnswerData                FieldID = 0xc7b21dbf45e7b422
+	FieldMessagesGetBotWidgetQueryAnswerMsgID               FieldID = 0x4b045f56336ecf87
 	FieldMessagesGetChatInviteImportersLimit                FieldID = 0xc79a14a8fa199aba
 	FieldMessagesGetChatInviteImportersLink                 FieldID = 0xebe90816d8ed02fa
 	FieldMessagesGetChatInviteImportersOffsetDate           FieldID = 0xb1a3ecc75b398131
@@ -3168,6 +3207,7 @@ const (
 	FieldMessagesGetWebPageURL                              FieldID = 0xcdd8b6a66da0fe64
 	FieldMessagesGetWebPagePreviewEntities                  FieldID = 0xd76f5fd57a1031e6
 	FieldMessagesGetWebPagePreviewMessage                   FieldID = 0xd3d17b911b35101c
+	FieldMessagesGetWidgetPublicDataMsgID                   FieldID = 0x075dfda687b1cd99
 	FieldMessagesHideAllChatJoinRequestsLink                FieldID = 0x9be73ec694613296
 	FieldMessagesImportChatInviteHash                       FieldID = 0xdce07a83fa8aa786
 	FieldMessagesInitHistoryImportMediaCount                FieldID = 0x314a787d873ef469
@@ -3284,6 +3324,7 @@ const (
 	FieldMessagesSetBotPrecheckoutResultsError              FieldID = 0xef847b75166b5f47
 	FieldMessagesSetBotShippingResultsError                 FieldID = 0xa5741be059146e03
 	FieldMessagesSetBotShippingResultsShippingOptions       FieldID = 0x7af9457aecb3b553
+	FieldMessagesSetBotWidgetQueryAnswerResult              FieldID = 0x37663b4178fe5a80
 	FieldMessagesSetChatAvailableReactionsReactionsLimit    FieldID = 0x8f1bf2a79b40c48c
 	FieldMessagesSetChatWallPaperID                         FieldID = 0xe0b5f352474e3403
 	FieldMessagesSetDefaultHistoryTTLPeriod                 FieldID = 0xfcdae22b67acd129
@@ -3844,6 +3885,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "botInlineMessageRichMessage", true
 	case SemanticTypeBotInlineMessageText:
 		return "type", "botInlineMessageText", true
+	case SemanticTypeBotInlineMessageWidget:
+		return "type", "botInlineMessageWidget", true
 	case SemanticTypeBotInlineResult:
 		return "type", "botInlineResult", true
 	case SemanticTypeBotMenuButton:
@@ -4508,6 +4551,10 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "inputBotInlineMessageRichMessage", true
 	case SemanticTypeInputBotInlineMessageText:
 		return "type", "inputBotInlineMessageText", true
+	case SemanticTypeInputBotInlineMessageWidget:
+		return "type", "inputBotInlineMessageWidget", true
+	case SemanticTypeInputBotInlineMessageWidgetID:
+		return "type", "inputBotInlineMessageWidgetId", true
 	case SemanticTypeInputBotInlineResult:
 		return "type", "inputBotInlineResult", true
 	case SemanticTypeInputBotInlineResultDocument:
@@ -4696,6 +4743,10 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "inputMediaVenue", true
 	case SemanticTypeInputMediaWebPage:
 		return "type", "inputMediaWebPage", true
+	case SemanticTypeInputMediaWidget:
+		return "type", "inputMediaWidget", true
+	case SemanticTypeInputMediaWidgetID:
+		return "type", "inputMediaWidgetId", true
 	case SemanticTypeInputMessageCallbackQuery:
 		return "type", "inputMessageCallbackQuery", true
 	case SemanticTypeInputMessageEntityMentionName:
@@ -5360,6 +5411,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "messageMediaVideoStream", true
 	case SemanticTypeMessageMediaWebPage:
 		return "type", "messageMediaWebPage", true
+	case SemanticTypeMessageMediaWidget:
+		return "type", "messageMediaWidget", true
 	case SemanticTypeMessagePeerReaction:
 		return "type", "messagePeerReaction", true
 	case SemanticTypeMessagePeerVote:
@@ -5414,6 +5467,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "messages.botPreparedInlineMessage", true
 	case SemanticTypeMessagesBotResults:
 		return "type", "messages.botResults", true
+	case SemanticTypeMessagesBotWidgetQueryAnswer:
+		return "type", "messages.botWidgetQueryAnswer", true
 	case SemanticTypeMessagesChannelMessages:
 		return "type", "messages.channelMessages", true
 	case SemanticTypeMessagesChatAdminsWithInvites:
@@ -5578,6 +5633,10 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "messages.webPage", true
 	case SemanticTypeMessagesWebPagePreview:
 		return "type", "messages.webPagePreview", true
+	case SemanticTypeMessagesWidgetPublicData:
+		return "type", "messages.widgetPublicData", true
+	case SemanticTypeMessagesWidgetPublicDataNotModified:
+		return "type", "messages.widgetPublicDataNotModified", true
 	case SemanticTypeMissingInvitee:
 		return "type", "missingInvitee", true
 	case SemanticTypeMonoForumDialog:
@@ -6618,6 +6677,10 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "updateBotWebhookJSON", true
 	case SemanticTypeUpdateBotWebhookJSONQuery:
 		return "type", "updateBotWebhookJSONQuery", true
+	case SemanticTypeUpdateBotWidgetCopyQuery:
+		return "type", "updateBotWidgetCopyQuery", true
+	case SemanticTypeUpdateBotWidgetQuery:
+		return "type", "updateBotWidgetQuery", true
 	case SemanticTypeUpdateBusinessBotCallbackQuery:
 		return "type", "updateBusinessBotCallbackQuery", true
 	case SemanticTypeUpdateChannel:
@@ -6694,6 +6757,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "updateEditChannelMessage", true
 	case SemanticTypeUpdateEditEphemeralMessage:
 		return "type", "updateEditEphemeralMessage", true
+	case SemanticTypeUpdateEditForumTopic:
+		return "type", "updateEditForumTopic", true
 	case SemanticTypeUpdateEditMessage:
 		return "type", "updateEditMessage", true
 	case SemanticTypeUpdateEmojiGameInfo:
@@ -6726,6 +6791,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "updateGroupCallParticipants", true
 	case SemanticTypeUpdateInlineBotCallbackQuery:
 		return "type", "updateInlineBotCallbackQuery", true
+	case SemanticTypeUpdateInlineBotWidgetQuery:
+		return "type", "updateInlineBotWidgetQuery", true
 	case SemanticTypeUpdateJoinChatWebViewDecision:
 		return "type", "updateJoinChatWebViewDecision", true
 	case SemanticTypeUpdateLangPack:
@@ -6746,6 +6813,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "updateMessagePollVote", true
 	case SemanticTypeUpdateMessageReactions:
 		return "type", "updateMessageReactions", true
+	case SemanticTypeUpdateMessageWidgetData:
+		return "type", "updateMessageWidgetData", true
 	case SemanticTypeUpdateMonoForumNoPaidException:
 		return "type", "updateMonoForumNoPaidException", true
 	case SemanticTypeUpdateMoveStickerSetToTop:
@@ -6890,6 +6959,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "updateTheme", true
 	case SemanticTypeUpdateTranscribedAudio:
 		return "type", "updateTranscribedAudio", true
+	case SemanticTypeUpdateTranscribedAudioFile:
+		return "type", "updateTranscribedAudioFile", true
 	case SemanticTypeUpdateUser:
 		return "type", "updateUser", true
 	case SemanticTypeUpdateUserEmojiStatus:
@@ -6978,6 +7049,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "userStatusOnline", true
 	case SemanticTypeUserStatusRecently:
 		return "type", "userStatusRecently", true
+	case SemanticTypeUserWallet:
+		return "type", "userWallet", true
 	case SemanticTypeUsername:
 		return "type", "username", true
 	case SemanticTypeUsersSavedMusic:
@@ -7088,6 +7161,12 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "type", "webViewMessageSent", true
 	case SemanticTypeWebViewResultURL:
 		return "type", "webViewResultUrl", true
+	case SemanticTypeWidgetQueryTypeData:
+		return "type", "widgetQueryTypeData", true
+	case SemanticTypeWidgetQueryTypeSentTransaction:
+		return "type", "widgetQueryTypeSentTransaction", true
+	case SemanticTypeWidgetQueryTypeSignData:
+		return "type", "widgetQueryTypeSignData", true
 	case SemanticMethodAccountAcceptAuthorization:
 		return "function", "account.acceptAuthorization", true
 	case SemanticMethodAccountCancelPasswordEmail:
@@ -7910,10 +7989,16 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "messages.editForumTopic", true
 	case SemanticMethodMessagesEditInlineBotMessage:
 		return "function", "messages.editInlineBotMessage", true
+	case SemanticMethodMessagesEditInlineBotMessageWidgetData:
+		return "function", "messages.editInlineBotMessageWidgetData", true
 	case SemanticMethodMessagesEditMessage:
 		return "function", "messages.editMessage", true
+	case SemanticMethodMessagesEditMessageWidgetData:
+		return "function", "messages.editMessageWidgetData", true
 	case SemanticMethodMessagesEditQuickReplyShortcut:
 		return "function", "messages.editQuickReplyShortcut", true
+	case SemanticMethodMessagesEditWidgetData:
+		return "function", "messages.editWidgetData", true
 	case SemanticMethodMessagesExportChatInvite:
 		return "function", "messages.exportChatInvite", true
 	case SemanticMethodMessagesFaveSticker:
@@ -7942,6 +8027,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "messages.getBotApp", true
 	case SemanticMethodMessagesGetBotCallbackAnswer:
 		return "function", "messages.getBotCallbackAnswer", true
+	case SemanticMethodMessagesGetBotWidgetQueryAnswer:
+		return "function", "messages.getBotWidgetQueryAnswer", true
 	case SemanticMethodMessagesGetChatInviteImporters:
 		return "function", "messages.getChatInviteImporters", true
 	case SemanticMethodMessagesGetChats:
@@ -8104,6 +8191,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "messages.getSuggestedDialogFilters", true
 	case SemanticMethodMessagesGetTopReactions:
 		return "function", "messages.getTopReactions", true
+	case SemanticMethodMessagesGetTranscriptionLangs:
+		return "function", "messages.getTranscriptionLangs", true
 	case SemanticMethodMessagesGetUnreadMentions:
 		return "function", "messages.getUnreadMentions", true
 	case SemanticMethodMessagesGetUnreadPollVotes:
@@ -8114,6 +8203,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "messages.getWebPage", true
 	case SemanticMethodMessagesGetWebPagePreview:
 		return "function", "messages.getWebPagePreview", true
+	case SemanticMethodMessagesGetWidgetPublicData:
+		return "function", "messages.getWidgetPublicData", true
 	case SemanticMethodMessagesHideAllChatJoinRequests:
 		return "function", "messages.hideAllChatJoinRequests", true
 	case SemanticMethodMessagesHideChatJoinRequest:
@@ -8260,6 +8351,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "messages.setBotPrecheckoutResults", true
 	case SemanticMethodMessagesSetBotShippingResults:
 		return "function", "messages.setBotShippingResults", true
+	case SemanticMethodMessagesSetBotWidgetQueryAnswer:
+		return "function", "messages.setBotWidgetQueryAnswer", true
 	case SemanticMethodMessagesSetChatAvailableReactions:
 		return "function", "messages.setChatAvailableReactions", true
 	case SemanticMethodMessagesSetChatTheme:
@@ -8312,6 +8405,8 @@ func SemanticName(id SemanticID) (category, qname string, ok bool) {
 		return "function", "messages.toggleTodoCompleted", true
 	case SemanticMethodMessagesTranscribeAudio:
 		return "function", "messages.transcribeAudio", true
+	case SemanticMethodMessagesTranscribeAudioFile:
+		return "function", "messages.transcribeAudioFile", true
 	case SemanticMethodMessagesTranslateRichMessage:
 		return "function", "messages.translateRichMessage", true
 	case SemanticMethodMessagesTranslateText:
@@ -9071,6 +9166,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x0a617e7b, true
 	case SemanticTypeBotInlineMessageText:
 		return 0x8c7f65e2, true
+	case SemanticTypeBotInlineMessageWidget:
+		return 0xbaa17834, true
 	case SemanticTypeBotInlineResult:
 		return 0x11965f3a, true
 	case SemanticTypeBotMenuButton:
@@ -9735,6 +9832,10 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xb43df56c, true
 	case SemanticTypeInputBotInlineMessageText:
 		return 0x3dcd7a87, true
+	case SemanticTypeInputBotInlineMessageWidget:
+		return 0xf597a3f0, true
+	case SemanticTypeInputBotInlineMessageWidgetID:
+		return 0xfe8b792b, true
 	case SemanticTypeInputBotInlineResult:
 		return 0x88bf9319, true
 	case SemanticTypeInputBotInlineResultDocument:
@@ -9917,6 +10018,10 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xc13d1c11, true
 	case SemanticTypeInputMediaWebPage:
 		return 0xc21b8849, true
+	case SemanticTypeInputMediaWidget:
+		return 0x44f6c04e, true
+	case SemanticTypeInputMediaWidgetID:
+		return 0x7c855cb5, true
 	case SemanticTypeInputMessageCallbackQuery:
 		return 0xacfa1a7e, true
 	case SemanticTypeInputMessageEntityMentionName:
@@ -10551,6 +10656,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xca5cab89, true
 	case SemanticTypeMessageMediaWebPage:
 		return 0xddf10c3b, true
+	case SemanticTypeMessageMediaWidget:
+		return 0x2238f214, true
 	case SemanticTypeMessagePeerReaction:
 		return 0x8c79b63c, true
 	case SemanticTypeMessagePeerVote:
@@ -10605,6 +10712,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x8ecf0511, true
 	case SemanticTypeMessagesBotResults:
 		return 0xe021f2f6, true
+	case SemanticTypeMessagesBotWidgetQueryAnswer:
+		return 0x95b73023, true
 	case SemanticTypeMessagesChannelMessages:
 		return 0xc776ba4e, true
 	case SemanticTypeMessagesChatAdminsWithInvites:
@@ -10769,6 +10878,10 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xfd5e12bd, true
 	case SemanticTypeMessagesWebPagePreview:
 		return 0x8c9a88ac, true
+	case SemanticTypeMessagesWidgetPublicData:
+		return 0x04493bff, true
+	case SemanticTypeMessagesWidgetPublicDataNotModified:
+		return 0xb9196e57, true
 	case SemanticTypeMissingInvitee:
 		return 0x628c9224, true
 	case SemanticTypeMonoForumDialog:
@@ -11809,6 +11922,10 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x8317c0c3, true
 	case SemanticTypeUpdateBotWebhookJSONQuery:
 		return 0x9b9240a6, true
+	case SemanticTypeUpdateBotWidgetCopyQuery:
+		return 0xfa89bef7, true
+	case SemanticTypeUpdateBotWidgetQuery:
+		return 0xb373fe68, true
 	case SemanticTypeUpdateBusinessBotCallbackQuery:
 		return 0x1ea2fda7, true
 	case SemanticTypeUpdateChannel:
@@ -11885,6 +12002,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x1b3f4df7, true
 	case SemanticTypeUpdateEditEphemeralMessage:
 		return 0x4bbb8f01, true
+	case SemanticTypeUpdateEditForumTopic:
+		return 0x2366665c, true
 	case SemanticTypeUpdateEditMessage:
 		return 0xe40370a3, true
 	case SemanticTypeUpdateEmojiGameInfo:
@@ -11917,6 +12036,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xf2ebdb4e, true
 	case SemanticTypeUpdateInlineBotCallbackQuery:
 		return 0x691e9052, true
+	case SemanticTypeUpdateInlineBotWidgetQuery:
+		return 0xa5f07e08, true
 	case SemanticTypeUpdateJoinChatWebViewDecision:
 		return 0xbdac7e70, true
 	case SemanticTypeUpdateLangPack:
@@ -11937,6 +12058,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x7699f014, true
 	case SemanticTypeUpdateMessageReactions:
 		return 0x1e297bfa, true
+	case SemanticTypeUpdateMessageWidgetData:
+		return 0xbbb078dd, true
 	case SemanticTypeUpdateMonoForumNoPaidException:
 		return 0x9f812b08, true
 	case SemanticTypeUpdateMoveStickerSetToTop:
@@ -12081,6 +12204,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x8216fba3, true
 	case SemanticTypeUpdateTranscribedAudio:
 		return 0x0084cd5a, true
+	case SemanticTypeUpdateTranscribedAudioFile:
+		return 0x734c2e7b, true
 	case SemanticTypeUpdateUser:
 		return 0x20529438, true
 	case SemanticTypeUpdateUserEmojiStatus:
@@ -12169,6 +12294,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xedb93949, true
 	case SemanticTypeUserStatusRecently:
 		return 0x7b197dc8, true
+	case SemanticTypeUserWallet:
+		return 0x454d2737, true
 	case SemanticTypeUsername:
 		return 0xb4073647, true
 	case SemanticTypeUsersSavedMusic:
@@ -12279,6 +12406,12 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x0c94511c, true
 	case SemanticTypeWebViewResultURL:
 		return 0x4d22ff98, true
+	case SemanticTypeWidgetQueryTypeData:
+		return 0x16d8cf0b, true
+	case SemanticTypeWidgetQueryTypeSentTransaction:
+		return 0xff3b33b4, true
+	case SemanticTypeWidgetQueryTypeSignData:
+		return 0x192047dc, true
 	case SemanticMethodAccountAcceptAuthorization:
 		return 0xf3ed4c73, true
 	case SemanticMethodAccountCancelPasswordEmail:
@@ -12780,7 +12913,7 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 	case SemanticMethodChannelsToggleAutotranslation:
 		return 0x167fc0a1, true
 	case SemanticMethodChannelsToggleForum:
-		return 0x3ff75734, true
+		return 0xa2952b54, true
 	case SemanticMethodChannelsToggleJoinRequest:
 		return 0x0ecc2618, true
 	case SemanticMethodChannelsToggleJoinToSend:
@@ -13101,10 +13234,16 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xcecc1134, true
 	case SemanticMethodMessagesEditInlineBotMessage:
 		return 0xa423bb51, true
+	case SemanticMethodMessagesEditInlineBotMessageWidgetData:
+		return 0x6396ce2b, true
 	case SemanticMethodMessagesEditMessage:
 		return 0xb106e66c, true
+	case SemanticMethodMessagesEditMessageWidgetData:
+		return 0xf624bc1e, true
 	case SemanticMethodMessagesEditQuickReplyShortcut:
 		return 0x5c003cef, true
+	case SemanticMethodMessagesEditWidgetData:
+		return 0xeac343c0, true
 	case SemanticMethodMessagesExportChatInvite:
 		return 0xa455de90, true
 	case SemanticMethodMessagesFaveSticker:
@@ -13133,6 +13272,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x34fdc5c3, true
 	case SemanticMethodMessagesGetBotCallbackAnswer:
 		return 0x9342ca07, true
+	case SemanticMethodMessagesGetBotWidgetQueryAnswer:
+		return 0x5c550579, true
 	case SemanticMethodMessagesGetChatInviteImporters:
 		return 0xdf04dd4e, true
 	case SemanticMethodMessagesGetChats:
@@ -13295,6 +13436,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xa29cd42c, true
 	case SemanticMethodMessagesGetTopReactions:
 		return 0xbb8125ba, true
+	case SemanticMethodMessagesGetTranscriptionLangs:
+		return 0xba6cd9aa, true
 	case SemanticMethodMessagesGetUnreadMentions:
 		return 0xf107e790, true
 	case SemanticMethodMessagesGetUnreadPollVotes:
@@ -13305,6 +13448,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x8d9692a3, true
 	case SemanticMethodMessagesGetWebPagePreview:
 		return 0x570d6f6f, true
+	case SemanticMethodMessagesGetWidgetPublicData:
+		return 0x6fc53181, true
 	case SemanticMethodMessagesHideAllChatJoinRequests:
 		return 0xe085f4ea, true
 	case SemanticMethodMessagesHideChatJoinRequest:
@@ -13451,6 +13596,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0x09c2dd95, true
 	case SemanticMethodMessagesSetBotShippingResults:
 		return 0xe5f672fa, true
+	case SemanticMethodMessagesSetBotWidgetQueryAnswer:
+		return 0xf8cdec6a, true
 	case SemanticMethodMessagesSetChatAvailableReactions:
 		return 0x864b2581, true
 	case SemanticMethodMessagesSetChatTheme:
@@ -13503,6 +13650,8 @@ func canonicalWireID(id SemanticID) (uint32, bool) {
 		return 0xd3e03124, true
 	case SemanticMethodMessagesTranscribeAudio:
 		return 0x269e9a49, true
+	case SemanticMethodMessagesTranscribeAudioFile:
+		return 0x072d2ef7, true
 	case SemanticMethodMessagesTranslateRichMessage:
 		return 0x1a542004, true
 	case SemanticMethodMessagesTranslateText:
@@ -14025,6 +14174,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0xc27ac8c7, true
 		case SemanticTypeBotInlineMessageRichMessage:
 			return 0, false
+		case SemanticTypeBotInlineMessageWidget:
+			return 0, false
 		case SemanticTypeBotVerification:
 			return 0xf93cd45c, true
 		case SemanticTypeBotVerifierSettings:
@@ -14101,6 +14252,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeInputBotInlineMessageRichMessage:
 			return 0, false
+		case SemanticTypeInputBotInlineMessageWidget:
+			return 0, false
+		case SemanticTypeInputBotInlineMessageWidgetID:
+			return 0, false
 		case SemanticTypeInputButtonTypeRequestPeer:
 			return 0, false
 		case SemanticTypeInputDialogPeerCommunity:
@@ -14117,6 +14272,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x68013e72, true
 		case SemanticTypeInputKeyboardButtonUserProfile:
 			return 0x7d5e07c7, true
+		case SemanticTypeInputMediaWidget:
+			return 0, false
+		case SemanticTypeInputMediaWidgetID:
+			return 0, false
 		case SemanticTypeInputNotifyCommunity:
 			return 0, false
 		case SemanticTypeInputPageBlockMap:
@@ -14209,8 +14368,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageEntityTonAddress:
 			return 0, false
+		case SemanticTypeMessageMediaWidget:
+			return 0, false
 		case SemanticTypeMessageReplyHeader:
 			return 0x1b97dd66, true
+		case SemanticTypeMessagesBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticTypeMessagesChatInviteJoinResultOk:
 			return 0, false
 		case SemanticTypeMessagesChatInviteJoinResultWebView:
@@ -14218,6 +14381,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticTypeMessagesComposedRichMessageWithAI:
 			return 0, false
 		case SemanticTypeMessagesTranslatedRichMessage:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicData:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicDataNotModified:
 			return 0, false
 		case SemanticTypeNotifyCommunity:
 			return 0, false
@@ -14347,19 +14514,31 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x11dfa986, true
 		case SemanticTypeUpdateBotStarsSubscription:
 			return 0, false
+		case SemanticTypeUpdateBotWidgetCopyQuery:
+			return 0, false
+		case SemanticTypeUpdateBotWidgetQuery:
+			return 0, false
 		case SemanticTypeUpdateDeleteEphemeralMessages:
 			return 0, false
 		case SemanticTypeUpdateEditEphemeralMessage:
 			return 0, false
+		case SemanticTypeUpdateEditForumTopic:
+			return 0, false
 		case SemanticTypeUpdateEphemeralBotCallbackQuery:
 			return 0, false
+		case SemanticTypeUpdateInlineBotWidgetQuery:
+			return 0, false
 		case SemanticTypeUpdateJoinChatWebViewDecision:
+			return 0, false
+		case SemanticTypeUpdateMessageWidgetData:
 			return 0, false
 		case SemanticTypeUpdateNewBotConnection:
 			return 0, false
 		case SemanticTypeUpdateNewEphemeralMessage:
 			return 0, false
 		case SemanticTypeUpdateSentWalletTransaction:
+			return 0, false
+		case SemanticTypeUpdateTranscribedAudioFile:
 			return 0, false
 		case SemanticTypeUpdateWalletGaslessInfo:
 			return 0, false
@@ -14379,6 +14558,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x31774388, true
 		case SemanticTypeUserFull:
 			return 0x06cbe645, true
+		case SemanticTypeUserWallet:
+			return 0, false
 		case SemanticTypeWalletCard:
 			return 0, false
 		case SemanticTypeWalletCardSticker:
@@ -14433,6 +14614,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWebDomainException:
 			return 0, false
+		case SemanticTypeWidgetQueryTypeData:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSentTransaction:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSignData:
+			return 0, false
 		case SemanticMethodAccountConfirmBotConnection:
 			return 0, false
 		case SemanticMethodAccountDeleteWebBrowserSettingsExceptions:
@@ -14463,6 +14650,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodChannelsJoinChannel:
 			return 0x24b524c5, true
+		case SemanticMethodChannelsToggleForum:
+			return 0x3ff75734, true
 		case SemanticMethodChannelsToggleJoinRequest:
 			return 0x4c2985b6, true
 		case SemanticMethodCommunitiesCreate:
@@ -14511,13 +14700,25 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodMessagesEditInlineBotMessage:
 			return 0x83557dba, true
+		case SemanticMethodMessagesEditInlineBotMessageWidgetData:
+			return 0, false
 		case SemanticMethodMessagesEditMessage:
 			return 0x51e842e1, true
+		case SemanticMethodMessagesEditMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditWidgetData:
+			return 0, false
+		case SemanticMethodMessagesGetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesGetPersonalChannelHistory:
 			return 0, false
 		case SemanticMethodMessagesGetRichMessage:
 			return 0, false
 		case SemanticMethodMessagesGetShareThemeBackdrops:
+			return 0, false
+		case SemanticMethodMessagesGetTranscriptionLangs:
+			return 0, false
+		case SemanticMethodMessagesGetWidgetPublicData:
 			return 0, false
 		case SemanticMethodMessagesImportChatInvite:
 			return 0x6c50051c, true
@@ -14531,7 +14732,11 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x545cd15a, true
 		case SemanticMethodMessagesSetBotGuestChatResult:
 			return 0x052b08db, true
+		case SemanticMethodMessagesSetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
+		case SemanticMethodMessagesTranscribeAudioFile:
 			return 0, false
 		case SemanticMethodMessagesTranslateRichMessage:
 			return 0, false
@@ -14624,6 +14829,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0xc27ac8c7, true
 		case SemanticTypeBotInlineMessageRichMessage:
 			return 0, false
+		case SemanticTypeBotInlineMessageWidget:
+			return 0, false
 		case SemanticTypeBotVerification:
 			return 0xf93cd45c, true
 		case SemanticTypeBotVerifierSettings:
@@ -14698,6 +14905,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeInputBotInlineMessageRichMessage:
 			return 0, false
+		case SemanticTypeInputBotInlineMessageWidget:
+			return 0, false
+		case SemanticTypeInputBotInlineMessageWidgetID:
+			return 0, false
 		case SemanticTypeInputButtonTypeRequestPeer:
 			return 0, false
 		case SemanticTypeInputDialogPeerCommunity:
@@ -14714,6 +14925,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x68013e72, true
 		case SemanticTypeInputKeyboardButtonUserProfile:
 			return 0x7d5e07c7, true
+		case SemanticTypeInputMediaWidget:
+			return 0, false
+		case SemanticTypeInputMediaWidgetID:
+			return 0, false
 		case SemanticTypeInputNotifyCommunity:
 			return 0, false
 		case SemanticTypeInputPageBlockMap:
@@ -14796,13 +15011,21 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageEntityTonAddress:
 			return 0, false
+		case SemanticTypeMessageMediaWidget:
+			return 0, false
 		case SemanticTypeMessageReplyHeader:
 			return 0x1b97dd66, true
+		case SemanticTypeMessagesBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticTypeMessagesChatInviteJoinResultWebView:
 			return 0x774bbdf4, true
 		case SemanticTypeMessagesComposedRichMessageWithAI:
 			return 0, false
 		case SemanticTypeMessagesTranslatedRichMessage:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicData:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicDataNotModified:
 			return 0, false
 		case SemanticTypeNotifyCommunity:
 			return 0, false
@@ -14928,15 +15151,27 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeUpdateBotStarsSubscription:
 			return 0, false
+		case SemanticTypeUpdateBotWidgetCopyQuery:
+			return 0, false
+		case SemanticTypeUpdateBotWidgetQuery:
+			return 0, false
 		case SemanticTypeUpdateDeleteEphemeralMessages:
 			return 0, false
 		case SemanticTypeUpdateEditEphemeralMessage:
 			return 0, false
+		case SemanticTypeUpdateEditForumTopic:
+			return 0, false
 		case SemanticTypeUpdateEphemeralBotCallbackQuery:
+			return 0, false
+		case SemanticTypeUpdateInlineBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateMessageWidgetData:
 			return 0, false
 		case SemanticTypeUpdateNewEphemeralMessage:
 			return 0, false
 		case SemanticTypeUpdateSentWalletTransaction:
+			return 0, false
+		case SemanticTypeUpdateTranscribedAudioFile:
 			return 0, false
 		case SemanticTypeUpdateWalletGaslessInfo:
 			return 0, false
@@ -14952,6 +15187,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x31774388, true
 		case SemanticTypeUserFull:
 			return 0x06cbe645, true
+		case SemanticTypeUserWallet:
+			return 0, false
 		case SemanticTypeWalletCard:
 			return 0, false
 		case SemanticTypeWalletCardSticker:
@@ -15004,6 +15241,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWalletUserAddress:
 			return 0, false
+		case SemanticTypeWidgetQueryTypeData:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSentTransaction:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSignData:
+			return 0, false
 		case SemanticMethodAccountToggleWebBrowserSettingsException:
 			return 0x2d0a0571, true
 		case SemanticMethodAuthCancelWebTokenAuthorization:
@@ -15022,6 +15265,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodBotsSetCustomVerification:
 			return 0x8b89dfbd, true
+		case SemanticMethodChannelsToggleForum:
+			return 0x3ff75734, true
 		case SemanticMethodCommunitiesCreate:
 			return 0, false
 		case SemanticMethodCommunitiesGetJoinedCommunities:
@@ -15068,11 +15313,23 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodMessagesEditInlineBotMessage:
 			return 0x83557dba, true
+		case SemanticMethodMessagesEditInlineBotMessageWidgetData:
+			return 0, false
 		case SemanticMethodMessagesEditMessage:
 			return 0x51e842e1, true
+		case SemanticMethodMessagesEditMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditWidgetData:
+			return 0, false
+		case SemanticMethodMessagesGetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesGetRichMessage:
 			return 0, false
 		case SemanticMethodMessagesGetShareThemeBackdrops:
+			return 0, false
+		case SemanticMethodMessagesGetTranscriptionLangs:
+			return 0, false
+		case SemanticMethodMessagesGetWidgetPublicData:
 			return 0, false
 		case SemanticMethodMessagesRequestChatJoinWebView:
 			return 0, false
@@ -15082,7 +15339,11 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x4bc6589a, true
 		case SemanticMethodMessagesSendMessage:
 			return 0x545cd15a, true
+		case SemanticMethodMessagesSetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
+		case SemanticMethodMessagesTranscribeAudioFile:
 			return 0, false
 		case SemanticMethodMessagesTranslateRichMessage:
 			return 0, false
@@ -15173,6 +15434,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeBotCommand:
 			return 0xc27ac8c7, true
+		case SemanticTypeBotInlineMessageWidget:
+			return 0, false
 		case SemanticTypeBotVerification:
 			return 0xf93cd45c, true
 		case SemanticTypeBotVerifierSettings:
@@ -15243,6 +15506,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeInputAiComposeToneSingleUse:
 			return 0, false
+		case SemanticTypeInputBotInlineMessageWidget:
+			return 0, false
+		case SemanticTypeInputBotInlineMessageWidgetID:
+			return 0, false
 		case SemanticTypeInputButtonTypeRequestPeer:
 			return 0, false
 		case SemanticTypeInputDialogPeerCommunity:
@@ -15259,6 +15526,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x68013e72, true
 		case SemanticTypeInputKeyboardButtonUserProfile:
 			return 0x7d5e07c7, true
+		case SemanticTypeInputMediaWidget:
+			return 0, false
+		case SemanticTypeInputMediaWidgetID:
+			return 0, false
 		case SemanticTypeInputNotifyCommunity:
 			return 0, false
 		case SemanticTypeInputPasskeyCredentialFirebasePNV:
@@ -15327,13 +15598,21 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageEntityTonAddress:
 			return 0, false
+		case SemanticTypeMessageMediaWidget:
+			return 0, false
 		case SemanticTypeMessageReplyHeader:
 			return 0x1b97dd66, true
+		case SemanticTypeMessagesBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticTypeMessagesChatInviteJoinResultWebView:
 			return 0x2f51c337, true
 		case SemanticTypeMessagesComposedRichMessageWithAI:
 			return 0, false
 		case SemanticTypeMessagesTranslatedRichMessage:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicData:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicDataNotModified:
 			return 0, false
 		case SemanticTypeNotifyCommunity:
 			return 0, false
@@ -15403,15 +15682,27 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeUpdateBotStarsSubscription:
 			return 0, false
+		case SemanticTypeUpdateBotWidgetCopyQuery:
+			return 0, false
+		case SemanticTypeUpdateBotWidgetQuery:
+			return 0, false
 		case SemanticTypeUpdateDeleteEphemeralMessages:
 			return 0, false
 		case SemanticTypeUpdateEditEphemeralMessage:
 			return 0, false
+		case SemanticTypeUpdateEditForumTopic:
+			return 0, false
 		case SemanticTypeUpdateEphemeralBotCallbackQuery:
+			return 0, false
+		case SemanticTypeUpdateInlineBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateMessageWidgetData:
 			return 0, false
 		case SemanticTypeUpdateNewEphemeralMessage:
 			return 0, false
 		case SemanticTypeUpdateSentWalletTransaction:
+			return 0, false
+		case SemanticTypeUpdateTranscribedAudioFile:
 			return 0, false
 		case SemanticTypeUpdateWalletGaslessInfo:
 			return 0, false
@@ -15427,6 +15718,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x31774388, true
 		case SemanticTypeUserFull:
 			return 0x06cbe645, true
+		case SemanticTypeUserWallet:
+			return 0, false
 		case SemanticTypeWalletCard:
 			return 0, false
 		case SemanticTypeWalletCardSticker:
@@ -15479,6 +15772,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWalletUserAddress:
 			return 0, false
+		case SemanticTypeWidgetQueryTypeData:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSentTransaction:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSignData:
+			return 0, false
 		case SemanticMethodAuthCancelWebTokenAuthorization:
 			return 0, false
 		case SemanticMethodAuthFinishFirebasePnvLogin:
@@ -15495,6 +15794,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodBotsSetCustomVerification:
 			return 0x8b89dfbd, true
+		case SemanticMethodChannelsToggleForum:
+			return 0x3ff75734, true
 		case SemanticMethodCommunitiesCreate:
 			return 0, false
 		case SemanticMethodCommunitiesGetJoinedCommunities:
@@ -15537,13 +15838,29 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x67a3f0de, true
 		case SemanticMethodMessagesComposeRichMessageWithAI:
 			return 0, false
+		case SemanticMethodMessagesEditInlineBotMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditWidgetData:
+			return 0, false
+		case SemanticMethodMessagesGetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesGetShareThemeBackdrops:
+			return 0, false
+		case SemanticMethodMessagesGetTranscriptionLangs:
+			return 0, false
+		case SemanticMethodMessagesGetWidgetPublicData:
 			return 0, false
 		case SemanticMethodMessagesRequestChatJoinWebView:
 			return 0, false
 		case SemanticMethodMessagesSearchGlobal:
 			return 0x4bc6589a, true
+		case SemanticMethodMessagesSetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
+		case SemanticMethodMessagesTranscribeAudioFile:
 			return 0, false
 		case SemanticMethodMessagesTranslateRichMessage:
 			return 0, false
@@ -15632,6 +15949,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		switch semantic {
 		case SemanticTypeAuthFirebasePnvIntent:
 			return 0, false
+		case SemanticTypeBotInlineMessageWidget:
+			return 0, false
 		case SemanticTypeBotVerification:
 			return 0xf93cd45c, true
 		case SemanticTypeBotVerifierSettings:
@@ -15682,6 +16001,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeInlineButtonTypeWebView:
 			return 0, false
+		case SemanticTypeInputBotInlineMessageWidget:
+			return 0, false
+		case SemanticTypeInputBotInlineMessageWidgetID:
+			return 0, false
 		case SemanticTypeInputButtonTypeRequestPeer:
 			return 0, false
 		case SemanticTypeInputInlineButtonTypeURLAuth:
@@ -15696,6 +16019,10 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x68013e72, true
 		case SemanticTypeInputKeyboardButtonUserProfile:
 			return 0x7d5e07c7, true
+		case SemanticTypeInputMediaWidget:
+			return 0, false
+		case SemanticTypeInputMediaWidgetID:
+			return 0, false
 		case SemanticTypeInputPasskeyCredentialFirebasePNV:
 			return 0x5b1ccb28, true
 		case SemanticTypeInputReplyToMessage:
@@ -15758,8 +16085,16 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageEntityTonAddress:
 			return 0, false
+		case SemanticTypeMessageMediaWidget:
+			return 0, false
 		case SemanticTypeMessageReplyHeader:
 			return 0x1b97dd66, true
+		case SemanticTypeMessagesBotWidgetQueryAnswer:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicData:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicDataNotModified:
+			return 0, false
 		case SemanticTypeOnrampAvailability:
 			return 0, false
 		case SemanticTypeOnrampLimits:
@@ -15822,9 +16157,21 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeToncenterStreamingURL:
 			return 0, false
+		case SemanticTypeUpdateBotWidgetCopyQuery:
+			return 0, false
+		case SemanticTypeUpdateBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateEditForumTopic:
+			return 0, false
 		case SemanticTypeUpdateEphemeralBotCallbackQuery:
 			return 0, false
+		case SemanticTypeUpdateInlineBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateMessageWidgetData:
+			return 0, false
 		case SemanticTypeUpdateSentWalletTransaction:
+			return 0, false
+		case SemanticTypeUpdateTranscribedAudioFile:
 			return 0, false
 		case SemanticTypeUpdateWalletGaslessInfo:
 			return 0, false
@@ -15838,6 +16185,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x3cd623ec, true
 		case SemanticTypeUserFull:
 			return 0x06cbe645, true
+		case SemanticTypeUserWallet:
+			return 0, false
 		case SemanticTypeWalletCard:
 			return 0, false
 		case SemanticTypeWalletCardSticker:
@@ -15890,6 +16239,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWalletUserAddress:
 			return 0, false
+		case SemanticTypeWidgetQueryTypeData:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSentTransaction:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSignData:
+			return 0, false
 		case SemanticMethodAuthCancelWebTokenAuthorization:
 			return 0, false
 		case SemanticMethodAuthFinishFirebasePnvLogin:
@@ -15906,6 +16261,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodBotsSetCustomVerification:
 			return 0x8b89dfbd, true
+		case SemanticMethodChannelsToggleForum:
+			return 0x3ff75734, true
 		case SemanticMethodContactsExportNoPaidMessagesToken:
 			return 0, false
 		case SemanticMethodContactsImportNoPaidMessagesToken:
@@ -15924,9 +16281,25 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x68cbd09f, true
 		case SemanticMethodMessagesAcceptURLAuth:
 			return 0x67a3f0de, true
+		case SemanticMethodMessagesEditInlineBotMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditWidgetData:
+			return 0, false
+		case SemanticMethodMessagesGetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesGetShareThemeBackdrops:
 			return 0, false
+		case SemanticMethodMessagesGetTranscriptionLangs:
+			return 0, false
+		case SemanticMethodMessagesGetWidgetPublicData:
+			return 0, false
+		case SemanticMethodMessagesSetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
+		case SemanticMethodMessagesTranscribeAudioFile:
 			return 0, false
 		case SemanticMethodPaymentsCreateOnrampSession:
 			return 0, false
@@ -16011,6 +16384,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		}
 	case Profile229:
 		switch semantic {
+		case SemanticTypeBotInlineMessageWidget:
+			return 0, false
 		case SemanticTypeBotVerification:
 			return 0xf93cd45c, true
 		case SemanticTypeBotVerifierSettings:
@@ -16023,11 +16398,19 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeExportedNoPaidMessagesToken:
 			return 0, false
+		case SemanticTypeInputBotInlineMessageWidget:
+			return 0, false
+		case SemanticTypeInputBotInlineMessageWidgetID:
+			return 0, false
 		case SemanticTypeInputKeyboardButtonRequestPeer:
 			return 0, false
 		case SemanticTypeInputKeyboardButtonURLAuth:
 			return 0, false
 		case SemanticTypeInputKeyboardButtonUserProfile:
+			return 0, false
+		case SemanticTypeInputMediaWidget:
+			return 0, false
+		case SemanticTypeInputMediaWidgetID:
 			return 0, false
 		case SemanticTypeInputPasskeyCredentialFirebasePNV:
 			return 0x5b1ccb28, true
@@ -16081,8 +16464,16 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageEntityTonAddress:
 			return 0, false
+		case SemanticTypeMessageMediaWidget:
+			return 0, false
 		case SemanticTypeMessageReplyHeader:
 			return 0x1b97dd66, true
+		case SemanticTypeMessagesBotWidgetQueryAnswer:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicData:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicDataNotModified:
+			return 0, false
 		case SemanticTypeOnrampAvailability:
 			return 0, false
 		case SemanticTypeOnrampLimits:
@@ -16125,7 +16516,19 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeToncenterStreamingURL:
 			return 0, false
+		case SemanticTypeUpdateBotWidgetCopyQuery:
+			return 0, false
+		case SemanticTypeUpdateBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateEditForumTopic:
+			return 0, false
+		case SemanticTypeUpdateInlineBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateMessageWidgetData:
+			return 0, false
 		case SemanticTypeUpdateSentWalletTransaction:
+			return 0, false
+		case SemanticTypeUpdateTranscribedAudioFile:
 			return 0, false
 		case SemanticTypeUpdateWalletGaslessInfo:
 			return 0, false
@@ -16139,6 +16542,8 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0x3cd623ec, true
 		case SemanticTypeUserFull:
 			return 0x06cbe645, true
+		case SemanticTypeUserWallet:
+			return 0, false
 		case SemanticTypeWalletCard:
 			return 0, false
 		case SemanticTypeWalletCardSticker:
@@ -16191,6 +16596,12 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWalletUserAddress:
 			return 0, false
+		case SemanticTypeWidgetQueryTypeData:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSentTransaction:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSignData:
+			return 0, false
 		case SemanticMethodAuthCancelWebTokenAuthorization:
 			return 0, false
 		case SemanticMethodAuthInitFirebasePnvLogin:
@@ -16203,15 +16614,33 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticMethodBotsSetCustomVerification:
 			return 0x8b89dfbd, true
+		case SemanticMethodChannelsToggleForum:
+			return 0x3ff75734, true
 		case SemanticMethodContactsExportNoPaidMessagesToken:
 			return 0, false
 		case SemanticMethodContactsImportNoPaidMessagesToken:
 			return 0, false
 		case SemanticMethodMessagesAcceptURLAuth:
 			return 0x67a3f0de, true
+		case SemanticMethodMessagesEditInlineBotMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditWidgetData:
+			return 0, false
+		case SemanticMethodMessagesGetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesGetShareThemeBackdrops:
 			return 0, false
+		case SemanticMethodMessagesGetTranscriptionLangs:
+			return 0, false
+		case SemanticMethodMessagesGetWidgetPublicData:
+			return 0, false
+		case SemanticMethodMessagesSetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
+		case SemanticMethodMessagesTranscribeAudioFile:
 			return 0, false
 		case SemanticMethodPaymentsCreateOnrampSession:
 			return 0, false
@@ -16296,17 +16725,27 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		}
 	case Profile230:
 		switch semantic {
+		case SemanticTypeBotInlineMessageWidget:
+			return 0, false
 		case SemanticTypeChannel:
 			return 0xd49f34c6, true
 		case SemanticTypeChannelFull:
 			return 0xa04e8d3a, true
 		case SemanticTypeExportedNoPaidMessagesToken:
 			return 0, false
+		case SemanticTypeInputBotInlineMessageWidget:
+			return 0, false
+		case SemanticTypeInputBotInlineMessageWidgetID:
+			return 0, false
 		case SemanticTypeInputKeyboardButtonRequestPeer:
 			return 0, false
 		case SemanticTypeInputKeyboardButtonURLAuth:
 			return 0, false
 		case SemanticTypeInputKeyboardButtonUserProfile:
+			return 0, false
+		case SemanticTypeInputMediaWidget:
+			return 0, false
+		case SemanticTypeInputMediaWidgetID:
 			return 0, false
 		case SemanticTypeInputPasskeyCredentialFirebasePNV:
 			return 0, false
@@ -16348,8 +16787,16 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageActionNoPaidMessagesTokenUsed:
 			return 0, false
+		case SemanticTypeMessageMediaWidget:
+			return 0, false
 		case SemanticTypeMessageReplyHeader:
 			return 0x1b97dd66, true
+		case SemanticTypeMessagesBotWidgetQueryAnswer:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicData:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicDataNotModified:
+			return 0, false
 		case SemanticTypePaymentsStarGiftDepositPayload:
 			return 0, false
 		case SemanticTypeShareThemeBackdropOption:
@@ -16364,10 +16811,24 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeShareThemeGift:
 			return 0, false
+		case SemanticTypeUpdateBotWidgetCopyQuery:
+			return 0, false
+		case SemanticTypeUpdateBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateEditForumTopic:
+			return 0, false
+		case SemanticTypeUpdateInlineBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateMessageWidgetData:
+			return 0, false
+		case SemanticTypeUpdateTranscribedAudioFile:
+			return 0, false
 		case SemanticTypeURLAuthResultRequest:
 			return 0x3cd623ec, true
 		case SemanticTypeUserFull:
 			return 0x06cbe645, true
+		case SemanticTypeUserWallet:
+			return 0, false
 		case SemanticTypeWalletCard:
 			return 0, false
 		case SemanticTypeWalletCardSticker:
@@ -16378,15 +16839,39 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWalletTransactionPeerTelegramGift:
 			return 0, false
+		case SemanticTypeWidgetQueryTypeData:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSentTransaction:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSignData:
+			return 0, false
+		case SemanticMethodChannelsToggleForum:
+			return 0x3ff75734, true
 		case SemanticMethodContactsExportNoPaidMessagesToken:
 			return 0, false
 		case SemanticMethodContactsImportNoPaidMessagesToken:
 			return 0, false
 		case SemanticMethodMessagesAcceptURLAuth:
 			return 0x67a3f0de, true
+		case SemanticMethodMessagesEditInlineBotMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditWidgetData:
+			return 0, false
+		case SemanticMethodMessagesGetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesGetShareThemeBackdrops:
 			return 0, false
+		case SemanticMethodMessagesGetTranscriptionLangs:
+			return 0, false
+		case SemanticMethodMessagesGetWidgetPublicData:
+			return 0, false
+		case SemanticMethodMessagesSetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
+		case SemanticMethodMessagesTranscribeAudioFile:
 			return 0, false
 		case SemanticMethodPaymentsDeleteStarGift:
 			return 0, false
@@ -16403,17 +16888,27 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		}
 	case Profile231:
 		switch semantic {
+		case SemanticTypeBotInlineMessageWidget:
+			return 0, false
 		case SemanticTypeChannel:
 			return 0xd49f34c6, true
 		case SemanticTypeChannelFull:
 			return 0xa04e8d3a, true
 		case SemanticTypeExportedNoPaidMessagesToken:
 			return 0, false
+		case SemanticTypeInputBotInlineMessageWidget:
+			return 0, false
+		case SemanticTypeInputBotInlineMessageWidgetID:
+			return 0, false
 		case SemanticTypeInputKeyboardButtonRequestPeer:
 			return 0, false
 		case SemanticTypeInputKeyboardButtonURLAuth:
 			return 0, false
 		case SemanticTypeInputKeyboardButtonUserProfile:
+			return 0, false
+		case SemanticTypeInputMediaWidget:
+			return 0, false
+		case SemanticTypeInputMediaWidgetID:
 			return 0, false
 		case SemanticTypeInputPasskeyCredentialFirebasePNV:
 			return 0, false
@@ -16453,8 +16948,16 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeMessageActionNoPaidMessagesTokenUsed:
 			return 0, false
+		case SemanticTypeMessageMediaWidget:
+			return 0, false
 		case SemanticTypeMessageReplyHeader:
 			return 0x1b97dd66, true
+		case SemanticTypeMessagesBotWidgetQueryAnswer:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicData:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicDataNotModified:
+			return 0, false
 		case SemanticTypePaymentsStarGiftDepositPayload:
 			return 0, false
 		case SemanticTypeShareThemeBackdropOption:
@@ -16469,8 +16972,22 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeShareThemeGift:
 			return 0, false
+		case SemanticTypeUpdateBotWidgetCopyQuery:
+			return 0, false
+		case SemanticTypeUpdateBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateEditForumTopic:
+			return 0, false
+		case SemanticTypeUpdateInlineBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateMessageWidgetData:
+			return 0, false
+		case SemanticTypeUpdateTranscribedAudioFile:
+			return 0, false
 		case SemanticTypeUserFull:
 			return 0x06cbe645, true
+		case SemanticTypeUserWallet:
+			return 0, false
 		case SemanticTypeWalletCard:
 			return 0, false
 		case SemanticTypeWalletCardSticker:
@@ -16481,13 +16998,37 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 			return 0, false
 		case SemanticTypeWalletTransactionPeerTelegramGift:
 			return 0, false
+		case SemanticTypeWidgetQueryTypeData:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSentTransaction:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSignData:
+			return 0, false
+		case SemanticMethodChannelsToggleForum:
+			return 0x3ff75734, true
 		case SemanticMethodContactsExportNoPaidMessagesToken:
 			return 0, false
 		case SemanticMethodContactsImportNoPaidMessagesToken:
 			return 0, false
+		case SemanticMethodMessagesEditInlineBotMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditWidgetData:
+			return 0, false
+		case SemanticMethodMessagesGetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesGetShareThemeBackdrops:
 			return 0, false
+		case SemanticMethodMessagesGetTranscriptionLangs:
+			return 0, false
+		case SemanticMethodMessagesGetWidgetPublicData:
+			return 0, false
+		case SemanticMethodMessagesSetBotWidgetQueryAnswer:
+			return 0, false
 		case SemanticMethodMessagesSetShareTheme:
+			return 0, false
+		case SemanticMethodMessagesTranscribeAudioFile:
 			return 0, false
 		case SemanticMethodPaymentsDeleteStarGift:
 			return 0, false
@@ -16500,6 +17041,103 @@ func WireID(profile Profile, semantic SemanticID) (uint32, bool) {
 		case SemanticMethodPaymentsWithdrawStarGift:
 			return 0, false
 		case SemanticMethodWalletSetCardStickers:
+			return 0, false
+		}
+	case Profile232:
+		switch semantic {
+		case SemanticTypeBotInlineMessageWidget:
+			return 0, false
+		case SemanticTypeInputBotInlineMessageWidget:
+			return 0, false
+		case SemanticTypeInputBotInlineMessageWidgetID:
+			return 0, false
+		case SemanticTypeInputKeyboardButtonRequestPeer:
+			return 0, false
+		case SemanticTypeInputKeyboardButtonURLAuth:
+			return 0, false
+		case SemanticTypeInputKeyboardButtonUserProfile:
+			return 0, false
+		case SemanticTypeInputMediaWidget:
+			return 0, false
+		case SemanticTypeInputMediaWidgetID:
+			return 0, false
+		case SemanticTypeInputPasskeyCredentialFirebasePNV:
+			return 0, false
+		case SemanticTypeKeyboardButtonBuy:
+			return 0, false
+		case SemanticTypeKeyboardButtonCallback:
+			return 0, false
+		case SemanticTypeKeyboardButtonCopy:
+			return 0, false
+		case SemanticTypeKeyboardButtonGame:
+			return 0, false
+		case SemanticTypeKeyboardButtonRequestGeoLocation:
+			return 0, false
+		case SemanticTypeKeyboardButtonRequestPeer:
+			return 0, false
+		case SemanticTypeKeyboardButtonRequestPhone:
+			return 0, false
+		case SemanticTypeKeyboardButtonRequestPoll:
+			return 0, false
+		case SemanticTypeKeyboardButtonSimpleWebView:
+			return 0, false
+		case SemanticTypeKeyboardButtonSwitchInline:
+			return 0, false
+		case SemanticTypeKeyboardButtonURL:
+			return 0, false
+		case SemanticTypeKeyboardButtonURLAuth:
+			return 0, false
+		case SemanticTypeKeyboardButtonUserProfile:
+			return 0, false
+		case SemanticTypeKeyboardButtonWebView:
+			return 0, false
+		case SemanticTypeMessageMediaWidget:
+			return 0, false
+		case SemanticTypeMessagesBotWidgetQueryAnswer:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicData:
+			return 0, false
+		case SemanticTypeMessagesWidgetPublicDataNotModified:
+			return 0, false
+		case SemanticTypeUpdateBotWidgetCopyQuery:
+			return 0, false
+		case SemanticTypeUpdateBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateEditForumTopic:
+			return 0, false
+		case SemanticTypeUpdateInlineBotWidgetQuery:
+			return 0, false
+		case SemanticTypeUpdateMessageWidgetData:
+			return 0, false
+		case SemanticTypeUpdateTranscribedAudioFile:
+			return 0, false
+		case SemanticTypeUserWallet:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeData:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSentTransaction:
+			return 0, false
+		case SemanticTypeWidgetQueryTypeSignData:
+			return 0, false
+		case SemanticMethodChannelsToggleForum:
+			return 0x3ff75734, true
+		case SemanticMethodMessagesEditInlineBotMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditMessageWidgetData:
+			return 0, false
+		case SemanticMethodMessagesEditWidgetData:
+			return 0, false
+		case SemanticMethodMessagesGetBotWidgetQueryAnswer:
+			return 0, false
+		case SemanticMethodMessagesGetTranscriptionLangs:
+			return 0, false
+		case SemanticMethodMessagesGetWidgetPublicData:
+			return 0, false
+		case SemanticMethodMessagesSetBotWidgetQueryAnswer:
+			return 0, false
+		case SemanticMethodMessagesTranscribeAudioFile:
+			return 0, false
+		case SemanticMethodPaymentsGetStarGiftWithdrawalURLLegacy:
 			return 0, false
 		}
 	case ProfileCanonical:
@@ -16593,6 +17231,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodPremiumGetBoostsStatus, true
 	case 0x0438865b:
 		return SemanticTypeInputStickeredMediaDocument, true
+	case 0x04493bff:
+		return SemanticTypeMessagesWidgetPublicData, true
 	case 0x049ee584:
 		return SemanticTypeInvoice, true
 	case 0x04c4d4ce:
@@ -16655,6 +17295,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeAuthCodeTypeFragmentSMS, true
 	case 0x07141dbf:
 		return SemanticTypeInputEmojiStatusCollectible, true
+	case 0x072d2ef7:
+		return SemanticMethodMessagesTranscribeAudioFile, true
 	case 0x0773c080:
 		return SemanticTypeInputAiComposeToneID, true
 	case 0x07761198:
@@ -16941,6 +17583,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeStoryItem, true
 	case 0x16bf744e:
 		return SemanticTypeSendMessageTypingAction, true
+	case 0x16d8cf0b:
+		return SemanticTypeWidgetQueryTypeData, true
 	case 0x16d9703b:
 		return SemanticTypeContactStatus, true
 	case 0x16fcc2cb:
@@ -17005,6 +17649,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodMessagesGetAvailableReactions, true
 	case 0x18e82537:
 		return SemanticTypeWalletEncryptedSecretPhrasePart, true
+	case 0x192047dc:
+		return SemanticTypeWidgetQueryTypeSignData, true
 	case 0x19360dc0:
 		return SemanticTypeUpdateFolderPeers, true
 	case 0x193b4417:
@@ -17215,6 +17861,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeTodoCompletion, true
 	case 0x222600ef:
 		return SemanticTypeMessagesExportedChatInviteReplaced, true
+	case 0x2238f214:
+		return SemanticTypeMessageMediaWidget, true
 	case 0x2244afad:
 		return SemanticTypeCommunitiesPeerLinkRequests, true
 	case 0x22567115:
@@ -17233,6 +17881,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeChannelAdminLogEventActionStartGroupCall, true
 	case 0x2331b22d:
 		return SemanticTypePhotoEmpty, true
+	case 0x2366665c:
+		return SemanticTypeUpdateEditForumTopic, true
 	case 0x236df622:
 		return SemanticTypeEmojiKeywordDeleted, true
 	case 0x23734b06:
@@ -17907,12 +18557,16 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeInputStickerSetEmojiDefaultTopicIcons, true
 	case 0x44e56023:
 		return SemanticTypeMessagesEmojiGameDiceInfo, true
+	case 0x44f6c04e:
+		return SemanticTypeInputMediaWidget, true
 	case 0x44fa7a15:
 		return SemanticMethodMessagesSendEncrypted, true
 	case 0x4500c525:
 		return SemanticMethodWalletEnableBackup, true
 	case 0x4504d54f:
 		return SemanticMethodBotsSetBotMenuButton, true
+	case 0x454d2737:
+		return SemanticTypeUserWallet, true
 	case 0x455b853d:
 		return SemanticTypeMessageViews, true
 	case 0x4576f3f0:
@@ -18367,6 +19021,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodMessagesEditQuickReplyShortcut, true
 	case 0x5c467992:
 		return SemanticTypeInputNotifyForumTopic, true
+	case 0x5c550579:
+		return SemanticMethodMessagesGetBotWidgetQueryAnswer, true
 	case 0x5c9d3702:
 		return SemanticTypeChatInvite, true
 	case 0x5c9ff4d6:
@@ -18491,6 +19147,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeUpdateChannel, true
 	case 0x635fe375:
 		return SemanticTypePhoneConnectionWebrtc, true
+	case 0x6396ce2b:
+		return SemanticMethodMessagesEditInlineBotMessageWidgetData, true
 	case 0x63a440dc:
 		return SemanticTypeInputWalletNew, true
 	case 0x63c3dd0a:
@@ -18737,6 +19395,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeInputBusinessRecipients, true
 	case 0x6fb4ad87:
 		return SemanticTypeMessagesEmojiGroupsNotModified, true
+	case 0x6fc53181:
+		return SemanticMethodMessagesGetWidgetPublicData, true
 	case 0x6fe1a881:
 		return SemanticTypeBotCommandScopeChats, true
 	case 0x702a40e0:
@@ -18797,6 +19457,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeRequestedPeerChat, true
 	case 0x7311ca11:
 		return SemanticTypeWebPageNotModified, true
+	case 0x734c2e7b:
+		return SemanticTypeUpdateTranscribedAudioFile, true
 	case 0x734f9721:
 		return SemanticMethodEphemeralDeleteAllWelcomeMessages, true
 	case 0x735787a8:
@@ -19001,6 +19663,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeUpdateEphemeralBotCallbackQuery, true
 	case 0x7c2557c4:
 		return SemanticMethodStoriesToggleAllStoriesHidden, true
+	case 0x7c855cb5:
+		return SemanticTypeInputMediaWidgetID, true
 	case 0x7c8fe7b6:
 		return SemanticTypePageBlockVideo, true
 	case 0x7cb34d79:
@@ -19491,6 +20155,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodAuthImportLoginToken, true
 	case 0x95ace84f:
 		return SemanticTypeShareThemeDefault, true
+	case 0x95b73023:
+		return SemanticTypeMessagesBotWidgetQueryAnswer, true
 	case 0x95c5346b:
 		return SemanticTypeWalletState, true
 	case 0x95d2ac92:
@@ -19805,6 +20471,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodAccountUpdateBusinessAwayMessage, true
 	case 0xa2875319:
 		return SemanticMethodMessagesMigrateChat, true
+	case 0xa2952b54:
+		return SemanticMethodChannelsToggleForum, true
 	case 0xa29cd42c:
 		return SemanticMethodMessagesGetSuggestedDialogFilters, true
 	case 0xa2a5371e:
@@ -19889,6 +20557,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeUpdateDialogFilterOrder, true
 	case 0xa5eec345:
 		return SemanticMethodMessagesTranslateText, true
+	case 0xa5f07e08:
+		return SemanticTypeUpdateInlineBotWidgetQuery, true
 	case 0xa60ab9ce:
 		return SemanticMethodAccountGetDefaultBackgroundEmojis, true
 	case 0xa614d034:
@@ -20163,6 +20833,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeContactsFound, true
 	case 0xb320aadb:
 		return SemanticTypeSecureValueTypePhone, true
+	case 0xb373fe68:
+		return SemanticTypeUpdateBotWidgetQuery, true
 	case 0xb37794af:
 		return SemanticTypeAuthSentCodeTypeSMSPhrase, true
 	case 0xb390dc08:
@@ -20307,6 +20979,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodMessagesSetBotGuestChatResult, true
 	case 0xb90c2afd:
 		return SemanticTypeUserFull, true
+	case 0xb9196e57:
+		return SemanticTypeMessagesWidgetPublicDataNotModified, true
 	case 0xb91bbd3a:
 		return SemanticTypeMessageActionSetChatTheme, true
 	case 0xb92c09e2:
@@ -20339,12 +21013,16 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodMessagesReadSavedHistory, true
 	case 0xba6705f0:
 		return SemanticMethodContactsEditCloseFriends, true
+	case 0xba6cd9aa:
+		return SemanticMethodMessagesGetTranscriptionLangs, true
 	case 0xba7bb15e:
 		return SemanticTypePollResults, true
 	case 0xba8d5f35:
 		return SemanticMethodEphemeralSendMessage, true
 	case 0xba9ee679:
 		return SemanticMethodMessagesRequestChatJoinWebView, true
+	case 0xbaa17834:
+		return SemanticTypeBotInlineMessageWidget, true
 	case 0xbaa57628:
 		return SemanticTypeAutoDownloadSettings, true
 	case 0xbaafe5e0:
@@ -20373,6 +21051,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeUpdatePeerHistoryTTL, true
 	case 0xbbab2643:
 		return SemanticTypeStoryReactionPublicForward, true
+	case 0xbbb078dd:
+		return SemanticTypeUpdateMessageWidgetData, true
 	case 0xbbb6b4a3:
 		return SemanticTypeStarsAmount, true
 	case 0xbbcce4c2:
@@ -21355,6 +22035,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodChannelsReadMessageContents, true
 	case 0xeabbb94c:
 		return SemanticMethodChannelsTogglePreHistoryHidden, true
+	case 0xeac343c0:
+		return SemanticMethodMessagesEditWidgetData, true
 	case 0xeae87e42:
 		return SemanticTypeContactsContacts, true
 	case 0xeafc32bc:
@@ -21607,12 +22289,16 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeBankCardOpenURL, true
 	case 0xf5890df1:
 		return SemanticTypeInputThemeSlug, true
+	case 0xf597a3f0:
+		return SemanticTypeInputBotInlineMessageWidget, true
 	case 0xf5b5563f:
 		return SemanticMethodAccountDeletePasskey, true
 	case 0xf5dad378:
 		return SemanticMethodChannelsGetGroupsForDiscussion, true
 	case 0xf5ddd6e7:
 		return SemanticTypeInputReportReasonFake, true
+	case 0xf624bc1e:
+		return SemanticMethodMessagesEditMessageWidgetData, true
 	case 0xf64daf43:
 		return SemanticMethodMessagesRequestEncryption, true
 	case 0xf64f54f7:
@@ -21667,6 +22353,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeInputMediaContact, true
 	case 0xf8b036af:
 		return SemanticMethodChannelsGetAdminedPublicChannels, true
+	case 0xf8cdec6a:
+		return SemanticMethodMessagesSetBotWidgetQueryAnswer, true
 	case 0xf8e0aa1c:
 		return SemanticTypeAccountPasskeys, true
 	case 0xf8ec284b:
@@ -21709,6 +22397,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeThemeSettings, true
 	case 0xfa87f659:
 		return SemanticTypeChatlistsChatlistInviteAlready, true
+	case 0xfa89bef7:
+		return SemanticTypeUpdateBotWidgetCopyQuery, true
 	case 0xfa8cc6f5:
 		return SemanticMethodAccountReportProfilePhoto, true
 	case 0xfabadc5f:
@@ -21799,6 +22489,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticTypeGlobalPrivacySettings, true
 	case 0xfe78eecc:
 		return SemanticTypeWalletUserAddress, true
+	case 0xfe8b792b:
+		return SemanticTypeInputBotInlineMessageWidgetID, true
 	case 0xfe9fc158:
 		return SemanticTypeChannelAdminLogEventActionParticipantJoinByInvite, true
 	case 0xfebe5491:
@@ -21807,6 +22499,8 @@ func semanticByWireID(id uint32) (SemanticID, bool) {
 		return SemanticMethodAccountInstallWallPaper, true
 	case 0xfef48f62:
 		return SemanticMethodMessagesSendMessage, true
+	case 0xff3b33b4:
+		return SemanticTypeWidgetQueryTypeSentTransaction, true
 	case 0xff544e65:
 		return SemanticTypeFolder, true
 	case 0xff57708d:

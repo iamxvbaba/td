@@ -35,7 +35,7 @@ var (
 // Get information about the value of a collectible gift »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#collectible-gifts
+//  1) https://core.telegram.org/api/gifts#collectible-gifts
 //
 // See https://core.telegram.org/method/payments.getUniqueStarGiftValueInfo for reference.
 type PaymentsGetUniqueStarGiftValueInfoRequest struct {
@@ -171,11 +171,10 @@ func (g *PaymentsGetUniqueStarGiftValueInfoRequest) GetSlug() (value string) {
 // Get information about the value of a collectible gift »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#collectible-gifts
+//  1) https://core.telegram.org/api/gifts#collectible-gifts
 //
 // Possible errors:
-//
-//	400 STARGIFT_SLUG_INVALID: The specified gift slug is invalid.
+//  400 STARGIFT_SLUG_INVALID: The specified gift slug is invalid.
 //
 // See https://core.telegram.org/method/payments.getUniqueStarGiftValueInfo for reference.
 func (c *Client) PaymentsGetUniqueStarGiftValueInfo(ctx context.Context, slug string) (*PaymentsUniqueStarGiftValueInfo, error) {

@@ -3405,22 +3405,21 @@ const MessageClassName = "Message"
 // See https://core.telegram.org/type/Message for reference.
 //
 // Constructors:
-//   - [MessageEmpty]
-//   - [Message]
-//   - [MessageService]
+//  - [MessageEmpty]
+//  - [Message]
+//  - [MessageService]
 //
 // Example:
-//
-//	g, err := tg.DecodeMessage(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.MessageEmpty: // messageEmpty#90a6ca84
-//	case *tg.Message: // message#7600b9d3
-//	case *tg.MessageService: // messageService#7a800e0a
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeMessage(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.MessageEmpty: // messageEmpty#90a6ca84
+//  case *tg.Message: // message#7600b9d3
+//  case *tg.MessageService: // messageService#7a800e0a
+//  default: panic(v)
+//  }
 type MessageClass interface {
 	bin.Encoder
 	bin.Decoder

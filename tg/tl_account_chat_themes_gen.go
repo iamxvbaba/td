@@ -137,7 +137,7 @@ func (c *AccountChatThemesNotModified) DecodeBare(b *bin.Buffer) error {
 // Available chat themes¹
 //
 // Links:
-//  1. https://core.telegram.org/api/themes#chat-themes
+//  1) https://core.telegram.org/api/themes#chat-themes
 //
 // See https://core.telegram.org/constructor/account.chatThemes for reference.
 type AccountChatThemes struct {
@@ -499,20 +499,19 @@ const AccountChatThemesClassName = "account.ChatThemes"
 // See https://core.telegram.org/type/account.ChatThemes for reference.
 //
 // Constructors:
-//   - [AccountChatThemesNotModified]
-//   - [AccountChatThemes]
+//  - [AccountChatThemesNotModified]
+//  - [AccountChatThemes]
 //
 // Example:
-//
-//	g, err := tg.DecodeAccountChatThemes(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.AccountChatThemesNotModified: // account.chatThemesNotModified#e011e1c4
-//	case *tg.AccountChatThemes: // account.chatThemes#be098173
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeAccountChatThemes(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.AccountChatThemesNotModified: // account.chatThemesNotModified#e011e1c4
+//  case *tg.AccountChatThemes: // account.chatThemes#be098173
+//  default: panic(v)
+//  }
 type AccountChatThemesClass interface {
 	bin.Encoder
 	bin.Decoder

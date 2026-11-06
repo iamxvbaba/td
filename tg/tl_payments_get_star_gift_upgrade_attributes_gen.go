@@ -39,9 +39,9 @@ var (
 // regular upgrade previews (and vice versa).
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#collectible-gifts
-//  2. https://core.telegram.org/constructor/starGiftAttributeModel
-//  3. https://core.telegram.org/api/gifts#crafting-collectible-gifts
+//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  2) https://core.telegram.org/constructor/starGiftAttributeModel
+//  3) https://core.telegram.org/api/gifts#crafting-collectible-gifts
 //
 // See https://core.telegram.org/method/payments.getStarGiftUpgradeAttributes for reference.
 type PaymentsGetStarGiftUpgradeAttributesRequest struct {
@@ -181,13 +181,12 @@ func (g *PaymentsGetStarGiftUpgradeAttributesRequest) GetGiftID() (value int64) 
 // regular upgrade previews (and vice versa).
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#collectible-gifts
-//  2. https://core.telegram.org/constructor/starGiftAttributeModel
-//  3. https://core.telegram.org/api/gifts#crafting-collectible-gifts
+//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  2) https://core.telegram.org/constructor/starGiftAttributeModel
+//  3) https://core.telegram.org/api/gifts#crafting-collectible-gifts
 //
 // Possible errors:
-//
-//	400 STARGIFT_INVALID: The passed gift is invalid.
+//  400 STARGIFT_INVALID: The passed gift is invalid.
 //
 // See https://core.telegram.org/method/payments.getStarGiftUpgradeAttributes for reference.
 func (c *Client) PaymentsGetStarGiftUpgradeAttributes(ctx context.Context, giftid int64) (*PaymentsStarGiftUpgradeAttributes, error) {

@@ -36,8 +36,8 @@ var (
 // Styled text entities¹ will only be preserved for Telegram Premium² users.
 //
 // Links:
-//  1. https://core.telegram.org/api/entities
-//  2. https://core.telegram.org/api/premium
+//  1) https://core.telegram.org/api/entities
+//  2) https://core.telegram.org/api/premium
 //
 // See https://core.telegram.org/method/messages.translateText for reference.
 type MessagesTranslateTextRequest struct {
@@ -417,20 +417,19 @@ func (t *MessagesTranslateTextRequest) GetTone() (value string, ok bool) {
 // Styled text entities¹ will only be preserved for Telegram Premium² users.
 //
 // Links:
-//  1. https://core.telegram.org/api/entities
-//  2. https://core.telegram.org/api/premium
+//  1) https://core.telegram.org/api/entities
+//  2) https://core.telegram.org/api/premium
 //
 // Possible errors:
-//
-//	400 INPUT_TEXT_EMPTY: The specified text is empty.
-//	400 INPUT_TEXT_TOO_LONG: The specified text is too long.
-//	400 MSG_ID_INVALID: Invalid message ID provided.
-//	400 PEER_ID_INVALID: The provided peer id is invalid.
-//	400 TO_LANG_INVALID: The specified destination language is invalid.
-//	500 TRANSLATE_REQ_FAILED: Translation failed, please try again later.
-//	400 TRANSLATE_REQ_QUOTA_EXCEEDED: Translation is currently unavailable due to a temporary server-side lack of resources.
-//	406 TRANSLATIONS_DISABLED: Translations are unavailable, a detailed and localized description for the error will be emitted via an updateServiceNotification as specified here ».
-//	500 TRANSLATION_TIMEOUT: A timeout occurred while translating the specified text.
+//  400 INPUT_TEXT_EMPTY: The specified text is empty.
+//  400 INPUT_TEXT_TOO_LONG: The specified text is too long.
+//  400 MSG_ID_INVALID: Invalid message ID provided.
+//  400 PEER_ID_INVALID: The provided peer id is invalid.
+//  400 TO_LANG_INVALID: The specified destination language is invalid.
+//  500 TRANSLATE_REQ_FAILED: Translation failed, please try again later.
+//  400 TRANSLATE_REQ_QUOTA_EXCEEDED: Translation is currently unavailable due to a temporary server-side lack of resources.
+//  406 TRANSLATIONS_DISABLED: Translations are unavailable, a detailed and localized description for the error will be emitted via an updateServiceNotification as specified here ».
+//  500 TRANSLATION_TIMEOUT: A timeout occurred while translating the specified text.
 //
 // See https://core.telegram.org/method/messages.translateText for reference.
 func (c *Client) MessagesTranslateText(ctx context.Context, request *MessagesTranslateTextRequest) (*MessagesTranslateResult, error) {

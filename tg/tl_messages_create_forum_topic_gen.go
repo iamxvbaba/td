@@ -35,7 +35,7 @@ var (
 // Create a forum topic¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/forum
+//  1) https://core.telegram.org/api/forum
 //
 // See https://core.telegram.org/method/messages.createForumTopic for reference.
 type MessagesCreateForumTopicRequest struct {
@@ -441,13 +441,12 @@ func (c *MessagesCreateForumTopicRequest) GetSendAs() (value InputPeerClass, ok 
 // Create a forum topic¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/forum
+//  1) https://core.telegram.org/api/forum
 //
 // Possible errors:
-//
-//	400 CHANNEL_FORUM_MISSING: This supergroup is not a forum.
-//	400 CHANNEL_INVALID: The provided channel is invalid.
-//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//  400 CHANNEL_FORUM_MISSING: This supergroup is not a forum.
+//  400 CHANNEL_INVALID: The provided channel is invalid.
+//  400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/messages.createForumTopic for reference.
 func (c *Client) MessagesCreateForumTopic(ctx context.Context, request *MessagesCreateForumTopicRequest) (UpdatesClass, error) {

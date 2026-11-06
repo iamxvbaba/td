@@ -35,7 +35,7 @@ var (
 // Represents the stories¹ tab of a profile page.
 //
 // Links:
-//  1. https://core.telegram.org/api/stories
+//  1) https://core.telegram.org/api/stories
 //
 // See https://core.telegram.org/constructor/profileTabPosts for reference.
 type ProfileTabPosts struct {
@@ -140,7 +140,7 @@ func (p *ProfileTabPosts) DecodeBare(b *bin.Buffer) error {
 // Represents the gifts¹ tab of a profile page.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts
+//  1) https://core.telegram.org/api/gifts
 //
 // See https://core.telegram.org/constructor/profileTabGifts for reference.
 type ProfileTabGifts struct {
@@ -449,7 +449,7 @@ func (p *ProfileTabFiles) DecodeBare(b *bin.Buffer) error {
 // Represents the music¹ tab of a profile page.
 //
 // Links:
-//  1. https://core.telegram.org/api/profile#music
+//  1) https://core.telegram.org/api/profile#music
 //
 // See https://core.telegram.org/constructor/profileTabMusic for reference.
 type ProfileTabMusic struct {
@@ -864,32 +864,31 @@ const ProfileTabClassName = "ProfileTab"
 // See https://core.telegram.org/type/ProfileTab for reference.
 //
 // Constructors:
-//   - [ProfileTabPosts]
-//   - [ProfileTabGifts]
-//   - [ProfileTabMedia]
-//   - [ProfileTabFiles]
-//   - [ProfileTabMusic]
-//   - [ProfileTabVoice]
-//   - [ProfileTabLinks]
-//   - [ProfileTabGifs]
+//  - [ProfileTabPosts]
+//  - [ProfileTabGifts]
+//  - [ProfileTabMedia]
+//  - [ProfileTabFiles]
+//  - [ProfileTabMusic]
+//  - [ProfileTabVoice]
+//  - [ProfileTabLinks]
+//  - [ProfileTabGifs]
 //
 // Example:
-//
-//	g, err := tg.DecodeProfileTab(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.ProfileTabPosts: // profileTabPosts#b98cd696
-//	case *tg.ProfileTabGifts: // profileTabGifts#4d4bd46a
-//	case *tg.ProfileTabMedia: // profileTabMedia#72c64955
-//	case *tg.ProfileTabFiles: // profileTabFiles#ab339c00
-//	case *tg.ProfileTabMusic: // profileTabMusic#9f27d26e
-//	case *tg.ProfileTabVoice: // profileTabVoice#e477092e
-//	case *tg.ProfileTabLinks: // profileTabLinks#d3656499
-//	case *tg.ProfileTabGifs: // profileTabGifs#a2c0f695
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeProfileTab(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.ProfileTabPosts: // profileTabPosts#b98cd696
+//  case *tg.ProfileTabGifts: // profileTabGifts#4d4bd46a
+//  case *tg.ProfileTabMedia: // profileTabMedia#72c64955
+//  case *tg.ProfileTabFiles: // profileTabFiles#ab339c00
+//  case *tg.ProfileTabMusic: // profileTabMusic#9f27d26e
+//  case *tg.ProfileTabVoice: // profileTabVoice#e477092e
+//  case *tg.ProfileTabLinks: // profileTabLinks#d3656499
+//  case *tg.ProfileTabGifs: // profileTabGifs#a2c0f695
+//  default: panic(v)
+//  }
 type ProfileTabClass interface {
 	bin.Encoder
 	bin.Decoder

@@ -35,7 +35,7 @@ var (
 // Contains the default background palette of a gift type »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#listing-all-possible-collectible-variants
+//  1) https://core.telegram.org/api/gifts#listing-all-possible-collectible-variants
 //
 // See https://core.telegram.org/constructor/starGiftBackground for reference.
 type StarGiftBackground struct {

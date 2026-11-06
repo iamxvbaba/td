@@ -35,7 +35,7 @@ var (
 // Changes the main profile tab of a channel, see here »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/profile#tabs
+//  1) https://core.telegram.org/api/profile#tabs
 //
 // See https://core.telegram.org/method/channels.setMainProfileTab for reference.
 type ChannelsSetMainProfileTabRequest struct {
@@ -210,11 +210,10 @@ func (s *ChannelsSetMainProfileTabRequest) GetChannelAsNotEmpty() (NotEmptyInput
 // Changes the main profile tab of a channel, see here »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/profile#tabs
+//  1) https://core.telegram.org/api/profile#tabs
 //
 // Possible errors:
-//
-//	400 CHANNEL_INVALID: The provided channel is invalid.
+//  400 CHANNEL_INVALID: The provided channel is invalid.
 //
 // See https://core.telegram.org/method/channels.setMainProfileTab for reference.
 func (c *Client) ChannelsSetMainProfileTab(ctx context.Context, request *ChannelsSetMainProfileTabRequest) (bool, error) {

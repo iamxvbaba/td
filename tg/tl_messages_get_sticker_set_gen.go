@@ -200,9 +200,8 @@ func (g *MessagesGetStickerSetRequest) GetHash() (value int) {
 // Get info about a stickerset
 //
 // Possible errors:
-//
-//	400 EMOTICON_STICKERPACK_MISSING: inputStickerSetDice.emoji cannot be empty.
-//	406 STICKERSET_INVALID: The provided sticker set is invalid.
+//  400 EMOTICON_STICKERPACK_MISSING: inputStickerSetDice.emoji cannot be empty.
+//  406 STICKERSET_INVALID: The provided sticker set is invalid.
 //
 // See https://core.telegram.org/method/messages.getStickerSet for reference.
 func (c *Client) MessagesGetStickerSet(ctx context.Context, request *MessagesGetStickerSetRequest) (MessagesStickerSetClass, error) {

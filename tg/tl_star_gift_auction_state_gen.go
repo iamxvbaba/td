@@ -37,7 +37,7 @@ var (
 // locally cached version.
 //
 // Links:
-//  1. https://core.telegram.org/api/auctions
+//  1) https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/constructor/starGiftAuctionStateNotModified for reference.
 type StarGiftAuctionStateNotModified struct {
@@ -142,7 +142,7 @@ func (s *StarGiftAuctionStateNotModified) DecodeBare(b *bin.Buffer) error {
 // Represents an active or pending auction »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/auctions
+//  1) https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/constructor/starGiftAuctionState for reference.
 type StarGiftAuctionState struct {
@@ -659,7 +659,7 @@ func (s *StarGiftAuctionState) MapRounds() (value StarGiftAuctionRoundClassArray
 // Represents a finished auction »¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/auctions
+//  1) https://core.telegram.org/api/auctions
 //
 // See https://core.telegram.org/constructor/starGiftAuctionStateFinished for reference.
 type StarGiftAuctionStateFinished struct {
@@ -1031,22 +1031,21 @@ const StarGiftAuctionStateClassName = "StarGiftAuctionState"
 // See https://core.telegram.org/type/StarGiftAuctionState for reference.
 //
 // Constructors:
-//   - [StarGiftAuctionStateNotModified]
-//   - [StarGiftAuctionState]
-//   - [StarGiftAuctionStateFinished]
+//  - [StarGiftAuctionStateNotModified]
+//  - [StarGiftAuctionState]
+//  - [StarGiftAuctionStateFinished]
 //
 // Example:
-//
-//	g, err := tg.DecodeStarGiftAuctionState(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.StarGiftAuctionStateNotModified: // starGiftAuctionStateNotModified#fe333952
-//	case *tg.StarGiftAuctionState: // starGiftAuctionState#771a4e66
-//	case *tg.StarGiftAuctionStateFinished: // starGiftAuctionStateFinished#972dabbf
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeStarGiftAuctionState(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.StarGiftAuctionStateNotModified: // starGiftAuctionStateNotModified#fe333952
+//  case *tg.StarGiftAuctionState: // starGiftAuctionState#771a4e66
+//  case *tg.StarGiftAuctionStateFinished: // starGiftAuctionStateFinished#972dabbf
+//  default: panic(v)
+//  }
 type StarGiftAuctionStateClass interface {
 	bin.Encoder
 	bin.Decoder

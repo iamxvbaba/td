@@ -36,7 +36,7 @@ var (
 // changed.
 //
 // Links:
-//  1. https://core.telegram.org/constructor/document
+//  1) https://core.telegram.org/constructor/document
 //
 // See https://core.telegram.org/constructor/account.savedMusicIdsNotModified for reference.
 type AccountSavedMusicIDsNotModified struct {
@@ -142,8 +142,8 @@ func (s *AccountSavedMusicIDsNotModified) DecodeBare(b *bin.Buffer) error {
 // for more info.
 //
 // Links:
-//  1. https://core.telegram.org/constructor/document
-//  2. https://core.telegram.org/api/profile#music
+//  1) https://core.telegram.org/constructor/document
+//  2) https://core.telegram.org/api/profile#music
 //
 // See https://core.telegram.org/constructor/account.savedMusicIds for reference.
 type AccountSavedMusicIDs struct {
@@ -301,20 +301,19 @@ const AccountSavedMusicIDsClassName = "account.SavedMusicIds"
 // See https://core.telegram.org/type/account.SavedMusicIds for reference.
 //
 // Constructors:
-//   - [AccountSavedMusicIDsNotModified]
-//   - [AccountSavedMusicIDs]
+//  - [AccountSavedMusicIDsNotModified]
+//  - [AccountSavedMusicIDs]
 //
 // Example:
-//
-//	g, err := tg.DecodeAccountSavedMusicIDs(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.AccountSavedMusicIDsNotModified: // account.savedMusicIdsNotModified#4fc81d6e
-//	case *tg.AccountSavedMusicIDs: // account.savedMusicIds#998d6636
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeAccountSavedMusicIDs(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.AccountSavedMusicIDsNotModified: // account.savedMusicIdsNotModified#4fc81d6e
+//  case *tg.AccountSavedMusicIDs: // account.savedMusicIds#998d6636
+//  default: panic(v)
+//  }
 type AccountSavedMusicIDsClass interface {
 	bin.Encoder
 	bin.Decoder

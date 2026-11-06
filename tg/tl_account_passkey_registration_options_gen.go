@@ -35,7 +35,7 @@ var (
 // Passkey registration options, see here »¹ for more info on the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/passkeys#creating-a-passkey
+//  1) https://core.telegram.org/api/passkeys#creating-a-passkey
 //
 // See https://core.telegram.org/constructor/account.passkeyRegistrationOptions for reference.
 type AccountPasskeyRegistrationOptions struct {

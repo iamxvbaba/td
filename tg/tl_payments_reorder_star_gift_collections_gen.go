@@ -35,7 +35,7 @@ var (
 // Reorder the star gift collections »¹ on an owned peer's profile.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#gift-collections
+//  1) https://core.telegram.org/api/gifts#gift-collections
 //
 // See https://core.telegram.org/method/payments.reorderStarGiftCollections for reference.
 type PaymentsReorderStarGiftCollectionsRequest struct {
@@ -213,11 +213,10 @@ func (r *PaymentsReorderStarGiftCollectionsRequest) GetOrder() (value []int) {
 // Reorder the star gift collections »¹ on an owned peer's profile.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#gift-collections
+//  1) https://core.telegram.org/api/gifts#gift-collections
 //
 // Possible errors:
-//
-//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//  400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/payments.reorderStarGiftCollections for reference.
 func (c *Client) PaymentsReorderStarGiftCollections(ctx context.Context, request *PaymentsReorderStarGiftCollectionsRequest) (bool, error) {

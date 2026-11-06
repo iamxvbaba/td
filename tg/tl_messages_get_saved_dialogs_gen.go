@@ -35,8 +35,8 @@ var (
 // Returns the current saved dialog list »¹ or monoforum topic list »².
 //
 // Links:
-//  1. https://core.telegram.org/api/saved-messages
-//  2. https://core.telegram.org/api/monoforum
+//  1) https://core.telegram.org/api/saved-messages
+//  2) https://core.telegram.org/api/monoforum
 //
 // See https://core.telegram.org/method/messages.getSavedDialogs for reference.
 type MessagesGetSavedDialogsRequest struct {
@@ -405,8 +405,8 @@ func (g *MessagesGetSavedDialogsRequest) GetHash() (value int64) {
 // Returns the current saved dialog list »¹ or monoforum topic list »².
 //
 // Links:
-//  1. https://core.telegram.org/api/saved-messages
-//  2. https://core.telegram.org/api/monoforum
+//  1) https://core.telegram.org/api/saved-messages
+//  2) https://core.telegram.org/api/monoforum
 //
 // See https://core.telegram.org/method/messages.getSavedDialogs for reference.
 func (c *Client) MessagesGetSavedDialogs(ctx context.Context, request *MessagesGetSavedDialogsRequest) (MessagesSavedDialogsClass, error) {

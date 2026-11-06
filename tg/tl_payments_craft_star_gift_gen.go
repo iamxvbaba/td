@@ -39,8 +39,8 @@ var (
 // The first passed gift must not be located on the TON blockchain.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#collectible-gifts
-//  2. https://core.telegram.org/constructor/starGiftUnique
+//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  2) https://core.telegram.org/constructor/starGiftUnique
 //
 // See https://core.telegram.org/method/payments.craftStarGift for reference.
 type PaymentsCraftStarGiftRequest struct {
@@ -204,12 +204,11 @@ func (c *PaymentsCraftStarGiftRequest) MapStargift() (value InputSavedStarGiftCl
 // The first passed gift must not be located on the TON blockchain.
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#collectible-gifts
-//  2. https://core.telegram.org/constructor/starGiftUnique
+//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  2) https://core.telegram.org/constructor/starGiftUnique
 //
 // Possible errors:
-//
-//	400 SAVED_ID_EMPTY: The passed inputSavedStarGiftChat.saved_id is empty.
+//  400 SAVED_ID_EMPTY: The passed inputSavedStarGiftChat.saved_id is empty.
 //
 // See https://core.telegram.org/method/payments.craftStarGift for reference.
 func (c *Client) PaymentsCraftStarGift(ctx context.Context, stargift []InputSavedStarGiftClass) (UpdatesClass, error) {

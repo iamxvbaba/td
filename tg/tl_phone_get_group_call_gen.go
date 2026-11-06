@@ -35,7 +35,7 @@ var (
 // Get info about a group call¹ and its participants.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#getting-info-about-a-group-call
+//  1) https://core.telegram.org/api/group-calls#getting-info-about-a-group-call
 //
 // See https://core.telegram.org/method/phone.getGroupCall for reference.
 type PhoneGetGroupCallRequest struct {
@@ -213,12 +213,11 @@ func (g *PhoneGetGroupCallRequest) GetLimit() (value int) {
 // Get info about a group call¹ and its participants.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#getting-info-about-a-group-call
+//  1) https://core.telegram.org/api/group-calls#getting-info-about-a-group-call
 //
 // Possible errors:
-//
-//	403 GROUPCALL_FORBIDDEN: The group call has already ended.
-//	400 GROUPCALL_INVALID: The specified group call is invalid.
+//  403 GROUPCALL_FORBIDDEN: The group call has already ended.
+//  400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.getGroupCall for reference.
 func (c *Client) PhoneGetGroupCall(ctx context.Context, request *PhoneGetGroupCallRequest) (*PhoneGroupCall, error) {

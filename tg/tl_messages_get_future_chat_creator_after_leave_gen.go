@@ -37,7 +37,7 @@ var (
 // flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/channel#leaving-groups-channels
+//  1) https://core.telegram.org/api/channel#leaving-groups-channels
 //
 // See https://core.telegram.org/method/messages.getFutureChatCreatorAfterLeave for reference.
 type MessagesGetFutureChatCreatorAfterLeaveRequest struct {
@@ -177,7 +177,7 @@ func (g *MessagesGetFutureChatCreatorAfterLeaveRequest) GetPeer() (value InputPe
 // flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/channel#leaving-groups-channels
+//  1) https://core.telegram.org/api/channel#leaving-groups-channels
 //
 // See https://core.telegram.org/method/messages.getFutureChatCreatorAfterLeave for reference.
 func (c *Client) MessagesGetFutureChatCreatorAfterLeave(ctx context.Context, peer InputPeerClass) (UserClass, error) {

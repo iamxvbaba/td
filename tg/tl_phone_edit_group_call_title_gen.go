@@ -35,7 +35,7 @@ var (
 // Edit the title of a group call or livestream¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls
+//  1) https://core.telegram.org/api/group-calls
 //
 // See https://core.telegram.org/method/phone.editGroupCallTitle for reference.
 type PhoneEditGroupCallTitleRequest struct {
@@ -200,12 +200,11 @@ func (e *PhoneEditGroupCallTitleRequest) GetTitle() (value string) {
 // Edit the title of a group call or livestream¹.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls
+//  1) https://core.telegram.org/api/group-calls
 //
 // Possible errors:
-//
-//	403 GROUPCALL_FORBIDDEN: The group call has already ended.
-//	400 GROUPCALL_INVALID: The specified group call is invalid.
+//  403 GROUPCALL_FORBIDDEN: The group call has already ended.
+//  400 GROUPCALL_INVALID: The specified group call is invalid.
 //
 // See https://core.telegram.org/method/phone.editGroupCallTitle for reference.
 func (c *Client) PhoneEditGroupCallTitle(ctx context.Context, request *PhoneEditGroupCallTitleRequest) (UpdatesClass, error) {

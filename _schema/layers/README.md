@@ -166,6 +166,21 @@ Adding a schema-identical next profile therefore only extends generated profile
 metadata and switch cases. A genuinely changed schema stops at generation time
 until its semantic policy and typed hook are supplied.
 
+### Layer 233 review record
+
+Canonical Layer 233 comes from official Telegram Desktop `ready@a6df181a`
+(stable branch; `dev` has identical bytes); exact profiles 225–232 remain
+available. The [Layer 233 review](LAYER233_REVIEW.md) locks provenance, the
+bot-widget/transcription constructors, and the two request changes: `channel`
+and `user` gain optional forum-sidebar layout flags (wire IDs unchanged), while
+`channels.toggleForum` gains the required `sidebar:Bool` and moves to
+`#a2952b54`. A historical `channels.toggleForum` request is rejected at
+admission instead of defaulting the sidebar decision; the six new update
+constructors drop for 225–232 like every prior non-wallet update. The policy
+has 305 entries (249 existing plus eight request rejections and 48 update
+drops). New update constructors are added, but no existing update's
+`pts`/`pts_count` field changes and the MTProto transport schema is unchanged.
+
 ### Layer 232 review record
 
 Canonical Layer 232 comes from official Telegram Desktop

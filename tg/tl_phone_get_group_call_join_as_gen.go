@@ -36,7 +36,7 @@ var (
 // specific user/channel.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#creating-joining-a-group-call-on-behalf-of-owned-channels
+//  1) https://core.telegram.org/api/group-calls#creating-joining-a-group-call-on-behalf-of-owned-channels
 //
 // See https://core.telegram.org/method/phone.getGroupCallJoinAs for reference.
 type PhoneGetGroupCallJoinAsRequest struct {
@@ -175,12 +175,11 @@ func (g *PhoneGetGroupCallJoinAsRequest) GetPeer() (value InputPeerClass) {
 // specific user/channel.
 //
 // Links:
-//  1. https://core.telegram.org/api/group-calls#creating-joining-a-group-call-on-behalf-of-owned-channels
+//  1) https://core.telegram.org/api/group-calls#creating-joining-a-group-call-on-behalf-of-owned-channels
 //
 // Possible errors:
-//
-//	400 CHANNEL_INVALID: The provided channel is invalid.
-//	400 PEER_ID_INVALID: The provided peer id is invalid.
+//  400 CHANNEL_INVALID: The provided channel is invalid.
+//  400 PEER_ID_INVALID: The provided peer id is invalid.
 //
 // See https://core.telegram.org/method/phone.getGroupCallJoinAs for reference.
 func (c *Client) PhoneGetGroupCallJoinAs(ctx context.Context, peer InputPeerClass) (*PhoneJoinAsPeers, error) {

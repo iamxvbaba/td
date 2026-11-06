@@ -36,8 +36,8 @@ var (
 // the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/end-to-end/voice-calls
-//  2. https://core.telegram.org/api/calls#one-to-one-calls
+//  1) https://core.telegram.org/api/end-to-end/voice-calls
+//  2) https://core.telegram.org/api/calls#one-to-one-calls
 //
 // See https://core.telegram.org/method/phone.confirmCall for reference.
 type PhoneConfirmCallRequest struct {
@@ -255,13 +255,12 @@ func (c *PhoneConfirmCallRequest) GetProtocol() (value PhoneCallProtocol) {
 // the full flow.
 //
 // Links:
-//  1. https://core.telegram.org/api/end-to-end/voice-calls
-//  2. https://core.telegram.org/api/calls#one-to-one-calls
+//  1) https://core.telegram.org/api/end-to-end/voice-calls
+//  2) https://core.telegram.org/api/calls#one-to-one-calls
 //
 // Possible errors:
-//
-//	400 CALL_ALREADY_DECLINED: The call was already declined.
-//	400 CALL_PEER_INVALID: The provided call peer object is invalid.
+//  400 CALL_ALREADY_DECLINED: The call was already declined.
+//  400 CALL_PEER_INVALID: The provided call peer object is invalid.
 //
 // See https://core.telegram.org/method/phone.confirmCall for reference.
 func (c *Client) PhoneConfirmCall(ctx context.Context, request *PhoneConfirmCallRequest) (*PhonePhoneCall, error) {

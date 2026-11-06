@@ -535,10 +535,10 @@ func (w *WebPageAttributeStory) GetStory() (value StoryItemClass, ok bool) {
 // link »³ (the webPage⁴ will have a type of telegram_stickerset).
 //
 // Links:
-//  1. https://core.telegram.org/api/stickers
-//  2. https://core.telegram.org/constructor/webPage
-//  3. https://core.telegram.org/api/links#stickerset-links
-//  4. https://core.telegram.org/constructor/webPage
+//  1) https://core.telegram.org/api/stickers
+//  2) https://core.telegram.org/constructor/webPage
+//  3) https://core.telegram.org/api/links#stickerset-links
+//  4) https://core.telegram.org/constructor/webPage
 //
 // See https://core.telegram.org/constructor/webPageAttributeStickerSet for reference.
 type WebPageAttributeStickerSet struct {
@@ -796,10 +796,10 @@ func (w *WebPageAttributeStickerSet) MapStickers() (value DocumentClassArray) {
 // gift »³ (the webPage⁴ will have a type of telegram_nft).
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#collectible-gifts
-//  2. https://core.telegram.org/constructor/webPage
-//  3. https://core.telegram.org/api/gifts#collectible-gifts
-//  4. https://core.telegram.org/constructor/webPage
+//  1) https://core.telegram.org/api/gifts#collectible-gifts
+//  2) https://core.telegram.org/constructor/webPage
+//  3) https://core.telegram.org/api/gifts#collectible-gifts
+//  4) https://core.telegram.org/constructor/webPage
 //
 // See https://core.telegram.org/constructor/webPageAttributeUniqueStarGift for reference.
 type WebPageAttributeUniqueStarGift struct {
@@ -946,10 +946,10 @@ func (w *WebPageAttributeUniqueStarGift) GetGift() (value StarGiftClass) {
 // collection »³ (the webPage⁴ will have a type of telegram_collection).
 //
 // Links:
-//  1. https://core.telegram.org/api/gifts#gift-collections
-//  2. https://core.telegram.org/constructor/webPage
-//  3. https://core.telegram.org/api/gifts#gift-collections
-//  4. https://core.telegram.org/constructor/webPage
+//  1) https://core.telegram.org/api/gifts#gift-collections
+//  2) https://core.telegram.org/constructor/webPage
+//  3) https://core.telegram.org/api/gifts#gift-collections
+//  4) https://core.telegram.org/constructor/webPage
 //
 // See https://core.telegram.org/constructor/webPageAttributeStarGiftCollection for reference.
 type WebPageAttributeStarGiftCollection struct {
@@ -1111,10 +1111,10 @@ func (w *WebPageAttributeStarGiftCollection) MapIcons() (value DocumentClassArra
 // auction »³ (the webPage⁴ will have a type of telegram_auction).
 //
 // Links:
-//  1. https://core.telegram.org/api/auctions
-//  2. https://core.telegram.org/constructor/webPage
-//  3. https://core.telegram.org/api/auctions
-//  4. https://core.telegram.org/constructor/webPage
+//  1) https://core.telegram.org/api/auctions
+//  2) https://core.telegram.org/constructor/webPage
+//  3) https://core.telegram.org/api/auctions
+//  4) https://core.telegram.org/constructor/webPage
 //
 // See https://core.telegram.org/constructor/webPageAttributeStarGiftAuction for reference.
 type WebPageAttributeStarGiftAuction struct {
@@ -1422,30 +1422,29 @@ const WebPageAttributeClassName = "WebPageAttribute"
 // See https://core.telegram.org/type/WebPageAttribute for reference.
 //
 // Constructors:
-//   - [WebPageAttributeTheme]
-//   - [WebPageAttributeStory]
-//   - [WebPageAttributeStickerSet]
-//   - [WebPageAttributeUniqueStarGift]
-//   - [WebPageAttributeStarGiftCollection]
-//   - [WebPageAttributeStarGiftAuction]
-//   - [WebPageAttributeAiComposeTone]
+//  - [WebPageAttributeTheme]
+//  - [WebPageAttributeStory]
+//  - [WebPageAttributeStickerSet]
+//  - [WebPageAttributeUniqueStarGift]
+//  - [WebPageAttributeStarGiftCollection]
+//  - [WebPageAttributeStarGiftAuction]
+//  - [WebPageAttributeAiComposeTone]
 //
 // Example:
-//
-//	g, err := tg.DecodeWebPageAttribute(buf)
-//	if err != nil {
-//	    panic(err)
-//	}
-//	switch v := g.(type) {
-//	case *tg.WebPageAttributeTheme: // webPageAttributeTheme#54b56617
-//	case *tg.WebPageAttributeStory: // webPageAttributeStory#2e94c3e7
-//	case *tg.WebPageAttributeStickerSet: // webPageAttributeStickerSet#50cc03d3
-//	case *tg.WebPageAttributeUniqueStarGift: // webPageAttributeUniqueStarGift#cf6f6db8
-//	case *tg.WebPageAttributeStarGiftCollection: // webPageAttributeStarGiftCollection#31cad303
-//	case *tg.WebPageAttributeStarGiftAuction: // webPageAttributeStarGiftAuction#1c641c2
-//	case *tg.WebPageAttributeAiComposeTone: // webPageAttributeAiComposeTone#7781fe18
-//	default: panic(v)
-//	}
+//  g, err := tg.DecodeWebPageAttribute(buf)
+//  if err != nil {
+//      panic(err)
+//  }
+//  switch v := g.(type) {
+//  case *tg.WebPageAttributeTheme: // webPageAttributeTheme#54b56617
+//  case *tg.WebPageAttributeStory: // webPageAttributeStory#2e94c3e7
+//  case *tg.WebPageAttributeStickerSet: // webPageAttributeStickerSet#50cc03d3
+//  case *tg.WebPageAttributeUniqueStarGift: // webPageAttributeUniqueStarGift#cf6f6db8
+//  case *tg.WebPageAttributeStarGiftCollection: // webPageAttributeStarGiftCollection#31cad303
+//  case *tg.WebPageAttributeStarGiftAuction: // webPageAttributeStarGiftAuction#1c641c2
+//  case *tg.WebPageAttributeAiComposeTone: // webPageAttributeAiComposeTone#7781fe18
+//  default: panic(v)
+//  }
 type WebPageAttributeClass interface {
 	bin.Encoder
 	bin.Decoder

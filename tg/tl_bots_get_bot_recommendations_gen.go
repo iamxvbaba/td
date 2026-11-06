@@ -36,7 +36,7 @@ var (
 // subscriber bases, see here »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/recommend
+//  1) https://core.telegram.org/api/recommend
 //
 // See https://core.telegram.org/method/bots.getBotRecommendations for reference.
 type BotsGetBotRecommendationsRequest struct {
@@ -175,11 +175,10 @@ func (g *BotsGetBotRecommendationsRequest) GetBot() (value InputUserClass) {
 // subscriber bases, see here »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/recommend
+//  1) https://core.telegram.org/api/recommend
 //
 // Possible errors:
-//
-//	400 BOT_INVALID: This is not a valid bot.
+//  400 BOT_INVALID: This is not a valid bot.
 //
 // See https://core.telegram.org/method/bots.getBotRecommendations for reference.
 func (c *Client) BotsGetBotRecommendations(ctx context.Context, bot InputUserClass) (UsersUsersClass, error) {

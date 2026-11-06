@@ -36,7 +36,7 @@ var (
 // references of songs pinned on a user's profile see here »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/profile#music
+//  1) https://core.telegram.org/api/profile#music
 //
 // See https://core.telegram.org/method/users.getSavedMusicByID for reference.
 type UsersGetSavedMusicByIDRequest struct {
@@ -225,11 +225,10 @@ func (g *UsersGetSavedMusicByIDRequest) MapDocuments() (value InputDocumentClass
 // references of songs pinned on a user's profile see here »¹ for more info.
 //
 // Links:
-//  1. https://core.telegram.org/api/profile#music
+//  1) https://core.telegram.org/api/profile#music
 //
 // Possible errors:
-//
-//	400 USER_ID_INVALID: The provided user ID is invalid.
+//  400 USER_ID_INVALID: The provided user ID is invalid.
 //
 // See https://core.telegram.org/method/users.getSavedMusicByID for reference.
 func (c *Client) UsersGetSavedMusicByID(ctx context.Context, request *UsersGetSavedMusicByIDRequest) (UsersSavedMusicClass, error) {
