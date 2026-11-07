@@ -797,6 +797,70 @@
       }
     },
     {
+      "key": "layer-obligation/v1/new-only/48cf1592bab384c078771998d489fd9e793d536cf038587ce7c98c558dcb94fc",
+      "resolution": {
+        "action": "project",
+        "hook": "layerProjectLegacyWidgetMedia",
+        "note": "kind=new-only; layer=225; direction=canonical-to-profile; semantic=type:messageMediaWidget; wire=0x2238f214-\u003e0x00000000; type=MessageMedia-\u003e; source_shape=390976d23b5ffc231eeb226c4fecdc33fb72f315126c195823b0980db0478536; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/new-only/5606c517427cdae430ba950680fa47f2c7969ab7a16e7b476db0db433278fe7c",
+      "resolution": {
+        "action": "project",
+        "hook": "layerProjectLegacyWidgetMedia",
+        "note": "kind=new-only; layer=232; direction=canonical-to-profile; semantic=type:messageMediaWidget; wire=0x2238f214-\u003e0x00000000; type=MessageMedia-\u003e; source_shape=390976d23b5ffc231eeb226c4fecdc33fb72f315126c195823b0980db0478536; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/new-only/62167c1a5cbd08e9220253c04cf408092e68326bec59ab1f47af3a65506201b8",
+      "resolution": {
+        "action": "project",
+        "hook": "layerProjectLegacyWidgetMedia",
+        "note": "kind=new-only; layer=230; direction=canonical-to-profile; semantic=type:messageMediaWidget; wire=0x2238f214-\u003e0x00000000; type=MessageMedia-\u003e; source_shape=390976d23b5ffc231eeb226c4fecdc33fb72f315126c195823b0980db0478536; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/new-only/7b7f67152e9d1b4811593bff8fa890e4768f6ef246a9d397f883959ccfe70921",
+      "resolution": {
+        "action": "project",
+        "hook": "layerProjectLegacyWidgetMedia",
+        "note": "kind=new-only; layer=231; direction=canonical-to-profile; semantic=type:messageMediaWidget; wire=0x2238f214-\u003e0x00000000; type=MessageMedia-\u003e; source_shape=390976d23b5ffc231eeb226c4fecdc33fb72f315126c195823b0980db0478536; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/new-only/975aaacb8e74e37b13a8eb886bd60f92be50b425b5837e14ceda975a8a4b301d",
+      "resolution": {
+        "action": "project",
+        "hook": "layerProjectLegacyWidgetMedia",
+        "note": "kind=new-only; layer=228; direction=canonical-to-profile; semantic=type:messageMediaWidget; wire=0x2238f214-\u003e0x00000000; type=MessageMedia-\u003e; source_shape=390976d23b5ffc231eeb226c4fecdc33fb72f315126c195823b0980db0478536; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/new-only/bda0208ba344039e3a0e01be032cc2964e242f2f97fda50b63a1f5604a81f8e2",
+      "resolution": {
+        "action": "project",
+        "hook": "layerProjectLegacyWidgetMedia",
+        "note": "kind=new-only; layer=226; direction=canonical-to-profile; semantic=type:messageMediaWidget; wire=0x2238f214-\u003e0x00000000; type=MessageMedia-\u003e; source_shape=390976d23b5ffc231eeb226c4fecdc33fb72f315126c195823b0980db0478536; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/new-only/bdd0c4d27164fe069302a61dbc4d54c168f9aea1032d064e365e9a055c26fe45",
+      "resolution": {
+        "action": "project",
+        "hook": "layerProjectLegacyWidgetMedia",
+        "note": "kind=new-only; layer=229; direction=canonical-to-profile; semantic=type:messageMediaWidget; wire=0x2238f214-\u003e0x00000000; type=MessageMedia-\u003e; source_shape=390976d23b5ffc231eeb226c4fecdc33fb72f315126c195823b0980db0478536; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "key": "layer-obligation/v1/new-only/d50e1746fc7b411accacaf1c57dae5eec66fe14e5dda255f008197cda8cc8a43",
+      "resolution": {
+        "action": "project",
+        "hook": "layerProjectLegacyWidgetMedia",
+        "note": "kind=new-only; layer=227; direction=canonical-to-profile; semantic=type:messageMediaWidget; wire=0x2238f214-\u003e0x00000000; type=MessageMedia-\u003e; source_shape=390976d23b5ffc231eeb226c4fecdc33fb72f315126c195823b0980db0478536; target_shape=0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
       "key": "layer-obligation/v1/old-only/04095a246f363f365768d27cfea9ed4d959a1cff28664178e227bddfa5d2f9e5",
       "resolution": {
         "action": "adapter",

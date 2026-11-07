@@ -3178,6 +3178,11 @@ var _ func(LayerProfile, *tg.BotCommand, bool) (*tg.BotCommand, bool, error) = l
 // inside one transactional pass; hooks must not mutate their input value.
 var _ func(LayerProfile, *tg.KeyboardButton, tg.ButtonTypeClass) (*tg.KeyboardButton, bool, error) = layerProjectLegacyDefaultKeyboardButtonProject
 
+// Static policy contract for layerProjectLegacyWidgetMediaProject. Missing hooks and signature drift
+// intentionally fail compilation. Production encoding invokes each hook once
+// inside one transactional pass; hooks must not mutate their input value.
+var _ func(LayerProfile, *tg.MessageMediaWidget) (bin.Object, bool, error) = layerProjectLegacyWidgetMediaProject
+
 // Static policy contract for layerRequireCapturedChatInviteJoinQueryIDDecode. Missing hooks and signature drift
 // intentionally fail compilation. Production encoding invokes each hook once
 // inside one transactional pass; hooks must not mutate their input value.

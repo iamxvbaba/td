@@ -3,6 +3,7 @@ package tlprofile
 import (
 	"fmt"
 
+	"github.com/iamxvbaba/td/bin"
 	"github.com/iamxvbaba/td/tg"
 )
 
@@ -84,6 +85,19 @@ func layerProjectEphemeralBotCommandProject(
 		return nil, false, nil
 	}
 	return value, true, nil
+}
+
+// layerProjectLegacyWidgetMediaProject projects a Layer 233 bot web widget to
+// messageMediaUnsupported for profiles that predate it. A dropped media field
+// would otherwise reach an older client as an empty text message.
+func layerProjectLegacyWidgetMediaProject(profile LayerProfile, value *tg.MessageMediaWidget) (bin.Object, bool, error) {
+	if value == nil {
+		return nil, false, fmt.Errorf("widget media is nil")
+	}
+	if profile >= LayerProfile233 {
+		return value, true, nil
+	}
+	return &tg.MessageMediaUnsupported{}, true, nil
 }
 
 func layerLegacyProjectionMiss(profile LayerProfile, kind string, value any) error {

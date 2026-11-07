@@ -1362,6 +1362,94 @@ func (s *ContactsGetContacts) Fetch(ctx context.Context) (bool, error) {
 	}
 }
 
+type innerEphemeralGetWelcomeMessages struct {
+	// Last received hash.
+	hash int64
+	// Last received result.
+	value *tg.EphemeralWelcomeMessages
+}
+
+type EphemeralGetWelcomeMessages struct {
+	// Query to send.
+	req *tg.EphemeralGetWelcomeMessagesRequest
+	// Result state.
+	last atomic.Value
+
+	// Reference to RPC client to make requests.
+	raw *tg.Client
+}
+
+// NewEphemeralGetWelcomeMessages creates new EphemeralGetWelcomeMessages.
+func NewEphemeralGetWelcomeMessages(raw *tg.Client, initial *tg.EphemeralGetWelcomeMessagesRequest) *EphemeralGetWelcomeMessages {
+	q := &EphemeralGetWelcomeMessages{
+		req: initial,
+		raw: raw,
+	}
+
+	return q
+}
+
+func (s *EphemeralGetWelcomeMessages) store(v innerEphemeralGetWelcomeMessages) {
+	s.last.Store(v)
+}
+
+func (s *EphemeralGetWelcomeMessages) load() (innerEphemeralGetWelcomeMessages, bool) {
+	v, ok := s.last.Load().(innerEphemeralGetWelcomeMessages)
+	return v, ok
+}
+
+// Value returns last received result.
+// NB: May be nil. Returned EphemeralWelcomeMessages must not be mutated.
+func (s *EphemeralGetWelcomeMessages) Value() *tg.EphemeralWelcomeMessages {
+	inner, _ := s.load()
+	return inner.value
+}
+
+// Hash returns last received hash.
+func (s *EphemeralGetWelcomeMessages) Hash() int64 {
+	inner, _ := s.load()
+	return inner.hash
+}
+
+// Get updates data if needed and returns it.
+func (s *EphemeralGetWelcomeMessages) Get(ctx context.Context) (*tg.EphemeralWelcomeMessages, error) {
+	if _, err := s.Fetch(ctx); err != nil {
+		return nil, err
+	}
+
+	return s.Value(), nil
+}
+
+// Fetch updates data if needed and returns true if data was modified.
+func (s *EphemeralGetWelcomeMessages) Fetch(ctx context.Context) (bool, error) {
+	lastHash := s.Hash()
+
+	req := s.req
+	req.Hash = lastHash
+	result, err := s.raw.EphemeralGetWelcomeMessages(ctx, req)
+	if err != nil {
+		return false, errors.Wrap(err, "execute EphemeralGetWelcomeMessages")
+	}
+
+	switch variant := result.(type) {
+	case *tg.EphemeralWelcomeMessages:
+		hash := variant.Hash
+
+		s.store(innerEphemeralGetWelcomeMessages{
+			hash:  hash,
+			value: variant,
+		})
+		return true, nil
+	case *tg.EphemeralWelcomeMessagesNotModified:
+		if lastHash == 0 {
+			return false, errors.Errorf("got unexpected %T result", result)
+		}
+		return false, nil
+	default:
+		return false, errors.Errorf("unexpected type %T", result)
+	}
+}
+
 type innerMessagesGetAllStickers struct {
 	// Last received hash.
 	hash int64
@@ -2633,6 +2721,94 @@ func (s *MessagesGetTopReactions) Fetch(ctx context.Context) (bool, error) {
 		})
 		return true, nil
 	case *tg.MessagesReactionsNotModified:
+		if lastHash == 0 {
+			return false, errors.Errorf("got unexpected %T result", result)
+		}
+		return false, nil
+	default:
+		return false, errors.Errorf("unexpected type %T", result)
+	}
+}
+
+type innerMessagesGetWidgetPublicData struct {
+	// Last received hash.
+	hash int64
+	// Last received result.
+	value *tg.MessagesWidgetPublicData
+}
+
+type MessagesGetWidgetPublicData struct {
+	// Query to send.
+	req *tg.MessagesGetWidgetPublicDataRequest
+	// Result state.
+	last atomic.Value
+
+	// Reference to RPC client to make requests.
+	raw *tg.Client
+}
+
+// NewMessagesGetWidgetPublicData creates new MessagesGetWidgetPublicData.
+func NewMessagesGetWidgetPublicData(raw *tg.Client, initial *tg.MessagesGetWidgetPublicDataRequest) *MessagesGetWidgetPublicData {
+	q := &MessagesGetWidgetPublicData{
+		req: initial,
+		raw: raw,
+	}
+
+	return q
+}
+
+func (s *MessagesGetWidgetPublicData) store(v innerMessagesGetWidgetPublicData) {
+	s.last.Store(v)
+}
+
+func (s *MessagesGetWidgetPublicData) load() (innerMessagesGetWidgetPublicData, bool) {
+	v, ok := s.last.Load().(innerMessagesGetWidgetPublicData)
+	return v, ok
+}
+
+// Value returns last received result.
+// NB: May be nil. Returned MessagesWidgetPublicData must not be mutated.
+func (s *MessagesGetWidgetPublicData) Value() *tg.MessagesWidgetPublicData {
+	inner, _ := s.load()
+	return inner.value
+}
+
+// Hash returns last received hash.
+func (s *MessagesGetWidgetPublicData) Hash() int64 {
+	inner, _ := s.load()
+	return inner.hash
+}
+
+// Get updates data if needed and returns it.
+func (s *MessagesGetWidgetPublicData) Get(ctx context.Context) (*tg.MessagesWidgetPublicData, error) {
+	if _, err := s.Fetch(ctx); err != nil {
+		return nil, err
+	}
+
+	return s.Value(), nil
+}
+
+// Fetch updates data if needed and returns true if data was modified.
+func (s *MessagesGetWidgetPublicData) Fetch(ctx context.Context) (bool, error) {
+	lastHash := s.Hash()
+
+	req := s.req
+	req.Hash = lastHash
+	result, err := s.raw.MessagesGetWidgetPublicData(ctx, req)
+	if err != nil {
+		return false, errors.Wrap(err, "execute MessagesGetWidgetPublicData")
+	}
+
+	switch variant := result.(type) {
+	case *tg.MessagesWidgetPublicData:
+		hash := variant.Hash
+
+		s.store(innerMessagesGetWidgetPublicData{
+			hash:  hash,
+			value: variant,
+		})
+		return true, nil
+	case *tg.MessagesWidgetPublicDataNotModified:
 		if lastHash == 0 {
 			return false, errors.Errorf("got unexpected %T result", result)
 		}

@@ -56,7 +56,7 @@ func TestRealLayerPolicy(t *testing.T) {
 	if unresolved := resolved.LayerConversionPlan().Report.Unresolved(); len(unresolved) != 0 {
 		t.Fatalf("real policy leaves %d unresolved obligations; first=%+v", len(unresolved), unresolved[0])
 	}
-	if got, want := len(document.Entries), 305; got != want {
+	if got, want := len(document.Entries), 313; got != want {
 		t.Fatalf("reviewed policy entry count = %d, want %d", got, want)
 	}
 	codec, err := resolved.buildLayerCodecModel("tg")
@@ -125,6 +125,7 @@ func assertRealLayerHookContracts(t *testing.T, codec, sparse []layerCodecHookCo
 		"layerDefaultLegacyKeyboardButtonTypeDecode":                 "func(LayerProfile, *KeyboardButton) (ButtonTypeClass, error)",
 		"layerProjectEphemeralBotCommandProject":                     "func(LayerProfile, *BotCommand, bool) (*BotCommand, bool, error)",
 		"layerProjectLegacyDefaultKeyboardButtonProject":             "func(LayerProfile, *KeyboardButton, ButtonTypeClass) (*KeyboardButton, bool, error)",
+		"layerProjectLegacyWidgetMediaProject":                       "func(LayerProfile, *MessageMediaWidget) (bin.Object, bool, error)",
 		"layerRequireCapturedChatInviteJoinQueryIDDecode":            "func(LayerProfile, *MessagesChatInviteJoinResultWebView) (int64, error)",
 		"layerRequireLegacyEphemeralDeletePeerEncode":                "func(LayerProfile, *EphemeralDeleteMessageRequest, bool, InputPeerClass) (InputPeerClass, error)",
 		"layerRequireLegacyEphemeralMessagePeerEncode":               "func(LayerProfile, *EphemeralMessage, bool, PeerClass) (PeerClass, error)",
@@ -245,6 +246,13 @@ func realLayerResolution(obligation LayerObligation) (LayerObligationResolution,
 			}
 		}
 		return LayerObligationResolution{}, false, nil
+	}
+	// A Layer 233 bot web widget has no wire identity before Layer 233. Dropping
+	// it would leave a text message with no media, so project it to
+	// messageMediaUnsupported for 225-232: the client then renders an explicit
+	// unsupported-media placeholder instead of a silently media-less message.
+	if obligation.Kind == LayerObligationNewOnly && obligation.Semantic.QName == "messageMediaWidget" {
+		return LayerObligationResolution{Action: LayerResolveProject, Hook: "layerProjectLegacyWidgetMedia"}, true, nil
 	}
 	if obligation.Resolution.resolved() {
 		return LayerObligationResolution{}, false, nil
