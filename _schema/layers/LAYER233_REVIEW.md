@@ -56,10 +56,11 @@ decision below).
 | Legacy `payments.getStarGiftWithdrawalUrlLegacy#d06e93a8` | Still owned by the canonical Go model. Exact profile 232 defines the temporary-password method `#c8ca817b`, not `#d06e93a8`, so unlike the Layer 232 record it no longer admits the promoted legacy wire; the SRP constructor remains available in exact profiles 225–231. |
 
 The policy has 313 entries: the 249 reviewed decisions are retained unchanged,
-and 64 new obligations are explicit (eight `channels.toggleForum` request
-defaults, 48 update drops and eight `messageMediaWidget` new-only projections,
-six constructors × eight historical profiles). One obligation uses a typed hook
-(`layerProjectLegacyWidgetMedia`); no stale key remains.
+and 64 new obligations are explicit: eight `channels.toggleForum` request
+defaults, 48 update drops (six constructors × eight historical profiles) and
+eight `messageMediaWidget` new-only projections, one per historical profile.
+The eight projections share one typed hook (`layerProjectLegacyWidgetMedia`);
+no other new obligation uses a hook, and no stale key remains.
 
 ## Verification matrix
 
@@ -69,11 +70,15 @@ new layout flags into 225–232; the literal `#a2952b54` canonical
 `channels.toggleForum` round trip versus the dropped `#3ff75734` historical
 encoding, with historical admission as `sidebar=false`; and, for all six new
 updates, canonical round trips, bare-encode rejection and drops inside an
-`updates` container that keep the neighbouring update. Keep every prior exact profile wire ID and the existing Layer 230/231/232
-oracles. Run deterministic generation, protocol tests and `go vet`, then
-downstream RPC/edge tests and command builds against the published module
-without a permanent local `replace`. This protocol change allocates no PTS/QTS,
-durable outbox event, or session state.
+`updates` container that keep the neighbouring update.
+`tlprofile/layer233_widget_projection_test.go` round-trips a `message` with
+`messageMediaWidget` media through every exact profile: 225–232 decode
+`messageMediaUnsupported` and 233 keeps the widget. Keep every prior exact
+profile wire ID and the existing Layer 230/231/232 oracles. Run deterministic
+generation, protocol tests and `go vet`, then downstream RPC/edge tests and
+command builds against the published module without a permanent local
+`replace`. This protocol change allocates no PTS/QTS, durable outbox event, or
+session state.
 
 ## Local verification
 
@@ -82,8 +87,9 @@ On Windows/amd64, Go 1.27.3:
 - Schema import verified against the locked Git blob and normalized SHA-256;
   `canonical_layer` moved to 233 and `layer-233.tl` was written with its
   provenance.
-- Policy audit: 249 retained entries, zero stale, 64 new obligations, all
-  reviewed above. The reviewed policy document now holds 313 entries.
+- Policy audit: 249 retained entries, zero stale, 56 new obligations, all
+  reviewed above. The reviewed policy document then held 305 entries; the
+  widget media projection below took it to 313.
 - `go generate .` reproduced the canonical `tg` model plus the `tlprofile`
   sidecar with `Profile233` and `ProfileCanonical = 233`; the execution-plan
   audit was regenerated.
@@ -108,5 +114,28 @@ Maintainer re-verification on macOS/arm64, Go 1.27.0, from an LF checkout:
 - `go build ./...`, the `go vet` set above and `go test ./... -count=1` pass.
   A downstream server build against this tree through a temporary `go.work`
   passes its edge tests.
+
+Widget media projection follow-up (pull request #6), maintainer verification on
+macOS/arm64, Go 1.27.0, from an LF checkout:
+
+- `messageMediaWidget` resolves its eight new-only obligations with
+  `LayerResolveProject` and the hook `layerProjectLegacyWidgetMedia` instead of
+  the default drop, which had left a widget-only message empty on 225–232. The
+  policy grows from 305 to 313 entries.
+- It is the first family-level project hook in the sparse codec. The family
+  project function calls the hook, and the `MessageMedia` class encoder
+  dispatches on the projected constructor. The family body keeps the drop for
+  225–232 instead of calling the generic object encoder, which the sparse codec
+  never generates. Only the `MessageMediaWidget` family changes in the
+  regenerated `tlprofile`.
+- The four stale `telegram/` convenience files (entity and styling options,
+  typing actions and cached queries) are regenerated, so `make check_generated`
+  is clean again. The typing builders `TextDraft`, `RichMessageDraft` and
+  `InputSendMessageRichMessageDraft` gain the schema's `canStop` and
+  `keepOnStop` arguments.
+- A full `go generate ./...` run is byte-identical. `go build ./...`,
+  `go vet ./...` and `go test ./... -count=1` (75 packages) pass. A downstream
+  server build against this tree through a temporary `go.work` passes its edge
+  tests and its Layer 232/233 RPC tests.
 
 No client UI session or deployment is part of this verification.
