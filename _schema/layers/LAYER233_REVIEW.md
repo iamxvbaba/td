@@ -52,13 +52,14 @@ decision below).
 | Canonical `channels.toggleForum` encoded for 225–232 (canonical→profile) | The required-field projection mechanically drops `sidebar` and emits the historical `#3ff75734` body. Server obligation: a canonical `#a2952b54` request carries the client's explicit `sidebar`; a historical request arrives with `sidebar=false`. A server that wants to keep a sidebar layout chosen by a Layer 233 client may preserve it for historical sessions. |
 | `channel.forum_sidebar`, `user.bot_forum_sidebar` encoded for 225–232 | Drop (generic optional-field default). Layout metadata only: no permission, consent, credential or PTS meaning, and the historical constructor keeps its field set. Wire IDs are unchanged, so the flags are canonical-only for 225–232. |
 | Six new updates (`updateEditForumTopic`, `updateBotWidgetQuery`, `updateInlineBotWidgetQuery`, `updateBotWidgetCopyQuery`, `updateMessageWidgetData`, `updateTranscribedAudioFile`) projected to 225–232 | Drop. Every prior non-wallet update added in Layers 225–229 was dropped (`updateJoinChatWebViewDecision`, `updateNewBotConnection`, `updateWebBrowserException`, `updateWebBrowserSettings`, the four ephemeral updates, and `updateEphemeralBotCallbackQuery`); only the Layer 230 wallet/TON-session updates were rejected. The widget, transcription and forum-UI features are unavailable to old profiles, and a dropped interactive widget query cannot authorize a wallet transaction. `updateMessageWidgetData` is the first dropped update with `pts`/`pts_count`: a 225–232 session sees a pts gap when it is emitted and recovers through `updates.getDifference`/`updates.getChannelDifference`, where the update is dropped again from `other_updates` while the returned state still covers its pts. A server emitting it must account for that gap. |
-| New widget methods, results and `WidgetQueryType`/`UserWallet` types in historical profiles | Unavailable (generic canonical-only default). No alias and no byte bridge. `messageMediaWidget` in the optional `message.media` falls under the generic optional-field drop: 225–232 receive the message without media, so a widget-only message arrives empty. A server that wants an "unsupported message" placeholder must substitute `messageMediaUnsupported` itself. |
+| New widget methods, results and `WidgetQueryType`/`UserWallet` types in historical profiles | Unavailable (generic canonical-only default). No alias and no byte bridge. `messageMediaWidget` in the optional `message.media` is projected to `messageMediaUnsupported#9f84f49e` for 225–232 (new-only project hook `layerProjectLegacyWidgetMedia`): a widget-only message reaches an older client as an explicit unsupported-media placeholder instead of an empty text message. |
 | Legacy `payments.getStarGiftWithdrawalUrlLegacy#d06e93a8` | Still owned by the canonical Go model. Exact profile 232 defines the temporary-password method `#c8ca817b`, not `#d06e93a8`, so unlike the Layer 232 record it no longer admits the promoted legacy wire; the SRP constructor remains available in exact profiles 225–231. |
 
-The policy has 305 entries: the 249 reviewed decisions are retained unchanged,
-and 56 new obligations are explicit (eight `channels.toggleForum` request
-defaults and 48 update drops, six constructors × eight historical profiles).
-No obligation uses a hook; no stale key remains.
+The policy has 313 entries: the 249 reviewed decisions are retained unchanged,
+and 64 new obligations are explicit (eight `channels.toggleForum` request
+defaults, 48 update drops and eight `messageMediaWidget` new-only projections,
+six constructors × eight historical profiles). One obligation uses a typed hook
+(`layerProjectLegacyWidgetMedia`); no stale key remains.
 
 ## Verification matrix
 
@@ -81,8 +82,8 @@ On Windows/amd64, Go 1.27.3:
 - Schema import verified against the locked Git blob and normalized SHA-256;
   `canonical_layer` moved to 233 and `layer-233.tl` was written with its
   provenance.
-- Policy audit: 249 retained entries, zero stale, 56 new obligations, all
-  reviewed above. The reviewed policy document now holds 305 entries.
+- Policy audit: 249 retained entries, zero stale, 64 new obligations, all
+  reviewed above. The reviewed policy document now holds 313 entries.
 - `go generate .` reproduced the canonical `tg` model plus the `tlprofile`
   sidecar with `Profile233` and `ProfileCanonical = 233`; the execution-plan
   audit was regenerated.

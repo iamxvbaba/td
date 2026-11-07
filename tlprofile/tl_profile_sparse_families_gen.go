@@ -9152,7 +9152,7 @@ func layerEncodeFamilyMessageMediaWidgetBody(profile LayerProfile, value *tg.Mes
 	}
 	switch profile {
 	case LayerProfile225, LayerProfile226, LayerProfile227, LayerProfile228, LayerProfile229, LayerProfile230, LayerProfile231, LayerProfile232:
-		return &LayerProjectionError{Profile: profile, Semantic: LayerSemanticTypeMessageMediaWidget, Dropped: true, Reason: "policy drops unavailable value"}
+		return &LayerProjectionError{Profile: profile, Semantic: LayerSemanticTypeMessageMediaWidget, Dropped: true, Reason: "policy drops projected value"}
 	case LayerProfile233:
 		b.PutID(0x2238f214)
 		return layerEncodeWire2238f214BareBody(profile, value, b, state)
@@ -25575,7 +25575,7 @@ func layerProjectFamilyMessageMediaWidget(profile LayerProfile, value *tg.Messag
 	}
 	switch profile {
 	case LayerProfile225, LayerProfile226, LayerProfile227, LayerProfile228, LayerProfile229, LayerProfile230, LayerProfile231, LayerProfile232:
-		return nil, false, nil
+		return layerProjectLegacyWidgetMediaProject(profile, value)
 	case LayerProfile233:
 		return value, true, nil
 	default:

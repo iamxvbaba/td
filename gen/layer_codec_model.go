@@ -2332,8 +2332,15 @@ func (e *layerCodecEmitter) buildFamilies() error {
 						return err
 					}
 					current.project = fmt.Sprintf("return %s(profile, value)\n", hook)
-					current.preflight = fmt.Sprintf("projected, keep, err := %s(profile, value); if err != nil { return 0, err }; if !keep { return 0, nil }; return layerPreflightDynamicObject(profile, projected, state)\n", hook)
-					current.encode = fmt.Sprintf("projected, keep, err := %s(profile, value); if err != nil { return err }; if !keep { return &LayerProjectionError{Profile: profile, Semantic: %s, Dropped: true, Reason: \"policy drops projected value\"} }; return layerEncodeObjectBody(profile, projected, b, state)\n", hook, semanticID)
+					// A class/object dispatcher applies the projection and then
+					// re-enters the family body of the *projected* constructor, so a
+					// projected value never reaches this body for an unavailable
+					// profile. Emitting a generic object encoder here would require
+					// runtime dynamic dispatch (the sparse codec forbids it). Keep the
+					// drop behavior: a value that reaches a family body directly for an
+					// unavailable profile has no encodable wire identity.
+					current.preflight = "return 0, nil\n"
+					current.encode = fmt.Sprintf("return &LayerProjectionError{Profile: profile, Semantic: %s, Dropped: true, Reason: \"policy drops projected value\"}\n", semanticID)
 				default:
 					reason := "semantic family is unavailable in exact profile"
 					current.project = fmt.Sprintf("return nil, false, &LayerCodecError{Operation: \"project\", Profile: profile, Semantic: %s, Reason: %q}\n", semanticID, reason)

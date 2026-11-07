@@ -178,8 +178,12 @@ and `user` gain optional forum-sidebar layout flags (wire IDs unchanged), while
 `sidebar=false`, the layout an old client chose, instead of being rejected; the
 six new update constructors drop for 225–232 like every prior non-wallet
 update. `updateMessageWidgetData` is the first dropped update with `pts`, so a
-historical session recovers its gap through difference. The policy has 305
-entries (249 existing plus eight request defaults and 48 update drops). No
+historical session recovers its gap through difference. `messageMediaWidget`
+projects to `messageMediaUnsupported#9f84f49e` for 225–232 instead of dropping
+the media, so a widget-only message reaches an older client as an unsupported
+placeholder rather than an empty text message. The policy has 313 entries (249
+existing plus eight `channels.toggleForum` request defaults, 48 update drops and
+eight `messageMediaWidget` new-only projections). No
 existing update's `pts`/`pts_count` field changes and the MTProto transport
 schema is unchanged.
 
